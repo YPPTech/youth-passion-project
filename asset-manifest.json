@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/youth-passion-project/ypp-landing-page/static/css/main.37fb695b.css",
+    "main.js": "/youth-passion-project/ypp-landing-page/static/js/main.084c26ff.js",
+    "static/js/453.080ceea7.chunk.js": "/youth-passion-project/ypp-landing-page/static/js/453.080ceea7.chunk.js",
+    "index.html": "/youth-passion-project/ypp-landing-page/index.html",
+    "main.37fb695b.css.map": "/youth-passion-project/ypp-landing-page/static/css/main.37fb695b.css.map",
+    "main.084c26ff.js.map": "/youth-passion-project/ypp-landing-page/static/js/main.084c26ff.js.map",
+    "453.080ceea7.chunk.js.map": "/youth-passion-project/ypp-landing-page/static/js/453.080ceea7.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.37fb695b.css",
+    "static/js/main.084c26ff.js"
+  ]
+}
