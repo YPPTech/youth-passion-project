@@ -1,0 +1,153 @@
+.App {
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header */
+.header {
+  background: linear-gradient(135deg, var(--ypp-deep) 0%, var(--ypp-primary) 60%, var(--ypp-mid) 100%);
+  padding: 20px 0;
+  color: white;
+}
+
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: 500;
+}
+
+nav a:hover {
+  color: var(--ypp-lavender);
+}
+
+/* Hero */
+.hero {
+  background: linear-gradient(135deg, var(--ypp-deep) 0%, var(--ypp-primary) 60%, var(--ypp-mid) 100%);
+  padding: 100px 0;
+  text-align: center;
+  color: white;
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 48px;
+  font-weight: 900;
+  margin-bottom: 20px;
+  line-height: 1.1;
+}
+
+.hero p {
+  font-size: 18px;
+  margin-bottom: 40px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Buttons */
+.btn-primary {
+  background: linear-gradient(135deg, var(--ypp-primary), var(--ypp-mid));
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: var(--r-full);
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 20px rgba(107,33,200,0.4);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(107,33,200,0.5);
+}
+
+/* Sections */
+.about, .programs {
+  padding: 80px 0;
+  background: white;
+}
+
+.about h2, .programs h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--ypp-deep);
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.about p {
+  font-size: 18px;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Programs */
+.program-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.program-card {
+  background: white;
+  border-radius: var(--r-xl);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--ypp-border);
+  padding: 40px 30px;
+  text-align: center;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.program-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+}
+
+.program-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--ypp-deep);
+  margin-bottom: 15px;
+}
+
+.program-card p {
+  font-size: 16px;
+  color: var(--ypp-muted);
+  line-height: 1.6;
+}
+
+/* Footer */
+.footer {
+  background: var(--ypp-deep);
+  color: white;
+  padding: 40px 0;
+  text-align: center;
+}
+
+.footer p {
+  margin: 0;
+}
