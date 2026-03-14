@@ -6,6 +6,19 @@
 /** Pathways Portal (student registration, course catalog, instructor applications). Temp domain; may change. */
 export const PORTAL_URL = "https://youthpassionproject-portal.vercel.app";
 
+/** Legal documents (official YPP links + internal pages). */
+export const LEGAL_LINKS = [
+  { href: "/legal/privacy", label: "Privacy Policy", internal: true },
+  { href: "/legal/by-laws", label: "By-Laws", internal: true },
+  { href: "/legal/enrollment-consent", label: "Enrollment Consent and Release Agreement", internal: true },
+  { href: "/legal/enrollment-media-release", label: "Enrollment Media Release Agreement", internal: true },
+  { href: "/legal/instructor-retainment", label: "Instructor Retainment", internal: true },
+  { href: "/legal/volunteer-retainment", label: "Volunteer Retainment", internal: true },
+  { href: "/legal/volunteer-media-release", label: "Volunteer Media Release", internal: true },
+  { href: "https://docs.google.com/forms/d/e/1FAIpQLSfy4sOTNRXNjLMJ63jF2jx7B7FYBI3HLZAkuufi_vnhmvYTkg/viewform", label: "Whistleblower Report", internal: false },
+  { href: "https://docs.google.com/spreadsheets/d/1XmtmKRDIX8YxVWdeeleUPWec1MSL8m_3b4naHhIo0Co/edit#gid=0", label: "Volunteer Directory", internal: false },
+] as const;
+
 /** Contact emails by audience. */
 export const CONTACT_EMAILS = {
   /** Students and parents — Enrollment and Student Services */

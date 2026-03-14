@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Privacy Policy | Youth Passion Project",
@@ -119,7 +120,15 @@ export default function PrivacyPolicyPage() {
     <div>
       {/* Page header */}
       <section className="border-b border-[var(--ypp-border)] bg-[var(--ypp-white)] px-4 py-12 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-3xl text-center">
+        <div className="mx-auto max-w-3xl">
+          <Link
+            href="/legal"
+            className="font-body mb-6 inline-flex items-center gap-2 text-sm font-medium text-[var(--ypp-primary)] transition-colors hover:text-[var(--ypp-deep)]"
+          >
+            <span aria-hidden>←</span>
+            Back to Legal
+          </Link>
+          <div className="text-center">
           <span className="font-label mx-auto mb-4 block text-xs text-[var(--ypp-primary)]">
             Legal
           </span>
@@ -130,6 +139,7 @@ export default function PrivacyPolicyPage() {
             How we collect, use, and protect your information when you use our website
             and services.
           </p>
+          </div>
         </div>
       </section>
 

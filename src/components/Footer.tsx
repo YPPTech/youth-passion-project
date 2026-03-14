@@ -14,7 +14,7 @@ const resourceLinks = [
   { href: PORTAL_URL, label: "Student Portal", external: true },
   { href: "/resources/faqs", label: "FAQs" },
   { href: "/legal/privacy", label: "Privacy Policy" },
-  { href: "#", label: "By-Laws" },
+  { href: "/legal", label: "Legal" },
 ];
 
 const contactLinks = [
@@ -23,13 +23,14 @@ const contactLinks = [
 ];
 
 const social = [
-  { name: "X (Twitter)", href: "#", icon: "x" as const },
-  { name: "Instagram", href: "#", icon: "instagram" as const },
-  { name: "TikTok", href: "#", icon: "tiktok" as const },
-  { name: "LinkedIn", href: "#", icon: "linkedin" as const },
+  { name: "X (Twitter)", href: "https://x.com/PassionYouth", icon: "x" as const },
+  { name: "Instagram", href: "https://www.instagram.com/youthpassionproject/", icon: "instagram" as const },
+  { name: "TikTok", href: "https://www.tiktok.com/@youthpassionproject", icon: "tiktok" as const },
+  { name: "Facebook", href: "https://www.facebook.com/people/Youth-Passion-Project/100063756570369/", icon: "facebook" as const },
+  { name: "LinkedIn", href: "https://www.linkedin.com/company/youth-passion-project", icon: "linkedin" as const },
 ];
 
-function SocialIcon({ icon }: { icon: "x" | "instagram" | "tiktok" | "linkedin" }) {
+function SocialIcon({ icon }: { icon: "x" | "instagram" | "tiktok" | "facebook" | "linkedin" }) {
   const className = "h-4 w-4 shrink-0";
   if (icon === "x") {
     return (
@@ -52,6 +53,13 @@ function SocialIcon({ icon }: { icon: "x" | "instagram" | "tiktok" | "linkedin" 
       </svg>
     );
   }
+  if (icon === "facebook") {
+    return (
+      <svg className={className} fill="currentColor" viewBox="0 0 24 24" aria-hidden>
+        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+      </svg>
+    );
+  }
   if (icon === "linkedin") {
     return (
       <svg className={className} fill="currentColor" viewBox="0 0 24 24" aria-hidden>
@@ -62,17 +70,17 @@ function SocialIcon({ icon }: { icon: "x" | "instagram" | "tiktok" | "linkedin" 
   return null;
 }
 
-const colHeading = "font-label text-xs text-[var(--ypp-primary)]";
-const colList = "mt-4 flex flex-col gap-3";
+const colHeading = "font-label text-xs font-semibold uppercase tracking-wider text-[var(--ypp-primary)]";
+const colList = "mt-5 flex flex-col gap-3";
 
 export default function Footer() {
   return (
     <footer className="border-t border-[var(--ypp-border)] bg-[var(--ypp-blush)] text-[var(--ypp-ink)]">
-      <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-[1.25fr_1fr_1fr_1fr] lg:gap-x-12 lg:gap-y-0">
-          {/* Column 1: Brand + logo + tagline + social */}
-          <div className="flex flex-col">
-            <div className="flex items-start gap-4">
+      <div className="mx-auto max-w-6xl px-6 py-16 sm:px-8 lg:px-10">
+        <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-[1.3fr_1fr_1fr_1fr] lg:gap-x-16 lg:gap-y-0 lg:items-start">
+          {/* Column 1: Brand + logo + tagline */}
+          <div className="flex flex-col sm:pr-4">
+            <div className="flex items-start gap-5">
               <img
                 src="/logo.png"
                 alt="Youth Passion Project"
@@ -81,26 +89,14 @@ export default function Footer() {
                 className="h-14 w-14 shrink-0 object-contain"
               />
               <div className="min-w-0 flex-1">
-                <h3 className="font-heading text-lg font-bold text-[var(--ypp-ink)]">
+                <h3 className="font-heading text-lg font-bold leading-tight text-[var(--ypp-ink)]">
                   Youth Passion Project
                 </h3>
-                <p className="font-body mt-2 text-sm leading-relaxed text-[var(--ypp-muted)]">
+                <p className="font-body mt-3 text-sm leading-relaxed text-[var(--ypp-muted)]">
                   Free online and in-person courses taught by passionate high school students,
                   empowering younger learners everywhere.
                 </p>
               </div>
-            </div>
-            <div className="mt-6 flex gap-3">
-              {social.map(({ name, href, icon }) => (
-                <a
-                  key={name}
-                  href={href}
-                  className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[var(--ypp-lavender)] text-[var(--ypp-primary)] transition-colors hover:bg-[var(--ypp-primary)] hover:text-white"
-                  aria-label={name}
-                >
-                  <SocialIcon icon={icon} />
-                </a>
-              ))}
             </div>
           </div>
 
@@ -149,7 +145,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Column 4: Contact */}
+          {/* Column 4: Contact + social */}
           <div className="flex flex-col">
             <h4 className={colHeading}>Contact</h4>
             <ul className={colList}>
@@ -164,10 +160,24 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
+            <div className="mt-6 flex flex-wrap gap-3">
+              {social.map(({ name, href, icon }) => (
+                <a
+                  key={name}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[var(--ypp-lavender)] text-[var(--ypp-primary)] transition-colors hover:bg-[var(--ypp-primary)] hover:text-white"
+                  aria-label={name}
+                >
+                  <SocialIcon icon={icon} />
+                </a>
+              ))}
+            </div>
           </div>
         </div>
 
-        <div className="mt-12 flex items-center justify-center border-t border-[var(--ypp-border)] pt-8 text-sm text-[var(--ypp-muted)]">
+        <div className="mt-16 flex items-center justify-center border-t border-[var(--ypp-border)] pt-8 text-sm text-[var(--ypp-muted)]">
           <p className="font-body">© 2026 Youth Passion Project Inc.</p>
         </div>
       </div>
