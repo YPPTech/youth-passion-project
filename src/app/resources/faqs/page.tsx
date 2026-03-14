@@ -1,6 +1,26 @@
 import Link from "next/link";
 import { PORTAL_URL, CONTACT_EMAILS } from "@/constants/site";
 
+const EMAIL_REGEX = /([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})/g;
+const EMAIL_TEST = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+function textWithEmailLinks(text: string) {
+  const parts = text.split(EMAIL_REGEX);
+  return parts.map((part, i) =>
+    EMAIL_TEST.test(part) ? (
+      <a
+        key={i}
+        href={`mailto:${part}`}
+        className="font-medium text-[var(--ypp-primary)] hover:underline"
+      >
+        {part}
+      </a>
+    ) : (
+      part
+    )
+  );
+}
+
 const faqCategories = [
   {
     title: "For Students & Families",
@@ -152,7 +172,7 @@ export default function FAQsPage() {
                       </summary>
                       <div className="border-t border-[var(--ypp-border)] px-5 py-4">
                         <p className="font-body text-[var(--ypp-muted)] leading-relaxed whitespace-pre-line">
-                          {faq.a}
+                          {textWithEmailLinks(faq.a)}
                         </p>
                       </div>
                     </details>
@@ -171,7 +191,14 @@ export default function FAQsPage() {
             <Link href="/about" className="font-medium text-[var(--ypp-primary)] hover:underline">
               Contact page
             </Link>
-            . For students and parents, email support@youthpassionproject.org.
+            . For students and parents, email{" "}
+            <a
+              href={`mailto:${CONTACT_EMAILS.support}`}
+              className="font-medium text-[var(--ypp-primary)] hover:underline"
+            >
+              {CONTACT_EMAILS.support}
+            </a>
+            .
           </p>
         </div>
       </section>

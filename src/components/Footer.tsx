@@ -13,7 +13,7 @@ const navigateLinks = [
 const resourceLinks = [
   { href: PORTAL_URL, label: "Student Portal", external: true },
   { href: "/resources/faqs", label: "FAQs" },
-  { href: "#", label: "Privacy Policy" },
+  { href: "/legal/privacy", label: "Privacy Policy" },
   { href: "#", label: "By-Laws" },
 ];
 
