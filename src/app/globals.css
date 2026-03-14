@@ -270,6 +270,29 @@ html {
   right: 25%;
   animation: heroBlob3 14s ease-in-out infinite 0.5s;
 }
+
+/* Mouse-following subtle darker gradient bubble */
+.hero-mouse-bubble {
+  position: absolute;
+  width: 380px;
+  height: 380px;
+  left: 0;
+  top: 0;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(180, 160, 215, 0.38) 0%,
+    rgba(170, 150, 205, 0.18) 40%,
+    rgba(160, 140, 195, 0.06) 65%,
+    transparent 75%
+  );
+  filter: blur(36px);
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.25s ease-out, left 0.12s ease-out, top 0.12s ease-out;
+  z-index: 1;
+}
+
 .hero-animate-in {
   animation: heroFadeInUp 0.7s ease-out both;
   animation-fill-mode: both;

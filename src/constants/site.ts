@@ -74,6 +74,26 @@ export const valuePills = [
   { label: "Create" },
 ] as const;
 
+/** Who We Are section: value propositions with title and description. */
+export const valueItems = [
+  {
+    title: "Grow",
+    description: "Students gain skills, knowledge, and confidence through hands-on peer teaching.",
+  },
+  {
+    title: "Lead",
+    description: "High schoolers develop real leadership experience as instructors and coordinators.",
+  },
+  {
+    title: "Connect",
+    description: "A global community spanning 30+ states and countries united by curiosity.",
+  },
+  {
+    title: "Create",
+    description: "Students produce real projects, art, code, and ideas that matter to them.",
+  },
+] as const;
+
 export const missionOneLiner =
   "Connecting young individuals with meaningful experiences, education, and leadership opportunities that ignite lifelong purpose.";
 

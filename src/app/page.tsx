@@ -1,11 +1,12 @@
 import Link from "next/link";
 import SectionHeading from "@/components/SectionHeading";
 import EmailSignup from "@/components/EmailSignup";
+import HeroSection from "@/components/HeroSection";
 import {
   statsByTheNumbers,
   hiringRolePills,
   openPositions,
-  valuePills,
+  valueItems,
   missionOneLiner,
   visionOneLiner,
   featuredPrograms,
@@ -70,11 +71,46 @@ function IconGraduation() {
   );
 }
 
+/** Who We Are value icons — on-brand, consistent weight, centered in 24x24. */
+const valueIconClass = "h-5 w-5 shrink-0";
+const valueIconStroke = 1.75;
+
+function IconGrow() {
+  return (
+    <svg className={valueIconClass} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={valueIconStroke} strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+      <path d="M12 22V12M12 12c-2.5 0-4-2-4-4.5S9 4 12 4s4 2 4 4.5-1.5 3.5-4 3.5z" />
+      <path d="M9 9l1.5 1.5M15 9l-1.5 1.5" />
+    </svg>
+  );
+}
+function IconLead() {
+  return (
+    <svg className={valueIconClass} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={valueIconStroke} strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+      <circle cx="12" cy="12" r="4" />
+      <path d="M12 2v2M12 20v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M2 12h2M20 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4" />
+    </svg>
+  );
+}
+function IconConnect() {
+  return (
+    <svg className={valueIconClass} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={valueIconStroke} strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+      <path d="M12 21.5c-2.2-1.8-7-5.5-7-10C5 6.4 8.1 4 12 4s7 2.4 7 7.5c0 4.5-4.8 8.2-7 10z" />
+    </svg>
+  );
+}
+function IconCreate() {
+  return (
+    <svg className={valueIconClass} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={valueIconStroke} strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+      <path d="M12 2l2.5 7.5L22 12l-7.5 2.5L12 22l-2.5-7.5L2 12l7.5-2.5L12 2z" />
+    </svg>
+  );
+}
+
 export default function HomePage() {
   return (
     <div>
       {/* Hero */}
-      <section className="hero-gradient hero-glow hero-curve relative flex min-h-[85vh] flex-col overflow-hidden px-4 pb-24 pt-8 sm:px-6 sm:pt-12 lg:px-8">
+      <HeroSection className="hero-gradient hero-glow hero-curve relative flex min-h-[85vh] flex-col overflow-hidden px-4 pb-24 pt-8 sm:px-6 sm:pt-12 lg:px-8">
         <div className="hero-blob hero-blob-1" aria-hidden />
         <div className="hero-blob hero-blob-2" aria-hidden />
         <div className="hero-blob hero-blob-3" aria-hidden />
@@ -137,7 +173,7 @@ export default function HomePage() {
               className="hero-animate-in font-label mb-4 text-sm text-[var(--ypp-muted)]"
               style={{ animationDelay: "0.3s" }}
             >
-              What sparks your curiosity?
+              Explore by subject
             </p>
             <div className="flex flex-wrap gap-3">
               {passionTopics.map(({ label, href }, i) => (
@@ -155,11 +191,11 @@ export default function HomePage() {
               className="hero-animate-in font-body mt-4 text-xs text-[var(--ypp-muted)]"
               style={{ animationDelay: "0.7s" }}
             >
-              Tap any topic to explore 110+ free courses →
+              110+ free courses — music, code, art, and more →
             </p>
           </div>
         </div>
-      </section>
+      </HeroSection>
 
       {/* Now Hiring banner */}
       <section className="bg-[var(--ypp-deep)] px-4 py-4 sm:px-6 lg:px-8">
@@ -187,64 +223,64 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Who We Are (two-column) + Mission & Vision cards */}
+      {/* Who We Are — two-column: intro + CTA | value propositions */}
       <section className="border-y border-[var(--ypp-border)] bg-[var(--ypp-blush)] px-4 py-16 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-6xl">
-          <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
+          <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 lg:items-center">
+            {/* Left: label, title, description, CTA */}
             <div>
-              <p className="section-label text-[var(--ypp-muted)]">
-                — Who we are
-              </p>
-              <h2 className="font-heading mt-2 text-2xl font-bold text-[var(--ypp-deep)] sm:text-3xl">
-                Built Around Young People&apos;s Potential
+              <div className="flex items-center gap-3">
+                <span className="h-px w-8 bg-[var(--ypp-primary)]" aria-hidden />
+                <p className="font-label text-xs font-semibold uppercase tracking-wider text-[var(--ypp-primary)]">
+                  Who we are
+                </p>
+              </div>
+              <h2 className="font-heading mt-4 text-4xl font-normal leading-tight tracking-tight text-[var(--ypp-ink)] sm:text-5xl">
+                Built Around Young People&apos;s{" "}
+                <span className="font-normal italic text-[var(--ypp-primary)]">Potential</span>
               </h2>
-              <p className="font-body mt-4 text-[var(--ypp-muted)] leading-relaxed">
+              <p className="font-body mt-6 text-[var(--ypp-muted)] leading-relaxed">
                 We exist to discover, develop, and celebrate the passions of youth—providing the resources, mentorship, and community they need to thrive in whatever path they choose.
               </p>
-              <div className="mt-6 flex flex-wrap gap-3">
-                {valuePills.map(({ label }) => (
-                  <span
-                    key={label}
-                    className="font-body rounded-full bg-[var(--ypp-lavender)] px-4 py-2 text-sm font-semibold text-[var(--ypp-deep)]"
-                  >
-                    {label}
-                  </span>
-                ))}
-              </div>
               <Link
-                href="/about"
-                className="btn-primary font-body mt-8 inline-flex items-center"
+                href="/about#staff"
+                className="mt-8 inline-flex items-center gap-2 rounded-lg border-2 border-[var(--ypp-primary)] bg-[var(--ypp-white)] px-5 py-2.5 font-semibold text-[var(--ypp-primary)] transition-colors hover:bg-[var(--ypp-primary)] hover:text-white"
               >
                 Meet Our Team
-                <svg className="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
               </Link>
             </div>
 
+            {/* Right: four value items with icons */}
             <div className="flex flex-col gap-6">
-              <div className="card-ypp flex flex-col gap-4">
-                <div className="text-[var(--ypp-primary)]">
-                  <IconTarget />
+              {[
+                { Icon: IconGrow, ...valueItems[0] },
+                { Icon: IconLead, ...valueItems[1] },
+                { Icon: IconConnect, ...valueItems[2] },
+                { Icon: IconCreate, ...valueItems[3] },
+              ].map(({ title, description, Icon }) => (
+                <div
+                  key={title}
+                  className="flex gap-4 rounded-xl border border-[var(--ypp-border)] bg-[var(--ypp-white)] p-5 shadow-sm"
+                >
+                  <div
+                    className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-[var(--ypp-lavender)] text-[var(--ypp-primary)]"
+                    aria-hidden
+                  >
+                    <Icon />
+                  </div>
+                  <div className="min-w-0">
+                    <h3 className="font-heading text-lg font-bold text-[var(--ypp-ink)]">
+                      {title}
+                    </h3>
+                    <p className="font-body mt-1 text-sm text-[var(--ypp-muted)] leading-relaxed">
+                      {description}
+                    </p>
+                  </div>
                 </div>
-                <h3 className="font-heading text-lg font-bold text-[var(--ypp-ink)]">
-                  Our Mission
-                </h3>
-                <p className="font-body text-sm text-[var(--ypp-muted)] leading-relaxed">
-                  {missionOneLiner}
-                </p>
-              </div>
-              <div className="flex flex-col gap-4 rounded-2xl border border-transparent bg-[rgba(36,0,77,1)] p-8 shadow-lg">
-                <div className="text-[var(--ypp-light)]">
-                  <IconStarburst />
-                </div>
-                <h3 className="font-heading text-lg font-bold text-white">
-                  Our Vision
-                </h3>
-                <p className="font-body text-sm text-white/80 leading-relaxed">
-                  {visionOneLiner}
-                </p>
-              </div>
+              ))}
             </div>
           </div>
         </div>
@@ -273,8 +309,19 @@ export default function HomePage() {
 
       {/* Open positions */}
       <section className="bg-[var(--ypp-blush)]/60 px-4 py-16 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-6xl">
-          <SectionHeading title="Join our team" subtitle="Open positions for students and volunteers" />
+        <div className="mx-auto max-w-6xl text-left">
+          <div className="flex items-center gap-3">
+            <span className="h-px w-8 bg-[var(--ypp-primary)]" aria-hidden />
+            <p className="font-label text-xs font-semibold uppercase tracking-wider text-[var(--ypp-primary)] underline decoration-[var(--ypp-primary)] underline-offset-2">
+              Now hiring
+            </p>
+          </div>
+          <h2 className="font-heading mt-4 text-3xl font-bold text-[var(--ypp-deep)] sm:text-4xl">
+            Join our team
+          </h2>
+          <p className="font-body mt-3 max-w-2xl text-lg text-[var(--ypp-muted)]">
+            Open positions for students and volunteers.
+          </p>
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {openPositions.map(({ title, description, href }) => (
               <Link key={title} href={href} className="card-ypp block">
@@ -293,12 +340,15 @@ export default function HomePage() {
               </Link>
             ))}
           </div>
-          <div className="mt-8 text-center">
+          <div className="mt-8">
             <Link
               href="/apply"
-              className="font-body font-semibold text-[var(--ypp-primary)] underline underline-offset-2 hover:no-underline"
+              className="font-body inline-flex items-center rounded-lg border-2 border-[var(--ypp-primary)] bg-[var(--ypp-white)] px-5 py-2.5 font-semibold text-[var(--ypp-primary)] transition-colors hover:bg-[var(--ypp-primary)] hover:text-white"
             >
-              View all openings →
+              View all openings
+              <svg className="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
             </Link>
           </div>
         </div>

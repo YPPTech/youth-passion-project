@@ -4,6 +4,7 @@ import { PORTAL_URL, CONTACT_EMAILS } from "@/constants/site";
 const navigateLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About Us" },
+  { href: "/contact", label: "Contact Us" },
   { href: "/programs", label: "Programs" },
   { href: "/programs/calendar", label: "Calendar" },
   { href: "/apply", label: "Apply" },
@@ -18,7 +19,7 @@ const resourceLinks = [
 ];
 
 const contactLinks = [
-  { href: "/about", label: "Contact Us" },
+  { href: "/contact", label: "Contact Us" },
   { href: `mailto:${CONTACT_EMAILS.support}`, label: "Email Us" },
 ];
 
@@ -151,12 +152,21 @@ export default function Footer() {
             <ul className={colList}>
               {contactLinks.map(({ href, label }) => (
                 <li key={label}>
-                  <a
-                    href={href}
-                    className="font-body text-sm text-[var(--ypp-ink)] transition-colors hover:text-[var(--ypp-primary)]"
-                  >
-                    {label}
-                  </a>
+                  {href.startsWith("mailto:") ? (
+                    <a
+                      href={href}
+                      className="font-body text-sm text-[var(--ypp-ink)] transition-colors hover:text-[var(--ypp-primary)]"
+                    >
+                      {label}
+                    </a>
+                  ) : (
+                    <Link
+                      href={href}
+                      className="font-body text-sm text-[var(--ypp-ink)] transition-colors hover:text-[var(--ypp-primary)]"
+                    >
+                      {label}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>

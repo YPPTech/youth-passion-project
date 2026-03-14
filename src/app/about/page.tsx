@@ -88,8 +88,8 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Leadership team */}
-      <section className="bg-[var(--ypp-lavender)]/20 px-4 py-16 sm:px-6 lg:px-8">
+      {/* Staff: leadership, instructors, chapter leadership */}
+      <section id="staff" className="scroll-mt-20 bg-[var(--ypp-lavender)]/20 px-4 py-16 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-6xl">
           <SectionHeading
             title="Leadership team"
@@ -151,6 +151,14 @@ export default function AboutPage() {
               student portal
             </a>
             .
+          </p>
+
+          <SectionHeading
+            title="Chapter leadership"
+            subtitle="Presidents and leads for our in-person chapters. More chapters coming soon."
+          />
+          <p className="mt-6 text-center text-sm text-[var(--ypp-muted)]">
+            Chapter leads and local coordinators will be listed here as we grow.
           </p>
         </div>
       </section>
