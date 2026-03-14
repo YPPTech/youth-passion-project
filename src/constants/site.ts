@@ -1,5 +1,6 @@
 /**
  * Site-wide copy and data aligned with youthpassionproject.org
+ * (Trigger deploy)
  */
 
 /** Pathways Portal (student registration, course catalog, instructor applications). Temp domain; may change. */
