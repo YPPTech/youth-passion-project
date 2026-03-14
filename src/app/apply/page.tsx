@@ -8,7 +8,7 @@ const roles = [
     title: "Instructor",
     ageGrade: "High school students (grades 9–12)",
     description:
-      "Teach a course in your passion to younger students. You'll design or follow a curriculum, run weekly sessions on Zoom, and help students practice and grow. We provide training and support. Classes typically run 30–60 minutes, 1–2 times per week.",
+      "Teach a course in your passion to younger students. You'll design or follow a curriculum, run weekly sessions online (e.g., Zoom) or in person at chapter locations, and help students practice and grow. We provide training and support. Classes typically run 30–60 minutes, 1–2 times per week.",
     applyLink: PORTAL_URL,
     applyLabel: "Apply via portal",
   },
@@ -17,7 +17,7 @@ const roles = [
     title: "Curriculum Developer",
     ageGrade: "High school students & adult volunteers",
     description:
-      "Help create and refine course materials for our catalog. You'll work with instructors to build syllabi, activities, and resources that work in an online, interactive setting.",
+      "Help create and refine course materials for our catalog. You'll work with instructors to build syllabi, activities, and resources that work in both online and in-person settings.",
     applyLink: PORTAL_URL,
     applyLabel: "Apply via portal",
   },

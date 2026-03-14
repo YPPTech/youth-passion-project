@@ -64,12 +64,13 @@ export default function AboutPage() {
             share their passions with others.
           </p>
           <p className="mt-4 text-[var(--ypp-muted)] leading-relaxed">
-            We offer free, online courses taught by high schoolers to encourage
-            younger students to expand and supplement their learning. Our large
-            variety of classes ranges from Songwriting to the Art of Baking and
-            Introduction to Coding in Java. Every course emphasizes practice and
-            commitment, and classes generally run from thirty minutes to an hour,
-            meeting once or twice a week.
+            We offer free online and in-person courses taught by high schoolers to
+            encourage younger students to expand and supplement their learning.
+            Our large variety of classes ranges from Songwriting to the Art of
+            Baking and Introduction to Coding in Java. Classes may be held
+            online (e.g., Zoom) or in person where we have chapters. Every
+            course emphasizes practice and commitment, and classes generally run
+            from thirty minutes to an hour, meeting once or twice a week.
           </p>
 
           <h2 className="mt-12 text-2xl font-bold text-[var(--ypp-ink)]">

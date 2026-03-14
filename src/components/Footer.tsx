@@ -85,8 +85,8 @@ export default function Footer() {
                   Youth Passion Project
                 </h3>
                 <p className="font-body mt-2 text-sm leading-relaxed text-[var(--ypp-muted)]">
-                  Free online courses taught by passionate high school students,
-                  empowering younger learners around the world.
+                  Free online and in-person courses taught by passionate high school students,
+                  empowering younger learners everywhere.
                 </p>
               </div>
             </div>

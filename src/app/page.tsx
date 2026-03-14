@@ -102,7 +102,7 @@ export default function HomePage() {
               className="hero-animate-in font-body mt-6 max-w-xl text-[15px] font-normal leading-loose text-[var(--ypp-muted)]"
               style={{ animationDelay: "0.35s" }}
             >
-              Free online courses taught by passionate high school students—designed to spark curiosity and expand the horizons of younger learners worldwide.
+              Free online and in-person courses taught by passionate high school students—designed to spark curiosity and expand the horizons of younger learners.
             </p>
 
             <div

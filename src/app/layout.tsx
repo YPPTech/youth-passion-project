@@ -34,13 +34,13 @@ const lora = Lora({
 });
 
 export const metadata: Metadata = {
-  title: "Youth Passion Project | Free Online Classes",
+  title: "Youth Passion Project | Free Online & In-Person Classes",
   description:
-    "Free online courses, taught by high school students, to foster the passions of younger learners.",
+    "Free online and in-person courses, taught by high school students, to foster the passions of younger learners.",
   openGraph: {
-    title: "Youth Passion Project | Free Online Classes",
+    title: "Youth Passion Project | Free Online & In-Person Classes",
     description:
-      "Free online courses, taught by high school students, to foster the passions of younger learners.",
+      "Free online and in-person courses, taught by high school students, to foster the passions of younger learners.",
     url: "https://www.youthpassionproject.org",
   },
 };
