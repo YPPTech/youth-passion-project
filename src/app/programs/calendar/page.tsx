@@ -1,5 +1,6 @@
 import Link from "next/link";
 import SectionHeading from "@/components/SectionHeading";
+import { PORTAL_URL } from "@/constants/site";
 
 const sampleEvents = [
   { date: "Mar 15, 2025", title: "Spring registration opens", type: "Registration" },
@@ -61,7 +62,7 @@ export default function CalendarPage() {
           <p className="mt-6 text-center text-sm text-[var(--ypp-muted)]">
             For the most up-to-date schedule and to sign up, visit the{" "}
             <a
-              href="https://www.youthpassionproject.org/"
+              href={PORTAL_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="text-[var(--ypp-primary)] font-medium hover:underline"

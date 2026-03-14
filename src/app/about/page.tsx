@@ -1,5 +1,6 @@
 import Link from "next/link";
 import SectionHeading from "@/components/SectionHeading";
+import { PORTAL_URL } from "@/constants/site";
 
 const leadership = [
   {
@@ -141,12 +142,12 @@ export default function AboutPage() {
           <p className="mt-8 text-center text-[var(--ypp-muted)]">
             For full instructor profiles and course details, visit our{" "}
             <a
-              href="https://www.youthpassionproject.org/"
+              href={PORTAL_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="text-[var(--ypp-primary)] font-medium hover:underline"
             >
-              student & instructor portal
+              student portal
             </a>
             .
           </p>

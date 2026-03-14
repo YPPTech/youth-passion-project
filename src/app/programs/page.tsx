@@ -1,17 +1,17 @@
 import Link from "next/link";
 import SectionHeading from "@/components/SectionHeading";
 
-const PORTAL_BASE = "https://www.youthpassionproject.org/";
+import { PORTAL_URL } from "@/constants/site";
 
 const onlineSessions = [
   {
     session: "Spring 2025",
     location: "Online (Zoom)",
     classes: [
-      { name: "Introduction to Coding in Java", grades: "6–9", link: PORTAL_BASE },
-      { name: "Songwriting & Music", grades: "4–8", link: PORTAL_BASE },
-      { name: "Art of Baking", grades: "5–8", link: PORTAL_BASE },
-      { name: "Creative Writing", grades: "5–9", link: PORTAL_BASE },
+      { name: "Introduction to Coding in Java", grades: "6–9", link: PORTAL_URL },
+      { name: "Songwriting & Music", grades: "4–8", link: PORTAL_URL },
+      { name: "Art of Baking", grades: "5–8", link: PORTAL_URL },
+      { name: "Creative Writing", grades: "5–9", link: PORTAL_URL },
     ],
   },
 ];
@@ -36,7 +36,7 @@ export default function ProgramsPage() {
           </p>
           <div className="mt-8">
             <a
-              href={PORTAL_BASE}
+              href={PORTAL_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary inline-flex items-center"
@@ -82,7 +82,7 @@ export default function ProgramsPage() {
                       Sessions: {sessions}
                     </span>
                     <a
-                      href={PORTAL_BASE}
+                      href={PORTAL_URL}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="mt-1 text-sm font-medium text-[var(--ypp-primary)] hover:underline"

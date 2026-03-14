@@ -10,9 +10,8 @@ import {
   visionOneLiner,
   featuredPrograms,
   mailingListSubtitle,
+  PORTAL_URL,
 } from "@/constants/site";
-
-const PORTAL_URL = "https://www.youthpassionproject.org/";
 
 const passionTopics = [
   { label: "Music & Songwriting", href: "/programs" },

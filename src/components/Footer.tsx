@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { PORTAL_URL, CONTACT_EMAILS } from "@/constants/site";
 
 const navigateLinks = [
   { href: "/", label: "Home" },
@@ -10,16 +11,15 @@ const navigateLinks = [
 ];
 
 const resourceLinks = [
-  { href: "https://www.youthpassionproject.org/", label: "Student Portal", external: true },
-  { href: "#", label: "FAQs" },
-  { href: "#", label: "Blog" },
+  { href: PORTAL_URL, label: "Student Portal", external: true },
+  { href: "/resources/faqs", label: "FAQs" },
   { href: "#", label: "Privacy Policy" },
   { href: "#", label: "By-Laws" },
 ];
 
 const contactLinks = [
   { href: "/about", label: "Contact Us" },
-  { href: "mailto:contact@youthpassionproject.org", label: "Email Us" },
+  { href: `mailto:${CONTACT_EMAILS.support}`, label: "Email Us" },
 ];
 
 const social = [

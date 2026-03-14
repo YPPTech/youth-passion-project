@@ -2,6 +2,21 @@
  * Site-wide copy and data aligned with youthpassionproject.org
  */
 
+/** Pathways Portal (student registration, course catalog, instructor applications). Temp domain; may change. */
+export const PORTAL_URL = "https://youthpassionproject-portal.vercel.app";
+
+/** Contact emails by audience. */
+export const CONTACT_EMAILS = {
+  /** Students and parents — Enrollment and Student Services */
+  support: "support@youthpassionproject.org",
+  /** Media inquiries — Public Relations */
+  marketing: "marketing@youthpassionproject.org",
+  /** In-person instructor support */
+  inPersonInstructors: "in-person-instructors@youthpassionproject.org",
+  /** Online instructor support */
+  onlineInstructorSupport: "online-instructor-support@youthpassionproject.org",
+} as const;
+
 export const statsByTheNumbers = [
   { value: "3,200+", label: "Lifetime Student Sign-ups" },
   { value: "200+", label: "Carefully Selected Instructors" },

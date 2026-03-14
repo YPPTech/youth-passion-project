@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { PORTAL_URL } from "@/constants/site";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -12,8 +13,6 @@ const navLinks = [
   { href: "/apply", label: "Apply" },
   { href: "/donate", label: "Donate" },
 ];
-
-const PORTAL_URL = "https://youthpassionproject-portal.vercel.app/login";
 
 export default function Header() {
   const pathname = usePathname();
@@ -53,7 +52,7 @@ export default function Header() {
           })}
           <li>
             <a
-              href={PORTAL_URL}
+              href={`${PORTAL_URL}/login`}
               target="_blank"
               rel="noopener noreferrer"
               className="nav-link nav-cta"
@@ -112,7 +111,7 @@ export default function Header() {
               </Link>
             ))}
             <a
-              href={PORTAL_URL}
+              href={`${PORTAL_URL}/login`}
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setMobileOpen(false)}

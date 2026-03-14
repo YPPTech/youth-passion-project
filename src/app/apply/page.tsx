@@ -1,5 +1,6 @@
 import Link from "next/link";
 import SectionHeading from "@/components/SectionHeading";
+import { PORTAL_URL } from "@/constants/site";
 
 const roles = [
   {
@@ -8,7 +9,7 @@ const roles = [
     ageGrade: "High school students (grades 9–12)",
     description:
       "Teach a course in your passion to younger students. You'll design or follow a curriculum, run weekly sessions on Zoom, and help students practice and grow. We provide training and support. Classes typically run 30–60 minutes, 1–2 times per week.",
-    applyLink: "https://www.youthpassionproject.org/",
+    applyLink: PORTAL_URL,
     applyLabel: "Apply via portal",
   },
   {
@@ -17,7 +18,7 @@ const roles = [
     ageGrade: "High school students & adult volunteers",
     description:
       "Help create and refine course materials for our catalog. You'll work with instructors to build syllabi, activities, and resources that work in an online, interactive setting.",
-    applyLink: "https://www.youthpassionproject.org/",
+    applyLink: PORTAL_URL,
     applyLabel: "Apply via portal",
   },
   {
@@ -26,7 +27,7 @@ const roles = [
     ageGrade: "High school students & volunteers",
     description:
       "Spread the word about YPP in your school and community. You'll help with social media, school partnerships, and finding both students and future instructors.",
-    applyLink: "https://www.youthpassionproject.org/",
+    applyLink: PORTAL_URL,
     applyLabel: "Apply via portal",
   },
   {
@@ -35,7 +36,7 @@ const roles = [
     ageGrade: "High school students & volunteers",
     description:
       "Support day-to-day operations, registration systems, and technical needs so our classes run smoothly for everyone.",
-    applyLink: "https://www.youthpassionproject.org/",
+    applyLink: PORTAL_URL,
     applyLabel: "Contact us",
   },
 ];
@@ -55,12 +56,12 @@ export default function ApplyPage() {
           </p>
           <div className="mt-8">
             <a
-              href="https://www.youthpassionproject.org/"
+              href={PORTAL_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center rounded-full bg-[var(--ypp-primary)] px-6 py-3 font-semibold text-white transition-colors hover:bg-[var(--accent-hover)]"
             >
-              Go to application portal
+              Go to portal
               <svg className="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
               </svg>
@@ -118,14 +119,14 @@ export default function ApplyPage() {
             <Link href="/programs" className="text-[var(--ypp-primary)] font-medium hover:underline">
               Programs
             </Link>{" "}
-            page for sessions and links to the portal, or go directly to{" "}
+            page for sessions and links to the portal, or go directly to our{" "}
             <a
-              href="https://www.youthpassionproject.org/"
+              href={PORTAL_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="text-[var(--ypp-primary)] font-medium hover:underline"
             >
-              youthpassionproject.org
+              student portal
             </a>
             .
           </p>

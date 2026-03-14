@@ -1,5 +1,6 @@
 import Link from "next/link";
 import SectionHeading from "@/components/SectionHeading";
+import { CONTACT_EMAILS } from "@/constants/site";
 
 const sponsors = [
   { name: "Community Foundation of Delaware", tier: "Founding supporter" },
@@ -78,7 +79,7 @@ export default function DonatePage() {
           <p className="mt-8 text-center text-sm text-[var(--ypp-muted)]">
             Interested in becoming a sponsor?{" "}
             <a
-              href="mailto:contact@youthpassionproject.org"
+              href={`mailto:${CONTACT_EMAILS.support}`}
               className="text-[var(--ypp-primary)] font-medium hover:underline"
             >
               Contact us
