@@ -39,7 +39,7 @@ export default function DonatePage() {
             </p>
             <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
               <a
-                href="https://www.youthpassionproject.org/copy-of-template"
+                href="https://www.paypal.com/us/fundraiser/charity/4239878"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary inline-flex items-center justify-center px-8 py-4"
