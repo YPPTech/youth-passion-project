@@ -33,13 +33,13 @@ const leadership = [
   },
   {
     personName: "Anthea Zamir",
-    name: "Co-Director of Tech",
+    name: "Director of Tech",
     bio: "Leads technology, systems, and digital infrastructure for programs and the organization.",
     image: "/team/placeholder.jpg",
   },
   {
     personName: "Yuvaan Das",
-    name: "Co-Director of Tech",
+    name: "Director of Tech",
     bio: "Leads technology, systems, and digital infrastructure for programs and the organization.",
     image: "/team/placeholder.jpg",
   },
