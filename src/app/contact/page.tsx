@@ -1,4 +1,5 @@
 import Link from "next/link";
+import PageHeader from "@/components/PageHeader";
 import SectionHeading from "@/components/SectionHeading";
 import { CONTACT_EMAILS } from "@/constants/site";
 
@@ -28,20 +29,14 @@ const contactEntries = [
 export default function ContactPage() {
   return (
     <div>
-      {/* Page header */}
-      <section className="border-b border-[var(--ypp-border)] bg-[var(--ypp-white)] px-4 py-12 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-3xl text-center">
-          <h1 className="text-4xl font-bold tracking-tight text-[var(--ypp-ink)] sm:text-5xl">
-            Contact Us
-          </h1>
-          <p className="mt-4 text-lg text-[var(--ypp-muted)]">
-            Reach the right team with the form below or use our general contact emails.
-          </p>
-        </div>
-      </section>
+      <PageHeader
+        label="Contact"
+        title="Contact Us"
+        subtitle="Reach the right team with the form below or use our general contact emails."
+      />
 
       {/* General contact emails */}
-      <section className="px-4 py-16 sm:px-6 lg:px-8">
+      <section className="bg-[var(--ypp-blush)]/60 px-4 py-16 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl">
           <SectionHeading
             title="General contact"
@@ -51,10 +46,10 @@ export default function ContactPage() {
             {contactEntries.map(({ label, description, email }) => (
               <li
                 key={email}
-                className="rounded-xl border border-[var(--ypp-border)] bg-[var(--ypp-white)] p-6 shadow-sm"
+                className="card-ypp"
               >
-                <p className="font-semibold text-[var(--ypp-ink)]">{label}</p>
-                <p className="mt-1 text-sm text-[var(--ypp-muted)]">{description}</p>
+                <p className="font-heading font-semibold text-[var(--ypp-ink)]">{label}</p>
+                <p className="font-body mt-1 text-sm text-[var(--ypp-muted)]">{description}</p>
                 <a
                   href={`mailto:${email}`}
                   className="mt-3 inline-flex items-center gap-2 text-[var(--ypp-primary)] font-medium hover:underline"
@@ -73,15 +68,15 @@ export default function ContactPage() {
       {/* Link to About / staff */}
       <section className="border-t border-[var(--ypp-border)] bg-[var(--ypp-lavender)]/20 px-4 py-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-xl font-bold text-[var(--ypp-ink)]">
+          <h2 className="font-heading text-xl font-bold text-[var(--ypp-ink)]">
             Meet our team
           </h2>
-          <p className="mt-3 text-[var(--ypp-muted)]">
+          <p className="font-body mt-3 text-[var(--ypp-muted)]">
             Leadership, online instructors, chapter presidents, and the people behind Youth Passion Project.
           </p>
           <Link
             href="/about#staff"
-            className="mt-6 inline-flex items-center gap-2 rounded-full bg-[var(--ypp-primary)] px-5 py-2.5 font-semibold text-white hover:bg-[var(--ypp-mid)]"
+            className="btn-primary mt-6 inline-flex items-center gap-2 px-5 py-2.5 font-semibold"
           >
             About us &amp; staff
             <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

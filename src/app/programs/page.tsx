@@ -1,6 +1,6 @@
 import Link from "next/link";
+import PageHeader from "@/components/PageHeader";
 import SectionHeading from "@/components/SectionHeading";
-
 import { PORTAL_URL } from "@/constants/site";
 
 const onlineSessions = [
@@ -24,42 +24,35 @@ const inPersonLocations = [
 export default function ProgramsPage() {
   return (
     <div>
-      {/* Page header */}
-      <section className="border-b border-[var(--ypp-border)] bg-[var(--ypp-white)] px-4 py-12 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-3xl text-center">
-          <h1 className="text-4xl font-bold tracking-tight text-[var(--ypp-ink)] sm:text-5xl">
-            Programs & classes
-          </h1>
-          <p className="mt-4 text-lg text-[var(--ypp-muted)]">
-            Browse online and in-person sessions. Full details, schedules, and
-            sign-up are on our portal.
-          </p>
-          <div className="mt-8">
-            <a
-              href={PORTAL_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary inline-flex items-center"
-            >
-              Open student portal
-              <svg className="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-              </svg>
-            </a>
-          </div>
-        </div>
-      </section>
+      <PageHeader
+        label="Programs"
+        title="Programs & classes"
+        subtitle="Browse online and in-person sessions. Full details, schedules, and sign-up are on our portal."
+        action={
+          <a
+            href={PORTAL_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary inline-flex items-center"
+          >
+            Open student portal
+            <svg className="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+          </a>
+        }
+      />
 
       {/* In-person map + list */}
-      <section className="px-4 py-16 sm:px-6 lg:px-8">
+      <section className="bg-[var(--ypp-blush)]/60 px-4 py-16 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-6xl">
           <SectionHeading
             title="In-person programs"
             subtitle="Where we run local sessions"
           />
           <div className="mt-10 grid gap-8 lg:grid-cols-2">
-            <div className="rounded-xl border border-[var(--ypp-border)] bg-[var(--ypp-white)] p-6">
-              <h3 className="font-semibold text-[var(--ypp-ink)]">Map</h3>
+            <div className="card-ypp">
+              <h3 className="font-heading font-semibold text-[var(--ypp-ink)]">Map</h3>
               <div className="mt-4 aspect-video w-full overflow-hidden rounded-lg bg-[var(--ypp-border)]">
                 {/* Placeholder map: replace with a real map component (e.g. Mapbox, Google Maps) or embedded iframe */}
                 <div className="flex h-full items-center justify-center text-[var(--ypp-muted)] text-sm">
@@ -67,8 +60,8 @@ export default function ProgramsPage() {
                 </div>
               </div>
             </div>
-            <div className="rounded-xl border border-[var(--ypp-border)] bg-[var(--ypp-white)] p-6">
-              <h3 className="font-semibold text-[var(--ypp-ink)]">Locations & sessions</h3>
+            <div className="card-ypp">
+              <h3 className="font-heading font-semibold text-[var(--ypp-ink)]">Locations & sessions</h3>
               <ul className="mt-4 space-y-4">
                 {inPersonLocations.map(({ city, state, sessions }) => (
                   <li
@@ -108,10 +101,10 @@ export default function ProgramsPage() {
             {onlineSessions.map(({ session, location, classes }) => (
               <div
                 key={session}
-                className="rounded-xl border border-[var(--ypp-border)] bg-[var(--ypp-white)] p-6 shadow-sm"
+                className="card-ypp"
               >
                 <div className="flex flex-wrap items-center justify-between gap-2">
-                  <h3 className="text-lg font-semibold text-[var(--ypp-ink)]">
+                  <h3 className="font-heading text-lg font-semibold text-[var(--ypp-ink)]">
                     {session}
                   </h3>
                   <span className="text-sm text-[var(--ypp-muted)]">{location}</span>
@@ -123,7 +116,7 @@ export default function ProgramsPage() {
                         href={link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="block rounded-lg border border-[var(--ypp-border)] bg-[var(--ypp-blush)] p-4 transition-colors hover:border-[var(--ypp-primary)]/50 hover:bg-[var(--ypp-lavender)]/20"
+                        className="card-ypp block p-4 transition-colors hover:border-[var(--ypp-primary)]/50 hover:bg-[var(--ypp-lavender)]/20"
                       >
                         <span className="font-medium text-[var(--ypp-ink)]">
                           {name}
@@ -145,9 +138,9 @@ export default function ProgramsPage() {
       </section>
 
       {/* Class descriptions note + Calendar link */}
-      <section className="px-4 py-12 sm:px-6 lg:px-8">
+      <section className="border-t border-[var(--ypp-border)] bg-[var(--ypp-white)] px-4 py-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="text-[var(--ypp-muted)]">
+          <p className="font-body text-[var(--ypp-muted)]">
             Descriptions, age ranges, grades, and instructor profiles are
             available on the portal when you open each course. For a full
             calendar of dates and events, see our{" "}

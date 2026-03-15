@@ -1,4 +1,5 @@
 import Link from "next/link";
+import PageHeader from "@/components/PageHeader";
 import { PORTAL_URL, CONTACT_EMAILS } from "@/constants/site";
 
 const EMAIL_REGEX = /([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})/g;
@@ -117,7 +118,7 @@ const faqCategories = [
       },
       {
         q: "When will the next session be open for registration?",
-        a: "You can view our full course schedule on our Calendar page. Subscribe to our mailing list (subscription box at the bottom of our website pages) to get the latest updates about registration openings.",
+        a: "You can view our full course schedule on our Calendar page. Check back or contact us for the latest updates about registration openings.",
       },
       {
         q: "Where do you operate?",
@@ -138,20 +139,14 @@ const faqCategories = [
 export default function FAQsPage() {
   return (
     <div>
-      {/* Page header */}
-      <section className="border-b border-[var(--ypp-border)] bg-[var(--ypp-white)] px-4 py-12 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-3xl text-center">
-          <h1 className="text-4xl font-bold tracking-tight text-[var(--ypp-ink)] sm:text-5xl">
-            Frequently Asked Questions
-          </h1>
-          <p className="mt-4 text-lg text-[var(--ypp-muted)]">
-            Quick answers about our courses, how to join, and how we run.
-          </p>
-        </div>
-      </section>
+      <PageHeader
+        label="Resources"
+        title="Frequently Asked Questions"
+        subtitle="Quick answers about our courses, how to join, and how we run."
+      />
 
       {/* FAQ content */}
-      <section className="px-4 py-16 sm:px-6 lg:px-8">
+      <section className="bg-[var(--ypp-blush)]/60 px-4 py-16 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl">
           {faqCategories.map((category) => (
             <div key={category.title} className="mb-14 last:mb-0">
@@ -161,7 +156,7 @@ export default function FAQsPage() {
               <ul className="mt-6 flex flex-col gap-3" aria-label={`FAQs: ${category.title}`}>
                 {category.items.map((faq) => (
                   <li key={faq.q}>
-                    <details className="group rounded-xl border border-[var(--ypp-border)] bg-[var(--ypp-white)] shadow-sm">
+                    <details className="card-ypp group p-0">
                       <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 font-body font-medium text-[var(--ypp-ink)] transition-colors hover:bg-[var(--ypp-blush)] [&::-webkit-details-marker]:hidden">
                         <span className="pr-2">{faq.q}</span>
                         <span className="shrink-0 text-[var(--ypp-primary)] transition-transform group-open:rotate-180" aria-hidden>
@@ -182,7 +177,7 @@ export default function FAQsPage() {
             </div>
           ))}
 
-          <p className="mt-12 text-center text-sm text-[var(--ypp-muted)]">
+          <p className="font-body mt-12 text-center text-sm text-[var(--ypp-muted)]">
             To register or view the course catalog, visit our{" "}
             <a href={PORTAL_URL} target="_blank" rel="noopener noreferrer" className="font-medium text-[var(--ypp-primary)] hover:underline">
               student portal

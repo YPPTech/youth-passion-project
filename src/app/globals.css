@@ -37,6 +37,7 @@
   /* Map to generic names for compatibility */
   --background: var(--ypp-blush);
   --foreground: var(--ypp-ink);
+  --accent-hover: var(--ypp-mid);
   --card: var(--ypp-white);
   --border: var(--ypp-border);
   --border-color: var(--ypp-border);

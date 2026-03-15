@@ -124,7 +124,43 @@ export const featuredPrograms = [
   },
 ] as const;
 
-export const mailingListSubtitle =
-  "Receive updates about registration and upcoming sessions.";
+/** Newest courses for homepage — quick display; full details on programs page / portal. */
+export const newestCourses = [
+  {
+    name: "Introduction to Coding in Java",
+    delivery: "online" as const,
+    chapter: null,
+    grades: "6–9",
+    ages: "11–14",
+    summary: "Learn basics of Java through hands-on projects and exercises.",
+    href: PORTAL_URL,
+  },
+  {
+    name: "Songwriting & Music",
+    delivery: "online" as const,
+    chapter: null,
+    grades: "4–8",
+    ages: "9–13",
+    summary: "Write lyrics and melodies and explore what makes a song work.",
+    href: PORTAL_URL,
+  },
+  {
+    name: "Art of Baking",
+    delivery: "in-person" as const,
+    chapter: "Wilmington, DE",
+    grades: "5–8",
+    ages: "10–13",
+    summary: "Hands-on baking and pastry basics in our Delaware chapter.",
+    href: PORTAL_URL,
+  },
+  {
+    name: "Creative Writing",
+    delivery: "online" as const,
+    chapter: null,
+    grades: "5–9",
+    ages: "10–14",
+    summary: "Short stories, poetry, and finding your writer's voice.",
+    href: PORTAL_URL,
+  },
+];
 
-export const mailingListSuccessMessage = "We're excited to be in touch!";

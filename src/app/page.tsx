@@ -1,6 +1,5 @@
 import Link from "next/link";
 import SectionHeading from "@/components/SectionHeading";
-import EmailSignup from "@/components/EmailSignup";
 import HeroSection from "@/components/HeroSection";
 import {
   statsByTheNumbers,
@@ -9,8 +8,7 @@ import {
   valueItems,
   missionOneLiner,
   visionOneLiner,
-  featuredPrograms,
-  mailingListSubtitle,
+  newestCourses,
   PORTAL_URL,
 } from "@/constants/site";
 
@@ -37,36 +35,6 @@ function IconStarburst() {
   return (
     <svg className="h-10 w-10" viewBox="0 0 40 40" fill="currentColor" aria-hidden>
       <path d="M20 2l3 10 10 3-10 3-3 10-3-10-10-3 10-3 3-10z" />
-    </svg>
-  );
-}
-
-function IconMicroscope() {
-  return (
-    <svg className="h-12 w-12" viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden>
-      <path d="M16 40h16M20 40v-4M28 40v-4M12 20c0-4 2-8 6-8s6 4 6 8v12c0 4-2 8-6 8s-6-4-6-8V20z" />
-      <path d="M24 12v8M24 12a4 4 0 100-8 4 4 0 000 8z" />
-    </svg>
-  );
-}
-
-function IconPalette() {
-  return (
-    <svg className="h-12 w-12" viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden>
-      <circle cx="24" cy="24" r="14" />
-      <circle cx="18" cy="20" r="2" fill="currentColor" />
-      <circle cx="30" cy="20" r="2" fill="currentColor" />
-      <circle cx="24" cy="28" r="2" fill="currentColor" />
-    </svg>
-  );
-}
-
-function IconGraduation() {
-  return (
-    <svg className="h-12 w-12" viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden>
-      <path d="M24 8l16 8v8L24 32 8 24v-8l16-8z" />
-      <path d="M8 24v8l16 8 16-8v-8" />
-      <path d="M24 32V16" />
     </svg>
   );
 }
@@ -354,41 +322,57 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Featured Programs */}
+      {/* Newest courses — quick display, no images; right-aligned like opposite of Join our team */}
       <section className="border-y border-[var(--ypp-border)] bg-[var(--ypp-white)] px-4 py-16 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-6xl">
-          <p className="section-label justify-center text-[var(--ypp-muted)]">
-            — Featured Programs —
-          </p>
-          <h2 className="font-heading mt-2 text-center text-2xl font-bold text-[var(--ypp-deep)] sm:text-3xl">
+        <div className="mx-auto max-w-6xl text-right">
+          <div className="flex items-center justify-end gap-3">
+            <span className="h-px w-8 bg-[var(--ypp-primary)]" aria-hidden />
+            <p className="font-label text-xs font-semibold uppercase tracking-wider text-[var(--ypp-primary)] underline decoration-[var(--ypp-primary)] underline-offset-2">
+              Newest courses
+            </p>
+          </div>
+          <h2 className="font-heading mt-2 text-2xl font-bold text-[var(--ypp-deep)] sm:text-3xl">
             Where Passion Comes Alive
           </h2>
-          <p className="font-body mx-auto mt-3 max-w-2xl text-center text-[var(--ypp-muted)]">
-            Explore our signature programs designed to challenge, inspire, and connect young leaders.
+          <p className="font-body ml-auto mt-3 max-w-2xl text-right text-[var(--ypp-muted)]">
+            A quick look at our newest additions. Full details, schedules, and sign-up are on our programs page and portal.
           </p>
-          <div className="mt-12 grid gap-6 sm:grid-cols-3">
-            {featuredPrograms.map(({ title, description, href, icon }) => (
-              <Link key={title} href={href} className="card-ypp block overflow-hidden p-0">
-                <div className="flex h-32 items-center justify-center bg-[var(--ypp-deep)] text-[var(--ypp-lavender)]">
-                  {icon === "microscope" && <IconMicroscope />}
-                  {icon === "palette" && <IconPalette />}
-                  {icon === "graduation" && <IconGraduation />}
-                </div>
-                <div className="p-6">
-                  <h3 className="font-heading font-semibold text-[var(--ypp-deep)]">
-                    {title}
-                  </h3>
-                  <p className="font-body mt-2 text-sm text-[var(--ypp-muted)]">
-                    {description}
-                  </p>
-                  <span className="mt-3 inline-flex items-center text-sm font-medium text-[var(--ypp-primary)]">
-                    Learn more →
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {newestCourses.map((course) => (
+              <a
+                key={course.name}
+                href={course.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="card-ypp block text-left"
+              >
+                <h3 className="font-heading font-semibold text-[var(--ypp-deep)]">
+                  {course.name}
+                </h3>
+                <div className="mt-2 flex flex-wrap gap-1.5">
+                  <span className="rounded-full bg-[var(--ypp-lavender)] px-2.5 py-0.5 font-body text-xs font-medium capitalize text-[var(--ypp-primary)]">
+                    {course.delivery === "in-person" ? "In person" : "Online"}
+                    {course.chapter ? ` · ${course.chapter}` : ""}
                   </span>
+                  <span className="rounded-full bg-[var(--ypp-lavender)] px-2.5 py-0.5 font-body text-xs text-[var(--ypp-muted)]">
+                    Grades {course.grades}
+                  </span>
+                  {course.ages && (
+                    <span className="rounded-full bg-[var(--ypp-lavender)] px-2.5 py-0.5 font-body text-xs text-[var(--ypp-muted)]">
+                      Ages {course.ages}
+                    </span>
+                  )}
                 </div>
-              </Link>
+                <p className="font-body mt-2 text-sm text-[var(--ypp-muted)] leading-snug">
+                  {course.summary}
+                </p>
+                <span className="mt-3 inline-flex items-center text-sm font-medium text-[var(--ypp-primary)]">
+                  Full details & sign up →
+                </span>
+              </a>
             ))}
           </div>
-          <div className="mt-10 text-center">
+          <div className="mt-10 flex justify-end">
             <Link
               href="/programs"
               className="btn-primary inline-flex items-center"
@@ -399,23 +383,6 @@ export default function HomePage() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
             </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Stay in the Loop — dark email section */}
-      <section className="bg-[var(--ypp-deep)] px-4 py-16 sm:px-6 lg:px-8">
-        <div className="mx-auto flex max-w-6xl flex-col items-center gap-10 md:flex-row md:items-center md:justify-between">
-          <div className="max-w-md text-center md:text-left">
-            <h2 className="font-heading text-2xl font-bold text-white sm:text-3xl">
-              Stay in the Loop
-            </h2>
-            <p className="font-body mt-3 text-white/80">
-              {mailingListSubtitle}
-            </p>
-          </div>
-          <div className="w-full shrink-0 md:max-w-md">
-            <EmailSignup variant="dark" />
           </div>
         </div>
       </section>

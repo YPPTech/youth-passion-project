@@ -1,4 +1,4 @@
-import Link from "next/link";
+import PageHeader from "@/components/PageHeader";
 import SectionHeading from "@/components/SectionHeading";
 import { CONTACT_EMAILS } from "@/constants/site";
 
@@ -10,28 +10,21 @@ const sponsors = [
 export default function DonatePage() {
   return (
     <div>
-      {/* Page header */}
-      <section className="border-b border-[var(--ypp-border)] bg-[var(--ypp-white)] px-4 py-12 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-3xl text-center">
-          <h1 className="text-4xl font-bold tracking-tight text-[var(--ypp-ink)] sm:text-5xl">
-            Support Youth Passion Project
-          </h1>
-          <p className="mt-4 text-lg text-[var(--ypp-muted)]">
-            Your tax-deductible donation helps us keep classes free for every
-            student.
-          </p>
-        </div>
-      </section>
+      <PageHeader
+        label="Donate"
+        title="Support Youth Passion Project"
+        subtitle="Your tax-deductible donation helps us keep classes free for every student."
+      />
 
       {/* Donate CTA + info */}
-      <section className="px-4 py-16 sm:px-6 lg:px-8">
+      <section className="bg-[var(--ypp-blush)]/60 px-4 py-16 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl">
           <SectionHeading
             title="Donate"
             subtitle="100% tax deductible. Every dollar helps us expand into new communities and develop more courses."
           />
-          <div className="mt-10 rounded-xl border border-[var(--ypp-border)] bg-[var(--ypp-white)] p-8 shadow-sm">
-            <p className="text-[var(--ypp-muted)] leading-relaxed">
+          <div className="card-ypp mt-10 p-8">
+            <p className="font-body text-[var(--ypp-muted)] leading-relaxed">
               Currently, we depend on dedicated volunteers and supporters to keep
               our project running. Your donation will help the Youth Passion
               Project reach more students, train more instructors, and offer an
@@ -49,7 +42,7 @@ export default function DonatePage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                 </svg>
               </a>
-              <p className="text-sm text-[var(--ypp-muted)]">
+              <p className="font-body text-sm text-[var(--ypp-muted)]">
                 Youth Passion Project is a 501(c)(3) nonprofit. EIN available
                 upon request.
               </p>
@@ -69,14 +62,14 @@ export default function DonatePage() {
             {sponsors.map(({ name, tier }) => (
               <div
                 key={name}
-                className="rounded-xl border border-[var(--ypp-border)] bg-[var(--ypp-white)] p-6 text-center"
+                className="card-ypp p-6 text-center"
               >
-                <p className="font-semibold text-[var(--ypp-ink)]">{name}</p>
-                <p className="mt-1 text-sm text-[var(--ypp-primary)]">{tier}</p>
+                <p className="font-heading font-semibold text-[var(--ypp-ink)]">{name}</p>
+                <p className="font-body mt-1 text-sm text-[var(--ypp-primary)]">{tier}</p>
               </div>
             ))}
           </div>
-          <p className="mt-8 text-center text-sm text-[var(--ypp-muted)]">
+          <p className="font-body mt-8 text-center text-sm text-[var(--ypp-muted)]">
             Interested in becoming a sponsor?{" "}
             <a
               href={`mailto:${CONTACT_EMAILS.support}`}
