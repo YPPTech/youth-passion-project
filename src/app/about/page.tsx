@@ -53,7 +53,7 @@ const leadership: LeadershipMember[] = [
     personName: "Anthea Zamir",
     name: "Director of Technology",
     bio: "Anthea is a junior in high school in Seattle and serves as Director of Technology at the Youth Passion Project. She built and maintains the organization's website and is currently developing YPP's online portal for students and instructors. In her role, she oversees the organization's technical infrastructure and works on building and improving the digital systems that support YPP's programs and operations. Outside of YPP, Anthea plays varsity golf at her school and enjoys traveling, attending concerts, and exploring new technology.",
-    image: "/team/placeholder.jpg",
+    image: "/team/anthea-zamir.png",
     email: "anthea.zamir@youthpassionproject.org",
   },
   {
@@ -203,7 +203,7 @@ export default function AboutPage() {
                       <img
                         src={person.image}
                         alt=""
-                        className="h-full w-full object-cover object-top"
+                        className="h-full w-full object-cover object-[50%_38%]"
                       />
                     ) : (
                       <div className="flex h-full items-center justify-center text-[var(--ypp-muted)] text-sm">
@@ -261,7 +261,7 @@ export default function AboutPage() {
                       <img
                         src={person.image}
                         alt=""
-                        className="h-full w-full object-cover object-top"
+                        className="h-full w-full object-cover object-[50%_38%]"
                       />
                     ) : (
                       <div className="flex h-full items-center justify-center text-[var(--ypp-muted)] text-sm">
@@ -319,7 +319,7 @@ export default function AboutPage() {
                       <img
                         src={person.image}
                         alt=""
-                        className="h-full w-full object-cover object-top"
+                        className="h-full w-full object-cover object-[50%_38%]"
                       />
                     ) : (
                       <div className="flex h-full items-center justify-center text-[var(--ypp-muted)] text-sm">
@@ -402,7 +402,7 @@ export default function AboutPage() {
                     <img
                       src={selected.image}
                       alt=""
-                      className="h-full w-full object-cover object-top"
+                      className="h-full w-full object-cover object-[50%_38%]"
                     />
                   ) : (
                     <div className="flex h-full w-full items-center justify-center text-[var(--ypp-muted)]">
