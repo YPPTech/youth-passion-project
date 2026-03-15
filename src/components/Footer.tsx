@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { PORTAL_URL, CONTACT_EMAILS } from "@/constants/site";
+import { PORTAL_URL, CONTACT_EMAILS, USE_PORTAL_WAITLIST } from "@/constants/site";
 
 const navigateLinks = [
   { href: "/about", label: "About Us" },
@@ -11,7 +11,9 @@ const navigateLinks = [
 ];
 
 const resourceLinks = [
-  { href: PORTAL_URL, label: "Student Portal", external: true },
+  ...(USE_PORTAL_WAITLIST
+    ? [{ href: "/notify", label: "Get notified when portal is ready", external: false as const }]
+    : [{ href: PORTAL_URL, label: "Student Portal", external: true as const }]),
   { href: "/resources/faqs", label: "FAQs" },
   { href: "/legal/privacy", label: "Privacy Policy" },
   { href: "/legal", label: "Legal" },

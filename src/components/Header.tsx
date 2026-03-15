@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { PORTAL_URL } from "@/constants/site";
+import { PORTAL_URL, USE_PORTAL_WAITLIST } from "@/constants/site";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -50,14 +50,20 @@ export default function Header() {
             );
           })}
           <li>
-            <a
-              href={`${PORTAL_URL}/login`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="nav-link nav-cta"
-            >
-              Student Portal →
-            </a>
+            {USE_PORTAL_WAITLIST ? (
+              <Link href="/notify" className="nav-link nav-cta">
+                Notify me when portal is ready →
+              </Link>
+            ) : (
+              <a
+                href={`${PORTAL_URL}/login`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="nav-link nav-cta"
+              >
+                Student Portal →
+              </a>
+            )}
           </li>
         </ul>
 
@@ -105,15 +111,25 @@ export default function Header() {
                 {label}
               </Link>
             ))}
-            <a
-              href={`${PORTAL_URL}/login`}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => setMobileOpen(false)}
-              className="nav-cta mt-2 rounded-full py-3 text-center"
-            >
-              Student Portal →
-            </a>
+            {USE_PORTAL_WAITLIST ? (
+              <Link
+                href="/notify"
+                onClick={() => setMobileOpen(false)}
+                className="nav-cta mt-2 rounded-full py-3 text-center"
+              >
+                Notify me when portal is ready →
+              </Link>
+            ) : (
+              <a
+                href={`${PORTAL_URL}/login`}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setMobileOpen(false)}
+                className="nav-cta mt-2 rounded-full py-3 text-center"
+              >
+                Student Portal →
+              </a>
+            )}
           </div>
         </div>
       )}

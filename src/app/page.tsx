@@ -1,6 +1,8 @@
 import Link from "next/link";
 import SectionHeading from "@/components/SectionHeading";
 import HeroSection from "@/components/HeroSection";
+import MouseFollowSection from "@/components/MouseFollowSection";
+import { getNewestCourses } from "@/data/programsData";
 import {
   statsByTheNumbers,
   hiringRolePills,
@@ -8,8 +10,8 @@ import {
   valueItems,
   missionOneLiner,
   visionOneLiner,
-  newestCourses,
   PORTAL_URL,
+  USE_PORTAL_WAITLIST,
 } from "@/constants/site";
 
 const passionTopics = [
@@ -113,17 +115,29 @@ export default function HomePage() {
               className="hero-animate-in mt-10 flex flex-wrap gap-4"
               style={{ animationDelay: "0.5s" }}
             >
-              <a
-                href={PORTAL_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-secondary font-body inline-flex items-center transition-transform hover:scale-[1.02] active:scale-[0.98]"
-              >
-                Join the Portal
-                <svg className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </a>
+              {USE_PORTAL_WAITLIST ? (
+                <Link
+                  href="/notify"
+                  className="btn-secondary font-body inline-flex items-center transition-transform hover:scale-[1.02] active:scale-[0.98]"
+                >
+                  Get notified when portal is ready
+                  <svg className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </Link>
+              ) : (
+                <a
+                  href={PORTAL_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-secondary font-body inline-flex items-center transition-transform hover:scale-[1.02] active:scale-[0.98]"
+                >
+                  Join the Portal
+                  <svg className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </a>
+              )}
               <Link
                 href="/apply"
                 className="btn-primary font-body inline-flex items-center px-6 py-3 text-base"
@@ -166,34 +180,42 @@ export default function HomePage() {
       </HeroSection>
 
       {/* Now Hiring banner */}
-      <section className="bg-[var(--ypp-deep)] px-4 py-4 sm:px-6 lg:px-8">
-        <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4">
-          <span className="font-label text-sm text-white/70">
-            Now Hiring
-          </span>
-          <div className="flex flex-wrap justify-center gap-2">
+      <section className="bg-[var(--ypp-deep)] px-4 py-5 sm:px-6 lg:px-8">
+        <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-6">
+          <div className="flex flex-wrap items-center gap-4">
+            <span className="font-label text-xs font-semibold uppercase tracking-widest text-[var(--ypp-primary)]">
+              We&apos;re hiring
+            </span>
+            <p className="font-body text-sm text-white/80">
+              Teach what you love. Lead in your community.
+            </p>
+          </div>
+          <div className="flex flex-wrap items-center justify-center gap-3">
             {hiringRolePills.map((role) => (
               <Link
-                key={role}
-                href="/apply"
-                className="font-body rounded-full bg-[var(--ypp-lavender)]/90 px-4 py-2 text-sm font-semibold text-[var(--ypp-deep)] transition-colors hover:bg-[var(--ypp-lavender)]"
+                key={role.id}
+                href={`/apply#${role.id}`}
+                className="font-body rounded-full bg-white/95 px-5 py-2.5 text-sm font-bold text-[var(--ypp-deep)] shadow-md transition-all hover:scale-105 hover:bg-white hover:shadow-lg"
               >
-                {role}
+                {role.title}
               </Link>
             ))}
+            <Link
+              href="/apply"
+              className="font-body inline-flex items-center rounded-full border-2 border-white/80 bg-transparent px-5 py-2.5 text-sm font-semibold text-white transition-all hover:bg-white hover:text-[var(--ypp-deep)]"
+            >
+              View all openings
+              <svg className="ml-1.5 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </Link>
           </div>
-          <Link
-            href="/apply"
-            className="font-body text-sm font-semibold text-white underline underline-offset-2 hover:no-underline"
-          >
-            View all openings +
-          </Link>
         </div>
       </section>
 
-      {/* Who We Are — two-column: intro + CTA | value propositions */}
-      <section className="border-y border-[var(--ypp-border)] bg-[var(--ypp-blush)] px-4 py-16 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-6xl">
+      {/* Who We Are — two-column: intro + CTA | value propositions (cursor-follow bubble) */}
+      <MouseFollowSection className="relative border-y border-[var(--ypp-border)] bg-[var(--ypp-blush)] px-4 py-16 sm:px-6 lg:px-8">
+        <div className="relative z-10 mx-auto max-w-6xl">
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 lg:items-center">
             {/* Left: label, title, description, CTA */}
             <div>
@@ -252,7 +274,7 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-      </section>
+      </MouseFollowSection>
 
       {/* Stats strip — By the Numbers */}
       <section className="border-b border-[var(--ypp-border)] bg-[var(--ypp-white)] px-4 py-12 sm:px-6 lg:px-8">
@@ -275,43 +297,47 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Open positions */}
-      <section className="bg-[var(--ypp-blush)]/60 px-4 py-16 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-6xl text-left">
+      {/* Open positions — Join Our Team (cursor-follow bubble) */}
+      <MouseFollowSection className="relative bg-[var(--ypp-blush)]/60 px-4 py-16 sm:px-6 lg:px-8">
+        <div className="relative z-10 mx-auto max-w-6xl">
           <div className="flex items-center gap-3">
             <span className="h-px w-8 bg-[var(--ypp-primary)]" aria-hidden />
-            <p className="font-label text-xs font-semibold uppercase tracking-wider text-[var(--ypp-primary)] underline decoration-[var(--ypp-primary)] underline-offset-2">
+            <p className="font-label text-xs font-semibold uppercase tracking-wider text-[var(--ypp-primary)]">
               Now Hiring
             </p>
           </div>
-          <h2 className="font-heading mt-4 text-3xl font-bold text-[var(--ypp-deep)] sm:text-4xl">
+          <h2 className="font-heading mt-4 text-3xl font-bold tracking-tight text-[var(--ypp-deep)] sm:text-4xl">
             Join Our Team
           </h2>
-          <p className="font-body mt-3 max-w-2xl text-lg text-[var(--ypp-muted)]">
-            Open positions for students and volunteers.
+          <p className="font-body mt-2 max-w-2xl text-[var(--ypp-muted)]">
+            Open positions for high school students and volunteers. Apply below and help shape the next generation.
           </p>
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {openPositions.map(({ title, description, href }) => (
-              <Link key={title} href={href} className="card-ypp block">
-                <h3 className="font-heading font-semibold text-[var(--ypp-deep)] hover:text-[var(--ypp-primary)]">
+              <Link
+                key={title}
+                href={href}
+                className="group flex flex-col rounded-2xl border-2 border-[var(--ypp-border)] bg-[var(--ypp-white)] p-6 shadow-sm transition-all hover:border-[var(--ypp-primary)]/40 hover:shadow-md"
+              >
+                <h3 className="font-heading text-lg font-semibold text-[var(--ypp-deep)] transition-colors group-hover:text-[var(--ypp-primary)]">
                   {title}
                 </h3>
-                <p className="font-body mt-2 text-sm text-[var(--ypp-muted)]">
+                <p className="font-body mt-3 flex-1 text-sm leading-relaxed text-[var(--ypp-muted)]">
                   {description}
                 </p>
-                <span className="font-body mt-3 inline-flex items-center text-sm font-medium text-[var(--ypp-primary)]">
+                <span className="font-body mt-4 inline-flex items-center text-sm font-semibold text-[var(--ypp-primary)]">
                   Apply now
-                  <svg className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="ml-1.5 h-4 w-4 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
                 </span>
               </Link>
             ))}
           </div>
-          <div className="mt-8">
+          <div className="mt-10 flex flex-wrap items-center gap-4">
             <Link
               href="/apply"
-              className="font-body inline-flex items-center rounded-lg border-2 border-[var(--ypp-primary)] bg-[var(--ypp-white)] px-5 py-2.5 font-semibold text-[var(--ypp-primary)] transition-colors hover:bg-[var(--ypp-primary)] hover:text-white"
+              className="font-body inline-flex items-center rounded-xl border-2 border-[var(--ypp-primary)] bg-[var(--ypp-white)] px-6 py-3 font-semibold text-[var(--ypp-primary)] transition-colors hover:bg-[var(--ypp-primary)] hover:text-white"
             >
               View all openings
               <svg className="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -320,7 +346,7 @@ export default function HomePage() {
             </Link>
           </div>
         </div>
-      </section>
+      </MouseFollowSection>
 
       {/* Newest courses — quick display, no images; right-aligned like opposite of Join Our Team */}
       <section className="border-y border-[var(--ypp-border)] bg-[var(--ypp-white)] px-4 py-16 sm:px-6 lg:px-8">
@@ -335,17 +361,71 @@ export default function HomePage() {
             Where Passion Comes Alive
           </h2>
           <p className="font-body ml-auto mt-3 max-w-2xl text-right text-[var(--ypp-muted)]">
-            A quick look at our newest additions. Full details, schedules, and sign-up are on our programs page and portal.
+            {USE_PORTAL_WAITLIST
+              ? "A quick look at our newest additions. We’ll notify you when the portal is ready for sign-up."
+              : "A quick look at our newest additions. Full details, schedules, and sign-up are on our programs page and portal."}
           </p>
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {newestCourses.map((course) => (
-              <a
-                key={course.name}
-                href={course.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="card-ypp block text-left"
+          {getNewestCourses().length === 0 ? (
+            <div className="card-ypp mt-12 flex flex-col items-center justify-center px-6 py-16 text-center">
+              <p className="font-body text-lg text-[var(--ypp-ink)]">
+                No classes available at the moment.
+              </p>
+              <p className="font-body mt-2 text-[var(--ypp-muted)]">
+                Please check back later for new sessions.
+              </p>
+              <Link
+                href="/programs"
+                className="btn-primary mt-6 inline-flex items-center"
+                style={{ fontFamily: "var(--font-dm-sans)" }}
               >
+                View Programs
+                <svg className="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </Link>
+            </div>
+          ) : (
+          <>
+            <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+              {getNewestCourses().map((course) =>
+              USE_PORTAL_WAITLIST ? (
+                <Link
+                  key={course.name}
+                  href="/notify"
+                  className="card-ypp block text-left"
+                >
+                  <h3 className="font-heading font-semibold text-[var(--ypp-deep)]">
+                    {course.name}
+                  </h3>
+                  <div className="mt-2 flex flex-wrap gap-1.5">
+                    <span className="rounded-full bg-[var(--ypp-lavender)] px-2.5 py-0.5 font-body text-xs font-medium capitalize text-[var(--ypp-primary)]">
+                      {course.delivery === "in-person" ? "In person" : "Online"}
+                      {course.chapter ? ` · ${course.chapter}` : ""}
+                    </span>
+                    <span className="rounded-full bg-[var(--ypp-lavender)] px-2.5 py-0.5 font-body text-xs text-[var(--ypp-muted)]">
+                      Grades {course.grades}
+                    </span>
+                    {course.ages && (
+                      <span className="rounded-full bg-[var(--ypp-lavender)] px-2.5 py-0.5 font-body text-xs text-[var(--ypp-muted)]">
+                        Ages {course.ages}
+                      </span>
+                    )}
+                  </div>
+                  <p className="font-body mt-2 text-sm text-[var(--ypp-muted)] leading-snug">
+                    {course.summary}
+                  </p>
+                  <span className="mt-3 inline-flex items-center text-sm font-medium text-[var(--ypp-primary)]">
+                    Get notified when portal is ready →
+                  </span>
+                </Link>
+              ) : (
+                <a
+                  key={course.name}
+                  href={course.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="card-ypp block text-left"
+                >
                 <h3 className="font-heading font-semibold text-[var(--ypp-deep)]">
                   {course.name}
                 </h3>
@@ -370,20 +450,22 @@ export default function HomePage() {
                   Full details & sign up →
                 </span>
               </a>
-            ))}
-          </div>
-          <div className="mt-10 flex justify-end">
-            <Link
-              href="/programs"
-              className="btn-primary inline-flex items-center"
-              style={{ fontFamily: "var(--font-dm-sans)" }}
-            >
-              View All Programs
-              <svg className="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </Link>
-          </div>
+              ))}
+            </div>
+            <div className="mt-10 flex justify-end">
+              <Link
+                href="/programs"
+                className="btn-primary inline-flex items-center"
+                style={{ fontFamily: "var(--font-dm-sans)" }}
+              >
+                View All Programs
+                <svg className="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </Link>
+            </div>
+          </>
+          )}
         </div>
       </section>
 

@@ -24,26 +24,40 @@ type Props = {
 export default function InPersonSection({ locations }: Props) {
   const [selectedId, setSelectedId] = useState<string | null>(null);
 
-  return (
-    <div className="mt-10 grid gap-8 lg:grid-cols-2">
-      <div className="card-ypp">
-        <h3 className="font-heading font-semibold text-[var(--ypp-ink)]">Map</h3>
-        <div className="mt-4 flex aspect-video w-full items-center justify-center overflow-hidden rounded-lg bg-[var(--ypp-border)]">
-          <p className="text-center text-sm text-[var(--ypp-muted)]">
-            Map: DE, PA (in-person locations)
-          </p>
-        </div>
-      </div>
+  // Restore map when needed: uncomment the block below and change wrapper to grid lg:grid-cols-2
+  // {/* Map card (stored for later):
+  //   <div className="card-ypp">
+  //     <h3 className="font-heading font-semibold text-[var(--ypp-ink)]">Map</h3>
+  //     <div className="mt-4 flex aspect-video w-full items-center justify-center overflow-hidden rounded-lg bg-[var(--ypp-border)]">
+  //       <p className="text-center text-sm text-[var(--ypp-muted)]">
+  //         Map: DE, PA (in-person locations)
+  //       </p>
+  //     </div>
+  //   </div>
+  // */}
 
+  return (
+    <div className="mt-10">
       <div className="card-ypp">
         <h3 className="font-heading font-semibold text-[var(--ypp-ink)]">
           Locations & Sessions
         </h3>
-        <p className="mt-1 text-sm text-[var(--ypp-muted)]">
-          Tap a location to preview classes offered there.
-        </p>
-        <ul className="mt-4 space-y-2">
-          {locations.map((loc) => {
+        {locations.length === 0 ? (
+          <div className="mt-6 flex flex-col items-center justify-center rounded-xl border border-[var(--ypp-border)] bg-[var(--ypp-blush)]/30 px-6 py-12 text-center">
+            <p className="font-body text-[var(--ypp-ink)]">
+              No in-person locations at the moment.
+            </p>
+            <p className="font-body mt-2 text-[var(--ypp-muted)]">
+              Please check back later for new sessions.
+            </p>
+          </div>
+        ) : (
+          <>
+            <p className="mt-1 text-sm text-[var(--ypp-muted)]">
+              Tap a location to preview classes offered there.
+            </p>
+            <ul className="mt-4 space-y-2">
+              {locations.map((loc) => {
             const isOpen = selectedId === loc.id;
             return (
               <li key={loc.id} className="flex flex-col gap-2">
@@ -109,7 +123,9 @@ export default function InPersonSection({ locations }: Props) {
               </li>
             );
           })}
-        </ul>
+            </ul>
+          </>
+        )}
       </div>
     </div>
   );

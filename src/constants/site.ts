@@ -13,6 +13,20 @@ export const PORTAL_URL =
     ? process.env.NEXT_PUBLIC_PORTAL_URL
     : "https://youthpassionproject-portal.vercel.app";
 
+/**
+ * When set, the site promotes "Get notified when the portal is ready" and links to /notify
+ * (which sends users to this form to collect emails). When the portal is ready, remove this
+ * env var (or leave it empty) so all CTAs point to the portal again.
+ * Create a Google Form with one field: Email (and optionally "I'm interested as: Student / Instructor / Parent").
+ */
+export const PORTAL_WAITLIST_FORM_URL =
+  typeof process !== "undefined" && process.env?.NEXT_PUBLIC_PORTAL_WAITLIST_FORM_URL
+    ? process.env.NEXT_PUBLIC_PORTAL_WAITLIST_FORM_URL.trim()
+    : "";
+
+/** True when we're collecting waitlist emails instead of linking to the portal. */
+export const USE_PORTAL_WAITLIST = PORTAL_WAITLIST_FORM_URL.length > 0;
+
 /** Legal documents (official YPP links + internal pages). */
 export const LEGAL_LINKS = [
   { href: "/legal/privacy", label: "Privacy Policy", internal: true },
@@ -47,32 +61,62 @@ export const statsByTheNumbers = [
   { value: "30+", label: "Countries of Engagement" },
 ] as const;
 
-export const hiringRolePills = [
-  "Program Coordinator",
-  "Instructor — STEM",
-  "Community Outreach",
-  "Volunteer Mentor",
+/** Application form URLs — single source for Apply page and any links to apply. */
+const INSTRUCTOR_APPLICATION_URL =
+  "https://docs.google.com/forms/d/e/1FAIpQLSfXlGvCx_itTN6bBdevbL7ohb8Ya7tQMIQS5JBF92q4xPS1QA/viewform";
+const CHAPTER_PRESIDENT_APPLICATION_URL =
+  "https://docs.google.com/forms/d/e/1FAIpQLSd7d2uxq1kJaFP5FAp5HsMe0h2U13CNz6heKuBcsY8rMgLOLQ/viewform";
+
+/**
+ * All open roles — single source of truth for Apply page and homepage (Now Hiring bar + Join Our Team cards).
+ * Add or edit roles here; the Apply page and hiring bar stay in sync.
+ */
+export const applyRoles = [
+  {
+    id: "instructor",
+    title: "Instructor",
+    ageGrade: "High school students (grades 9–12)",
+    shortDescription:
+      "Teach a course in your passion to younger students. Design or follow a curriculum, run weekly sessions online or in person. Training and support provided.",
+    description:
+      "Teach a course in your passion to younger students. You'll design or follow a curriculum, run weekly sessions online (e.g., Zoom) or in person at chapter locations, and help students practice and grow. Classes typically run 30–60 minutes, 1–2 times per week.",
+    details: [
+      "Selective application process; we provide training and ongoing support.",
+      "You'll share your course idea or topic and how you'd structure sessions.",
+      "Mentorship is available from experienced officers (college advice, role guidance, and beyond).",
+      "Part of a global community—past instructors have been accepted to top universities nationwide.",
+    ],
+    applyLink: INSTRUCTOR_APPLICATION_URL,
+    applyLabel: "Instructor application (25–26)",
+  },
+  {
+    id: "chapter-president",
+    title: "Chapter President",
+    ageGrade: "High school students (grades 9–12)",
+    shortDescription:
+      "Launch and run a YPP chapter in your community. Lead recruitment and support of instructors, plan classes and events. We recommend contacting your school first.",
+    description:
+      "Coordinate the launch and operation of a YPP chapter in your community. Lead recruitment and support of student volunteers and instructors, plan classes and events, and serve as the link between YPP and your school.",
+    details: [
+      "We recommend reaching out to your school administration about establishing a chapter before applying.",
+      "The form asks about your school, grade, and why you want to lead a chapter.",
+      "You'll outline how you'd recruit instructors and run local sessions.",
+      "Ongoing support and resources from YPP leadership to help your chapter succeed.",
+    ],
+    applyLink: CHAPTER_PRESIDENT_APPLICATION_URL,
+    applyLabel: "Chapter President application",
+  },
 ] as const;
 
-export const openPositions = [
-  {
-    title: "Program Coordinator",
-    description:
-      "Help coordinate scheduling, instructor onboarding, and session management across our growing platform.",
-    href: "/apply",
-  },
-  {
-    title: "Instructor — STEM",
-    description:
-      "Teach a course in your passion to younger students. Open to high school students. STEM and all subjects welcome.",
-    href: "/apply",
-  },
-  {
-    title: "Community Outreach",
-    description: "Spread the word about YPP in your school and community. Social media, partnerships, and recruitment.",
-    href: "/apply",
-  },
-] as const;
+/** Pills for the Now Hiring bar — derived from applyRoles; links go to /apply#id. */
+export const hiringRolePills = applyRoles.map((r) => ({ title: r.title, id: r.id }));
+
+/** Cards for Join Our Team section — derived from applyRoles. */
+export const openPositions = applyRoles.map((r) => ({
+  title: r.title,
+  description: r.shortDescription,
+  href: `/apply#${r.id}` as const,
+}));
 
 export const valuePills = [
   { label: "Grow" },
@@ -130,44 +174,3 @@ export const featuredPrograms = [
     icon: "graduation",
   },
 ] as const;
-
-/** Newest courses for homepage — quick display; full details on programs page / portal. */
-export const newestCourses = [
-  {
-    name: "Introduction to Coding in Java",
-    delivery: "online" as const,
-    chapter: null,
-    grades: "6–9",
-    ages: "11–14",
-    summary: "Learn basics of Java through hands-on projects and exercises.",
-    href: PORTAL_URL,
-  },
-  {
-    name: "Songwriting & Music",
-    delivery: "online" as const,
-    chapter: null,
-    grades: "4–8",
-    ages: "9–13",
-    summary: "Write lyrics and melodies and explore what makes a song work.",
-    href: PORTAL_URL,
-  },
-  {
-    name: "Art of Baking",
-    delivery: "in-person" as const,
-    chapter: "Wilmington, DE",
-    grades: "5–8",
-    ages: "10–13",
-    summary: "Hands-on baking and pastry basics in our Delaware chapter.",
-    href: PORTAL_URL,
-  },
-  {
-    name: "Creative Writing",
-    delivery: "online" as const,
-    chapter: null,
-    grades: "5–9",
-    ages: "10–14",
-    summary: "Short stories, poetry, and finding your writer's voice.",
-    href: PORTAL_URL,
-  },
-];
-

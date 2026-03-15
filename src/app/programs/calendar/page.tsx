@@ -2,19 +2,11 @@ import Link from "next/link";
 import PageHeader from "@/components/PageHeader";
 import SectionHeading from "@/components/SectionHeading";
 import CalendarView, { type CalendarEvent } from "@/components/CalendarView";
-import { PORTAL_URL } from "@/constants/site";
+import { PORTAL_URL, USE_PORTAL_WAITLIST } from "@/constants/site";
 
-// Sample events for this year (placeholder — replace with real data later)
+// Calendar events (add more when you have dates)
 const sampleEvents: CalendarEvent[] = [
-  { date: "2026-03-15", title: "Spring registration opens", type: "Registration" },
-  { date: "2026-03-22", title: "Introduction to Java – Section A starts", type: "Class" },
-  { date: "2026-03-23", title: "Songwriting & Music – Section A starts", type: "Class" },
-  { date: "2026-03-29", title: "Art of Baking – Section A starts", type: "Class" },
-  { date: "2026-04-05", title: "Creative Writing – Section A starts", type: "Class" },
-  { date: "2026-04-12", title: "Instructor info session", type: "Event" },
-  { date: "2026-05-15", title: "Spring session ends", type: "Session" },
-  { date: "2026-03-10", title: "Early registration reminder", type: "Event" },
-  { date: "2026-04-19", title: "Make-up week", type: "Session" },
+  { date: "2026-03-17", title: "Applications open", type: "Event" },
 ];
 
 export default function CalendarPage() {
@@ -44,16 +36,28 @@ export default function CalendarPage() {
             <CalendarView events={sampleEvents} />
           </div>
           <p className="font-body mt-6 text-center text-sm text-[var(--ypp-muted)]">
-            For the most up-to-date schedule and to sign up, visit the{" "}
-            <a
-              href={PORTAL_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[var(--ypp-primary)] font-medium hover:underline"
-            >
-              student portal
-            </a>
-            .
+            {USE_PORTAL_WAITLIST ? (
+              <>
+                We’re getting the portal ready.{" "}
+                <Link href="/notify" className="text-[var(--ypp-primary)] font-medium hover:underline">
+                  Get notified when you can sign up
+                </Link>
+                .
+              </>
+            ) : (
+              <>
+                For the most up-to-date schedule and to sign up, visit the{" "}
+                <a
+                  href={PORTAL_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[var(--ypp-primary)] font-medium hover:underline"
+                >
+                  student portal
+                </a>
+                .
+              </>
+            )}
           </p>
         </div>
       </section>

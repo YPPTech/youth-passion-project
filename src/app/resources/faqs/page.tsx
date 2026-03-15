@@ -1,6 +1,6 @@
 import Link from "next/link";
 import PageHeader from "@/components/PageHeader";
-import { PORTAL_URL, CONTACT_EMAILS } from "@/constants/site";
+import { PORTAL_URL, CONTACT_EMAILS, USE_PORTAL_WAITLIST } from "@/constants/site";
 
 const EMAIL_REGEX = /([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})/g;
 const EMAIL_TEST = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -178,12 +178,24 @@ export default function FAQsPage() {
           ))}
 
           <p className="font-body mt-12 text-center text-sm text-[var(--ypp-muted)]">
-            To register or view the course catalog, visit our{" "}
-            <a href={PORTAL_URL} target="_blank" rel="noopener noreferrer" className="font-medium text-[var(--ypp-primary)] hover:underline">
-              student portal
-            </a>
-            . For enrollment or student services, use our{" "}
-            <Link href="/about" className="font-medium text-[var(--ypp-primary)] hover:underline">
+            {USE_PORTAL_WAITLIST ? (
+              <>
+                The student portal isn’t quite ready yet.{" "}
+                <Link href="/notify" className="font-medium text-[var(--ypp-primary)] hover:underline">
+                  Get notified when you can create an account and register
+                </Link>
+                . For enrollment or student services, use our{" "}
+              </>
+            ) : (
+              <>
+                To register or view the course catalog, visit our{" "}
+                <a href={PORTAL_URL} target="_blank" rel="noopener noreferrer" className="font-medium text-[var(--ypp-primary)] hover:underline">
+                  student portal
+                </a>
+                . For enrollment or student services, use our{" "}
+              </>
+            )}
+            <Link href="/contact" className="font-medium text-[var(--ypp-primary)] hover:underline">
               Contact page
             </Link>
             . For students and parents, email{" "}
