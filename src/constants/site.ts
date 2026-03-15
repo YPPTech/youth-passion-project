@@ -3,8 +3,15 @@
  * (Trigger deploy)
  */
 
-/** Pathways Portal (student registration, course catalog, instructor applications). Temp domain; may change. */
-export const PORTAL_URL = "https://youthpassionproject-portal.vercel.app";
+/**
+ * YPP Pathways Portal (registration, courses, instructor training, events).
+ * Repo: https://github.com/braydenwhite-blip/YPP-Portal
+ * Default deploy: youthpassionproject-portal.vercel.app. Override via NEXT_PUBLIC_PORTAL_URL.
+ */
+export const PORTAL_URL =
+  typeof process !== "undefined" && process.env?.NEXT_PUBLIC_PORTAL_URL
+    ? process.env.NEXT_PUBLIC_PORTAL_URL
+    : "https://youthpassionproject-portal.vercel.app";
 
 /** Legal documents (official YPP links + internal pages). */
 export const LEGAL_LINKS = [

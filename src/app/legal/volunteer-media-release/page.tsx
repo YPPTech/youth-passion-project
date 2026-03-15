@@ -50,10 +50,10 @@ export default function VolunteerMediaReleasePage() {
             Back to Legal
           </Link>
           <div className="text-center">
-            <span className="font-label mx-auto mb-4 block text-xs text-[var(--ypp-primary)]">
+            <span className="font-label mx-auto mb-4 block text-xs font-semibold uppercase tracking-wider text-[var(--ypp-primary)]">
               Legal
             </span>
-            <h1 className="font-display text-4xl font-bold tracking-tight text-[var(--ypp-ink)] sm:text-5xl">
+            <h1 className="font-heading text-4xl font-bold tracking-tight text-[var(--ypp-ink)] sm:text-5xl">
               Volunteer Media Release Agreement
             </h1>
             <p className="mt-4 text-lg text-[var(--ypp-muted)]">

@@ -37,8 +37,7 @@ export default function Header() {
 
         <ul className="hidden list-none items-center gap-1 md:flex" id="navLinks">
           {navLinks.map(({ href, label }) => {
-            const isActive =
-              pathname === href || (href !== "/" && pathname.startsWith(href));
+            const isActive = pathname === href;
             return (
               <li key={href}>
                 <Link
@@ -101,11 +100,7 @@ export default function Header() {
                 key={href}
                 href={href}
                 onClick={() => setMobileOpen(false)}
-                className={`nav-link py-3 ${
-                  pathname === href || (href !== "/" && pathname.startsWith(href))
-                    ? "active"
-                    : ""
-                }`}
+                className={`nav-link py-3 ${pathname === href ? "active" : ""}`}
               >
                 {label}
               </Link>

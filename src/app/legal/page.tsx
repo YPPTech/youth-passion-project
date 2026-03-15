@@ -15,7 +15,7 @@ export default function LegalPage() {
       <PageHeader
         label="Resources"
         title="Legal"
-        subtitle="By-laws, policies, agreements, and other legal documents."
+        subtitle="By-Laws, policies, agreements, and other legal documents."
       />
 
       <section className="bg-[var(--ypp-blush)]/60 px-4 py-16 sm:px-6 lg:px-8">

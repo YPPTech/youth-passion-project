@@ -2,7 +2,6 @@ import Link from "next/link";
 import { PORTAL_URL, CONTACT_EMAILS } from "@/constants/site";
 
 const navigateLinks = [
-  { href: "/", label: "Home" },
   { href: "/about", label: "About Us" },
   { href: "/contact", label: "Contact Us" },
   { href: "/programs", label: "Programs" },

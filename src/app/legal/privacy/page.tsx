@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 const sections = [
   {
     id: "intro",
-    title: "Who we are",
+    title: "Who We Are",
     content: (
       <>
         <p>
@@ -26,7 +26,7 @@ const sections = [
   },
   {
     id: "data",
-    title: "Data we collect",
+    title: "Data We Collect",
     content: (
       <>
         <p>
@@ -64,7 +64,7 @@ const sections = [
   },
   {
     id: "intellectual-property",
-    title: "Intellectual property & use of content",
+    title: "Intellectual Property & Use of Content",
     content: (
       <>
         <p>
@@ -88,7 +88,7 @@ const sections = [
   },
   {
     id: "third-party",
-    title: "Third-party links",
+    title: "Third-Party Links",
     content: (
       <>
         <p>
@@ -102,7 +102,7 @@ const sections = [
   },
   {
     id: "effective-date",
-    title: "Effective date",
+    title: "Effective Date",
     content: (
       <>
         <p>
@@ -129,16 +129,16 @@ export default function PrivacyPolicyPage() {
             Back to Legal
           </Link>
           <div className="text-center">
-          <span className="font-label mx-auto mb-4 block text-xs text-[var(--ypp-primary)]">
-            Legal
-          </span>
-          <h1 className="font-display text-4xl font-bold tracking-tight text-[var(--ypp-ink)] sm:text-5xl">
-            Privacy Policy
-          </h1>
-          <p className="mt-4 text-lg text-[var(--ypp-muted)]">
-            How we collect, use, and protect your information when you use our website
-            and services.
-          </p>
+            <span className="font-label mx-auto mb-4 block text-xs font-semibold uppercase tracking-wider text-[var(--ypp-primary)]">
+              Legal
+            </span>
+            <h1 className="font-heading text-4xl font-bold tracking-tight text-[var(--ypp-ink)] sm:text-5xl">
+              Privacy Policy
+            </h1>
+            <p className="mt-4 text-lg text-[var(--ypp-muted)]">
+              How we collect, use, and protect your information when you use our website
+              and services.
+            </p>
           </div>
         </div>
       </section>

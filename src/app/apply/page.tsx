@@ -47,7 +47,7 @@ export default function ApplyPage() {
     <div>
       <PageHeader
         label="Apply"
-        title="Apply to join YPP"
+        title="Apply to Join YPP"
         subtitle="Open roles for instructors, curriculum developers, outreach, and more. Apply through our portal or use the links below."
         action={
           <a
@@ -68,7 +68,7 @@ export default function ApplyPage() {
       <section className="bg-[var(--ypp-blush)]/60 px-4 py-16 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl">
           <SectionHeading
-            title="What's available"
+            title="What's Available"
             subtitle="Role, age/grade, and how to apply"
           />
           <div className="mt-12 space-y-10">

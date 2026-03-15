@@ -1,56 +1,48 @@
-import Link from "next/link";
 import SectionHeading from "@/components/SectionHeading";
-import { PORTAL_URL } from "@/constants/site";
 
 const leadership = [
   {
-    personName: "Alex Chen",
+    personName: "Ian DiLorenzo",
     name: "Co-President",
     bio: "Shares overall strategy, partnerships, and day-to-day leadership of Youth Passion Project.",
     image: "/team/placeholder.jpg",
   },
   {
-    personName: "Jamie Park",
+    personName: "Aveena Haswani",
     name: "Co-President",
     bio: "Shares overall strategy, partnerships, and day-to-day leadership of Youth Passion Project.",
     image: "/team/placeholder.jpg",
   },
   {
-    personName: "Jordan Miller",
+    personName: "Brayden White",
     name: "Vice President for Instruction",
     bio: "Oversees course design, instructor training, and quality of our 110+ unique courses.",
     image: "/team/placeholder.jpg",
   },
   {
-    personName: "Sam Rivera",
+    personName: "Sanvi Mehta",
     name: "Vice President for Communication",
     bio: "Leads messaging, social media, and external communications for YPP.",
     image: "/team/placeholder.jpg",
   },
   {
-    personName: "Casey Evans",
+    personName: "Katherine Zhang",
     name: "Chief of Staff",
     bio: "Coordinates operations, scheduling, and supports the leadership team and volunteers.",
     image: "/team/placeholder.jpg",
   },
   {
-    personName: "Morgan Taylor",
+    personName: "Anthea Zamir",
     name: "Co-Director of Tech",
     bio: "Leads technology, systems, and digital infrastructure for programs and the organization.",
     image: "/team/placeholder.jpg",
   },
   {
-    personName: "Riley Kim",
+    personName: "Yuvaan Das",
     name: "Co-Director of Tech",
     bio: "Leads technology, systems, and digital infrastructure for programs and the organization.",
     image: "/team/placeholder.jpg",
   },
-];
-
-const instructorsPreview = [
-  { name: "Instructor A", subject: "Songwriting & Music" },
-  { name: "Instructor B", subject: "Introduction to Java" },
-  { name: "Instructor C", subject: "Art of Baking" },
 ];
 
 const aboutHeroStats = [
@@ -105,11 +97,11 @@ export default function AboutPage() {
           <div className="flex items-center gap-3">
             <span className="h-px w-8 bg-[var(--ypp-primary)]" aria-hidden />
             <p className="font-label text-xs font-semibold uppercase tracking-wider text-[var(--ypp-primary)] underline decoration-[var(--ypp-primary)] underline-offset-2">
-              Our mission
+              Our Mission
             </p>
           </div>
           <h2 className="font-heading mt-4 text-2xl font-bold text-[var(--ypp-deep)]">
-            Our mission
+            Our Mission
           </h2>
           <p className="font-body mt-4 text-[var(--ypp-muted)] leading-relaxed">
             The Youth Passion Project is a Delaware Nonprofit Corporation with
@@ -137,11 +129,11 @@ export default function AboutPage() {
           <div className="mt-12 flex items-center gap-3">
             <span className="h-px w-8 bg-[var(--ypp-primary)]" aria-hidden />
             <p className="font-label text-xs font-semibold uppercase tracking-wider text-[var(--ypp-primary)] underline decoration-[var(--ypp-primary)] underline-offset-2">
-              Our vision
+              Our Vision
             </p>
           </div>
           <h2 className="font-heading mt-4 text-2xl font-bold text-[var(--ypp-deep)]">
-            Our vision
+            Our Vision
           </h2>
           <p className="font-body mt-4 text-[var(--ypp-muted)] leading-relaxed">
             We envision a world where every young person can pursue their
@@ -159,7 +151,7 @@ export default function AboutPage() {
       <section id="staff" className="scroll-mt-20 bg-[var(--ypp-lavender)]/20 px-4 py-16 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-6xl">
           <SectionHeading
-            title="Leadership team"
+            title="Leadership Team"
             subtitle="The people who guide Youth Passion Project"
           />
           <div className="mt-12 flex flex-col items-center gap-8">
@@ -239,69 +231,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Instructors section */}
-      <section className="px-4 py-16 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-6xl">
-          <SectionHeading
-            title="Our instructors"
-            subtitle="High school students who teach what they love. Meet more on our portal."
-          />
-          <div className="mt-8 flex flex-wrap justify-center gap-4">
-            {instructorsPreview.map(({ name, subject }) => (
-              <div
-                key={name}
-                className="card-ypp px-5 py-4"
-              >
-                <p className="font-medium text-[var(--ypp-ink)]">{name}</p>
-                <p className="text-sm text-[var(--ypp-muted)]">{subject}</p>
-              </div>
-            ))}
-          </div>
-          <p className="mt-8 text-center text-[var(--ypp-muted)]">
-            For full instructor profiles and course details, visit our{" "}
-            <a
-              href={PORTAL_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[var(--ypp-primary)] font-medium hover:underline"
-            >
-              student portal
-            </a>
-            .
-          </p>
-
-          <SectionHeading
-            title="Chapter leadership"
-            subtitle="Presidents and leads for our in-person chapters. More chapters coming soon."
-          />
-          <p className="mt-6 text-center text-sm text-[var(--ypp-muted)]">
-            Chapter leads and local coordinators will be listed here as we grow.
-          </p>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="border-t border-[var(--ypp-border)] bg-[var(--ypp-white)] px-4 py-12 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="font-heading text-xl font-bold text-[var(--ypp-ink)]">
-            Ready to get involved?
-          </h2>
-          <div className="mt-6 flex flex-wrap justify-center gap-4">
-            <Link
-              href="/programs"
-              className="btn-primary inline-flex items-center px-5 py-2.5 font-semibold"
-            >
-              Browse classes
-            </Link>
-            <Link
-              href="/apply"
-              className="inline-flex items-center rounded-lg border-2 border-[var(--ypp-primary)] bg-[var(--ypp-white)] px-5 py-2.5 font-semibold text-[var(--ypp-primary)] transition-colors hover:bg-[var(--ypp-primary)] hover:text-white"
-            >
-              Apply to teach
-            </Link>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }

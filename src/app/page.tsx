@@ -86,10 +86,10 @@ export default function HomePage() {
         <div className="relative z-10 mx-auto flex max-w-6xl flex-1 flex-col lg:flex-row lg:items-center lg:justify-between lg:gap-12">
           <div className="max-w-2xl pt-6 lg:pt-0">
             <p
-              className="hero-animate-in font-label mb-3 text-[11px] text-[var(--ypp-primary)]"
+              className="hero-animate-in font-label mb-3 text-[11px] font-semibold uppercase tracking-wider text-[var(--ypp-primary)]"
               style={{ animationDelay: "0.1s" }}
             >
-              501(C)(3) NONPROFIT — FREE FOR ALL STUDENTS
+              501(c)(3) nonprofit — free for all students
             </p>
 
             <h1
@@ -200,7 +200,7 @@ export default function HomePage() {
               <div className="flex items-center gap-3">
                 <span className="h-px w-8 bg-[var(--ypp-primary)]" aria-hidden />
                 <p className="font-label text-xs font-semibold uppercase tracking-wider text-[var(--ypp-primary)]">
-                  Who we are
+                  Who We Are
                 </p>
               </div>
               <h2 className="font-heading mt-4 text-4xl font-normal leading-tight tracking-tight text-[var(--ypp-ink)] sm:text-5xl">
@@ -281,11 +281,11 @@ export default function HomePage() {
           <div className="flex items-center gap-3">
             <span className="h-px w-8 bg-[var(--ypp-primary)]" aria-hidden />
             <p className="font-label text-xs font-semibold uppercase tracking-wider text-[var(--ypp-primary)] underline decoration-[var(--ypp-primary)] underline-offset-2">
-              Now hiring
+              Now Hiring
             </p>
           </div>
           <h2 className="font-heading mt-4 text-3xl font-bold text-[var(--ypp-deep)] sm:text-4xl">
-            Join our team
+            Join Our Team
           </h2>
           <p className="font-body mt-3 max-w-2xl text-lg text-[var(--ypp-muted)]">
             Open positions for students and volunteers.
@@ -322,13 +322,13 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Newest courses — quick display, no images; right-aligned like opposite of Join our team */}
+      {/* Newest courses — quick display, no images; right-aligned like opposite of Join Our Team */}
       <section className="border-y border-[var(--ypp-border)] bg-[var(--ypp-white)] px-4 py-16 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-6xl text-right">
           <div className="flex items-center justify-end gap-3">
             <span className="h-px w-8 bg-[var(--ypp-primary)]" aria-hidden />
             <p className="font-label text-xs font-semibold uppercase tracking-wider text-[var(--ypp-primary)] underline decoration-[var(--ypp-primary)] underline-offset-2">
-              Newest courses
+              Newest Courses
             </p>
           </div>
           <h2 className="font-heading mt-2 text-2xl font-bold text-[var(--ypp-deep)] sm:text-3xl">

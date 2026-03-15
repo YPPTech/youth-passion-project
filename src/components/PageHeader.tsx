@@ -13,10 +13,11 @@ export default function PageHeader({ label, title, subtitle, action }: PageHeade
       <div className="mx-auto max-w-3xl text-center">
         {label && (
           <div className="mb-4 flex items-center justify-center gap-3">
-            <span className="h-px w-8 bg-[var(--ypp-primary)]" aria-hidden />
+            <span className="h-px w-8 shrink-0 bg-[var(--ypp-primary)]/60" aria-hidden />
             <p className="font-label text-xs font-semibold uppercase tracking-wider text-[var(--ypp-primary)] underline decoration-[var(--ypp-primary)] underline-offset-2">
               {label}
             </p>
+            <span className="h-px w-8 shrink-0 bg-[var(--ypp-primary)]/60" aria-hidden />
           </div>
         )}
         <h1 className="font-heading text-4xl font-bold tracking-tight text-[var(--ypp-ink)] sm:text-5xl">
