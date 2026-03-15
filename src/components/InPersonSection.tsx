@@ -1,8 +1,6 @@
 "use client";
 
-import dynamic from "next/dynamic";
 import { useState } from "react";
-import type { MapLocation } from "./LocationsMap";
 
 export type InPersonClass = {
   name: string;
@@ -16,12 +14,8 @@ export type InPersonLocation = {
   city: string;
   state: string;
   sessions: string;
-  lat: number;
-  lng: number;
   classes: InPersonClass[];
 };
-
-const LocationsMap = dynamic(() => import("./LocationsMap"), { ssr: false });
 
 type Props = {
   locations: InPersonLocation[];
@@ -29,20 +23,15 @@ type Props = {
 
 export default function InPersonSection({ locations }: Props) {
   const [selectedId, setSelectedId] = useState<string | null>(null);
-  const mapLocations: MapLocation[] = locations.map(({ id, city, state, lat, lng }) => ({
-    id,
-    city,
-    state,
-    lat,
-    lng,
-  }));
 
   return (
     <div className="mt-10 grid gap-8 lg:grid-cols-2">
       <div className="card-ypp">
         <h3 className="font-heading font-semibold text-[var(--ypp-ink)]">Map</h3>
-        <div className="mt-4 aspect-video w-full overflow-hidden rounded-lg bg-[var(--ypp-border)]">
-          <LocationsMap locations={mapLocations} />
+        <div className="mt-4 flex aspect-video w-full items-center justify-center overflow-hidden rounded-lg bg-[var(--ypp-border)]">
+          <p className="text-center text-sm text-[var(--ypp-muted)]">
+            Map: DE, PA (in-person locations)
+          </p>
         </div>
       </div>
 

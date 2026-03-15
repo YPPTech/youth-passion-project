@@ -44,11 +44,9 @@ const onlineSessions = [
 const inPersonLocations = [
   {
     id: "wilmington-de",
-    city: "Wilmington",
+    city: "Wilmington, DE",
     state: "Delaware",
     sessions: "Fall & Spring",
-    lat: 39.7391,
-    lng: -75.5398,
     classes: [
       {
         name: "Introduction to Coding in Java",
@@ -78,8 +76,6 @@ const inPersonLocations = [
     city: "Philadelphia area",
     state: "Pennsylvania",
     sessions: "Spring",
-    lat: 39.9526,
-    lng: -75.1652,
     classes: [
       {
         name: "Art of Baking",
