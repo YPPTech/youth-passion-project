@@ -86,14 +86,10 @@ export default function InPersonSection({ locations }: Props) {
                       Classes at {loc.city}
                     </h4>
                     <ul className="mt-4 space-y-3">
-                      {loc.classes.map((cls) => (
-                        <li key={cls.name}>
-                          <a
-                            href={cls.link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="block rounded-lg border border-[var(--ypp-border)] p-3 transition-colors hover:border-[var(--ypp-primary)]/50 hover:bg-[var(--ypp-lavender)]/20"
-                          >
+                      {loc.classes.map((cls) => {
+                        const hasLink = cls.link.trim().length > 0;
+                        const inner = (
+                          <>
                             <span className="font-medium text-[var(--ypp-ink)]">
                               {cls.name}
                             </span>
@@ -104,20 +100,44 @@ export default function InPersonSection({ locations }: Props) {
                               {cls.description}
                             </p>
                             <span className="mt-2 inline-block text-xs font-semibold text-[var(--ypp-primary)]">
-                              Full details & sign up →
+                              {hasLink ? "Full details & sign up →" : "Coming soon"}
                             </span>
-                          </a>
-                        </li>
-                      ))}
+                          </>
+                        );
+                        return (
+                          <li key={cls.name}>
+                            {hasLink ? (
+                              <a
+                                href={cls.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="block rounded-lg border border-[var(--ypp-border)] p-3 transition-colors hover:border-[var(--ypp-primary)]/50 hover:bg-[var(--ypp-lavender)]/20"
+                              >
+                                {inner}
+                              </a>
+                            ) : (
+                              <div className="block rounded-lg border border-[var(--ypp-border)] p-3">
+                                {inner}
+                              </div>
+                            )}
+                          </li>
+                        );
+                      })}
                     </ul>
-                    <a
-                      href={loc.classes[0]?.link ?? "#"}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="mt-4 inline-block text-sm font-semibold text-[var(--ypp-primary)] hover:underline"
-                    >
-                      View all classes & sign up on portal →
-                    </a>
+                    {loc.classes[0]?.link?.trim() ? (
+                      <a
+                        href={loc.classes[0].link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-4 inline-block text-sm font-semibold text-[var(--ypp-primary)] hover:underline"
+                      >
+                        View all classes & sign up on portal →
+                      </a>
+                    ) : (
+                      <p className="mt-4 text-sm font-semibold text-[var(--ypp-primary)]">
+                        Student portal — coming soon
+                      </p>
+                    )}
                   </div>
                 )}
               </li>

@@ -1,5 +1,4 @@
 import Link from "next/link";
-import SectionHeading from "@/components/SectionHeading";
 import HeroSection from "@/components/HeroSection";
 import MouseFollowSection from "@/components/MouseFollowSection";
 import { getNewestCourses } from "@/data/programsData";
@@ -8,19 +7,39 @@ import {
   hiringRolePills,
   openPositions,
   valueItems,
-  missionOneLiner,
-  visionOneLiner,
-  PORTAL_URL,
-  USE_PORTAL_WAITLIST,
 } from "@/constants/site";
 
 const passionTopics = [
-  { label: "Music & Songwriting", href: "/programs" },
-  { label: "Coding & Tech", href: "/programs" },
-  { label: "Art & Design", href: "/programs" },
-  { label: "Baking & Cooking", href: "/programs" },
-  { label: "Creative Writing", href: "/programs" },
-  { label: "Science & More", href: "/programs" },
+  {
+    label: "Music & Songwriting",
+    description: "Melody, lyrics, and performance with instructors who live for music.",
+    href: "/programs",
+  },
+  {
+    label: "Coding & Tech",
+    description: "Build real projects and learn fundamentals from peers who code every day.",
+    href: "/programs",
+  },
+  {
+    label: "Art & Design",
+    description: "Draw, design, and express yourself in a creative, supportive space.",
+    href: "/programs",
+  },
+  {
+    label: "Baking & Cooking",
+    description: "Hands-on kitchen skills and recipes you can practice at home.",
+    href: "/programs",
+  },
+  {
+    label: "Creative Writing",
+    description: "Stories, poetry, and voice—workshop-style with fellow young writers.",
+    href: "/programs",
+  },
+  {
+    label: "Science & More",
+    description: "STEM, curiosity, and exploration beyond the typical school day.",
+    href: "/programs",
+  },
 ];
 
 function IconTarget() {
@@ -95,54 +114,40 @@ export default function HomePage() {
             </p>
 
             <h1
-              className="hero-animate-in font-display text-4xl font-black text-[var(--ypp-ink)] sm:text-5xl lg:text-6xl"
+              className="hero-animate-in font-display text-4xl font-black leading-tight text-[var(--ypp-ink)] sm:text-5xl lg:text-6xl"
               style={{ animationDelay: "0.2s" }}
             >
-              Learn Anything.
+              <span className="bg-gradient-to-r from-[var(--ypp-primary)] to-[var(--ypp-mid)] bg-clip-text text-transparent">
+                Guiding the stars
+              </span>
               <br />
-              <span className="font-normal italic text-[var(--ypp-deep)]">Taught by Those</span>
-              <br />
-              <span className="bg-gradient-to-r from-[var(--ypp-primary)] to-[var(--ypp-mid)] bg-clip-text text-transparent">Who Love It.</span>
+              <span className="font-normal italic text-[var(--ypp-deep)]">of tomorrow.</span>
             </h1>
             <p
               className="hero-animate-in font-body mt-6 max-w-xl text-[15px] font-normal leading-loose text-[var(--ypp-muted)]"
               style={{ animationDelay: "0.35s" }}
             >
-              Free online and in-person courses taught by passionate high school students—designed to spark curiosity and expand the horizons of younger learners.
+              Youth Passion Project connects students with passionate, high-quality instructors to discover what they love and build the skills to pursue it.
             </p>
 
             <div
               className="hero-animate-in mt-10 flex flex-wrap gap-4"
               style={{ animationDelay: "0.5s" }}
             >
-              {USE_PORTAL_WAITLIST ? (
-                <Link
-                  href="/notify"
-                  className="btn-secondary font-body inline-flex items-center transition-transform hover:scale-[1.02] active:scale-[0.98]"
-                >
-                  Get notified when portal is ready
-                  <svg className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </Link>
-              ) : (
-                <a
-                  href={PORTAL_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-secondary font-body inline-flex items-center transition-transform hover:scale-[1.02] active:scale-[0.98]"
-                >
-                  Join the Portal
-                  <svg className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </a>
-              )}
+              <Link
+                href="/programs"
+                className="btn-secondary font-body inline-flex items-center transition-transform hover:scale-[1.02] active:scale-[0.98]"
+              >
+                Find Your Passion
+                <svg className="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </Link>
               <Link
                 href="/apply"
                 className="btn-primary font-body inline-flex items-center px-6 py-3 text-base"
               >
-                Apply to Teach
+                Become a YPP Instructor
                 <svg className="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
@@ -150,30 +155,41 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="mt-12 lg:mt-0 lg:max-w-md">
-            <p
-              className="hero-animate-in font-label mb-4 text-sm text-[var(--ypp-muted)]"
-              style={{ animationDelay: "0.3s" }}
-            >
-              Explore by subject
-            </p>
-            <div className="flex flex-wrap gap-3">
-              {passionTopics.map(({ label, href }, i) => (
-                <Link
-                  key={label}
-                  href={href}
-                  className="hero-animate-in hero-passion-pill group inline-flex items-center rounded-full border-2 border-[var(--ypp-border)] bg-[var(--ypp-white)] px-4 py-2.5 text-sm font-medium text-[var(--ypp-ink)] shadow-[var(--shadow-sm)] transition-all duration-200 hover:scale-105 hover:border-[var(--ypp-primary)] hover:bg-[var(--ypp-lavender)] hover:shadow-[var(--shadow-md)] active:scale-100"
-                  style={{ animationDelay: `${0.4 + i * 0.06}s` }}
-                >
-                  <span className="font-body">{label}</span>
-                </Link>
-              ))}
+          <div className="mt-12 w-full lg:mt-0 lg:max-w-lg">
+            <div className="hero-animate-in mb-5" style={{ animationDelay: "0.3s" }}>
+              <div className="flex items-center gap-2">
+                <span className="h-px w-6 shrink-0 bg-[var(--ypp-primary)]" aria-hidden />
+                <p className="font-label text-xs font-semibold uppercase tracking-wider text-[var(--ypp-primary)]">
+                  Explore by subject
+                </p>
+              </div>
+              <h2 className="font-heading mt-3 text-2xl font-bold tracking-tight text-[var(--ypp-deep)] sm:text-3xl">
+                Where Will Your Passion Take You?
+              </h2>
             </div>
+            <ul className="flex flex-col gap-3">
+              {passionTopics.map(({ label, description, href }, i) => (
+                <li key={label}>
+                  <Link
+                    href={href}
+                    className="hero-animate-in hero-passion-pill group block rounded-xl border-2 border-[var(--ypp-border)] bg-[var(--ypp-white)] px-4 py-3 shadow-[var(--shadow-sm)] transition-all duration-200 hover:border-[var(--ypp-primary)] hover:bg-[var(--ypp-lavender)]/40 hover:shadow-[var(--shadow-md)]"
+                    style={{ animationDelay: `${0.4 + i * 0.06}s` }}
+                  >
+                    <span className="font-body text-sm font-semibold text-[var(--ypp-ink)] group-hover:text-[var(--ypp-primary)]">
+                      {label}
+                    </span>
+                    <p className="font-body mt-1 text-xs leading-snug text-[var(--ypp-muted)]">
+                      {description}
+                    </p>
+                  </Link>
+                </li>
+              ))}
+            </ul>
             <p
               className="hero-animate-in font-body mt-4 text-xs text-[var(--ypp-muted)]"
               style={{ animationDelay: "0.7s" }}
             >
-              110+ free courses — music, code, art, and more →
+              110+ free courses across every category—tap a topic to browse Programs.
             </p>
           </div>
         </div>
@@ -187,7 +203,7 @@ export default function HomePage() {
               We&apos;re hiring
             </span>
             <p className="font-body text-sm text-white/80">
-              Teach what you love. Lead in your community.
+              Share what you love. Lead the next generation.
             </p>
           </div>
           <div className="flex flex-wrap items-center justify-center gap-3">
@@ -307,10 +323,11 @@ export default function HomePage() {
             </p>
           </div>
           <h2 className="font-heading mt-4 text-3xl font-bold tracking-tight text-[var(--ypp-deep)] sm:text-4xl">
-            Join Our Team
+            Share What You Love. Lead the Next Generation.
           </h2>
           <p className="font-body mt-2 max-w-2xl text-[var(--ypp-muted)]">
-            Open positions for high school students and volunteers. Apply below and help shape the next generation.
+            YPP instructors aren&apos;t just teachers. They&apos;re leaders, mentors, and community builders who help
+            make an impact. Open roles for high school students—apply below.
           </p>
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {openPositions.map(({ title, description, href }) => (
@@ -358,12 +375,11 @@ export default function HomePage() {
             </p>
           </div>
           <h2 className="font-heading mt-2 text-2xl font-bold text-[var(--ypp-deep)] sm:text-3xl">
-            Where Passion Comes Alive
+            Newest additions
           </h2>
           <p className="font-body ml-auto mt-3 max-w-2xl text-right text-[var(--ypp-muted)]">
-            {USE_PORTAL_WAITLIST
-              ? "A quick look at our newest additions. We’ll notify you when the portal is ready for sign-up."
-              : "A quick look at our newest additions. Full details, schedules, and sign-up are on our programs page and portal."}
+            A quick look at our newest classes. Our student portal is coming soon—full details and sign-up will be
+            available there when it launches. Browse our Programs page in the meantime.
           </p>
           {getNewestCourses().length === 0 ? (
             <div className="card-ypp mt-12 flex flex-col items-center justify-center px-6 py-16 text-center">
@@ -387,70 +403,51 @@ export default function HomePage() {
           ) : (
           <>
             <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-              {getNewestCourses().map((course) =>
-              USE_PORTAL_WAITLIST ? (
-                <Link
-                  key={course.name}
-                  href="/notify"
-                  className="card-ypp block text-left"
-                >
-                  <h3 className="font-heading font-semibold text-[var(--ypp-deep)]">
-                    {course.name}
-                  </h3>
-                  <div className="mt-2 flex flex-wrap gap-1.5">
-                    <span className="rounded-full bg-[var(--ypp-lavender)] px-2.5 py-0.5 font-body text-xs font-medium capitalize text-[var(--ypp-primary)]">
-                      {course.delivery === "in-person" ? "In person" : "Online"}
-                      {course.chapter ? ` · ${course.chapter}` : ""}
-                    </span>
-                    <span className="rounded-full bg-[var(--ypp-lavender)] px-2.5 py-0.5 font-body text-xs text-[var(--ypp-muted)]">
-                      Grades {course.grades}
-                    </span>
-                    {course.ages && (
-                      <span className="rounded-full bg-[var(--ypp-lavender)] px-2.5 py-0.5 font-body text-xs text-[var(--ypp-muted)]">
-                        Ages {course.ages}
+              {getNewestCourses().map((course) => {
+                const hasPortalLink = course.href.trim().length > 0;
+                const CardInner = (
+                  <>
+                    <h3 className="font-heading font-semibold text-[var(--ypp-deep)]">
+                      {course.name}
+                    </h3>
+                    <div className="mt-2 flex flex-wrap gap-1.5">
+                      <span className="rounded-full bg-[var(--ypp-lavender)] px-2.5 py-0.5 font-body text-xs font-medium capitalize text-[var(--ypp-primary)]">
+                        {course.delivery === "in-person" ? "In person" : "Online"}
+                        {course.chapter ? ` · ${course.chapter}` : ""}
                       </span>
-                    )}
-                  </div>
-                  <p className="font-body mt-2 text-sm text-[var(--ypp-muted)] leading-snug">
-                    {course.summary}
-                  </p>
-                  <span className="mt-3 inline-flex items-center text-sm font-medium text-[var(--ypp-primary)]">
-                    Get notified when portal is ready →
-                  </span>
-                </Link>
-              ) : (
-                <a
-                  key={course.name}
-                  href={course.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="card-ypp block text-left"
-                >
-                <h3 className="font-heading font-semibold text-[var(--ypp-deep)]">
-                  {course.name}
-                </h3>
-                <div className="mt-2 flex flex-wrap gap-1.5">
-                  <span className="rounded-full bg-[var(--ypp-lavender)] px-2.5 py-0.5 font-body text-xs font-medium capitalize text-[var(--ypp-primary)]">
-                    {course.delivery === "in-person" ? "In person" : "Online"}
-                    {course.chapter ? ` · ${course.chapter}` : ""}
-                  </span>
-                  <span className="rounded-full bg-[var(--ypp-lavender)] px-2.5 py-0.5 font-body text-xs text-[var(--ypp-muted)]">
-                    Grades {course.grades}
-                  </span>
-                  {course.ages && (
-                    <span className="rounded-full bg-[var(--ypp-lavender)] px-2.5 py-0.5 font-body text-xs text-[var(--ypp-muted)]">
-                      Ages {course.ages}
+                      <span className="rounded-full bg-[var(--ypp-lavender)] px-2.5 py-0.5 font-body text-xs text-[var(--ypp-muted)]">
+                        Grades {course.grades}
+                      </span>
+                      {course.ages && (
+                        <span className="rounded-full bg-[var(--ypp-lavender)] px-2.5 py-0.5 font-body text-xs text-[var(--ypp-muted)]">
+                          Ages {course.ages}
+                        </span>
+                      )}
+                    </div>
+                    <p className="font-body mt-2 text-sm text-[var(--ypp-muted)] leading-snug">
+                      {course.summary}
+                    </p>
+                    <span className="mt-3 inline-flex items-center text-sm font-medium text-[var(--ypp-primary)]">
+                      {hasPortalLink ? "Full details & sign up →" : "Coming soon"}
                     </span>
-                  )}
-                </div>
-                <p className="font-body mt-2 text-sm text-[var(--ypp-muted)] leading-snug">
-                  {course.summary}
-                </p>
-                <span className="mt-3 inline-flex items-center text-sm font-medium text-[var(--ypp-primary)]">
-                  Full details & sign up →
-                </span>
-              </a>
-              ))}
+                  </>
+                );
+                return hasPortalLink ? (
+                  <a
+                    key={course.name}
+                    href={course.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="card-ypp block text-left"
+                  >
+                    {CardInner}
+                  </a>
+                ) : (
+                  <div key={course.name} className="card-ypp block text-left">
+                    {CardInner}
+                  </div>
+                );
+              })}
             </div>
             <div className="mt-10 flex justify-end">
               <Link

@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { PORTAL_URL, USE_PORTAL_WAITLIST } from "@/constants/site";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -31,7 +30,7 @@ export default function Header() {
           />
           <div className="nav-logo-text">
             Youth Passion Project
-            <span className="nav-logo-tagline">Empowering the next generation</span>
+            <span className="nav-logo-tagline">Guiding the stars of tomorrow.</span>
           </div>
         </Link>
 
@@ -50,20 +49,12 @@ export default function Header() {
             );
           })}
           <li>
-            {USE_PORTAL_WAITLIST ? (
-              <Link href="/notify" className="nav-link nav-cta">
-                Notify me when portal is ready →
-              </Link>
-            ) : (
-              <a
-                href={`${PORTAL_URL}/login`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="nav-link nav-cta"
-              >
-                Student Portal →
-              </a>
-            )}
+            <span
+              className="nav-link nav-cta cursor-default opacity-90"
+              aria-label="Student portal coming soon"
+            >
+              Coming soon
+            </span>
           </li>
         </ul>
 
@@ -111,25 +102,12 @@ export default function Header() {
                 {label}
               </Link>
             ))}
-            {USE_PORTAL_WAITLIST ? (
-              <Link
-                href="/notify"
-                onClick={() => setMobileOpen(false)}
-                className="nav-cta mt-2 rounded-full py-3 text-center"
-              >
-                Notify me when portal is ready →
-              </Link>
-            ) : (
-              <a
-                href={`${PORTAL_URL}/login`}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => setMobileOpen(false)}
-                className="nav-cta mt-2 rounded-full py-3 text-center"
-              >
-                Student Portal →
-              </a>
-            )}
+            <span
+              className="nav-cta mt-2 cursor-default rounded-full py-3 text-center opacity-90"
+              aria-label="Student portal coming soon"
+            >
+              Coming soon
+            </span>
           </div>
         </div>
       )}

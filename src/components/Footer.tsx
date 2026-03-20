@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { PORTAL_URL, CONTACT_EMAILS, USE_PORTAL_WAITLIST } from "@/constants/site";
+import { CONTACT_EMAILS } from "@/constants/site";
 
 const navigateLinks = [
   { href: "/about", label: "About Us" },
@@ -11,9 +11,6 @@ const navigateLinks = [
 ];
 
 const resourceLinks = [
-  ...(USE_PORTAL_WAITLIST
-    ? [{ href: "/notify", label: "Get notified when portal is ready", external: false as const }]
-    : [{ href: PORTAL_URL, label: "Student Portal", external: true as const }]),
   { href: "/resources/faqs", label: "FAQs" },
   { href: "/legal/privacy", label: "Privacy Policy" },
   { href: "/legal", label: "Legal" },
@@ -123,25 +120,19 @@ export default function Footer() {
           <div className="flex flex-col">
             <h4 className={colHeading}>Resources</h4>
             <ul className={colList}>
-              {resourceLinks.map(({ href, label, external }) => (
+              <li>
+                <span className="font-body text-sm text-[var(--ypp-muted)]">
+                  Student portal — <span className="text-[var(--ypp-primary)]">Coming soon</span>
+                </span>
+              </li>
+              {resourceLinks.map(({ href, label }) => (
                 <li key={label}>
-                  {external ? (
-                    <a
-                      href={href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="font-body text-sm text-[var(--ypp-ink)] transition-colors hover:text-[var(--ypp-primary)]"
-                    >
-                      {label}
-                    </a>
-                  ) : (
-                    <Link
-                      href={href}
-                      className="font-body text-sm text-[var(--ypp-ink)] transition-colors hover:text-[var(--ypp-primary)]"
-                    >
-                      {label}
-                    </Link>
-                  )}
+                  <Link
+                    href={href}
+                    className="font-body text-sm text-[var(--ypp-ink)] transition-colors hover:text-[var(--ypp-primary)]"
+                  >
+                    {label}
+                  </Link>
                 </li>
               ))}
             </ul>

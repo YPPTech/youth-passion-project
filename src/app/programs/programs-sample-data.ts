@@ -6,7 +6,8 @@
  *    export const inPersonLocations = inPersonLocationsSample;
  * 2. Programs page and homepage will both show courses; remove the "no classes" conditionals if you prefer.
  */
-import { PORTAL_URL } from "@/constants/site";
+/** Empty link = no portal URL while student portal is coming soon. */
+const NO_PORTAL_LINK = "";
 
 export const onlineSessionsSample = [
   {
@@ -18,28 +19,28 @@ export const onlineSessionsSample = [
         grades: "Grades 6–9",
         description:
           "Learn the fundamentals of programming with Java. Students write real code, build small projects, and develop problem-solving skills. No prior experience required—ideal for middle schoolers curious about computer science.",
-        link: PORTAL_URL,
+        link: NO_PORTAL_LINK,
       },
       {
         name: "Songwriting & Music",
         grades: "Grades 4–8",
         description:
           "Explore melody, lyrics, and basic music theory while writing your own songs. From idea to finished piece, with guidance on structure, rhyme, and simple arrangements. Bring your instrument or use your voice.",
-        link: PORTAL_URL,
+        link: NO_PORTAL_LINK,
       },
       {
         name: "Art of Baking",
         grades: "Grades 5–8",
         description:
           "Hands-on baking from scratch: cookies, quick breads, and simple pastries. Learn measuring, mixing, and oven safety while building confidence in the kitchen. Recipes are chosen so students can practice at home.",
-        link: PORTAL_URL,
+        link: NO_PORTAL_LINK,
       },
       {
         name: "Creative Writing",
         grades: "Grades 5–9",
         description:
           "Develop your voice through short stories, poetry, and personal narratives. Focus on character, setting, and revision in a supportive workshop setting. Great for students who love to read and want to write more.",
-        link: PORTAL_URL,
+        link: NO_PORTAL_LINK,
       },
     ],
   },
@@ -57,21 +58,21 @@ export const inPersonLocationsSample = [
         grades: "Grades 6–9",
         description:
           "Learn programming fundamentals with Java. Build small projects and develop problem-solving skills. No prior experience required.",
-        link: PORTAL_URL,
+        link: NO_PORTAL_LINK,
       },
       {
         name: "Songwriting & Music",
         grades: "Grades 4–8",
         description:
           "Explore melody, lyrics, and music theory while writing your own songs. Bring your instrument or use your voice.",
-        link: PORTAL_URL,
+        link: NO_PORTAL_LINK,
       },
       {
         name: "Creative Writing",
         grades: "Grades 5–9",
         description:
           "Short stories, poetry, and personal narratives in a supportive workshop. Focus on character, setting, and revision.",
-        link: PORTAL_URL,
+        link: NO_PORTAL_LINK,
       },
     ],
   },
@@ -86,14 +87,14 @@ export const inPersonLocationsSample = [
         grades: "Grades 5–8",
         description:
           "Hands-on baking from scratch: cookies, quick breads, and simple pastries. Learn measuring, mixing, and oven safety.",
-        link: PORTAL_URL,
+        link: NO_PORTAL_LINK,
       },
       {
         name: "Introduction to Coding in Java",
         grades: "Grades 6–9",
         description:
           "Learn programming fundamentals with Java. Build small projects and develop problem-solving skills.",
-        link: PORTAL_URL,
+        link: NO_PORTAL_LINK,
       },
     ],
   },

@@ -2,7 +2,6 @@ import Link from "next/link";
 import PageHeader from "@/components/PageHeader";
 import SectionHeading from "@/components/SectionHeading";
 import CalendarView, { type CalendarEvent } from "@/components/CalendarView";
-import { PORTAL_URL, USE_PORTAL_WAITLIST } from "@/constants/site";
 
 // Calendar events (add more when you have dates)
 const sampleEvents: CalendarEvent[] = [
@@ -36,28 +35,12 @@ export default function CalendarPage() {
             <CalendarView events={sampleEvents} />
           </div>
           <p className="font-body mt-6 text-center text-sm text-[var(--ypp-muted)]">
-            {USE_PORTAL_WAITLIST ? (
-              <>
-                We’re getting the portal ready.{" "}
-                <Link href="/notify" className="text-[var(--ypp-primary)] font-medium hover:underline">
-                  Get notified when you can sign up
-                </Link>
-                .
-              </>
-            ) : (
-              <>
-                For the most up-to-date schedule and to sign up, visit the{" "}
-                <a
-                  href={PORTAL_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[var(--ypp-primary)] font-medium hover:underline"
-                >
-                  student portal
-                </a>
-                .
-              </>
-            )}
+            Our student portal is <span className="font-medium text-[var(--ypp-primary)]">coming soon</span>
+            —you’ll be able to sign up for classes there when it launches. For questions, use our{" "}
+            <Link href="/contact" className="text-[var(--ypp-primary)] font-medium hover:underline">
+              Contact
+            </Link>{" "}
+            page.
           </p>
         </div>
       </section>

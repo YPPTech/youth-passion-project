@@ -6,7 +6,7 @@
 /**
  * YPP Pathways Portal (registration, courses, instructor training, events).
  * Repo: https://github.com/braydenwhite-blip/YPP-Portal
- * Default deploy: youthpassionproject-portal.vercel.app. Override via NEXT_PUBLIC_PORTAL_URL.
+ * Kept for when the portal goes live again. Do not use in UI while STUDENT_PORTAL_COMING_SOON is true.
  */
 export const PORTAL_URL =
   typeof process !== "undefined" && process.env?.NEXT_PUBLIC_PORTAL_URL
@@ -14,17 +14,20 @@ export const PORTAL_URL =
     : "https://youthpassionproject-portal.vercel.app";
 
 /**
- * When set, the site promotes "Get notified when the portal is ready" and links to /notify
- * (which sends users to this form to collect emails). When the portal is ready, remove this
- * env var (or leave it empty) so all CTAs point to the portal again.
- * Create a Google Form with one field: Email (and optionally "I'm interested as: Student / Instructor / Parent").
+ * When true, the marketing site shows “Coming soon” for the student portal and does not link to PORTAL_URL.
+ * Set to false when the portal is ready; then restore portal links in components (or wire CTAs to PORTAL_URL).
+ */
+export const STUDENT_PORTAL_COMING_SOON = true;
+
+/**
+ * Optional: Google Form URL for /notify waitlist. Unused while STUDENT_PORTAL_COMING_SOON is the primary UX.
  */
 export const PORTAL_WAITLIST_FORM_URL =
   typeof process !== "undefined" && process.env?.NEXT_PUBLIC_PORTAL_WAITLIST_FORM_URL
     ? process.env.NEXT_PUBLIC_PORTAL_WAITLIST_FORM_URL.trim()
     : "";
 
-/** True when we're collecting waitlist emails instead of linking to the portal. */
+/** @deprecated Use STUDENT_PORTAL_COMING_SOON; kept for any legacy checks. */
 export const USE_PORTAL_WAITLIST = PORTAL_WAITLIST_FORM_URL.length > 0;
 
 /** Legal documents (official YPP links + internal pages). */
@@ -129,19 +132,23 @@ export const valuePills = [
 export const valueItems = [
   {
     title: "Grow",
-    description: "Students gain skills, knowledge, and confidence through hands-on peer teaching.",
+    description:
+      "Build real skills through instruction by peers who are deeply passionate about what they teach.",
   },
   {
     title: "Lead",
-    description: "High schoolers develop real leadership experience as instructors and coordinators.",
+    description:
+      "Take on leadership as instructors, chapter presidents, and officers to grow beyond the ordinary classroom.",
   },
   {
     title: "Connect",
-    description: "A global community spanning 30+ states and countries united by curiosity.",
+    description:
+      "Join a community spanning 30+ US states and countries around the world who have the same purpose.",
   },
   {
     title: "Create",
-    description: "Students produce real projects, art, code, and ideas that matter to them.",
+    description:
+      "Turn your passion into something real such as projects, communities, and lasting impact.",
   },
 ] as const;
 

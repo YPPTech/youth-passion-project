@@ -11,6 +11,7 @@ export type OnlineClass = {
   name: string;
   grades: string;
   description: string;
+  /** Empty when student portal is not linked (e.g. coming soon). */
   link: string;
 };
 
