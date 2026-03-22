@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import ClassInActionGallery from "@/components/ClassInActionGallery";
 import MouseFollowSection from "@/components/MouseFollowSection";
 import SectionHeading from "@/components/SectionHeading";
 
@@ -124,6 +125,8 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      <ClassInActionGallery subtitle="Our programs blend live video, shared tools like Scratch and Lichess, and thoughtful instruction so students stay engaged—whether they are coding their first project or studying an endgame." />
 
       {/* Mission and how we work */}
       <section className="bg-[var(--ypp-blush)]/60 px-4 py-16 sm:px-6 lg:px-8">

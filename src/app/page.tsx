@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ClassInActionGallery from "@/components/ClassInActionGallery";
 import HeroSection from "@/components/HeroSection";
 import MouseFollowSection from "@/components/MouseFollowSection";
 import { getNewestCourses } from "@/data/programsData";
@@ -350,6 +351,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <ClassInActionGallery subtitle="Live online sessions with real instructors—coding, chess, and more—with everyone on camera and tools we can share together." />
 
       {/* Open positions — Join Our Team (cursor-follow bubble) */}
       <MouseFollowSection className="relative bg-[var(--ypp-blush)]/60 px-4 py-16 sm:px-6 lg:px-8">
