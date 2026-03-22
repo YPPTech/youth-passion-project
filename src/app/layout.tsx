@@ -53,9 +53,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${dmSans.variable} ${playfair.variable} ${nunito.variable} ${lora.variable}`}>
-      <body className="min-h-screen flex flex-col antialiased">
+      <body className="flex min-h-screen flex-col antialiased">
         <Header />
-        <main className="flex-1 pt-[68px]">{children}</main>
+        <main className="min-w-0 w-full flex-1 pt-[var(--ypp-nav-height)]">{children}</main>
         <Footer />
       </body>
     </html>

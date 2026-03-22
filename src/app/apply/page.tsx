@@ -6,15 +6,17 @@ import { applyRoles, CONTACT_EMAILS } from "@/constants/site";
 export default function ApplyPage() {
   return (
     <div>
-      <PageHeader
-        label="Apply"
-        title="Apply to Join YPP"
-        subtitle="Apply to become an instructor or chapter president. Use the application links below for the 25–26 cycle."
+      {/* When student portal launches, add back to PageHeader:
         action={
           <span className="btn-primary inline-flex cursor-default items-center opacity-90" aria-label="Student portal coming soon">
             Coming soon
           </span>
         }
+      */}
+      <PageHeader
+        label="Become an Instructor"
+        title="Become an Instructor"
+        subtitle="Lead a course as a high school instructor, or apply to be a chapter president. Use the application links below for the 25–26 cycle."
       />
 
       {/* Roles list */}
@@ -70,9 +72,9 @@ export default function ApplyPage() {
         <div className="mx-auto max-w-2xl text-center">
           <p className="font-body text-[var(--ypp-muted)]">
             Need to sign up for classes as a student? Our student portal is{" "}
-            <span className="font-medium text-[var(--ypp-primary)]">coming soon</span>. Visit the{" "}
+            <span className="font-medium text-[var(--ypp-primary)]">coming soon</span>. Visit our{" "}
             <Link href="/programs" className="text-[var(--ypp-primary)] font-medium hover:underline">
-              Programs
+              Programs & Chapters
             </Link>{" "}
             page for what we offer, or email{" "}
             <a

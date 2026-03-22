@@ -32,7 +32,7 @@ const faqCategories = [
       },
       {
         q: "What age group are the courses for? Do I have to live in a certain area?",
-        a: "Our courses are designed for elementary and middle school students. We offer both online and in-person classes. Online classes are open to any eligible student worldwide—no location requirement. In-person classes depend on where we have active chapters; check our Programs and Calendar pages to see what’s available in your area.",
+        a: "Our courses are designed for elementary and middle school students. We offer both online and in-person classes. Online classes are open to any eligible student worldwide—no location requirement. In-person classes depend on where we have active chapters; check our Programs & Chapters page and our Calendar to see what’s available in your area.",
       },
       {
         q: "How do I register for courses?",
@@ -81,7 +81,7 @@ const faqCategories = [
     items: [
       {
         q: "How do I become an instructor?",
-        a: "High school students can apply through our Apply page. You’ll share your passion, proposed course idea, and availability. Our team reviews applications and supports new instructors through training and curriculum help.",
+        a: "High school students can apply through our Become an Instructor page. You’ll share your passion, proposed course idea, and availability. Our team reviews applications and supports new instructors through training and curriculum help.",
       },
       {
         q: "What’s the time commitment for teaching a course?",
@@ -97,7 +97,7 @@ const faqCategories = [
       },
       {
         q: "I’m not in high school. How can I help?",
-        a: "Our instructor and volunteer roles—including curriculum development, outreach, and operations—are for high school students only. You must be in high school to apply. Check the Apply page for current opportunities or email us at support@youthpassionproject.org with questions.",
+        a: "Our instructor and volunteer roles—including curriculum development, outreach, and operations—are for high school students only. You must be in high school to apply. Check the Become an Instructor page for current opportunities or email us at support@youthpassionproject.org with questions.",
       },
     ],
   },
@@ -110,7 +110,7 @@ const faqCategories = [
       },
       {
         q: "What courses are offered?",
-        a: "We offer a large variety of courses in subjects like Competition Math, Painting, Chess, Creative Writing, and many more. The lineup changes each session based on which instructors are teaching. Our student portal is coming soon—the catalog will be there when it launches. Until then, see our Programs page or contact support@youthpassionproject.org.",
+        a: "We offer a large variety of courses in subjects like Competition Math, Painting, Chess, Creative Writing, and many more. The lineup changes each session based on which instructors are teaching. Our student portal is coming soon—the catalog will be there when it launches. Until then, see our Programs & Chapters page or contact support@youthpassionproject.org.",
       },
       {
         q: "Who are the instructors?",
@@ -122,7 +122,7 @@ const faqCategories = [
       },
       {
         q: "Where do you operate?",
-        a: "We’re based in Delaware. Online classes are open to students anywhere in the world. In-person classes run in locations where we have active chapters—availability varies by region. Our programs run in Fall and Spring; see the Programs and Calendar pages for chapter locations, dates, and what’s offered near you.",
+        a: "We’re based in Delaware. Online classes are open to students anywhere in the world. In-person classes run in locations where we have active chapters—availability varies by region. Our programs run in Fall and Spring; see the Programs & Chapters page and Calendar for chapter locations, dates, and what’s offered near you.",
       },
       {
         q: "How is YPP funded?",

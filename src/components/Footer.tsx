@@ -1,12 +1,11 @@
 import Link from "next/link";
-import { CONTACT_EMAILS } from "@/constants/site";
+import HomeReloadLink from "@/components/HomeReloadLink";
 
 const navigateLinks = [
   { href: "/about", label: "About Us" },
-  { href: "/contact", label: "Contact Us" },
-  { href: "/programs", label: "Programs" },
+  { href: "/programs", label: "Programs & Chapters" },
   { href: "/programs/calendar", label: "Calendar" },
-  { href: "/apply", label: "Apply" },
+  { href: "/apply", label: "Become an Instructor" },
   { href: "/donate", label: "Donate" },
 ];
 
@@ -16,10 +15,7 @@ const resourceLinks = [
   { href: "/legal", label: "Legal" },
 ];
 
-const contactLinks = [
-  { href: "/contact", label: "Contact Us" },
-  { href: `mailto:${CONTACT_EMAILS.support}`, label: "Email Us" },
-];
+const contactLinks = [{ href: "/contact", label: "Contact Us" }];
 
 const social = [
   { name: "X (Twitter)", href: "https://x.com/PassionYouth", icon: "x" as const },
@@ -75,11 +71,11 @@ const colList = "mt-5 flex flex-col gap-3";
 export default function Footer() {
   return (
     <footer className="border-t border-[var(--ypp-border)] bg-[var(--ypp-blush)] text-[var(--ypp-ink)]">
-      <div className="mx-auto max-w-6xl px-6 py-16 sm:px-8 lg:px-10">
-        <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-[1.3fr_1fr_1fr_1fr] lg:gap-x-16 lg:gap-y-0 lg:items-start">
+      <div className="mx-auto w-full max-w-6xl min-w-0 px-6 py-16 sm:px-8 lg:px-10">
+        <div className="grid min-w-0 grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-[1.3fr_1fr_1fr_1fr] lg:gap-x-16 lg:gap-y-0 lg:items-start">
           {/* Column 1: Brand + logo + tagline */}
           <div className="flex flex-col sm:pr-4">
-            <div className="flex items-start gap-5">
+            <HomeReloadLink className="flex items-start gap-5 no-underline text-inherit outline-offset-4 transition-opacity hover:opacity-90 focus-visible:rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--ypp-primary)]">
               <img
                 src="/logo.png"
                 alt="Youth Passion Project"
@@ -91,12 +87,11 @@ export default function Footer() {
                 <h3 className="font-heading text-lg font-bold leading-tight text-[var(--ypp-ink)]">
                   Youth Passion Project
                 </h3>
-                <p className="font-body mt-3 text-sm leading-relaxed text-[var(--ypp-muted)]">
-                  Free online and in-person courses taught by passionate high school students,
-                  empowering younger learners everywhere.
+                <p className="nav-logo-tagline mt-3 max-w-xs">
+                  Guiding the stars of tomorrow.
                 </p>
               </div>
-            </div>
+            </HomeReloadLink>
           </div>
 
           {/* Column 2: Navigate */}
@@ -144,21 +139,12 @@ export default function Footer() {
             <ul className={colList}>
               {contactLinks.map(({ href, label }) => (
                 <li key={label}>
-                  {href.startsWith("mailto:") ? (
-                    <a
-                      href={href}
-                      className="font-body text-sm text-[var(--ypp-ink)] transition-colors hover:text-[var(--ypp-primary)]"
-                    >
-                      {label}
-                    </a>
-                  ) : (
-                    <Link
-                      href={href}
-                      className="font-body text-sm text-[var(--ypp-ink)] transition-colors hover:text-[var(--ypp-primary)]"
-                    >
-                      {label}
-                    </Link>
-                  )}
+                  <Link
+                    href={href}
+                    className="font-body text-sm text-[var(--ypp-ink)] transition-colors hover:text-[var(--ypp-primary)]"
+                  >
+                    {label}
+                  </Link>
                 </li>
               ))}
             </ul>

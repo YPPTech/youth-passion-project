@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 
 export type InPersonClass = {
   name: string;
@@ -19,9 +19,13 @@ export type InPersonLocation = {
 
 type Props = {
   locations: InPersonLocation[];
+  /** When locations are empty, show only the short “check back” lines (parent shows the program-model banner). */
+  compactEmptyState?: boolean;
+  /** Explains the chapter model when the empty state is shown (omit when parent shows the same copy). */
+  emptyStateIntro?: ReactNode;
 };
 
-export default function InPersonSection({ locations }: Props) {
+export default function InPersonSection({ locations, compactEmptyState = false, emptyStateIntro }: Props) {
   const [selectedId, setSelectedId] = useState<string | null>(null);
 
   // Restore map when needed: uncomment the block below and change wrapper to grid lg:grid-cols-2
@@ -37,14 +41,19 @@ export default function InPersonSection({ locations }: Props) {
   // */}
 
   return (
-    <div className="mt-10">
-      <div className="card-ypp">
+    <div className="mt-10 w-full min-w-0">
+      <div className="card-ypp min-w-0">
         <h3 className="font-heading font-semibold text-[var(--ypp-ink)]">
           Locations & Sessions
         </h3>
         {locations.length === 0 ? (
           <div className="mt-6 flex flex-col items-center justify-center rounded-xl border border-[var(--ypp-border)] bg-[var(--ypp-blush)]/30 px-6 py-12 text-center">
-            <p className="font-body text-[var(--ypp-ink)]">
+            {!compactEmptyState && emptyStateIntro ? (
+              <div className="font-body max-w-2xl text-[var(--ypp-ink)] leading-relaxed">{emptyStateIntro}</div>
+            ) : null}
+            <p
+              className={`font-body text-[var(--ypp-ink)] ${compactEmptyState ? "" : "mt-6"}`}
+            >
               No in-person locations at the moment.
             </p>
             <p className="font-body mt-2 text-[var(--ypp-muted)]">

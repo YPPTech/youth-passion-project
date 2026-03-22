@@ -2,6 +2,7 @@ import Link from "next/link";
 import HeroSection from "@/components/HeroSection";
 import MouseFollowSection from "@/components/MouseFollowSection";
 import { getNewestCourses } from "@/data/programsData";
+import { getWeeklySpotlight } from "@/data/weeklySpotlight";
 import {
   statsByTheNumbers,
   hiringRolePills,
@@ -9,38 +10,15 @@ import {
   valueItems,
 } from "@/constants/site";
 
+/** Hero aside: subject chips → Programs & Chapters (/programs). */
 const passionTopics = [
-  {
-    label: "Music & Songwriting",
-    description: "Melody, lyrics, and performance with instructors who live for music.",
-    href: "/programs",
-  },
-  {
-    label: "Coding & Tech",
-    description: "Build real projects and learn fundamentals from peers who code every day.",
-    href: "/programs",
-  },
-  {
-    label: "Art & Design",
-    description: "Draw, design, and express yourself in a creative, supportive space.",
-    href: "/programs",
-  },
-  {
-    label: "Baking & Cooking",
-    description: "Hands-on kitchen skills and recipes you can practice at home.",
-    href: "/programs",
-  },
-  {
-    label: "Creative Writing",
-    description: "Stories, poetry, and voice—workshop-style with fellow young writers.",
-    href: "/programs",
-  },
-  {
-    label: "Science & More",
-    description: "STEM, curiosity, and exploration beyond the typical school day.",
-    href: "/programs",
-  },
-];
+  { label: "STEM", href: "/programs" },
+  { label: "Writing", href: "/programs" },
+  { label: "Music", href: "/programs" },
+  { label: "Business", href: "/programs" },
+  { label: "Arts", href: "/programs" },
+  { label: "Languages & Culture", href: "/programs" },
+] as const;
 
 function IconTarget() {
   return (
@@ -96,47 +74,49 @@ function IconCreate() {
 }
 
 export default function HomePage() {
+  const weeklySpotlight = getWeeklySpotlight();
+  const spotlightCtaExternal = weeklySpotlight.ctaHref.startsWith("http");
+
   return (
-    <div>
+    <div className="w-full min-w-0">
       {/* Hero */}
-      <HeroSection className="hero-gradient hero-glow hero-curve relative flex min-h-[85vh] flex-col overflow-hidden px-4 pb-24 pt-8 sm:px-6 sm:pt-12 lg:px-8">
+      <HeroSection className="hero-gradient hero-glow hero-curve relative flex min-h-[min(88vh,52rem)] flex-col overflow-hidden px-4 pt-10 pb-20 sm:px-6 sm:pt-14 sm:pb-28 lg:px-10 lg:pt-16 lg:pb-24">
         <div className="hero-blob hero-blob-1" aria-hidden />
         <div className="hero-blob hero-blob-2" aria-hidden />
         <div className="hero-blob hero-blob-3" aria-hidden />
 
-        <div className="relative z-10 mx-auto flex max-w-6xl flex-1 flex-col lg:flex-row lg:items-center lg:justify-between lg:gap-12">
-          <div className="max-w-2xl pt-6 lg:pt-0">
-            <p
-              className="hero-animate-in font-label mb-3 text-[11px] font-semibold uppercase tracking-wider text-[var(--ypp-primary)]"
+        <div className="relative z-10 mx-auto flex w-full min-w-0 max-w-6xl flex-1 flex-col justify-center gap-12 lg:flex-row lg:items-center lg:justify-between lg:gap-16 xl:gap-20">
+          <div className="min-w-0 max-w-2xl">
+            <div
+              className="hero-animate-in mb-5 flex items-center gap-3"
               style={{ animationDelay: "0.1s" }}
             >
-              501(c)(3) nonprofit — free for all students
-            </p>
-
+              <span className="h-px w-8 shrink-0 bg-[var(--ypp-primary)] sm:w-10" aria-hidden />
+              <p className="font-label text-[11px] font-semibold uppercase tracking-wider text-[var(--ypp-primary)] sm:text-xs">
+                Peer learning · 100% free · Worldwide
+              </p>
+            </div>
             <h1
-              className="hero-animate-in font-display text-4xl font-black leading-tight text-[var(--ypp-ink)] sm:text-5xl lg:text-6xl"
+              className="hero-animate-in font-heading max-w-2xl text-4xl font-normal leading-tight tracking-tight text-[var(--ypp-ink)] sm:text-5xl"
               style={{ animationDelay: "0.2s" }}
             >
-              <span className="bg-gradient-to-r from-[var(--ypp-primary)] to-[var(--ypp-mid)] bg-clip-text text-transparent">
-                Guiding the stars
-              </span>
-              <br />
-              <span className="font-normal italic text-[var(--ypp-deep)]">of tomorrow.</span>
+              Guiding The Stars{" "}
+              <span className="font-normal italic text-[var(--ypp-primary)]">Of Tomorrow.</span>
             </h1>
             <p
-              className="hero-animate-in font-body mt-6 max-w-xl text-[15px] font-normal leading-loose text-[var(--ypp-muted)]"
+              className="hero-animate-in font-body mt-6 max-w-xl text-base font-normal leading-relaxed text-[var(--ypp-muted)] sm:mt-7 sm:text-[1.0625rem] sm:leading-relaxed"
               style={{ animationDelay: "0.35s" }}
             >
               Youth Passion Project connects students with passionate, high-quality instructors to discover what they love and build the skills to pursue it.
             </p>
 
             <div
-              className="hero-animate-in mt-10 flex flex-wrap gap-4"
+              className="hero-animate-in mt-10 flex flex-wrap gap-3 sm:gap-4"
               style={{ animationDelay: "0.5s" }}
             >
               <Link
                 href="/programs"
-                className="btn-secondary font-body inline-flex items-center transition-transform hover:scale-[1.02] active:scale-[0.98]"
+                className="btn-secondary font-body inline-flex items-center"
               >
                 Find Your Passion
                 <svg className="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -155,58 +135,114 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="mt-12 w-full lg:mt-0 lg:max-w-lg">
-            <div className="hero-animate-in mb-5" style={{ animationDelay: "0.3s" }}>
-              <div className="flex items-center gap-2">
-                <span className="h-px w-6 shrink-0 bg-[var(--ypp-primary)]" aria-hidden />
-                <p className="font-label text-xs font-semibold uppercase tracking-wider text-[var(--ypp-primary)]">
-                  Explore by subject
+          <div className="w-full min-w-0 shrink-0 lg:max-w-sm">
+            <div
+              className="hero-animate-in overflow-hidden rounded-2xl border border-[var(--ypp-border)] bg-[var(--ypp-white)] shadow-[var(--shadow-sm)]"
+              style={{ animationDelay: "0.3s" }}
+            >
+              <div className="border-b border-[var(--ypp-border)] bg-[var(--ypp-blush)]/50 px-5 py-4">
+                <div className="flex items-center gap-2">
+                  <span className="h-px w-6 shrink-0 bg-[var(--ypp-primary)]" aria-hidden />
+                  <p className="font-label text-[10px] font-semibold uppercase tracking-wider text-[var(--ypp-primary)] sm:text-xs">
+                    Explore by subject
+                  </p>
+                </div>
+                <h2 className="font-heading mt-3 text-xl font-semibold leading-snug tracking-tight text-[var(--ypp-deep)] sm:text-2xl">
+                  Where Will Your{" "}
+                  <span className="font-normal italic text-[var(--ypp-primary)]">Passion</span> Take You?
+                </h2>
+              </div>
+
+              <div className="border-y border-[var(--ypp-border)] bg-[var(--ypp-white)] px-5 py-4">
+                <div className="flex items-center gap-2">
+                  <span className="h-px w-6 shrink-0 bg-[var(--ypp-primary)]/70" aria-hidden />
+                  <p className="font-label text-[10px] font-semibold uppercase tracking-wider text-[var(--ypp-primary)] sm:text-xs">
+                    This week
+                  </p>
+                </div>
+                <h3 className="font-heading mt-2 text-base font-semibold leading-snug text-[var(--ypp-deep)] sm:text-lg">
+                  {weeklySpotlight.title}
+                </h3>
+                <div className="mt-2 flex flex-wrap items-center gap-2">
+                  <span className="rounded-full bg-[var(--ypp-lavender)] px-2.5 py-0.5 font-body text-xs text-[var(--ypp-muted)]">
+                    {weeklySpotlight.gradesLabel}
+                  </span>
+                  {weeklySpotlight.source === "catalog" && (
+                    <span className="rounded-full border border-[var(--ypp-border)] bg-[var(--ypp-blush)]/40 px-2.5 py-0.5 font-body text-xs font-medium text-[var(--ypp-primary)]">
+                      Live catalog
+                    </span>
+                  )}
+                </div>
+                <p className="font-body mt-2 line-clamp-2 text-xs leading-snug text-[var(--ypp-muted)] sm:text-[13px] sm:leading-relaxed">
+                  {weeklySpotlight.blurb}
+                </p>
+                {spotlightCtaExternal ? (
+                  <a
+                    href={weeklySpotlight.ctaHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-body mt-3 inline-flex items-center text-sm font-semibold text-[var(--ypp-primary)] transition-colors hover:underline"
+                  >
+                    {weeklySpotlight.ctaLabel}
+                    <svg className="ml-1 h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  </a>
+                ) : (
+                  <Link
+                    href={weeklySpotlight.ctaHref}
+                    className="font-body mt-3 inline-flex items-center text-sm font-semibold text-[var(--ypp-primary)] transition-colors hover:underline"
+                  >
+                    {weeklySpotlight.ctaLabel}
+                    <svg className="ml-1 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </Link>
+                )}
+                {weeklySpotlight.disclaimer && (
+                  <p className="font-body mt-2 text-[10px] leading-snug text-[var(--ypp-muted)] sm:text-[11px]">
+                    {weeklySpotlight.disclaimer}
+                  </p>
+                )}
+              </div>
+
+              <div className="bg-gradient-to-b from-[var(--ypp-lavender)]/25 to-[var(--ypp-blush)]/20 p-4">
+                <ul className="flex flex-wrap justify-center gap-2 sm:justify-start">
+                  {passionTopics.map(({ label, href }, i) => (
+                    <li key={label}>
+                      <Link
+                        href={href}
+                        className="hero-animate-in inline-flex rounded-full border border-[var(--ypp-border)] bg-[var(--ypp-white)]/95 px-3 py-1.5 font-body text-[11px] font-semibold text-[var(--ypp-ink)] shadow-[var(--shadow-sm)] backdrop-blur-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-[var(--ypp-primary)]/35 hover:bg-[var(--ypp-lavender)]/45 hover:text-[var(--ypp-primary)] hover:shadow-[var(--shadow-md)] sm:px-3.5 sm:py-2 sm:text-xs"
+                        style={{ animationDelay: `${0.35 + i * 0.04}s` }}
+                      >
+                        {label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="border-t border-[var(--ypp-border)] bg-[var(--ypp-white)] px-4 py-2.5">
+                <p className="text-center font-body text-[10px] leading-snug text-[var(--ypp-muted)] sm:text-[11px]">
+                  Tap a bubble to browse Programs & Chapters—110+ free courses.
                 </p>
               </div>
-              <h2 className="font-heading mt-3 text-2xl font-bold tracking-tight text-[var(--ypp-deep)] sm:text-3xl">
-                Where Will Your Passion Take You?
-              </h2>
             </div>
-            <ul className="flex flex-col gap-3">
-              {passionTopics.map(({ label, description, href }, i) => (
-                <li key={label}>
-                  <Link
-                    href={href}
-                    className="hero-animate-in hero-passion-pill group block rounded-xl border-2 border-[var(--ypp-border)] bg-[var(--ypp-white)] px-4 py-3 shadow-[var(--shadow-sm)] transition-all duration-200 hover:border-[var(--ypp-primary)] hover:bg-[var(--ypp-lavender)]/40 hover:shadow-[var(--shadow-md)]"
-                    style={{ animationDelay: `${0.4 + i * 0.06}s` }}
-                  >
-                    <span className="font-body text-sm font-semibold text-[var(--ypp-ink)] group-hover:text-[var(--ypp-primary)]">
-                      {label}
-                    </span>
-                    <p className="font-body mt-1 text-xs leading-snug text-[var(--ypp-muted)]">
-                      {description}
-                    </p>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-            <p
-              className="hero-animate-in font-body mt-4 text-xs text-[var(--ypp-muted)]"
-              style={{ animationDelay: "0.7s" }}
-            >
-              110+ free courses across every category—tap a topic to browse Programs.
-            </p>
           </div>
         </div>
       </HeroSection>
 
       {/* Now Hiring banner */}
       <section className="bg-[var(--ypp-deep)] px-4 py-5 sm:px-6 lg:px-8">
-        <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-6">
-          <div className="flex flex-wrap items-center gap-4">
+        <div className="mx-auto flex min-w-0 max-w-6xl flex-wrap items-center justify-between gap-6">
+          <div className="flex min-w-0 flex-wrap items-center gap-4">
             <span className="font-label text-xs font-semibold uppercase tracking-widest text-[var(--ypp-primary)]">
               We&apos;re hiring
             </span>
             <p className="font-body text-sm text-white/80">
-              Share what you love. Lead the next generation.
+              Share What You Love. Lead the Next Generation.
             </p>
           </div>
-          <div className="flex flex-wrap items-center justify-center gap-3">
+          <div className="flex min-w-0 flex-wrap items-center justify-center gap-3">
             {hiringRolePills.map((role) => (
               <Link
                 key={role.id}
@@ -231,10 +267,10 @@ export default function HomePage() {
 
       {/* Who We Are — two-column: intro + CTA | value propositions (cursor-follow bubble) */}
       <MouseFollowSection className="relative border-y border-[var(--ypp-border)] bg-[var(--ypp-blush)] px-4 py-16 sm:px-6 lg:px-8">
-        <div className="relative z-10 mx-auto max-w-6xl">
+        <div className="relative z-10 mx-auto min-w-0 max-w-6xl">
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 lg:items-center">
             {/* Left: label, title, description, CTA */}
-            <div>
+            <div className="min-w-0">
               <div className="flex items-center gap-3">
                 <span className="h-px w-8 bg-[var(--ypp-primary)]" aria-hidden />
                 <p className="font-label text-xs font-semibold uppercase tracking-wider text-[var(--ypp-primary)]">
@@ -242,8 +278,10 @@ export default function HomePage() {
                 </p>
               </div>
               <h2 className="font-heading mt-4 text-4xl font-normal leading-tight tracking-tight text-[var(--ypp-ink)] sm:text-5xl">
-                Built Around Young People&apos;s{" "}
-                <span className="font-normal italic text-[var(--ypp-primary)]">Potential</span>
+                Built Around{" "}
+                <span className="font-normal italic text-[var(--ypp-primary)]">Curiosity</span>
+                {" "}
+                and Community
               </h2>
               <p className="font-body mt-6 text-[var(--ypp-muted)] leading-relaxed">
                 We exist to discover, develop, and celebrate the passions of youth—providing the resources, mentorship, and community they need to thrive in whatever path they choose.
@@ -260,7 +298,7 @@ export default function HomePage() {
             </div>
 
             {/* Right: four value items with icons */}
-            <div className="flex flex-col gap-6">
+            <div className="flex min-w-0 flex-col gap-6">
               {[
                 { Icon: IconGrow, ...valueItems[0] },
                 { Icon: IconLead, ...valueItems[1] },
@@ -294,13 +332,13 @@ export default function HomePage() {
 
       {/* Stats strip — By the Numbers */}
       <section className="border-b border-[var(--ypp-border)] bg-[var(--ypp-white)] px-4 py-12 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-6xl">
+        <div className="mx-auto min-w-0 max-w-6xl">
           <p className="section-label justify-center text-[var(--ypp-muted)]">
             By the Numbers
           </p>
           <div className="mt-8 grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-6">
             {statsByTheNumbers.map(({ value, label }) => (
-              <div key={label} className="text-center">
+              <div key={label} className="min-w-0 text-center">
                 <div className="font-heading text-2xl font-bold text-[var(--ypp-deep)] sm:text-3xl">
                   {value}
                 </div>
@@ -315,26 +353,26 @@ export default function HomePage() {
 
       {/* Open positions — Join Our Team (cursor-follow bubble) */}
       <MouseFollowSection className="relative bg-[var(--ypp-blush)]/60 px-4 py-16 sm:px-6 lg:px-8">
-        <div className="relative z-10 mx-auto max-w-6xl">
+        <div className="relative z-10 mx-auto min-w-0 max-w-6xl">
           <div className="flex items-center gap-3">
             <span className="h-px w-8 bg-[var(--ypp-primary)]" aria-hidden />
             <p className="font-label text-xs font-semibold uppercase tracking-wider text-[var(--ypp-primary)]">
               Now Hiring
             </p>
           </div>
-          <h2 className="font-heading mt-4 text-3xl font-bold tracking-tight text-[var(--ypp-deep)] sm:text-4xl">
+          <h2 className="font-heading mt-4 text-balance text-3xl font-bold tracking-tight text-[var(--ypp-deep)] sm:text-4xl">
             Share What You Love. Lead the Next Generation.
           </h2>
-          <p className="font-body mt-2 max-w-2xl text-[var(--ypp-muted)]">
+          <p className="font-body mt-4 max-w-2xl text-pretty leading-relaxed text-[var(--ypp-muted)]">
             YPP instructors aren&apos;t just teachers. They&apos;re leaders, mentors, and community builders who help
-            make an impact. Open roles for high school students—apply below.
+            make an impact.
           </p>
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {openPositions.map(({ title, description, href }) => (
               <Link
                 key={title}
                 href={href}
-                className="group flex flex-col rounded-2xl border-2 border-[var(--ypp-border)] bg-[var(--ypp-white)] p-6 shadow-sm transition-all hover:border-[var(--ypp-primary)]/40 hover:shadow-md"
+                className="group flex min-w-0 flex-col rounded-2xl border-2 border-[var(--ypp-border)] bg-[var(--ypp-white)] p-6 shadow-sm transition-all hover:border-[var(--ypp-primary)]/40 hover:shadow-md"
               >
                 <h3 className="font-heading text-lg font-semibold text-[var(--ypp-deep)] transition-colors group-hover:text-[var(--ypp-primary)]">
                   {title}
@@ -367,7 +405,7 @@ export default function HomePage() {
 
       {/* Newest courses — quick display, no images; right-aligned like opposite of Join Our Team */}
       <section className="border-y border-[var(--ypp-border)] bg-[var(--ypp-white)] px-4 py-16 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-6xl text-right">
+        <div className="mx-auto min-w-0 max-w-6xl text-right">
           <div className="flex items-center justify-end gap-3">
             <span className="h-px w-8 bg-[var(--ypp-primary)]" aria-hidden />
             <p className="font-label text-xs font-semibold uppercase tracking-wider text-[var(--ypp-primary)] underline decoration-[var(--ypp-primary)] underline-offset-2">
@@ -375,11 +413,11 @@ export default function HomePage() {
             </p>
           </div>
           <h2 className="font-heading mt-2 text-2xl font-bold text-[var(--ypp-deep)] sm:text-3xl">
-            Newest additions
+            Newest Additions
           </h2>
           <p className="font-body ml-auto mt-3 max-w-2xl text-right text-[var(--ypp-muted)]">
             A quick look at our newest classes. Our student portal is coming soon—full details and sign-up will be
-            available there when it launches. Browse our Programs page in the meantime.
+            available there when it launches. Browse our Programs & Chapters page in the meantime.
           </p>
           {getNewestCourses().length === 0 ? (
             <div className="card-ypp mt-12 flex flex-col items-center justify-center px-6 py-16 text-center">
@@ -394,7 +432,7 @@ export default function HomePage() {
                 className="btn-primary mt-6 inline-flex items-center"
                 style={{ fontFamily: "var(--font-dm-sans)" }}
               >
-                View Programs
+                View Programs & Chapters
                 <svg className="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
@@ -402,7 +440,7 @@ export default function HomePage() {
             </div>
           ) : (
           <>
-            <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {getNewestCourses().map((course) => {
                 const hasPortalLink = course.href.trim().length > 0;
                 const CardInner = (
@@ -438,12 +476,12 @@ export default function HomePage() {
                     href={course.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="card-ypp block text-left"
+                    className="card-ypp block min-w-0 text-left"
                   >
                     {CardInner}
                   </a>
                 ) : (
-                  <div key={course.name} className="card-ypp block text-left">
+                  <div key={course.name} className="card-ypp block min-w-0 text-left">
                     {CardInner}
                   </div>
                 );
@@ -455,7 +493,7 @@ export default function HomePage() {
                 className="btn-primary inline-flex items-center"
                 style={{ fontFamily: "var(--font-dm-sans)" }}
               >
-                View All Programs
+                View all Programs & Chapters
                 <svg className="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>

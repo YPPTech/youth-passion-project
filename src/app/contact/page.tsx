@@ -3,36 +3,13 @@ import PageHeader from "@/components/PageHeader";
 import SectionHeading from "@/components/SectionHeading";
 import { CONTACT_EMAILS } from "@/constants/site";
 
-const contactEntries = [
-  {
-    label: "Enrollment & Student Services",
-    description: "Students and parents — registration, course questions, and general support",
-    email: CONTACT_EMAILS.support,
-  },
-  {
-    label: "Media & Public Relations",
-    description: "Press, partnerships, and marketing inquiries",
-    email: CONTACT_EMAILS.marketing,
-  },
-  {
-    label: "Online Instructor Support",
-    description: "For our online instructors — course support and logistics",
-    email: CONTACT_EMAILS.onlineInstructorSupport,
-  },
-  {
-    label: "In-Person Instructor Support",
-    description: "For in-person and chapter instructors",
-    email: CONTACT_EMAILS.inPersonInstructors,
-  },
-] as const;
-
 export default function ContactPage() {
   return (
     <div>
       <PageHeader
         label="Contact"
         title="Contact Us"
-        subtitle="Reach the right team with the form below or use our general contact emails."
+        subtitle="Reach us anytime at our main support email—we’ll route your message to the right team."
       />
 
       {/* General contact emails */}
@@ -40,25 +17,34 @@ export default function ContactPage() {
         <div className="mx-auto max-w-2xl">
           <SectionHeading
             title="General Contact"
-            subtitle="Use the email that best matches your question so we can respond quickly."
+            subtitle="Enrollment, programs, partnerships, or anything else—send one message and we’ll help."
           />
-          <ul className="mt-10 flex flex-col gap-6">
-            {contactEntries.map(({ label, description, email }) => (
-              <li key={email} className="card-ypp p-6">
-                <p className="font-heading font-semibold text-[var(--ypp-ink)]">{label}</p>
-                <p className="font-body mt-1 text-sm text-[var(--ypp-muted)]">{description}</p>
-                <a
-                  href={`mailto:${email}`}
-                  className="mt-3 inline-flex items-center gap-2 font-medium text-[var(--ypp-primary)] hover:underline"
+          <div className="relative mt-10 overflow-hidden rounded-2xl border-2 border-[var(--ypp-primary)]/30 bg-[var(--ypp-white)] px-6 py-10 text-center shadow-[var(--shadow-lg)] sm:px-10 sm:py-12">
+            <div
+              className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[var(--ypp-lavender)]/40 via-transparent to-[var(--ypp-blush)]/50"
+              aria-hidden
+            />
+            <div className="relative">
+              <p className="font-body text-sm font-medium text-[var(--ypp-muted)] sm:text-base">
+                Main inbox (students, families, instructors, and partners)
+              </p>
+              <a
+                href={`mailto:${CONTACT_EMAILS.support}`}
+                className="mt-6 inline-flex max-w-full flex-wrap items-center justify-center gap-3 break-all font-heading text-2xl font-bold tracking-tight text-[var(--ypp-primary)] transition-colors hover:text-[var(--ypp-deep)] hover:underline sm:break-normal sm:text-3xl md:text-4xl md:leading-tight"
+              >
+                {CONTACT_EMAILS.support}
+                <svg
+                  className="h-7 w-7 shrink-0 sm:h-8 sm:w-8 md:h-9 md:w-9"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden
                 >
-                  {email}
-                  <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                  </svg>
-                </a>
-              </li>
-            ))}
-          </ul>
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              </a>
+            </div>
+          </div>
         </div>
       </section>
 

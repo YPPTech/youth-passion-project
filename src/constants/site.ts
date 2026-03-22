@@ -49,6 +49,8 @@ export const CONTACT_EMAILS = {
   support: "support@youthpassionproject.org",
   /** Media inquiries — Public Relations */
   marketing: "marketing@youthpassionproject.org",
+  /** Website, portal, and technical infrastructure */
+  tech: "tech@youthpassionproject.org",
   /** In-person instructor support */
   inPersonInstructors: "in-person-instructors@youthpassionproject.org",
   /** Online instructor support */

@@ -22,6 +22,8 @@
   --nav-purple-500: #8b3fe8;
   --nav-purple-100: #f0e6ff;
   --nav-shadow-sm: 0 1px 4px rgba(59, 15, 110, 0.08);
+  /* Fixed header — use for main offset, modals, mobile menu */
+  --ypp-nav-height: 68px;
 
   --r: 2px;
   --r-md: 8px;
@@ -85,7 +87,7 @@
 
 /* Nav bar (match provided HTML) */
 .nav-bar {
-  height: 68px;
+  height: var(--ypp-nav-height);
   padding: 0 1rem;
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(12px);
@@ -197,13 +199,13 @@ html {
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at 80% 30%, rgba(232, 216, 255, 0.6) 0%, transparent 60%);
+  background: radial-gradient(ellipse at 80% 30%, rgba(232, 216, 255, 0.28) 0%, transparent 55%);
   pointer-events: none;
-  animation: heroGlowPulse 8s ease-in-out infinite;
+  animation: heroGlowPulse 14s ease-in-out infinite;
 }
 @keyframes heroGlowPulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.8; }
+  0%, 100% { opacity: 0.9; }
+  50% { opacity: 0.65; }
 }
 .hero-curve::after {
   content: "";
@@ -243,8 +245,8 @@ html {
 .hero-blob {
   position: absolute;
   border-radius: 50%;
-  filter: blur(60px);
-  opacity: 0.4;
+  filter: blur(72px);
+  opacity: 0.22;
   pointer-events: none;
 }
 .hero-blob-1 {
@@ -282,12 +284,12 @@ html {
   border-radius: 50%;
   background: radial-gradient(
     circle,
-    rgba(180, 160, 215, 0.38) 0%,
-    rgba(170, 150, 205, 0.18) 40%,
-    rgba(160, 140, 195, 0.06) 65%,
-    transparent 75%
+    rgba(150, 125, 195, 0.38) 0%,
+    rgba(140, 115, 185, 0.22) 40%,
+    rgba(125, 105, 170, 0.1) 65%,
+    transparent 78%
   );
-  filter: blur(36px);
+  filter: blur(42px);
   pointer-events: none;
   transform: translate(-50%, -50%);
   transition: opacity 0.25s ease-out, left 0.12s ease-out, top 0.12s ease-out;
@@ -424,4 +426,9 @@ html {
 .input-focus:focus {
   border-color: var(--ypp-primary);
   box-shadow: 0 0 0 3px rgba(107, 33, 200, 0.12);
+}
+
+/* Avoid horizontal scroll from wide flex/grid children (mobile / narrow viewports) */
+html {
+  overflow-x: clip;
 }

@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useState, useEffect } from "react";
 import MouseFollowSection from "@/components/MouseFollowSection";
 import SectionHeading from "@/components/SectionHeading";
@@ -10,7 +9,6 @@ type LeadershipMember = {
   name: string;
   bio: string;
   image: string;
-  email?: string;
 };
 
 const leadership: LeadershipMember[] = [
@@ -19,49 +17,42 @@ const leadership: LeadershipMember[] = [
     name: "Co-President",
     bio: "Shares overall strategy, partnerships, and day-to-day leadership of Youth Passion Project.",
     image: "/team/placeholder.jpg",
-    email: "ian.dilorenzo@youthpassionproject.org",
   },
   {
     personName: "Aveena Haswani",
     name: "Co-President",
     bio: "Shares overall strategy, partnerships, and day-to-day leadership of Youth Passion Project.",
     image: "/team/placeholder.jpg",
-    email: "aveena.haswani@youthpassionproject.org",
   },
   {
     personName: "Brayden White",
     name: "Vice President for Instruction",
     bio: "Brayden is the Vice President of Instruction at the Youth Passion Project. He helps build programs that allow students to explore their interests and develop new skills. He built YPP's portal for students and instructors and helps train educators while supporting student instruction and programming across the organization. Brayden also teaches the BOW Sports Capital: Introduction to Sports Economics, a course on the business and economics behind professional sports. Outside of YPP, he enjoys spending time with friends, following sports, and finding the best food wherever he can.",
     image: "/team/brayden-white.png",
-    email: "brayden.white@youthpassionproject.org",
   },
   {
     personName: "Sanvi Mehta",
     name: "Vice President for Communication",
-    bio: "Leads messaging, social media, and external communications for YPP.",
+    bio: "Sanvi is the Vice President of Communication at the Youth Passion Project. In this role, she manages sponsorship outreach, oversees parent communication, and helps expand YPP's visibility through strategic marketing and social media. Sanvi first joined YPP as an ambitious student, taking classes in health, debate, and several other subjects. Through these experiences, she developed a strong passion for the organization and its mission, wanting to further her time at YPP. Outside of YPP, Sanvi enjoys spending time with friends, watching sports, and dancing.",
     image: "/team/placeholder.jpg",
-    email: "sanvi.mehta@youthpassionproject.org",
   },
   {
     personName: "Katherine Zhang",
     name: "Chief of Staff",
     bio: "Katherine is a junior in high school on the East Coast and currently serves as Chief of Staff of the Youth Passion Project. In this role, she is responsible for overseeing recruitment, supporting staff members and their needs, and maintaining institutional knowledge to ensure continuity and efficiency in the organization. At school, Katherine is an officer of the speech and debate team, teaching lowerclassmen techniques to develop critical thinking and argumentation skills. She also enjoys learning history and Spanish. Outside of school, Katherine likes reading and hanging out with friends and family.",
     image: "/team/placeholder.jpg",
-    email: "katherine.zhang@youthpassionproject.org",
   },
   {
     personName: "Anthea Zamir",
     name: "Director of Technology",
-    bio: "Anthea is a junior in high school in Seattle and serves as Director of Technology at the Youth Passion Project. She built and maintains the organization's website and is currently developing YPP's online portal for students and instructors. In her role, she oversees the organization's technical infrastructure and works on building and improving the digital systems that support YPP's programs and operations. Outside of YPP, Anthea plays varsity golf at her school and enjoys traveling, attending concerts, and exploring new technology.",
+    bio: "Anthea is a junior in high school in Seattle and serves as the Director of Technology at the Youth Passion Project. She built and maintains the organization's website and is currently developing YPP's online portal for students and instructors. In her role, she oversees the organization's technical infrastructure and works to enhance the digital systems that support YPP's programs and operations. Previously, she also taught Introduction to Algebra 1 at YPP. Outside of her work, Anthea plays varsity golf at her school and enjoys traveling, attending concerts, and exploring new technology.",
     image: "/team/anthea-zamir.png",
-    email: "anthea.zamir@youthpassionproject.org",
   },
   {
     personName: "Yuvaan Das",
     name: "Director of Technology",
     bio: "Leads technology, systems, and digital infrastructure for programs and the organization.",
     image: "/team/placeholder.jpg",
-    email: "yuvaan.das@youthpassionproject.org",
   },
 ];
 
@@ -102,17 +93,29 @@ export default function AboutPage() {
           <p className="font-body mt-4 text-center text-lg text-[var(--ypp-muted)]">
             Who we are, what we believe, and the people behind our mission.
           </p>
-          <div className="card-ypp mt-12 overflow-hidden">
-            <div className="grid grid-cols-2 divide-x divide-[var(--ypp-border)] sm:grid-cols-4">
-              {aboutHeroStats.map(({ value, label }) => (
+
+          <div className="mt-12 overflow-hidden rounded-3xl border border-[var(--ypp-border)] bg-gradient-to-b from-[var(--ypp-blush)]/80 to-[var(--ypp-white)] shadow-[0_8px_40px_rgba(59,15,110,0.06)]">
+            <div className="border-b border-[var(--ypp-border)]/60 bg-[var(--ypp-white)]/60 px-6 py-5 text-center sm:px-8">
+              <p className="font-label text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--ypp-primary)] sm:text-xs">
+                By the numbers
+              </p>
+            </div>
+            <div className="grid grid-cols-2 lg:grid-cols-4">
+              {aboutHeroStats.map(({ value, label }, i) => (
                 <div
                   key={label}
-                  className="flex flex-col items-center justify-center px-4 py-6 text-center sm:px-6 sm:py-8"
+                  className={[
+                    "flex flex-col items-center px-5 py-9 text-center sm:px-8 sm:py-10",
+                    i % 2 === 1 ? "max-lg:border-l max-lg:border-[var(--ypp-border)]/45" : "",
+                    i >= 2 ? "max-lg:border-t max-lg:border-[var(--ypp-border)]/45" : "",
+                    i > 0 ? "lg:border-l lg:border-[var(--ypp-border)]/50" : "",
+                  ].join(" ")}
                 >
-                  <span className="font-heading text-2xl font-bold text-[var(--ypp-primary)] sm:text-3xl">
+                  <span className="font-heading text-3xl font-bold tabular-nums tracking-tight text-[var(--ypp-deep)] sm:text-4xl lg:text-[2.75rem] lg:leading-none">
                     {value}
                   </span>
-                  <span className="font-label mt-1 text-xs uppercase tracking-wider text-[var(--ypp-muted)]">
+                  <span className="mt-3 h-1 w-10 shrink-0 rounded-full bg-[var(--ypp-primary)]/25" aria-hidden />
+                  <span className="font-label mt-3 text-xs font-medium uppercase tracking-wider text-[var(--ypp-muted)]">
                     {label}
                   </span>
                 </div>
@@ -122,7 +125,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Mission & vision (lengthy) */}
+      {/* Mission and how we work */}
       <section className="bg-[var(--ypp-blush)]/60 px-4 py-16 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl">
           <div className="flex items-center gap-3">
@@ -135,58 +138,75 @@ export default function AboutPage() {
             Our Mission
           </h2>
           <p className="font-body mt-4 text-[var(--ypp-muted)] leading-relaxed">
-            The Youth Passion Project is a Delaware Nonprofit Corporation with
-            501(c)(3) exempt status. We were first created to make use of the
-            free time in people&apos;s schedules during COVID-19, and we&apos;ve
-            grown into a lasting platform for peer-to-peer learning.
-          </p>
-          <p className="font-body mt-4 text-[var(--ypp-muted)] leading-relaxed">
-            We believe that students should always have the opportunity to
-            explore new topics of interest that they cannot learn in most school
-            settings. Our goal is to provide these opportunities to those with
-            a love for learning, while also allowing high school students to
-            share their passions with others.
-          </p>
-          <p className="font-body mt-4 text-[var(--ypp-muted)] leading-relaxed">
-            We offer free online and in-person courses taught by high schoolers to
-            encourage younger students to expand and supplement their learning.
-            Our large variety of classes ranges from Songwriting to the Art of
-            Baking and Introduction to Coding in Java. Classes may be held
-            online (e.g., Zoom) or in person where we have chapters. Every
-            course emphasizes practice and commitment, and classes generally run
-            from thirty minutes to an hour, meeting once or twice a week.
+            Youth Passion Project exists to guide the stars of tomorrow —
+            connecting young people with the instructors, opportunities, and
+            community they need to discover their passions and grow into leaders.
           </p>
 
           <div className="mt-12 flex items-center gap-3">
             <span className="h-px w-8 bg-[var(--ypp-primary)]" aria-hidden />
             <p className="font-label text-xs font-semibold uppercase tracking-wider text-[var(--ypp-primary)] underline decoration-[var(--ypp-primary)] underline-offset-2">
-              Our Vision
+              How We Work
             </p>
           </div>
           <h2 className="font-heading mt-4 text-2xl font-bold text-[var(--ypp-deep)]">
-            Our Vision
+            How We Work
           </h2>
-          <p className="font-body mt-4 text-[var(--ypp-muted)] leading-relaxed">
-            We envision a world where every young person can pursue their
-            curiosity—whether academic, creative, or technical—without cost or
-            gatekeeping. By pairing passionate high school instructors with
-            eager younger learners, we build community, confidence, and skills
-            that last a lifetime. We aim to expand into new communities, develop
-            an even broader set of courses, and keep our programs 100% free for
-            all students.
-          </p>
+          <div className="mt-8 grid gap-8 sm:gap-10 md:grid-cols-3">
+            <div>
+              <h3 className="font-heading text-lg font-semibold text-[var(--ypp-ink)]">
+                In the Classroom{" "}
+                <span className="font-normal text-[var(--ypp-primary)]">
+                  (Core Instruction)
+                </span>
+              </h3>
+              <p className="font-body mt-3 text-[var(--ypp-muted)] leading-relaxed">
+                YPP brings in-person programming to partner schools across the
+                country. Students learn directly from passionate, well-trained
+                instructors in a tight-knit community setting.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-heading text-lg font-semibold text-[var(--ypp-ink)]">
+                Your YPP Journey{" "}
+                <span className="font-normal text-[var(--ypp-primary)]">
+                  (Pathways)
+                </span>
+              </h3>
+              <p className="font-body mt-3 text-[var(--ypp-muted)] leading-relaxed">
+                From your first class to long-term mentorship and special
+                opportunities — YPP supports students and instructors at every
+                stage of their journey.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-heading text-lg font-semibold text-[var(--ypp-ink)]">
+                Behind the Mission{" "}
+                <span className="font-normal text-[var(--ypp-primary)]">
+                  (Global Operations)
+                </span>
+              </h3>
+              <p className="font-body mt-3 text-[var(--ypp-muted)] leading-relaxed">
+                A dedicated leadership team handles the logistics, partnerships,
+                and technology that keep YPP running at its best.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Staff: leadership — tap a card to open modal (cursor-follow bubble) */}
-      <MouseFollowSection id="staff" className="relative scroll-mt-20 bg-[var(--ypp-lavender)]/20 px-4 py-16 sm:px-6 lg:px-8">
+      <MouseFollowSection
+        id="staff"
+        className="relative scroll-mt-[calc(var(--ypp-nav-height)+0.75rem)] bg-[var(--ypp-lavender)]/20 px-4 py-16 sm:px-6 lg:px-8"
+      >
         <div className="relative z-10 mx-auto max-w-6xl">
           <SectionHeading
             title="Leadership Team"
             subtitle="The people who guide Youth Passion Project"
           />
           <p className="font-body mt-2 text-center text-sm text-[var(--ypp-muted)]">
-            Tap a card to see full bio and contact.
+            Tap a card to read their full bio.
           </p>
           <div className="mt-12 flex flex-col items-center gap-10">
             {/* Row 1: 2 cards — Co-Presidents */}
@@ -218,31 +238,6 @@ export default function AboutPage() {
                     <h3 className="mt-1 text-lg font-semibold text-[var(--ypp-ink)]">
                       {person.name}
                     </h3>
-                    {person.email ? (
-                      <a
-                        href={`mailto:${person.email}`}
-                        onClick={(e) => e.stopPropagation()}
-                        className="mt-3 inline-flex items-center gap-1.5 rounded-md border border-[var(--ypp-primary)] px-2.5 py-1.5 font-body text-xs font-semibold text-[var(--ypp-primary)] transition-colors hover:bg-[var(--ypp-primary)] hover:text-white"
-                        aria-label={`Email ${person.personName}`}
-                      >
-                        <svg className="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                        </svg>
-                        Email
-                      </a>
-                    ) : (
-                      <Link
-                        href="/contact"
-                        onClick={(e) => e.stopPropagation()}
-                        className="mt-3 inline-flex items-center gap-1.5 rounded-md border border-[var(--ypp-primary)] px-2.5 py-1.5 font-body text-xs font-semibold text-[var(--ypp-primary)] transition-colors hover:bg-[var(--ypp-primary)] hover:text-white"
-                        aria-label={`Contact ${person.personName}`}
-                      >
-                        <svg className="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                        </svg>
-                        Contact
-                      </Link>
-                    )}
                   </div>
                 </button>
               ))}
@@ -276,31 +271,6 @@ export default function AboutPage() {
                     <h3 className="mt-1 text-lg font-semibold text-[var(--ypp-ink)]">
                       {person.name}
                     </h3>
-                    {person.email ? (
-                      <a
-                        href={`mailto:${person.email}`}
-                        onClick={(e) => e.stopPropagation()}
-                        className="mt-3 inline-flex items-center gap-1.5 rounded-md border border-[var(--ypp-primary)] px-2.5 py-1.5 font-body text-xs font-semibold text-[var(--ypp-primary)] transition-colors hover:bg-[var(--ypp-primary)] hover:text-white"
-                        aria-label={`Email ${person.personName}`}
-                      >
-                        <svg className="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                        </svg>
-                        Email
-                      </a>
-                    ) : (
-                      <Link
-                        href="/contact"
-                        onClick={(e) => e.stopPropagation()}
-                        className="mt-3 inline-flex items-center gap-1.5 rounded-md border border-[var(--ypp-primary)] px-2.5 py-1.5 font-body text-xs font-semibold text-[var(--ypp-primary)] transition-colors hover:bg-[var(--ypp-primary)] hover:text-white"
-                        aria-label={`Contact ${person.personName}`}
-                      >
-                        <svg className="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                        </svg>
-                        Contact
-                      </Link>
-                    )}
                   </div>
                 </button>
               ))}
@@ -334,31 +304,6 @@ export default function AboutPage() {
                     <h3 className="mt-1 text-lg font-semibold text-[var(--ypp-ink)]">
                       {person.name}
                     </h3>
-                    {person.email ? (
-                      <a
-                        href={`mailto:${person.email}`}
-                        onClick={(e) => e.stopPropagation()}
-                        className="mt-3 inline-flex items-center gap-1.5 rounded-md border border-[var(--ypp-primary)] px-2.5 py-1.5 font-body text-xs font-semibold text-[var(--ypp-primary)] transition-colors hover:bg-[var(--ypp-primary)] hover:text-white"
-                        aria-label={`Email ${person.personName}`}
-                      >
-                        <svg className="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                        </svg>
-                        Email
-                      </a>
-                    ) : (
-                      <Link
-                        href="/contact"
-                        onClick={(e) => e.stopPropagation()}
-                        className="mt-3 inline-flex items-center gap-1.5 rounded-md border border-[var(--ypp-primary)] px-2.5 py-1.5 font-body text-xs font-semibold text-[var(--ypp-primary)] transition-colors hover:bg-[var(--ypp-primary)] hover:text-white"
-                        aria-label={`Contact ${person.personName}`}
-                      >
-                        <svg className="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                        </svg>
-                        Contact
-                      </Link>
-                    )}
                   </div>
                 </button>
               ))}
@@ -367,23 +312,23 @@ export default function AboutPage() {
         </div>
       </MouseFollowSection>
 
-      {/* Modal: full bio, name, position, email, picture */}
+      {/* Modal: full bio, name, position, picture */}
       {selected && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-4"
+          className="fixed inset-0 z-[200] flex flex-col overflow-y-auto p-4 pb-[calc(1rem+env(safe-area-inset-bottom))] pt-[calc(var(--ypp-nav-height)+0.75rem+env(safe-area-inset-top))] items-center justify-start sm:justify-center sm:pt-[calc(var(--ypp-nav-height)+0.5rem+env(safe-area-inset-top))]"
           role="dialog"
           aria-modal="true"
           aria-labelledby="modal-name"
         >
             <button
               type="button"
-              className="absolute inset-0 bg-neutral-400/40"
+              className="absolute inset-0 z-0 bg-neutral-900/45"
               onClick={() => setSelected(null)}
-              aria-label="Close"
+              aria-label="Close dialog"
               tabIndex={-1}
             />
-          <div className="relative max-h-[90vh] w-full max-w-4xl overflow-y-auto rounded-2xl border border-[var(--ypp-border)] bg-[var(--ypp-white)] shadow-xl">
-            <div className="sticky top-0 z-10 flex justify-end border-b border-[var(--ypp-border)] bg-[var(--ypp-white)] p-2">
+          <div className="relative z-[1] w-full max-w-4xl max-h-[min(85dvh,calc(100dvh-var(--ypp-nav-height)-2.5rem))] overflow-y-auto overscroll-contain rounded-2xl border border-[var(--ypp-border)] bg-[var(--ypp-white)] shadow-2xl">
+            <div className="sticky top-0 z-10 flex justify-end border-b border-[var(--ypp-border)] bg-[var(--ypp-white)]/95 p-2 backdrop-blur-sm supports-[backdrop-filter]:bg-[var(--ypp-white)]/80">
               <button
                 type="button"
                 onClick={() => setSelected(null)}
@@ -417,39 +362,6 @@ export default function AboutPage() {
                   <h3 className="mt-1 text-lg font-semibold text-[var(--ypp-ink)]">
                     {selected.name}
                   </h3>
-                  {selected.email && (
-                    <p className="mt-2 font-body text-sm text-[var(--ypp-muted)]">
-                      <a
-                        href={`mailto:${selected.email}`}
-                        className="text-[var(--ypp-primary)] hover:underline"
-                      >
-                        {selected.email}
-                      </a>
-                    </p>
-                  )}
-                  {selected.email ? (
-                    <a
-                      href={`mailto:${selected.email}`}
-                      className="mt-3 inline-flex items-center gap-2 rounded-lg border-2 border-[var(--ypp-primary)] bg-[var(--ypp-white)] px-4 py-2 font-body text-sm font-semibold text-[var(--ypp-primary)] transition-colors hover:bg-[var(--ypp-primary)] hover:text-white"
-                      aria-label={`Email ${selected.personName}`}
-                    >
-                      <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                      </svg>
-                      Email
-                    </a>
-                  ) : (
-                    <Link
-                      href="/contact"
-                      className="mt-3 inline-flex items-center gap-2 rounded-lg border-2 border-[var(--ypp-primary)] bg-[var(--ypp-white)] px-4 py-2 font-body text-sm font-semibold text-[var(--ypp-primary)] transition-colors hover:bg-[var(--ypp-primary)] hover:text-white"
-                      aria-label={`Contact ${selected.personName}`}
-                    >
-                      <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                      </svg>
-                      Contact
-                    </Link>
-                  )}
                   <p className="font-body mt-4 text-sm leading-relaxed text-[var(--ypp-muted)] sm:text-base">
                     {selected.bio}
                   </p>

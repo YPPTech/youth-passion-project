@@ -6,7 +6,7 @@
  *    export const inPersonLocations = inPersonLocationsSample;
  * 2. Programs page and homepage will both show courses; remove the "no classes" conditionals if you prefer.
  */
-/** Empty link = no portal URL while student portal is coming soon. */
+/** Empty link = no portal URL while portal is coming soon. */
 const NO_PORTAL_LINK = "";
 
 export const onlineSessionsSample = [
