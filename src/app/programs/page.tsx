@@ -55,8 +55,7 @@ export default function ProgramsPage() {
         }
       */}
       <PageHeader
-        label="Programs & Chapters"
-        title="Programs & Classes"
+        title="Programs & Chapters"
         subtitle="Browse how YPP shows up near you and online. Our student portal is coming soon—sign-up will be available there when it launches."
       />
 
