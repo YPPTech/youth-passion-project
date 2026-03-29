@@ -41,7 +41,7 @@ const leadership: LeadershipMember[] = [
     personName: "Katherine Zhang",
     name: "Chief of Staff",
     bio: "Katherine is a junior in high school on the East Coast and currently serves as Chief of Staff of the Youth Passion Project. In this role, she is responsible for overseeing recruitment, supporting staff members and their needs, and maintaining institutional knowledge to ensure continuity and efficiency in the organization. At school, Katherine is an officer of the speech and debate team, teaching lowerclassmen techniques to develop critical thinking and argumentation skills. She also enjoys learning history and Spanish. Outside of school, Katherine likes reading and hanging out with friends and family.",
-    image: "/team/placeholder.jpg",
+    image: "/team/katherine-zhang.png",
   },
   {
     personName: "Anthea Zamir",
