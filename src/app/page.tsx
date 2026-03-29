@@ -158,23 +158,31 @@ export default function HomePage() {
                 <div className="flex items-center gap-2">
                   <span className="h-px w-6 shrink-0 bg-[var(--ypp-primary)]/70" aria-hidden />
                   <p className="font-label text-[10px] font-semibold uppercase tracking-wider text-[var(--ypp-primary)] sm:text-xs">
-                    This week
+                    {weeklySpotlight.source === "idle" ? "Between sessions" : "This week"}
                   </p>
                 </div>
                 <h3 className="font-heading mt-2 text-base font-semibold leading-snug text-[var(--ypp-deep)] sm:text-lg">
                   {weeklySpotlight.title}
                 </h3>
-                <div className="mt-2 flex flex-wrap items-center gap-2">
-                  <span className="rounded-full bg-[var(--ypp-lavender)] px-2.5 py-0.5 font-body text-xs text-[var(--ypp-muted)]">
-                    {weeklySpotlight.gradesLabel}
-                  </span>
-                  {weeklySpotlight.source === "catalog" && (
-                    <span className="rounded-full border border-[var(--ypp-border)] bg-[var(--ypp-blush)]/40 px-2.5 py-0.5 font-body text-xs font-medium text-[var(--ypp-primary)]">
-                      Live catalog
-                    </span>
-                  )}
-                </div>
-                <p className="font-body mt-2 line-clamp-2 text-xs leading-snug text-[var(--ypp-muted)] sm:text-[13px] sm:leading-relaxed">
+                {(weeklySpotlight.gradesLabel || weeklySpotlight.source === "catalog") && (
+                  <div className="mt-2 flex flex-wrap items-center gap-2">
+                    {weeklySpotlight.gradesLabel ? (
+                      <span className="rounded-full bg-[var(--ypp-lavender)] px-2.5 py-0.5 font-body text-xs text-[var(--ypp-muted)]">
+                        {weeklySpotlight.gradesLabel}
+                      </span>
+                    ) : null}
+                    {weeklySpotlight.source === "catalog" && (
+                      <span className="rounded-full border border-[var(--ypp-border)] bg-[var(--ypp-blush)]/40 px-2.5 py-0.5 font-body text-xs font-medium text-[var(--ypp-primary)]">
+                        Live catalog
+                      </span>
+                    )}
+                  </div>
+                )}
+                <p
+                  className={`font-body mt-2 text-xs leading-snug text-[var(--ypp-muted)] sm:text-[13px] sm:leading-relaxed ${
+                    weeklySpotlight.source === "catalog" ? "line-clamp-2" : ""
+                  }`}
+                >
                   {weeklySpotlight.blurb}
                 </p>
                 {spotlightCtaExternal ? (

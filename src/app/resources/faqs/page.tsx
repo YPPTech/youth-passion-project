@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import Link from "next/link";
 import PageHeader from "@/components/PageHeader";
 import { CONTACT_EMAILS } from "@/constants/site";
@@ -22,7 +23,56 @@ function textWithEmailLinks(text: string) {
   );
 }
 
-const faqCategories = [
+function mailTo(addr: string, className?: string) {
+  return (
+    <a href={`mailto:${addr}`} className={className ?? "font-medium text-[var(--ypp-primary)] hover:underline"}>
+      {addr}
+    </a>
+  );
+}
+
+/** Matches /contact: main inbox first, then specialty addresses from CONTACT_EMAILS. */
+function ContactFaqAnswer() {
+  const e = CONTACT_EMAILS;
+  return (
+    <div className="space-y-3">
+      <p>
+        The best starting point is our{" "}
+        <Link href="/contact" className="font-medium text-[var(--ypp-primary)] hover:underline">
+          Contact Us
+        </Link>{" "}
+        page. It features the main inbox for students, families, instructors, and partners at {mailTo(e.support)}—we’ll
+        route your message to the right team. Enrollment, programs, partnerships, or anything else: send one message and
+        we’ll help.
+      </p>
+      <p className="font-medium text-[var(--ypp-ink)]">Specialized inboxes</p>
+      <ul className="list-disc space-y-2 pl-5">
+        <li>
+          Media inquiries — Public Relations: {mailTo(e.marketing)}
+        </li>
+        <li>
+          Website, portal, and technical issues: {mailTo(e.tech)}
+        </li>
+        <li>
+          In-person instructor support: {mailTo(e.inPersonInstructors)}
+        </li>
+        <li>
+          Online instructor support: {mailTo(e.onlineInstructorSupport)}
+        </li>
+      </ul>
+      <p>
+        You can also connect with us on Instagram or X (Twitter). For postal mail, phone, or Zoom, email the relevant
+        address above and we can arrange it.
+      </p>
+    </div>
+  );
+}
+
+type FaqItem =
+  | { q: string; a: string }
+  | { q: string; answer: ReactNode };
+
+const faqCategories: { title: string; items: FaqItem[] }[] = [
   {
     title: "For Students & Families",
     items: [
@@ -130,7 +180,7 @@ const faqCategories = [
       },
       {
         q: "How do I contact the Youth Passion Project?",
-        a: "Students and parents: Enrollment and Student Services at support@youthpassionproject.org\n\nMedia inquiries: Public Relations at marketing@youthpassionproject.org\n\nIn-person instructors: In-person Support at in-person-instructors@youthpassionproject.org\n\nOnline instructors: Online Support at online-instructor-support@youthpassionproject.org\n\nYou can also connect with us on Instagram or X (Twitter). For postal mail, phone, or Zoom, email the relevant address above and we can arrange it.",
+        answer: <ContactFaqAnswer />,
       },
     ],
   },
@@ -166,9 +216,13 @@ export default function FAQsPage() {
                         </span>
                       </summary>
                       <div className="border-t border-[var(--ypp-border)] px-5 py-4">
-                        <p className="font-body text-[var(--ypp-muted)] leading-relaxed whitespace-pre-line">
-                          {textWithEmailLinks(faq.a)}
-                        </p>
+                        {"answer" in faq ? (
+                          <div className="font-body text-[var(--ypp-muted)] leading-relaxed">{faq.answer}</div>
+                        ) : (
+                          <p className="font-body text-[var(--ypp-muted)] leading-relaxed whitespace-pre-line">
+                            {textWithEmailLinks(faq.a)}
+                          </p>
+                        )}
                       </div>
                     </details>
                   </li>

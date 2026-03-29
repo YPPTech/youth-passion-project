@@ -16,13 +16,13 @@ const leadership: LeadershipMember[] = [
   {
     personName: "Ian DiLorenzo",
     name: "Co-President",
-    bio: "Shares overall strategy, partnerships, and day-to-day leadership of Youth Passion Project.",
+    bio: "Ian is the Co-President of the Youth Passion Project. At YPP, he is the director of our in-person learning chapters. Outside of YPP, he loves the outdoors, movies, and learning about languages. He is currently studying both Latin and Spanish at Scarsdale High School, and loves to learn about the culture and history behind all sorts of different languages.",
     image: "/team/placeholder.jpg",
   },
   {
     personName: "Aveena Haswani",
     name: "Co-President",
-    bio: "Shares overall strategy, partnerships, and day-to-day leadership of Youth Passion Project.",
+    bio: "Aveena is the Co-President of the Youth Passion Project. At YPP, she manages the tech team and oversees the overall communication strategy. Outside of YPP, she loves swimming, baking, and spending time with friends.",
     image: "/team/placeholder.jpg",
   },
   {
@@ -35,7 +35,7 @@ const leadership: LeadershipMember[] = [
     personName: "Sanvi Mehta",
     name: "Vice President for Communication",
     bio: "Sanvi is the Vice President of Communication at the Youth Passion Project. In this role, she manages sponsorship outreach, oversees parent communication, and helps expand YPP's visibility through strategic marketing and social media. Sanvi first joined YPP as an ambitious student, taking classes in health, debate, and several other subjects. Through these experiences, she developed a strong passion for the organization and its mission, wanting to further her time at YPP. Outside of YPP, Sanvi enjoys spending time with friends, watching sports, and dancing.",
-    image: "/team/placeholder.jpg",
+    image: "/team/sanvi-mehta.png",
   },
   {
     personName: "Katherine Zhang",
@@ -58,7 +58,7 @@ const leadership: LeadershipMember[] = [
 ];
 
 const aboutHeroStats = [
-  { value: "3,200+", label: "Students" },
+  { value: "3,400+", label: "Students" },
   { value: "200+", label: "Instructors" },
   { value: "110+", label: "Courses" },
   { value: "30+", label: "Countries" },
@@ -126,7 +126,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <ClassInActionGallery subtitle="Our programs blend live video, shared tools like Scratch and Lichess, and thoughtful instruction so students stay engaged—whether they are coding their first project or studying an endgame." />
+      <ClassInActionGallery subtitle="This is how our online sessions work: live video, shared tools like Scratch and Lichess, and instruction tuned for the screen so students stay engaged—whether they are coding their first project or studying an endgame. In-person classes are a different experience (same programs and care, different room and logistics)." />
 
       {/* Mission and how we work */}
       <section className="bg-[var(--ypp-blush)]/60 px-4 py-16 sm:px-6 lg:px-8">

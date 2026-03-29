@@ -3,7 +3,21 @@ import PageHeader from "@/components/PageHeader";
 import SectionHeading from "@/components/SectionHeading";
 import { CONTACT_EMAILS } from "@/constants/site";
 
+function EmailWithBreak({ addr }: { addr: string }) {
+  const i = addr.indexOf("@");
+  if (i === -1) return addr;
+  return (
+    <>
+      {addr.slice(0, i + 1)}
+      <wbr />
+      {addr.slice(i + 1)}
+    </>
+  );
+}
+
 export default function ContactPage() {
+  const supportMail = CONTACT_EMAILS.support;
+
   return (
     <div>
       <PageHeader
@@ -19,22 +33,25 @@ export default function ContactPage() {
             title="General Contact"
             subtitle="Enrollment, programs, partnerships, or anything else—send one message and we’ll help."
           />
-          <div className="relative mt-10 overflow-hidden rounded-2xl border-2 border-[var(--ypp-primary)]/30 bg-[var(--ypp-white)] px-6 py-10 text-center shadow-[var(--shadow-lg)] sm:px-10 sm:py-12">
+          <div className="relative mt-8 overflow-hidden rounded-2xl border-2 border-[var(--ypp-primary)]/30 bg-[var(--ypp-white)] px-5 py-7 shadow-[var(--shadow-lg)] sm:px-8 sm:py-8">
             <div
               className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[var(--ypp-lavender)]/40 via-transparent to-[var(--ypp-blush)]/50"
               aria-hidden
             />
-            <div className="relative">
-              <p className="font-body text-sm font-medium text-[var(--ypp-muted)] sm:text-base">
+            <div className="relative mx-auto w-full max-w-xl">
+              <p
+                id="contact-general-inbox-desc"
+                className="font-body text-base font-medium leading-snug text-[var(--ypp-muted)] sm:text-lg"
+              >
                 Main inbox (students, families, instructors, and partners)
               </p>
               <a
-                href={`mailto:${CONTACT_EMAILS.support}`}
-                className="mt-6 inline-flex max-w-full flex-wrap items-center justify-center gap-3 break-all font-heading text-2xl font-bold tracking-tight text-[var(--ypp-primary)] transition-colors hover:text-[var(--ypp-deep)] hover:underline sm:break-normal sm:text-3xl md:text-4xl md:leading-tight"
+                href={`mailto:${supportMail}`}
+                aria-describedby="contact-general-inbox-desc"
+                className="group mt-4 flex w-full min-w-0 items-start gap-3 rounded-xl py-1.5 pr-2 text-[var(--ypp-deep)] no-underline outline-offset-2 transition-colors hover:text-[var(--ypp-primary)] hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ypp-primary)] focus-visible:ring-offset-2 sm:mt-5 sm:gap-3 sm:py-2"
               >
-                {CONTACT_EMAILS.support}
                 <svg
-                  className="h-7 w-7 shrink-0 sm:h-8 sm:w-8 md:h-9 md:w-9"
+                  className="mt-0.5 h-6 w-6 shrink-0 text-[var(--ypp-primary)] group-hover:text-[var(--ypp-mid)] sm:mt-1 sm:h-7 sm:w-7"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -42,6 +59,9 @@ export default function ContactPage() {
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
+                <span className="min-w-0 flex-1 break-words font-heading text-lg font-semibold leading-snug sm:text-xl md:text-2xl md:leading-snug">
+                  <EmailWithBreak addr={supportMail} />
+                </span>
               </a>
             </div>
           </div>

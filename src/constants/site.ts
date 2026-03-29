@@ -58,7 +58,7 @@ export const CONTACT_EMAILS = {
 } as const;
 
 export const statsByTheNumbers = [
-  { value: "3,200+", label: "Lifetime Student Sign-ups" },
+  { value: "3,400+", label: "Lifetime Student Sign-ups" },
   { value: "200+", label: "Carefully Selected Instructors" },
   { value: "400+", label: "Sections Taught of 110+ Unique Courses" },
   { value: "7", label: "Average Class Size" },
@@ -81,6 +81,8 @@ export const applyRoles = [
     id: "instructor",
     title: "Instructor",
     ageGrade: "High school students (grades 9–12)",
+    /** One line for /apply cards; homepage still uses shortDescription. */
+    applyTeaser: "Teach a course you love—weekly sessions online or in person.",
     shortDescription:
       "Teach a course in your passion to younger students. Design or follow a curriculum, run weekly sessions online or in person. Training and support provided.",
     description:
@@ -98,6 +100,7 @@ export const applyRoles = [
     id: "chapter-president",
     title: "Chapter President",
     ageGrade: "High school students (grades 9–12)",
+    applyTeaser: "Lead a YPP chapter—recruit instructors and host local programs.",
     shortDescription:
       "Launch and run a YPP chapter in your community. Lead recruitment and support of instructors, plan classes and events. We recommend contacting your school first.",
     description:

@@ -33,79 +33,32 @@ export function pickWeeklyIndex(weekYear: number, weekNumber: number, length: nu
 
 export type WeeklySpotlight = {
   title: string;
-  gradesLabel: string;
+  /** Omitted when `source` is `idle` (no section to highlight). */
+  gradesLabel?: string;
   blurb: string;
   ctaLabel: string;
   ctaHref: string;
   disclaimer?: string;
-  source: "editorial" | "catalog";
+  source: "catalog" | "idle";
 };
 
-/** Curated examples—tone aligned with real offerings; not an open enrollment claim. */
-const EDITORIAL_SPOTLIGHTS: readonly Omit<WeeklySpotlight, "source">[] = [
-  {
-    title: "Introduction to Coding in Java",
-    gradesLabel: "Grades 6–9",
-    blurb: "Fundamentals of programming with small projects—great for middle schoolers new to CS.",
-    ctaLabel: "See Programs & Chapters",
-    ctaHref: "/programs",
-    disclaimer: "Illustrative example—the full catalog returns with the student portal.",
-  },
-  {
-    title: "Songwriting & Music",
-    gradesLabel: "Grades 4–8",
-    blurb: "Melody, lyrics, and basic theory—students leave with a finished piece of their own.",
-    ctaLabel: "See Programs & Chapters",
-    ctaHref: "/programs",
-    disclaimer: "Illustrative example—the full catalog returns with the student portal.",
-  },
-  {
-    title: "Art of Baking",
-    gradesLabel: "Grades 5–8",
-    blurb: "From scratch cookies to simple pastries—measuring, mixing, and kitchen confidence.",
-    ctaLabel: "See Programs & Chapters",
-    ctaHref: "/programs",
-    disclaimer: "Illustrative example—the full catalog returns with the student portal.",
-  },
-  {
-    title: "Creative Writing",
-    gradesLabel: "Grades 5–9",
-    blurb: "Short stories and poetry in a workshop setting—voice, revision, and peer feedback.",
-    ctaLabel: "See Programs & Chapters",
-    ctaHref: "/programs",
-    disclaimer: "Illustrative example—the full catalog returns with the student portal.",
-  },
-  {
-    title: "Competition Math",
-    gradesLabel: "Grades 6–8",
-    blurb: "Problem-solving strategies beyond the textbook—patterns, proofs, and contest-style puzzles.",
-    ctaLabel: "See Programs & Chapters",
-    ctaHref: "/programs",
-    disclaimer: "Illustrative example—the full catalog returns with the student portal.",
-  },
-  {
-    title: "Introduction to Chess",
-    gradesLabel: "Grades 3–7",
-    blurb: "Openings, tactics, and endgame ideas—play, analyze, and build focus in a fun group.",
-    ctaLabel: "See Programs & Chapters",
-    ctaHref: "/programs",
-    disclaimer: "Illustrative example—the full catalog returns with the student portal.",
-  },
-  {
-    title: "Public Speaking & Debate",
-    gradesLabel: "Grades 6–10",
-    blurb: "Structure arguments, own the stage, and speak with clarity—skills for school and beyond.",
-    ctaLabel: "See Programs & Chapters",
-    ctaHref: "/programs",
-    disclaimer: "Illustrative example—the full catalog returns with the student portal.",
-  },
-];
+/**
+ * Shown when `getNewestCourses` is empty—honest copy instead of rotating sample courses.
+ * Remove or narrow this once `programsData` lists live sections again.
+ */
+const IDLE_SPOTLIGHT: Omit<WeeklySpotlight, "source"> = {
+  title: "No open class list right now",
+  blurb:
+    "We’re between published sections. When registration opens, you’ll enroll through the student portal and see offerings on Programs & Chapters. Until then, explore how chapters work, check the calendar, or contact us—we’re still here.",
+  ctaLabel: "Programs & Chapters",
+  ctaHref: "/programs",
+};
 
 export function getWeeklySpotlight(now = new Date()): WeeklySpotlight {
-  const { weekYear, weekNumber } = getIsoWeekKey(now);
   const catalog = getNewestCourses(200);
 
   if (catalog.length > 0) {
+    const { weekYear, weekNumber } = getIsoWeekKey(now);
     const idx = pickWeeklyIndex(weekYear, weekNumber, catalog.length);
     const c = catalog[idx]!;
     const gradesLabel = /^grades\s+/i.test(c.grades) ? c.grades : `Grades ${c.grades}`;
@@ -120,7 +73,5 @@ export function getWeeklySpotlight(now = new Date()): WeeklySpotlight {
     };
   }
 
-  const idx = pickWeeklyIndex(weekYear, weekNumber, EDITORIAL_SPOTLIGHTS.length);
-  const e = EDITORIAL_SPOTLIGHTS[idx]!;
-  return { ...e, source: "editorial" };
+  return { ...IDLE_SPOTLIGHT, source: "idle" };
 }
