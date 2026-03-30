@@ -17,13 +17,13 @@ const leadership: LeadershipMember[] = [
     personName: "Ian DiLorenzo",
     name: "Co-President",
     bio: "Ian is the Co-President of the Youth Passion Project. At YPP, he is the director of our in-person learning chapters. Outside of YPP, he loves the outdoors, movies, and learning about languages. He is currently studying both Latin and Spanish at Scarsdale High School, and loves to learn about the culture and history behind all sorts of different languages.",
-    image: "/team/placeholder.jpg",
+    image: "/team/ian-dilorenzo.png",
   },
   {
     personName: "Aveena Haswani",
     name: "Co-President",
     bio: "Aveena is the Co-President of the Youth Passion Project. At YPP, she manages the tech team and oversees the overall communication strategy. Outside of YPP, she loves swimming, baking, and spending time with friends.",
-    image: "/team/placeholder.jpg",
+    image: "/team/aveena-haswani.png",
   },
   {
     personName: "Brayden White",
@@ -53,7 +53,7 @@ const leadership: LeadershipMember[] = [
     personName: "Yuvaan Das",
     name: "Director of Technology",
     bio: "Leads technology, systems, and digital infrastructure for programs and the organization.",
-    image: "/team/placeholder.jpg",
+    image: "/team/yuvaan-das.png",
   },
 ];
 
