@@ -52,7 +52,7 @@ const leadership: LeadershipMember[] = [
   {
     personName: "Yuvaan Das",
     name: "Director of Technology",
-    bio: "Leads technology, systems, and digital infrastructure for programs and the organization.",
+    bio: "Yuvaan is a Director of Technology at the Youth Passion Project. In this role, he helps develop and maintain the organization’s technical systems, working to improve the digital experience for both students and instructors. He collaborates with team members to support the platform’s functionality and ensure that YPP’s programs run smoothly online. When he’s not building or troubleshooting systems, Yuvaan enjoys playing tennis, competing in public forum debate, and spending time with friends.",
     image: "/team/yuvaan-das.png",
   },
 ];
@@ -323,13 +323,13 @@ export default function AboutPage() {
           aria-modal="true"
           aria-labelledby="modal-name"
         >
-            <button
-              type="button"
-              className="absolute inset-0 z-0 bg-neutral-900/45"
-              onClick={() => setSelected(null)}
-              aria-label="Close dialog"
-              tabIndex={-1}
-            />
+          <button
+            type="button"
+            className="absolute inset-0 z-0 bg-neutral-900/45"
+            onClick={() => setSelected(null)}
+            aria-label="Close dialog"
+            tabIndex={-1}
+          />
           <div className="relative z-[1] w-full max-w-4xl max-h-[min(85dvh,calc(100dvh-var(--ypp-nav-height)-2.5rem))] overflow-y-auto overscroll-contain rounded-2xl border border-[var(--ypp-border)] bg-[var(--ypp-white)] shadow-2xl">
             <div className="sticky top-0 z-10 flex justify-end border-b border-[var(--ypp-border)] bg-[var(--ypp-white)]/95 p-2 backdrop-blur-sm supports-[backdrop-filter]:bg-[var(--ypp-white)]/80">
               <button
