@@ -45,8 +45,8 @@ const leadership: LeadershipMember[] = [
   },
   {
     personName: "Anthea Zamir",
-    name: "Director of Technology",
-    bio: "Anthea is a junior in high school in Seattle and serves as the Director of Technology at the Youth Passion Project. She built and maintains the organization's website and is currently developing YPP's online portal for students and instructors. In her role, she oversees the organization's technical infrastructure and works to enhance the digital systems that support YPP's programs and operations. Previously, she also taught Introduction to Algebra 1 at YPP. Outside of her work, Anthea plays varsity golf at her school and enjoys traveling, attending concerts, and exploring new technology.",
+    name: "Chief Technology Officer",
+    bio: "Anthea is a junior in high school in Seattle and serves as the Chief Technology Officer at the Youth Passion Project. She built and maintains the organization's website and is currently developing YPP's online portal for students and instructors. In her role, she oversees the organization's technical infrastructure and works to enhance the digital systems that support YPP's programs and operations. Previously, she also taught Introduction to Algebra 1 at YPP. Outside of her work, Anthea plays varsity golf at her school and enjoys traveling, attending concerts, and exploring new technology.",
     image: "/team/anthea-zamir.png",
   },
   {
