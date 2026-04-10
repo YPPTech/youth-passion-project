@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import ClassInActionGallery from "@/components/ClassInActionGallery";
-import MouseFollowSection from "@/components/MouseFollowSection";
 import SectionHeading from "@/components/SectionHeading";
 
 type LeadershipMember = {
@@ -198,12 +197,12 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Staff: leadership — tap a card to open modal (cursor-follow bubble) */}
-      <MouseFollowSection
+      {/* Staff: leadership — plain section (no overflow:hidden; avoids clipping hover/focus and #staff scroll) */}
+      <section
         id="staff"
-        className="relative scroll-mt-[calc(var(--ypp-nav-height)+0.75rem)] bg-[var(--ypp-lavender)]/20 px-4 py-16 sm:px-6 lg:px-8"
+        className="scroll-mt-[calc(var(--ypp-nav-height)+0.75rem)] bg-[var(--ypp-lavender)]/20 px-4 py-16 sm:px-6 lg:px-8"
       >
-        <div className="relative z-10 mx-auto max-w-6xl">
+        <div className="mx-auto max-w-6xl min-w-0">
           <SectionHeading
             title="Leadership Team"
             subtitle="The people who guide Youth Passion Project"
@@ -211,15 +210,13 @@ export default function AboutPage() {
           <p className="font-body mt-2 text-center text-sm text-[var(--ypp-muted)]">
             Tap a card to read their full bio.
           </p>
-          <div className="mt-12 flex flex-col items-center gap-10">
-            {/* Row 1: 2 cards — Co-Presidents */}
-            <div className="flex flex-wrap justify-center gap-10">
-              {leadership.slice(0, 2).map((person, i) => (
+          <ul className="mt-12 flex list-none flex-wrap justify-center gap-x-10 gap-y-10">
+            {leadership.map((person) => (
+              <li key={person.personName} className="w-full max-w-[18rem] min-w-0 sm:w-72 sm:max-w-none">
                 <button
                   type="button"
-                  key={`leadership-0-${i}`}
                   onClick={() => setSelected(person)}
-                  className="card-ypp w-72 shrink-0 cursor-pointer overflow-hidden p-0 text-left transition-transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-[var(--ypp-primary)]"
+                  className="card-ypp w-full cursor-pointer overflow-hidden p-0 text-left transition-transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-[var(--ypp-primary)]"
                 >
                   <div className="aspect-square bg-[var(--ypp-border)] overflow-hidden">
                     {person.image && person.image !== "/team/placeholder.jpg" ? (
@@ -243,77 +240,11 @@ export default function AboutPage() {
                     </h3>
                   </div>
                 </button>
-              ))}
-            </div>
-            {/* Row 2: 3 cards */}
-            <div className="flex flex-wrap justify-center gap-10">
-              {leadership.slice(2, 5).map((person, i) => (
-                <button
-                  type="button"
-                  key={`leadership-1-${i}`}
-                  onClick={() => setSelected(person)}
-                  className="card-ypp w-72 shrink-0 cursor-pointer overflow-hidden p-0 text-left transition-transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-[var(--ypp-primary)]"
-                >
-                  <div className="aspect-square bg-[var(--ypp-border)] overflow-hidden">
-                    {person.image && person.image !== "/team/placeholder.jpg" ? (
-                      <img
-                        src={person.image}
-                        alt=""
-                        className="h-full w-full object-cover object-[50%_38%]"
-                      />
-                    ) : (
-                      <div className="flex h-full items-center justify-center text-[var(--ypp-muted)] text-sm">
-                        Photo
-                      </div>
-                    )}
-                  </div>
-                  <div className="p-5">
-                    <p className="text-xs font-semibold tracking-wider text-[var(--ypp-primary)]">
-                      {person.personName}
-                    </p>
-                    <h3 className="mt-1 text-lg font-semibold text-[var(--ypp-ink)]">
-                      {person.name}
-                    </h3>
-                  </div>
-                </button>
-              ))}
-            </div>
-            {/* Row 3: 2 cards */}
-            <div className="flex flex-wrap justify-center gap-10">
-              {leadership.slice(5, 7).map((person, i) => (
-                <button
-                  type="button"
-                  key={`leadership-2-${i}`}
-                  onClick={() => setSelected(person)}
-                  className="card-ypp w-72 shrink-0 cursor-pointer overflow-hidden p-0 text-left transition-transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-[var(--ypp-primary)]"
-                >
-                  <div className="aspect-square bg-[var(--ypp-border)] overflow-hidden">
-                    {person.image && person.image !== "/team/placeholder.jpg" ? (
-                      <img
-                        src={person.image}
-                        alt=""
-                        className="h-full w-full object-cover object-[50%_38%]"
-                      />
-                    ) : (
-                      <div className="flex h-full items-center justify-center text-[var(--ypp-muted)] text-sm">
-                        Photo
-                      </div>
-                    )}
-                  </div>
-                  <div className="p-5">
-                    <p className="text-xs font-semibold tracking-wider text-[var(--ypp-primary)]">
-                      {person.personName}
-                    </p>
-                    <h3 className="mt-1 text-lg font-semibold text-[var(--ypp-ink)]">
-                      {person.name}
-                    </h3>
-                  </div>
-                </button>
-              ))}
-            </div>
-          </div>
+              </li>
+            ))}
+          </ul>
         </div>
-      </MouseFollowSection>
+      </section>
 
       {/* Modal: full bio, name, position, picture */}
       {selected && (

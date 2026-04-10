@@ -131,7 +131,7 @@ const faqCategories: { title: string; items: FaqItem[] }[] = [
     items: [
       {
         q: "How do I become an instructor?",
-        a: "High school students can apply through our Become an Instructor page. You’ll share your passion, proposed course idea, and availability. Our team reviews applications and supports new instructors through training and curriculum help.",
+        a: "High school students can apply from our Apply for a role page (or start at Join Us → Teach or lead). You’ll share your passion, proposed course idea, and availability. Our team reviews applications and supports new instructors through training and curriculum help.",
       },
       {
         q: "What’s the time commitment for teaching a course?",
@@ -147,7 +147,7 @@ const faqCategories: { title: string; items: FaqItem[] }[] = [
       },
       {
         q: "I’m not in high school. How can I help?",
-        a: "Our instructor and volunteer roles—including curriculum development, outreach, and operations—are for high school students only. You must be in high school to apply. Check the Become an Instructor page for current opportunities or email us at support@youthpassionproject.org with questions.",
+        a: "Our instructor and volunteer roles—including curriculum development, outreach, and operations—are for high school students only. You must be in high school to apply. See Join Us or Apply for a role for openings, or email us at support@youthpassionproject.org with questions.",
       },
     ],
   },

@@ -5,7 +5,7 @@ const navigateLinks = [
   { href: "/about", label: "About Us" },
   { href: "/programs", label: "Programs & Chapters" },
   { href: "/programs/calendar", label: "Calendar" },
-  { href: "/apply", label: "Become an Instructor" },
+  { href: "/join", label: "Join Us" },
   { href: "/donate", label: "Donate" },
 ];
 

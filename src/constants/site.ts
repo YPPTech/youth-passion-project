@@ -82,16 +82,15 @@ export const applyRoles = [
     title: "Instructor",
     ageGrade: "High school students (grades 9–12)",
     /** One line for /apply cards; homepage still uses shortDescription. */
-    applyTeaser: "Teach a course you love—weekly sessions online or in person.",
+    applyTeaser: "Teach a subject you love—online or in person.",
     shortDescription:
-      "Teach a course in your passion to younger students. Design or follow a curriculum, run weekly sessions online or in person. Training and support provided.",
+      "Teach younger students in your passion area. Weekly sessions, curriculum support, and training provided.",
     description:
-      "Teach a course in your passion to younger students. You'll design or follow a curriculum, run weekly sessions online (e.g., Zoom) or in person at chapter locations, and help students practice and grow. Classes typically run 30–60 minutes, 1–2 times per week.",
+      "Teach younger students in your passion area. Run sessions online or at a chapter; typical classes are 30–60 minutes, 1–2 times per week.",
     details: [
-      "Selective application process; we provide training and ongoing support.",
-      "You'll share your course idea or topic and how you'd structure sessions.",
-      "Mentorship is available from experienced officers (college advice, role guidance, and beyond).",
-      "Part of a global community—past instructors have been accepted to top universities nationwide.",
+      "Selective application; training and support included.",
+      "You’ll outline your course idea and how you’d run sessions.",
+      "Mentorship from experienced YPP leaders.",
     ],
     applyLink: INSTRUCTOR_APPLICATION_URL,
     applyLabel: "Instructor application (25–26)",
@@ -100,16 +99,15 @@ export const applyRoles = [
     id: "chapter-president",
     title: "Chapter President",
     ageGrade: "High school students (grades 9–12)",
-    applyTeaser: "Lead a YPP chapter—recruit instructors and host local programs.",
+    applyTeaser: "Start or run a chapter—recruit instructors and host local programs.",
     shortDescription:
-      "Launch and run a YPP chapter in your community. Lead recruitment and support of instructors, plan classes and events. We recommend contacting your school first.",
+      "Lead a chapter in your area: recruit instructors, plan events, and work with your school. Contact your school first.",
     description:
-      "Coordinate the launch and operation of a YPP chapter in your community. Lead recruitment and support of student volunteers and instructors, plan classes and events, and serve as the link between YPP and your school.",
+      "Coordinate a YPP chapter: recruit volunteers and instructors, plan classes and events, and connect your school with YPP.",
     details: [
-      "We recommend reaching out to your school administration about establishing a chapter before applying.",
-      "The form asks about your school, grade, and why you want to lead a chapter.",
-      "You'll outline how you'd recruit instructors and run local sessions.",
-      "Ongoing support and resources from YPP leadership to help your chapter succeed.",
+      "Talk to your school before applying when possible.",
+      "The form covers your school, grade, and why you want to lead.",
+      "Support from YPP leadership and resources for your chapter.",
     ],
     applyLink: CHAPTER_PRESIDENT_APPLICATION_URL,
     applyLabel: "Chapter President application",
@@ -125,64 +123,3 @@ export const openPositions = applyRoles.map((r) => ({
   description: r.shortDescription,
   href: `/apply#${r.id}` as const,
 }));
-
-export const valuePills = [
-  { label: "Grow" },
-  { label: "Lead" },
-  { label: "Connect" },
-  { label: "Create" },
-] as const;
-
-/** Who We Are section: value propositions with title and description. */
-export const valueItems = [
-  {
-    title: "Grow",
-    description:
-      "Build real skills through instruction by peers who are deeply passionate about what they teach.",
-  },
-  {
-    title: "Lead",
-    description:
-      "Take on leadership as instructors, chapter presidents, and officers to grow beyond the ordinary classroom.",
-  },
-  {
-    title: "Connect",
-    description:
-      "Join a community spanning 30+ US states and countries around the world who have the same purpose.",
-  },
-  {
-    title: "Create",
-    description:
-      "Turn your passion into something real such as projects, communities, and lasting impact.",
-  },
-] as const;
-
-export const missionOneLiner =
-  "Connecting young individuals with meaningful experiences, education, and leadership opportunities that ignite lifelong purpose.";
-
-export const visionOneLiner =
-  "A world where every young person has the tools, support, and confidence to pursue their passion and create positive change.";
-
-export const featuredPrograms = [
-  {
-    title: "STEM Innovation Lab",
-    description:
-      "Hands-on engineering and science challenges. Robotics, coding, and design thinking for future innovators.",
-    href: "/programs",
-    icon: "microscope",
-  },
-  {
-    title: "Creative Arts Collective",
-    description:
-      "Songwriting, visual art, and creative writing. Explore and share your artistic passions with peers.",
-    href: "/programs",
-    icon: "palette",
-  },
-  {
-    title: "Leadership & Civic Action",
-    description:
-      "Build confidence and skills to lead. From public speaking to community projects and peer mentorship.",
-    href: "/programs",
-    icon: "graduation",
-  },
-] as const;

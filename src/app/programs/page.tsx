@@ -63,9 +63,7 @@ export default function ProgramsPage() {
         <div className="mx-auto w-full max-w-6xl min-w-0">
           <h2 className="sr-only">Program types</h2>
           <p className="font-body mx-auto max-w-3xl text-center text-pretty text-base leading-relaxed text-[var(--ypp-muted)] sm:text-lg">
-            Our programs span <span className="font-medium text-[var(--ypp-ink)]">subjects, formats, and locations</span>
-            —so you can follow your curiosity as a learner, or share what you love as an instructor, in whatever shape
-            fits you best.
+            Online and in-person options—learn something new or teach what you love.
           </p>
           <ul className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-3 sm:items-stretch">
             {programTypes.map(({ title, description, sectionId }) => (
@@ -86,8 +84,8 @@ export default function ProgramsPage() {
           </ul>
           <p className="font-body mx-auto mt-10 max-w-2xl text-center text-pretty text-sm text-[var(--ypp-muted)] sm:text-base">
             Interested in building a curriculum for YPP?{" "}
-            <Link href="/apply" className={`inline-flex items-center gap-1 ${programModelLinkClass}`}>
-              Apply to Teach
+            <Link href="/join#teach-or-lead" className={`inline-flex items-center gap-1 ${programModelLinkClass}`}>
+              Apply to teach
               <span aria-hidden>→</span>
             </Link>
           </p>
@@ -244,8 +242,8 @@ export default function ProgramsPage() {
           </p>
           <p className="font-body mt-6 text-sm text-[var(--ypp-muted)] sm:text-base">
             Want to teach?{" "}
-            <Link href="/apply" className={`font-medium ${programModelLinkClass}`}>
-              Apply to Teach →
+            <Link href="/join#teach-or-lead" className={`font-medium ${programModelLinkClass}`}>
+              Apply to teach →
             </Link>
           </p>
         </div>

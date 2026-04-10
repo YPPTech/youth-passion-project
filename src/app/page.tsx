@@ -8,7 +8,6 @@ import {
   statsByTheNumbers,
   hiringRolePills,
   openPositions,
-  valueItems,
 } from "@/constants/site";
 
 /** Hero aside: subject chips → Programs & Chapters (/programs). */
@@ -20,59 +19,6 @@ const passionTopics = [
   { label: "Arts", href: "/programs" },
   { label: "Languages & Culture", href: "/programs" },
 ] as const;
-
-function IconTarget() {
-  return (
-    <svg className="h-10 w-10" viewBox="0 0 40 40" fill="none" aria-hidden>
-      <circle cx="20" cy="20" r="16" stroke="currentColor" strokeWidth="2" />
-      <circle cx="20" cy="20" r="10" stroke="currentColor" strokeWidth="1.5" />
-      <circle cx="20" cy="20" r="4" fill="currentColor" />
-    </svg>
-  );
-}
-
-function IconStarburst() {
-  return (
-    <svg className="h-10 w-10" viewBox="0 0 40 40" fill="currentColor" aria-hidden>
-      <path d="M20 2l3 10 10 3-10 3-3 10-3-10-10-3 10-3 3-10z" />
-    </svg>
-  );
-}
-
-/** Who We Are value icons — on-brand, consistent weight, centered in 24x24. */
-const valueIconClass = "h-5 w-5 shrink-0";
-const valueIconStroke = 1.75;
-
-function IconGrow() {
-  return (
-    <svg className={valueIconClass} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={valueIconStroke} strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-      <path d="M12 22V12M12 12c-2.5 0-4-2-4-4.5S9 4 12 4s4 2 4 4.5-1.5 3.5-4 3.5z" />
-      <path d="M9 9l1.5 1.5M15 9l-1.5 1.5" />
-    </svg>
-  );
-}
-function IconLead() {
-  return (
-    <svg className={valueIconClass} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={valueIconStroke} strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-      <circle cx="12" cy="12" r="4" />
-      <path d="M12 2v2M12 20v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M2 12h2M20 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4" />
-    </svg>
-  );
-}
-function IconConnect() {
-  return (
-    <svg className={valueIconClass} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={valueIconStroke} strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-      <path d="M12 21.5c-2.2-1.8-7-5.5-7-10C5 6.4 8.1 4 12 4s7 2.4 7 7.5c0 4.5-4.8 8.2-7 10z" />
-    </svg>
-  );
-}
-function IconCreate() {
-  return (
-    <svg className={valueIconClass} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={valueIconStroke} strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-      <path d="M12 2l2.5 7.5L22 12l-7.5 2.5L12 22l-2.5-7.5L2 12l7.5-2.5L12 2z" />
-    </svg>
-  );
-}
 
 export default function HomePage() {
   const weeklySpotlight = getWeeklySpotlight();
@@ -108,27 +54,27 @@ export default function HomePage() {
               className="hero-animate-in font-body mt-6 max-w-xl text-base font-normal leading-relaxed text-[var(--ypp-muted)] sm:mt-7 sm:text-[1.0625rem] sm:leading-relaxed"
               style={{ animationDelay: "0.35s" }}
             >
-              Youth Passion Project connects students with passionate, high-quality instructors to discover what they love and build the skills to pursue it.
+              Free peer-taught classes online and in person—find a subject you love or teach one.
             </p>
 
             <div
-              className="hero-animate-in mt-10 flex flex-wrap gap-3 sm:gap-4"
+              className="hero-animate-in mt-10 flex flex-wrap items-center justify-start gap-3 sm:gap-4"
               style={{ animationDelay: "0.5s" }}
             >
               <Link
                 href="/programs"
-                className="btn-secondary font-body inline-flex items-center"
+                className="btn-primary font-body inline-flex min-h-[2.75rem] items-center px-6 py-3 text-base"
               >
-                Find Your Passion
+                Find your passion
                 <svg className="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
               </Link>
               <Link
-                href="/apply"
-                className="btn-primary font-body inline-flex items-center px-6 py-3 text-base"
+                href="/join"
+                className="btn-secondary font-body inline-flex min-h-[2.75rem] items-center px-6 py-3 text-base"
               >
-                Become a YPP Instructor
+                Join Us
                 <svg className="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
@@ -232,7 +178,7 @@ export default function HomePage() {
               </div>
               <div className="border-t border-[var(--ypp-border)] bg-[var(--ypp-white)] px-4 py-2.5">
                 <p className="text-center font-body text-[10px] leading-snug text-[var(--ypp-muted)] sm:text-[11px]">
-                  Tap a bubble to browse Programs & Chapters—110+ free courses.
+                  Tap a subject to open Programs &amp; Chapters.
                 </p>
               </div>
             </div>
@@ -242,16 +188,16 @@ export default function HomePage() {
 
       {/* Now Hiring banner */}
       <section className="bg-[var(--ypp-deep)] px-4 py-5 sm:px-6 lg:px-8">
-        <div className="mx-auto flex min-w-0 max-w-6xl flex-wrap items-center justify-between gap-6">
-          <div className="flex min-w-0 flex-wrap items-center gap-4">
+        <div className="mx-auto flex min-w-0 max-w-6xl flex-col flex-wrap items-stretch justify-between gap-5 sm:flex-row sm:items-center sm:gap-6">
+          <div className="flex min-w-0 flex-col gap-1 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
             <span className="font-label text-xs font-semibold uppercase tracking-widest text-[var(--ypp-primary)]">
               We&apos;re hiring
             </span>
-            <p className="font-body text-sm text-white/80">
-              Share What You Love. Lead the Next Generation.
+            <p className="font-body text-sm text-white/85">
+              Teach or lead a chapter—high school students welcome.
             </p>
           </div>
-          <div className="flex min-w-0 flex-wrap items-center justify-center gap-3">
+          <div className="flex min-w-0 flex-wrap items-center justify-start gap-3 sm:justify-end">
             {hiringRolePills.map((role) => (
               <Link
                 key={role.id}
@@ -263,81 +209,22 @@ export default function HomePage() {
             ))}
             <Link
               href="/apply"
-              className="font-body inline-flex items-center rounded-full border-2 border-white/80 bg-transparent px-5 py-2.5 text-sm font-semibold text-white transition-all hover:bg-white hover:text-[var(--ypp-deep)]"
+              className="font-body inline-flex min-h-[2.5rem] items-center rounded-full border-2 border-white/80 bg-transparent px-5 py-2.5 text-sm font-semibold text-white transition-all hover:bg-white hover:text-[var(--ypp-deep)]"
             >
-              View all openings
+              All openings
               <svg className="ml-1.5 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
             </Link>
+            <Link
+              href="/join"
+              className="font-body text-sm font-medium text-white/90 underline decoration-white/40 underline-offset-2 hover:text-white"
+            >
+              Not a volunteer? Join Us
+            </Link>
           </div>
         </div>
       </section>
-
-      {/* Who We Are — two-column: intro + CTA | value propositions (cursor-follow bubble) */}
-      <MouseFollowSection className="relative border-y border-[var(--ypp-border)] bg-[var(--ypp-blush)] px-4 py-16 sm:px-6 lg:px-8">
-        <div className="relative z-10 mx-auto min-w-0 max-w-6xl">
-          <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 lg:items-center">
-            {/* Left: label, title, description, CTA */}
-            <div className="min-w-0">
-              <div className="flex items-center gap-3">
-                <span className="h-px w-8 bg-[var(--ypp-primary)]" aria-hidden />
-                <p className="font-label text-xs font-semibold uppercase tracking-wider text-[var(--ypp-primary)]">
-                  Who We Are
-                </p>
-              </div>
-              <h2 className="font-heading mt-4 text-4xl font-normal leading-tight tracking-tight text-[var(--ypp-ink)] sm:text-5xl">
-                Built Around{" "}
-                <span className="font-normal italic text-[var(--ypp-primary)]">Curiosity</span>
-                {" "}
-                and Community
-              </h2>
-              <p className="font-body mt-6 text-[var(--ypp-muted)] leading-relaxed">
-                We exist to discover, develop, and celebrate the passions of youth—providing the resources, mentorship, and community they need to thrive in whatever path they choose.
-              </p>
-              <Link
-                href="/about#staff"
-                className="mt-8 inline-flex items-center gap-2 rounded-lg border-2 border-[var(--ypp-primary)] bg-[var(--ypp-white)] px-5 py-2.5 font-semibold text-[var(--ypp-primary)] transition-colors hover:bg-[var(--ypp-primary)] hover:text-white"
-              >
-                Meet Our Team
-                <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </Link>
-            </div>
-
-            {/* Right: four value items with icons */}
-            <div className="flex min-w-0 flex-col gap-6">
-              {[
-                { Icon: IconGrow, ...valueItems[0] },
-                { Icon: IconLead, ...valueItems[1] },
-                { Icon: IconConnect, ...valueItems[2] },
-                { Icon: IconCreate, ...valueItems[3] },
-              ].map(({ title, description, Icon }) => (
-                <div
-                  key={title}
-                  className="flex gap-4 rounded-xl border border-[var(--ypp-border)] bg-[var(--ypp-white)] p-5 shadow-sm"
-                >
-                  <div
-                    className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-[var(--ypp-lavender)] text-[var(--ypp-primary)]"
-                    aria-hidden
-                  >
-                    <Icon />
-                  </div>
-                  <div className="min-w-0">
-                    <h3 className="font-heading text-lg font-bold text-[var(--ypp-ink)]">
-                      {title}
-                    </h3>
-                    <p className="font-body mt-1 text-sm text-[var(--ypp-muted)] leading-relaxed">
-                      {description}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </MouseFollowSection>
 
       {/* Stats strip — By the Numbers */}
       <section className="border-b border-[var(--ypp-border)] bg-[var(--ypp-white)] px-4 py-12 sm:px-6 lg:px-8">
@@ -360,7 +247,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <ClassInActionGallery subtitle="Live online sessions with real instructors—coding, chess, and more—with everyone on camera and tools we can share together." />
+      <ClassInActionGallery subtitle="Live online classes: video, shared tools, and small groups." />
 
       {/* Open positions — Join Our Team (cursor-follow bubble) */}
       <MouseFollowSection className="relative bg-[var(--ypp-blush)]/60 px-4 py-16 sm:px-6 lg:px-8">
@@ -375,8 +262,7 @@ export default function HomePage() {
             Share What You Love. Lead the Next Generation.
           </h2>
           <p className="font-body mt-4 max-w-2xl text-pretty leading-relaxed text-[var(--ypp-muted)]">
-            YPP instructors aren&apos;t just teachers. They&apos;re leaders, mentors, and community builders who help
-            make an impact.
+            Peer instructors and chapter leaders run programs in their communities and online.
           </p>
           <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {openPositions.map(({ title, description, href }) => (
@@ -427,8 +313,7 @@ export default function HomePage() {
             Newest Additions
           </h2>
           <p className="font-body ml-auto mt-3 max-w-2xl text-right text-[var(--ypp-muted)]">
-            A quick look at our newest classes. Our student portal is coming soon—full details and sign-up will be
-            available there when it launches. Browse our Programs & Chapters page in the meantime.
+            New courses added regularly. Full catalog and sign-up will be on the student portal when it launches—see Programs &amp; Chapters for now.
           </p>
           {getNewestCourses().length === 0 ? (
             <div className="card-ypp mt-12 flex flex-col items-center justify-center px-6 py-16 text-center">

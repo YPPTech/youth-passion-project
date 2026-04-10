@@ -11,12 +11,12 @@ const photos = [
   {
     src: "/photos/class-scratch-online.png",
     alt: "YPP online class: instructor and students on video chat while sharing a Scratch coding project in the browser.",
-    caption: "Coding in Scratch — live video, shared screen, and peers learning together.",
+    caption: "Scratch class: live video and shared screen.",
   },
   {
     src: "/photos/class-chess-online.png",
     alt: "YPP online chess class: instructor and students on video with a Lichess lesson board and YPP curriculum on screen.",
-    caption: "Chess on Lichess — small-group instruction with a YPP intermediate lesson on the board.",
+    caption: "Chess on Lichess: small group, lesson on the board.",
   },
 ] as const;
 
@@ -28,7 +28,7 @@ type ClassInActionGalleryProps = {
 export default function ClassInActionGallery({ subtitle, className = "" }: ClassInActionGalleryProps) {
   return (
     <section
-      className={`border-y border-[var(--ypp-border)] bg-[var(--ypp-white)] px-4 py-16 sm:px-6 lg:px-8 ${className}`}
+      className={`overflow-x-hidden border-y border-[var(--ypp-border)] bg-[var(--ypp-white)] px-4 py-16 sm:px-6 lg:px-8 ${className}`}
     >
       <div className="mx-auto w-full min-w-0 max-w-6xl">
         <div className="text-center">
@@ -43,9 +43,9 @@ export default function ClassInActionGallery({ subtitle, className = "" }: Class
           {photos.map(({ src, alt, caption }) => (
             <figure
               key={src}
-              className="flex min-w-0 flex-col overflow-hidden rounded-2xl border border-[var(--ypp-border)] bg-[var(--ypp-blush)]/30 shadow-[var(--shadow-sm)]"
+              className="flex min-w-0 flex-col overflow-hidden rounded-2xl border border-[var(--ypp-border)] bg-[var(--ypp-blush)]/30 shadow-[var(--shadow-sm)] lg:min-w-0"
             >
-              <div className="relative aspect-[16/10] w-full bg-[var(--ypp-border)]/40">
+              <div className="relative aspect-[16/10] w-full min-w-0 bg-[var(--ypp-border)]/40">
                 <Image
                   src={src}
                   alt={alt}

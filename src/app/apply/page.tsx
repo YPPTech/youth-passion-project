@@ -14,17 +14,29 @@ export default function ApplyPage() {
         }
       */}
       <PageHeader
-        label="Become an Instructor"
-        title="Become an Instructor"
-        subtitle="Lead a course as a high school instructor, or apply to be a chapter president. Use the application links below for the 25–26 cycle."
+        label="Volunteer roles"
+        title="Apply for a role"
+        subtitle="High school students: lead a course as an instructor or apply to be a chapter president. Open a form below for the 25–26 cycle."
       />
+
+      <section className="border-b border-[var(--ypp-border)] bg-[var(--ypp-white)] px-4 py-6 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-4xl text-center">
+          <p className="font-body text-sm text-[var(--ypp-muted)] sm:text-base">
+            Looking to enroll as a student?{" "}
+            <Link href="/join" className="font-semibold text-[var(--ypp-primary)] hover:underline">
+              Join Us
+            </Link>{" "}
+            for classes and enrollment options.
+          </p>
+        </div>
+      </section>
 
       {/* Roles list */}
       <section className="bg-[var(--ypp-blush)]/60 px-4 py-16 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl">
           <SectionHeading
-            title="What's Available"
-            subtitle="Tap a role to open its application in a new tab."
+            title="Open applications"
+            subtitle="Each link opens a Google Form in a new tab."
           />
           <div className="mt-8 space-y-4 sm:mt-10 sm:space-y-5">
             {applyRoles.map(({ id, title, ageGrade, applyTeaser, applyLink, applyLabel }) => (
@@ -69,19 +81,23 @@ export default function ApplyPage() {
       <section className="border-t border-[var(--ypp-border)] bg-[var(--ypp-lavender)]/20 px-4 py-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <p className="font-body text-[var(--ypp-muted)]">
-            Need to sign up for classes as a student? Our student portal is{" "}
-            <span className="font-medium text-[var(--ypp-primary)]">coming soon</span>. Visit our{" "}
-            <Link href="/programs" className="text-[var(--ypp-primary)] font-medium hover:underline">
-              Programs & Chapters
-            </Link>{" "}
-            page for what we offer, or email{" "}
+            Students: portal{" "}
+            <span className="font-medium text-[var(--ypp-primary)]">coming soon</span>. See{" "}
+            <Link href="/join" className="font-medium text-[var(--ypp-primary)] hover:underline">
+              Join Us
+            </Link>
+            ,{" "}
+            <Link href="/programs" className="font-medium text-[var(--ypp-primary)] hover:underline">
+              Programs &amp; Chapters
+            </Link>
+            , or email{" "}
             <a
               href={`mailto:${CONTACT_EMAILS.support}`}
-              className="text-[var(--ypp-primary)] font-medium hover:underline"
+              className="font-medium text-[var(--ypp-primary)] hover:underline"
             >
               {CONTACT_EMAILS.support}
-            </a>{" "}
-            for enrollment questions.
+            </a>
+            .
           </p>
         </div>
       </section>
