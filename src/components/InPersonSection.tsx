@@ -57,13 +57,13 @@ export default function InPersonSection({ locations, compactEmptyState = false, 
               No in-person locations at the moment.
             </p>
             <p className="font-body mt-2 text-[var(--ypp-muted)]">
-              Please check back later for new sessions.
+              Check back soon or contact us about starting a chapter.
             </p>
           </div>
         ) : (
           <>
             <p className="mt-1 text-sm text-[var(--ypp-muted)]">
-              Tap a location to preview classes offered there.
+              Select a location to see classes offered there.
             </p>
             <ul className="mt-4 space-y-2">
               {locations.map((loc) => {

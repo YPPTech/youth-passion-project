@@ -33,7 +33,7 @@ export default function ClassInActionGallery({ subtitle, className = "" }: Class
       <div className="mx-auto w-full min-w-0 max-w-6xl">
         <div className="text-center">
           <h2 className="font-heading text-balance text-3xl font-bold text-[var(--ypp-deep)] sm:text-4xl">
-            What class looks like
+            Classes in action
           </h2>
           <p className="font-body mx-auto mt-3 max-w-2xl text-pretty text-base text-[var(--ypp-muted)] sm:text-lg">
             {subtitle}

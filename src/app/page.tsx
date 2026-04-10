@@ -54,7 +54,7 @@ export default function HomePage() {
               className="hero-animate-in font-body mt-6 max-w-xl text-base font-normal leading-relaxed text-[var(--ypp-muted)] sm:mt-7 sm:text-[1.0625rem] sm:leading-relaxed"
               style={{ animationDelay: "0.35s" }}
             >
-              Free peer-taught classes online and in person—find a subject you love or teach one.
+              Free, peer-taught classes online or in person. Take a class—or teach one.
             </p>
 
             <div
@@ -65,7 +65,7 @@ export default function HomePage() {
                 href="/programs"
                 className="btn-primary font-body inline-flex min-h-[2.75rem] items-center px-6 py-3 text-base"
               >
-                Find your passion
+                Browse programs
                 <svg className="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
@@ -95,8 +95,8 @@ export default function HomePage() {
                   </p>
                 </div>
                 <h2 className="font-heading mt-3 text-xl font-semibold leading-snug tracking-tight text-[var(--ypp-deep)] sm:text-2xl">
-                  Where Will Your{" "}
-                  <span className="font-normal italic text-[var(--ypp-primary)]">Passion</span> Take You?
+                  Browse by{" "}
+                  <span className="font-normal italic text-[var(--ypp-primary)]">subject</span>
                 </h2>
               </div>
 
@@ -178,7 +178,7 @@ export default function HomePage() {
               </div>
               <div className="border-t border-[var(--ypp-border)] bg-[var(--ypp-white)] px-4 py-2.5">
                 <p className="text-center font-body text-[10px] leading-snug text-[var(--ypp-muted)] sm:text-[11px]">
-                  Tap a subject to open Programs &amp; Chapters.
+                  Each chip links to Programs &amp; Chapters.
                 </p>
               </div>
             </div>
@@ -194,7 +194,7 @@ export default function HomePage() {
               We&apos;re hiring
             </span>
             <p className="font-body text-sm text-white/85">
-              Teach or lead a chapter—high school students welcome.
+              High schoolers: teach a class or lead a chapter.
             </p>
           </div>
           <div className="flex min-w-0 flex-wrap items-center justify-start gap-3 sm:justify-end">
@@ -220,7 +220,7 @@ export default function HomePage() {
               href="/join"
               className="font-body text-sm font-medium text-white/90 underline decoration-white/40 underline-offset-2 hover:text-white"
             >
-              Not a volunteer? Join Us
+              Taking classes? Join Us
             </Link>
           </div>
         </div>
@@ -247,7 +247,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <ClassInActionGallery subtitle="Live online classes: video, shared tools, and small groups." />
+      <ClassInActionGallery subtitle="Live video, shared tools, and small groups—same idea online and in person." />
 
       {/* Open positions — Join Our Team (cursor-follow bubble) */}
       <MouseFollowSection className="relative bg-[var(--ypp-blush)]/60 px-4 py-16 sm:px-6 lg:px-8">
@@ -259,10 +259,10 @@ export default function HomePage() {
             </p>
           </div>
           <h2 className="font-heading mt-4 text-balance text-3xl font-bold tracking-tight text-[var(--ypp-deep)] sm:text-4xl">
-            Share What You Love. Lead the Next Generation.
+            Teach or lead where you are
           </h2>
           <p className="font-body mt-4 max-w-2xl text-pretty leading-relaxed text-[var(--ypp-muted)]">
-            Peer instructors and chapter leaders run programs in their communities and online.
+            Instructors and chapter presidents run programs locally and online.
           </p>
           <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {openPositions.map(({ title, description, href }) => (
@@ -313,7 +313,7 @@ export default function HomePage() {
             Newest Additions
           </h2>
           <p className="font-body ml-auto mt-3 max-w-2xl text-right text-[var(--ypp-muted)]">
-            New courses added regularly. Full catalog and sign-up will be on the student portal when it launches—see Programs &amp; Chapters for now.
+            We add courses often. Until the student portal opens, use Programs &amp; Chapters for the catalog.
           </p>
           {getNewestCourses().length === 0 ? (
             <div className="card-ypp mt-12 flex flex-col items-center justify-center px-6 py-16 text-center">
@@ -321,7 +321,7 @@ export default function HomePage() {
                 No classes available at the moment.
               </p>
               <p className="font-body mt-2 text-[var(--ypp-muted)]">
-                Please check back later for new sessions.
+                Check back soon or browse Programs &amp; Chapters.
               </p>
               <Link
                 href="/programs"

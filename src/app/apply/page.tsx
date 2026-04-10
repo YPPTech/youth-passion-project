@@ -5,7 +5,7 @@ import { applyRoles, CONTACT_EMAILS } from "@/constants/site";
 
 export default function ApplyPage() {
   return (
-    <div>
+    <div className="min-w-0 w-full">
       {/* When student portal launches, add back to PageHeader:
         action={
           <span className="btn-primary inline-flex cursor-default items-center opacity-90" aria-label="Student portal coming soon">
@@ -16,17 +16,17 @@ export default function ApplyPage() {
       <PageHeader
         label="Volunteer roles"
         title="Apply for a role"
-        subtitle="High school students: lead a course as an instructor or apply to be a chapter president. Open a form below for the 25–26 cycle."
+        subtitle="High school students: instructor or chapter president. Pick a form below (25–26 cycle)."
       />
 
       <section className="border-b border-[var(--ypp-border)] bg-[var(--ypp-white)] px-4 py-6 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
           <p className="font-body text-sm text-[var(--ypp-muted)] sm:text-base">
-            Looking to enroll as a student?{" "}
+            Enrolling as a student? Start at{" "}
             <Link href="/join" className="font-semibold text-[var(--ypp-primary)] hover:underline">
               Join Us
-            </Link>{" "}
-            for classes and enrollment options.
+            </Link>
+            .
           </p>
         </div>
       </section>
@@ -45,21 +45,21 @@ export default function ApplyPage() {
                   href={applyLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="card-ypp group flex w-full min-h-[4.5rem] items-start justify-between gap-4 text-left no-underline outline-offset-2 transition-colors hover:border-[var(--ypp-primary)]/45 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ypp-primary)] focus-visible:ring-offset-2 sm:min-h-0 sm:items-center sm:gap-6"
+                  className="card-ypp group flex w-full flex-col gap-5 !p-5 text-left no-underline outline-offset-2 transition-colors hover:border-[var(--ypp-primary)]/45 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ypp-primary)] focus-visible:ring-offset-2 sm:!p-8 sm:flex-row sm:items-center sm:justify-between sm:gap-8"
                 >
                   <div className="min-w-0 flex-1">
-                    <h2 className="font-heading text-lg font-bold text-[var(--ypp-ink)] group-hover:text-[var(--ypp-primary)] sm:text-xl">
+                    <h2 className="font-heading text-xl font-bold text-[var(--ypp-ink)] group-hover:text-[var(--ypp-primary)]">
                       {title}
                     </h2>
-                    <p className="font-body mt-0.5 text-xs font-medium text-[var(--ypp-primary)] sm:text-sm">
+                    <p className="font-body mt-1 text-sm font-medium text-[var(--ypp-primary)]">
                       {ageGrade}
                     </p>
-                    <p className="font-body mt-1.5 max-w-xl text-[11px] leading-snug text-[var(--ypp-muted)] sm:text-xs sm:leading-relaxed">
+                    <p className="font-body mt-2 text-sm leading-relaxed text-[var(--ypp-muted)]">
                       {applyTeaser}
                     </p>
                   </div>
-                  <span className="flex shrink-0 items-center gap-2 self-center rounded-lg border-2 border-[var(--ypp-primary)] bg-[var(--ypp-white)] px-3 py-2 text-xs font-semibold text-[var(--ypp-primary)] transition-colors group-hover:bg-[var(--ypp-primary)] group-hover:text-white sm:px-4 sm:text-sm">
-                    <span className="max-w-[10rem] leading-tight sm:max-w-none">{applyLabel}</span>
+                  <span className="flex w-full shrink-0 items-center justify-center gap-2 rounded-xl border-2 border-[var(--ypp-primary)] bg-[var(--ypp-white)] px-4 py-3.5 text-sm font-semibold text-[var(--ypp-primary)] transition-colors group-hover:bg-[var(--ypp-primary)] group-hover:text-white sm:w-auto sm:justify-center sm:self-center sm:px-4 sm:py-2.5">
+                    <span className="text-center leading-snug">{applyLabel}</span>
                     <svg className="h-4 w-4 shrink-0 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
                       <path
                         strokeLinecap="round"
@@ -81,12 +81,12 @@ export default function ApplyPage() {
       <section className="border-t border-[var(--ypp-border)] bg-[var(--ypp-lavender)]/20 px-4 py-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <p className="font-body text-[var(--ypp-muted)]">
-            Students: portal{" "}
-            <span className="font-medium text-[var(--ypp-primary)]">coming soon</span>. See{" "}
+            Students: the portal is{" "}
+            <span className="font-medium text-[var(--ypp-primary)]">coming soon</span>. Use{" "}
             <Link href="/join" className="font-medium text-[var(--ypp-primary)] hover:underline">
               Join Us
-            </Link>
-            ,{" "}
+            </Link>{" "}
+            or{" "}
             <Link href="/programs" className="font-medium text-[var(--ypp-primary)] hover:underline">
               Programs &amp; Chapters
             </Link>

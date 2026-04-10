@@ -117,10 +117,10 @@ const sections = [
 
 export default function PrivacyPolicyPage() {
   return (
-    <div>
+    <div className="min-w-0 w-full">
       {/* Page header */}
       <section className="border-b border-[var(--ypp-border)] bg-[var(--ypp-white)] px-4 py-12 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-3xl">
+        <div className="mx-auto max-w-3xl min-w-0">
           <Link
             href="/legal"
             className="font-body mb-6 inline-flex items-center gap-2 text-sm font-medium text-[var(--ypp-primary)] transition-colors hover:text-[var(--ypp-deep)]"
@@ -145,7 +145,7 @@ export default function PrivacyPolicyPage() {
 
       {/* Content */}
       <section className="px-4 py-16 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-3xl">
+        <div className="mx-auto max-w-3xl min-w-0 break-words">
           <div className="flex flex-col gap-14">
             {sections.map((section) => (
               <article

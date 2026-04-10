@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { DM_Sans, Playfair_Display, Nunito, Lora } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
@@ -34,6 +34,12 @@ const lora = Lora({
   display: "swap",
 });
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+};
+
 export const metadata: Metadata = {
   title: "Youth Passion Project | Free Online & In-Person Classes",
   description:
@@ -53,7 +59,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${dmSans.variable} ${playfair.variable} ${nunito.variable} ${lora.variable}`}>
-      <body className="flex min-h-screen flex-col antialiased">
+      <body className="flex min-h-screen min-w-0 flex-col overflow-x-clip antialiased">
         <Header />
         <main className="min-w-0 w-full flex-1 pt-[var(--ypp-nav-height)]">{children}</main>
         <Footer />

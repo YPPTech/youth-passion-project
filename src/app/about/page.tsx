@@ -76,7 +76,7 @@ export default function AboutPage() {
   }, [selected]);
 
   return (
-    <div>
+    <div className="min-w-0 w-full">
       {/* About header — label with lines both sides, title, subtitle, stats card */}
       <section className="border-b border-[var(--ypp-border)] bg-[var(--ypp-white)] px-4 py-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl">
@@ -91,7 +91,7 @@ export default function AboutPage() {
             About Youth Passion Project
           </h1>
           <p className="font-body mt-4 text-center text-lg text-[var(--ypp-muted)]">
-            Who we are, what we believe, and the people behind our mission.
+            Mission, model, and leadership.
           </p>
 
           <div className="mt-12 overflow-hidden rounded-3xl border border-[var(--ypp-border)] bg-gradient-to-b from-[var(--ypp-blush)]/80 to-[var(--ypp-white)] shadow-[0_8px_40px_rgba(59,15,110,0.06)]">
@@ -125,7 +125,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <ClassInActionGallery subtitle="This is how our online sessions work: live video, shared tools like Scratch and Lichess, and instruction tuned for the screen so students stay engaged—whether they are coding their first project or studying an endgame. In-person classes are a different experience (same programs and care, different room and logistics)." />
+      <ClassInActionGallery subtitle="Online: live video and shared tools (e.g. Scratch, Lichess). In person: same programs with local logistics." />
 
       {/* Mission and how we work */}
       <section className="bg-[var(--ypp-blush)]/60 px-4 py-16 sm:px-6 lg:px-8">
@@ -140,9 +140,8 @@ export default function AboutPage() {
             Our Mission
           </h2>
           <p className="font-body mt-4 text-[var(--ypp-muted)] leading-relaxed">
-            Youth Passion Project exists to guide the stars of tomorrow —
-            connecting young people with the instructors, opportunities, and
-            community they need to discover their passions and grow into leaders.
+            We connect young people with peer instructors, programs, and community so they can explore interests and
+            build skills—with room to lead.
           </p>
 
           <div className="mt-12 flex items-center gap-3">
@@ -163,9 +162,7 @@ export default function AboutPage() {
                 </span>
               </h3>
               <p className="font-body mt-3 text-[var(--ypp-muted)] leading-relaxed">
-                YPP brings in-person programming to partner schools across the
-                country. Students learn directly from passionate, well-trained
-                instructors in a tight-knit community setting.
+                In-person programs at partner schools. Students learn from trained peer instructors in small groups.
               </p>
             </div>
             <div>
@@ -176,9 +173,7 @@ export default function AboutPage() {
                 </span>
               </h3>
               <p className="font-body mt-3 text-[var(--ypp-muted)] leading-relaxed">
-                From your first class to long-term mentorship and special
-                opportunities — YPP supports students and instructors at every
-                stage of their journey.
+                From first class to advanced offerings and special programs—we support students and instructors over time.
               </p>
             </div>
             <div>
@@ -189,8 +184,7 @@ export default function AboutPage() {
                 </span>
               </h3>
               <p className="font-body mt-3 text-[var(--ypp-muted)] leading-relaxed">
-                A dedicated leadership team handles the logistics, partnerships,
-                and technology that keep YPP running at its best.
+                Staff handle logistics, partnerships, and tech so chapters and online programs can focus on teaching.
               </p>
             </div>
           </div>
@@ -205,10 +199,10 @@ export default function AboutPage() {
         <div className="mx-auto max-w-6xl min-w-0">
           <SectionHeading
             title="Leadership Team"
-            subtitle="The people who guide Youth Passion Project"
+            subtitle="Who runs day-to-day operations"
           />
           <p className="font-body mt-2 text-center text-sm text-[var(--ypp-muted)]">
-            Tap a card to read their full bio.
+            Open a card for the full bio.
           </p>
           <ul className="mt-12 flex list-none flex-wrap justify-center gap-x-10 gap-y-10">
             {leadership.map((person) => (

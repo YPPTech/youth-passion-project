@@ -30,12 +30,11 @@ const programTypes = [
 function ProgramModelCopy({ className }: { className?: string }) {
   return (
     <p className={className}>
-      Programs run through YPP&apos;s partner school chapters. New sessions launch regularly — sign up for our
-      newsletter or{" "}
+      Most programs run through partner-school chapters; new sessions start often.{" "}
       <Link href="/notify" className={programModelLinkClass}>
-        get notified when the Student Portal is ready
+        Get notified when the student portal opens
       </Link>{" "}
-      to enroll and stay updated.
+      so you can enroll and hear what&apos;s new.
     </p>
   );
 }
@@ -56,14 +55,14 @@ export default function ProgramsPage() {
       */}
       <PageHeader
         title="Programs & Chapters"
-        subtitle="Browse how YPP shows up near you and online. Our student portal is coming soon—sign-up will be available there when it launches."
+        subtitle="See what we offer online and near you. Registration moves to the student portal when it launches—for now, contact us or use the links below."
       />
 
       <section className="border-b border-[var(--ypp-border)] bg-[var(--ypp-white)] px-4 py-12 sm:px-6 lg:px-8">
         <div className="mx-auto w-full max-w-6xl min-w-0">
           <h2 className="sr-only">Program types</h2>
           <p className="font-body mx-auto max-w-3xl text-center text-pretty text-base leading-relaxed text-[var(--ypp-muted)] sm:text-lg">
-            Online and in-person options—learn something new or teach what you love.
+            Online or in person: take a class—or teach one.
           </p>
           <ul className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-3 sm:items-stretch">
             {programTypes.map(({ title, description, sectionId }) => (
@@ -83,9 +82,9 @@ export default function ProgramsPage() {
             ))}
           </ul>
           <p className="font-body mx-auto mt-10 max-w-2xl text-center text-pretty text-sm text-[var(--ypp-muted)] sm:text-base">
-            Interested in building a curriculum for YPP?{" "}
+            Want to teach?{" "}
             <Link href="/join#teach-or-lead" className={`inline-flex items-center gap-1 ${programModelLinkClass}`}>
-              Apply to teach
+              Volunteer roles
               <span aria-hidden>→</span>
             </Link>
           </p>
@@ -132,11 +131,10 @@ export default function ProgramsPage() {
           />
           <div className="card-ypp mx-auto mt-10 max-w-3xl px-6 py-8 sm:px-8">
             <p className="font-body text-center text-pretty text-base leading-relaxed text-[var(--ypp-ink)] sm:text-lg">
-              One-off labs, friendly competitions, and community events pop up across the network. Timing and
-              registration vary—when our student portal launches, you&apos;ll see what&apos;s open and how to join.
-              Until then,{" "}
+              Labs, competitions, and events run across the network; timing and sign-up vary by chapter. The student
+              portal will list what&apos;s open. Until then,{" "}
               <Link href="/notify" className={programModelLinkClass}>
-                get notified when the Student Portal is ready
+                get notified when it launches
               </Link>
               .
             </p>
@@ -152,7 +150,7 @@ export default function ProgramsPage() {
         <div className="mx-auto w-full max-w-6xl min-w-0">
           <SectionHeading
             title="Online Offerings"
-            subtitle="Live online sessions where we run them—platform and format vary by class. Full details and sign-up will be on our student portal when it launches."
+            subtitle="Live sessions where we offer them—platform varies by class. Details and sign-up move to the student portal when it opens."
           />
           {onlineSessions.length === 0 ? (
             <div className="card-ypp mt-10 flex flex-col items-center justify-center px-6 py-16 text-center">
@@ -165,7 +163,7 @@ export default function ProgramsPage() {
                 No online classes available at the moment.
               </p>
               <p className="font-body mt-2 text-[var(--ypp-muted)]">
-                Please check back later for new sessions.
+                Check back soon or email support for options.
               </p>
             </div>
           ) : (
@@ -229,16 +227,11 @@ export default function ProgramsPage() {
       <section className="border-t border-[var(--ypp-border)] bg-[var(--ypp-white)] px-4 py-12 sm:px-6 lg:px-8">
         <div className="mx-auto w-full max-w-3xl min-w-0 text-center">
           <p className="font-body text-pretty text-[var(--ypp-muted)]">
-            Descriptions, age ranges, grades, and instructor profiles will be
-            available on the student portal when it launches. For a sample of
-            how a chapter week can look, see our{" "}
-            <Link
-              href="/programs/calendar"
-              className="text-[var(--ypp-primary)] font-medium hover:underline"
-            >
-              weekly schedule preview
-            </Link>
-            .
+            Full descriptions, grades, ages, and instructor profiles will live on the student portal. The{" "}
+            <Link href="/programs/calendar" className="text-[var(--ypp-primary)] font-medium hover:underline">
+              Calendar
+            </Link>{" "}
+            page will show a week-at-a-glance when that portal is live—it&apos;s a placeholder for now.
           </p>
           <p className="font-body mt-6 text-sm text-[var(--ypp-muted)] sm:text-base">
             Want to teach?{" "}

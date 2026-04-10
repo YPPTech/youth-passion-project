@@ -1,6 +1,7 @@
 "use client";
 
 import type { ReactNode } from "react";
+import Link from "next/link";
 
 type HomeReloadLinkProps = {
   className?: string;
@@ -12,8 +13,9 @@ type HomeReloadLinkProps = {
 /** Full page load to home (not client-side navigation). */
 export default function HomeReloadLink({ className, children, onBeforeNavigate }: HomeReloadLinkProps) {
   return (
-    <a
+    <Link
       href="/"
+      prefetch={false}
       className={className}
       onClick={(e) => {
         if (e.ctrlKey || e.metaKey || e.shiftKey || e.altKey) return;
@@ -23,6 +25,6 @@ export default function HomeReloadLink({ className, children, onBeforeNavigate }
       }}
     >
       {children}
-    </a>
+    </Link>
   );
 }

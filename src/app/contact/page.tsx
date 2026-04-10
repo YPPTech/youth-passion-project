@@ -19,11 +19,11 @@ export default function ContactPage() {
   const supportMail = CONTACT_EMAILS.support;
 
   return (
-    <div>
+    <div className="min-w-0 w-full">
       <PageHeader
         label="Contact"
         title="Contact Us"
-        subtitle="Reach us anytime at our main support email—we’ll route your message to the right team."
+        subtitle="Email the main inbox below—we route to the right team."
       />
 
       {/* General contact emails */}
@@ -31,7 +31,7 @@ export default function ContactPage() {
         <div className="mx-auto max-w-2xl">
           <SectionHeading
             title="General Contact"
-            subtitle="Enrollment, programs, partnerships, or anything else—send one message and we’ll help."
+            subtitle="Enrollment, programs, partnerships—one message is enough."
           />
           <div className="relative mt-8 overflow-hidden rounded-2xl border-2 border-[var(--ypp-primary)]/30 bg-[var(--ypp-white)] px-5 py-7 shadow-[var(--shadow-lg)] sm:px-8 sm:py-8">
             <div
@@ -73,7 +73,7 @@ export default function ContactPage() {
         <div className="mx-auto max-w-2xl text-center">
           <SectionHeading
             title="Meet Our Team"
-            subtitle="Leadership, online instructors, chapter presidents, and the people behind Youth Passion Project."
+            subtitle="Leadership and the people behind YPP."
           />
           <Link
             href="/about#staff"

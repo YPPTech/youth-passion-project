@@ -37,13 +37,12 @@ function ContactFaqAnswer() {
   return (
     <div className="space-y-3">
       <p>
-        The best starting point is our{" "}
+        Start on{" "}
         <Link href="/contact" className="font-medium text-[var(--ypp-primary)] hover:underline">
           Contact Us
-        </Link>{" "}
-        page. It features the main inbox for students, families, instructors, and partners at {mailTo(e.support)}—we’ll
-        route your message to the right team. Enrollment, programs, partnerships, or anything else: send one message and
-        we’ll help.
+        </Link>
+        {" "}
+        — one inbox for students, families, instructors, and partners ({mailTo(e.support)}). We route to the right team.
       </p>
       <p className="font-medium text-[var(--ypp-ink)]">Specialized inboxes</p>
       <ul className="list-disc space-y-2 pl-5">
@@ -188,7 +187,7 @@ const faqCategories: { title: string; items: FaqItem[] }[] = [
 
 export default function FAQsPage() {
   return (
-    <div>
+    <div className="min-w-0 w-full">
       <PageHeader
         label="Resources"
         title="Frequently Asked Questions"
@@ -197,7 +196,7 @@ export default function FAQsPage() {
 
       {/* FAQ content */}
       <section className="bg-[var(--ypp-blush)]/60 px-4 py-16 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-3xl">
+        <div className="mx-auto max-w-3xl min-w-0">
           {faqCategories.map((category) => (
             <div key={category.title} className="mb-14 last:mb-0">
               <h2 className="font-heading text-xl font-bold text-[var(--ypp-ink)] sm:text-2xl">
@@ -208,7 +207,7 @@ export default function FAQsPage() {
                   <li key={faq.q}>
                     <details className="card-ypp group p-0">
                       <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 font-body font-medium text-[var(--ypp-ink)] transition-colors hover:bg-[var(--ypp-blush)] [&::-webkit-details-marker]:hidden">
-                        <span className="pr-2">{faq.q}</span>
+                        <span className="min-w-0 flex-1 pr-2 break-words">{faq.q}</span>
                         <span className="shrink-0 text-[var(--ypp-primary)] transition-transform group-open:rotate-180" aria-hidden>
                           <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />

@@ -58,12 +58,12 @@ export const CONTACT_EMAILS = {
 } as const;
 
 export const statsByTheNumbers = [
-  { value: "3,400+", label: "Lifetime Student Sign-ups" },
-  { value: "200+", label: "Carefully Selected Instructors" },
-  { value: "400+", label: "Sections Taught of 110+ Unique Courses" },
-  { value: "7", label: "Average Class Size" },
-  { value: "30+", label: "US States Represented" },
-  { value: "30+", label: "Countries of Engagement" },
+  { value: "3,400+", label: "Student sign-ups (all time)" },
+  { value: "200+", label: "Peer instructors" },
+  { value: "400+", label: "Sections across 110+ courses" },
+  { value: "7", label: "Avg. class size" },
+  { value: "30+", label: "U.S. states" },
+  { value: "30+", label: "Countries" },
 ] as const;
 
 /** Application form URLs — single source for Apply page and any links to apply. */
@@ -82,15 +82,15 @@ export const applyRoles = [
     title: "Instructor",
     ageGrade: "High school students (grades 9–12)",
     /** One line for /apply cards; homepage still uses shortDescription. */
-    applyTeaser: "Teach a subject you love—online or in person.",
+    applyTeaser: "Teach what you love—online or in person.",
     shortDescription:
-      "Teach younger students in your passion area. Weekly sessions, curriculum support, and training provided.",
+      "Lead classes for younger students in your subject. Weekly sessions with curriculum support and training.",
     description:
-      "Teach younger students in your passion area. Run sessions online or at a chapter; typical classes are 30–60 minutes, 1–2 times per week.",
+      "Lead classes for younger students online or at a chapter. Most sessions run 30–60 minutes, 1–2 times per week.",
     details: [
-      "Selective application; training and support included.",
-      "You’ll outline your course idea and how you’d run sessions.",
-      "Mentorship from experienced YPP leaders.",
+      "Application + training; support from YPP staff.",
+      "You’ll describe your course and how you’d run it.",
+      "Mentorship from experienced leaders.",
     ],
     applyLink: INSTRUCTOR_APPLICATION_URL,
     applyLabel: "Instructor application (25–26)",
@@ -99,15 +99,15 @@ export const applyRoles = [
     id: "chapter-president",
     title: "Chapter President",
     ageGrade: "High school students (grades 9–12)",
-    applyTeaser: "Start or run a chapter—recruit instructors and host local programs.",
+    applyTeaser: "Start or grow a chapter: recruit instructors and run local programs.",
     shortDescription:
-      "Lead a chapter in your area: recruit instructors, plan events, and work with your school. Contact your school first.",
+      "Coordinate a chapter—recruit instructors, plan events, and partner with your school. Reach out to your school first.",
     description:
-      "Coordinate a YPP chapter: recruit volunteers and instructors, plan classes and events, and connect your school with YPP.",
+      "Run a YPP chapter: recruit volunteers and instructors, plan classes and events, and connect your school with YPP.",
     details: [
-      "Talk to your school before applying when possible.",
-      "The form covers your school, grade, and why you want to lead.",
-      "Support from YPP leadership and resources for your chapter.",
+      "Contact your school before applying when you can.",
+      "The form asks for your school, grade, and why you want to lead.",
+      "Ongoing support from YPP leadership.",
     ],
     applyLink: CHAPTER_PRESIDENT_APPLICATION_URL,
     applyLabel: "Chapter President application",

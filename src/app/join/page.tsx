@@ -3,11 +3,11 @@ import PageHeader from "@/components/PageHeader";
 
 export default function JoinPage() {
   return (
-    <div>
+    <div className="min-w-0 w-full">
       <PageHeader
         label="Get involved"
         title="Join Us"
-        subtitle="Choose how you’d like to connect with YPP—take classes or apply to teach or lead."
+        subtitle="Take classes, or apply to teach or lead a chapter."
       />
 
       <section className="bg-[var(--ypp-blush)]/60 px-4 py-16 sm:px-6 lg:px-8">
@@ -18,7 +18,7 @@ export default function JoinPage() {
           >
             <h2 className="font-heading text-xl font-bold text-[var(--ypp-deep)] sm:text-2xl">Take classes</h2>
             <p className="font-body mt-2 flex-1 text-sm leading-relaxed text-[var(--ypp-muted)] sm:text-base">
-              Browse programs or contact us about enrollment.
+              See what&apos;s offered, or email us about enrollment.
             </p>
             <ul className="mt-6 flex flex-col gap-3">
               <li>

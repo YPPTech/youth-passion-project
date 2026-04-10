@@ -11,11 +11,11 @@ export default function SectionHeading({
 }: SectionHeadingProps) {
   return (
     <div className={`w-full min-w-0 ${centered ? "text-center" : ""}`}>
-      <h2 className="font-heading text-balance text-3xl font-bold text-[var(--ypp-deep)] sm:text-4xl">
+      <h2 className="font-heading max-w-full text-balance break-words text-3xl font-bold text-[var(--ypp-deep)] sm:text-4xl">
         {title}
       </h2>
       {subtitle && (
-        <p className="font-body mx-auto mt-3 max-w-2xl text-pretty text-base text-[var(--ypp-muted)] sm:text-lg">
+        <p className="font-body mx-auto mt-3 max-w-2xl text-pretty break-words text-base text-[var(--ypp-muted)] sm:text-lg">
           {subtitle}
         </p>
       )}

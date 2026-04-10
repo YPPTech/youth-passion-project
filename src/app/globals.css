@@ -432,3 +432,11 @@ html {
 html {
   overflow-x: clip;
 }
+body {
+  min-width: 0;
+  overflow-x: clip;
+}
+/* Long URLs and unbroken strings wrap instead of forcing horizontal scroll */
+main {
+  min-width: 0;
+}

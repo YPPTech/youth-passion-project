@@ -71,7 +71,7 @@ const colList = "mt-5 flex flex-col gap-3";
 export default function Footer() {
   return (
     <footer className="border-t border-[var(--ypp-border)] bg-[var(--ypp-blush)] text-[var(--ypp-ink)]">
-      <div className="mx-auto w-full max-w-6xl min-w-0 px-6 py-16 sm:px-8 lg:px-10">
+      <div className="mx-auto w-full max-w-6xl min-w-0 px-4 py-16 sm:px-8 lg:px-10">
         <div className="grid min-w-0 grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-[1.3fr_1fr_1fr_1fr] lg:gap-x-16 lg:gap-y-0 lg:items-start">
           {/* Column 1: Brand + logo + tagline */}
           <div className="flex flex-col sm:pr-4">

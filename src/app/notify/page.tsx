@@ -6,11 +6,11 @@ export default function NotifyPage() {
   const hasForm = PORTAL_WAITLIST_FORM_URL.length > 0;
 
   return (
-    <div>
+    <div className="min-w-0 w-full">
       <PageHeader
         label="Student Portal"
         title="Get notified when the portal is ready"
-        subtitle="Our student portal isn’t quite ready yet. Leave your email and we’ll notify you when you can create your account and sign up for classes."
+        subtitle="The student portal isn’t ready yet. Leave your email and we’ll tell you when you can sign up."
       />
 
       <section className="px-4 py-16 sm:px-6 lg:px-8">
@@ -18,7 +18,7 @@ export default function NotifyPage() {
           {hasForm ? (
             <>
               <p className="font-body text-[var(--ypp-muted)]">
-                You’ll only get an email when the portal is live. We’ll send one message with a link to create your account—no spam.
+                One email when the portal goes live—link to create your account. No marketing spam.
               </p>
               <a
                 href={PORTAL_WAITLIST_FORM_URL}

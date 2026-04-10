@@ -1,6 +1,7 @@
 "use client";
 
-import { useRef, useState, useCallback, useEffect } from "react";
+import { useRef, useState, useCallback } from "react";
+import { usePrefersReducedMotion } from "@/hooks/usePrefersReducedMotion";
 
 export default function HeroSection({
   children,
@@ -12,15 +13,7 @@ export default function HeroSection({
   const sectionRef = useRef<HTMLElement>(null);
   const [pos, setPos] = useState({ x: 50, y: 50 });
   const [visible, setVisible] = useState(false);
-  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
-
-  useEffect(() => {
-    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
-    setPrefersReducedMotion(mq.matches);
-    const handler = () => setPrefersReducedMotion(mq.matches);
-    mq.addEventListener("change", handler);
-    return () => mq.removeEventListener("change", handler);
-  }, []);
+  const prefersReducedMotion = usePrefersReducedMotion();
 
   const handleMouseMove = useCallback(
     (e: React.MouseEvent<HTMLElement>) => {
