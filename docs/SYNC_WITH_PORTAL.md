@@ -42,4 +42,4 @@ The **Calendar** page uses **static data** only. It is not synced with the porta
 | Portal codebase            | [github.com/braydenwhite-blip/YPP-Portal](https://github.com/braydenwhite-blip/YPP-Portal) |
 | Portal URL (all links)     | `NEXT_PUBLIC_PORTAL_URL` in `.env.local` or Vercel (or hardcode in `src/constants/site.ts`) |
 | Calendar events            | `src/app/programs/calendar/page.tsx` → `sampleEvents` (static; no portal sync) |
-| Programs / course list     | `src/app/programs/page.tsx` and `src/constants/site.ts` (e.g. `newestCourses`) |
+| Programs / course list     | `src/app/programs/page.tsx` and `src/data/programsData.ts` |
