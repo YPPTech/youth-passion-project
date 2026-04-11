@@ -44,6 +44,10 @@ export const metadata: Metadata = {
   title: "Youth Passion Project | Free Online & In-Person Classes",
   description:
     "Youth Passion Project connects students with passionate, high-quality instructors to discover what they love and build the skills to pursue it.",
+  icons: {
+    icon: "/logo.png",
+    apple: "/logo.png",
+  },
   openGraph: {
     title: "Youth Passion Project | Free Online & In-Person Classes",
     description:
