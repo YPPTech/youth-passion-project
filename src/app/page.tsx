@@ -10,7 +10,7 @@ import {
   openPositions,
 } from "@/constants/site";
 
-/** Hero aside: subject chips → Programs & Chapters (/programs). */
+/** Hero aside: class chips → Programs & Chapters (/programs). */
 const passionTopics = [
   { label: "STEM", href: "/programs" },
   { label: "Writing", href: "/programs" },
@@ -91,12 +91,12 @@ export default function HomePage() {
                 <div className="flex items-center gap-2">
                   <span className="h-px w-6 shrink-0 bg-[var(--ypp-primary)]" aria-hidden />
                   <p className="font-label text-[10px] font-semibold uppercase tracking-wider text-[var(--ypp-primary)] sm:text-xs">
-                    Explore by subject
+                    Explore by class
                   </p>
                 </div>
                 <h2 className="font-heading mt-3 text-xl font-semibold leading-snug tracking-tight text-[var(--ypp-deep)] sm:text-2xl">
                   Browse by{" "}
-                  <span className="font-normal italic text-[var(--ypp-primary)]">subject</span>
+                  <span className="font-normal italic text-[var(--ypp-primary)]">class</span>
                 </h2>
               </div>
 

@@ -48,12 +48,6 @@ const leadership: LeadershipMember[] = [
     bio: "Anthea is a junior in high school in Seattle and serves as the Chief Technology Officer at the Youth Passion Project. She built and maintains the organization's website and is currently developing YPP's online portal for students and instructors. In her role, she oversees the organization's technical infrastructure and works to enhance the digital systems that support YPP's programs and operations. Previously, she also taught Introduction to Algebra 1 at YPP. Outside of her work, Anthea plays varsity golf at her school and enjoys traveling, attending concerts, and exploring new technology.",
     image: "/team/anthea-zamir.png",
   },
-  {
-    personName: "Yuvaan Das",
-    name: "Director of Technology",
-    bio: "Yuvaan is a Director of Technology at the Youth Passion Project. In this role, he helps develop and maintain the organization’s technical systems, working to improve the digital experience for both students and instructors. He collaborates with team members to support the platform’s functionality and ensure that YPP’s programs run smoothly online. When he’s not building or troubleshooting systems, Yuvaan enjoys playing tennis, competing in public forum debate, and spending time with friends.",
-    image: "/team/yuvaan-das.png",
-  },
 ];
 
 const aboutHeroStats = [
