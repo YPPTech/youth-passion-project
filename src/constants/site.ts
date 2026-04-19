@@ -57,15 +57,6 @@ export const CONTACT_EMAILS = {
   onlineInstructorSupport: "online-instructor-support@youthpassionproject.org",
 } as const;
 
-export const statsByTheNumbers = [
-  { value: "3,400+", label: "Student sign-ups (all time)" },
-  { value: "200+", label: "Peer instructors" },
-  { value: "400+", label: "Sections across 110+ courses" },
-  { value: "7", label: "Avg. class size" },
-  { value: "30+", label: "U.S. states" },
-  { value: "30+", label: "Countries" },
-] as const;
-
 /** Application form URLs — single source for Apply page and any links to apply. */
 const INSTRUCTOR_APPLICATION_URL =
   "https://docs.google.com/forms/d/e/1FAIpQLSfXlGvCx_itTN6bBdevbL7ohb8Ya7tQMIQS5JBF92q4xPS1QA/viewform";

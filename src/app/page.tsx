@@ -1,24 +1,10 @@
 import Link from "next/link";
 import ClassInActionGallery from "@/components/ClassInActionGallery";
 import HeroSection from "@/components/HeroSection";
-import MouseFollowSection from "@/components/MouseFollowSection";
-import { getNewestCourses } from "@/data/programsData";
+import TestimonialsMarquee from "@/components/TestimonialsMarquee";
 import { getWeeklySpotlight } from "@/data/weeklySpotlight";
-import {
-  statsByTheNumbers,
-  hiringRolePills,
-  openPositions,
-} from "@/constants/site";
-
-/** Hero aside: class chips → Programs & Chapters (/programs). */
-const passionTopics = [
-  { label: "STEM", href: "/programs" },
-  { label: "Writing", href: "/programs" },
-  { label: "Music", href: "/programs" },
-  { label: "Business", href: "/programs" },
-  { label: "Arts", href: "/programs" },
-  { label: "Languages & Culture", href: "/programs" },
-] as const;
+import { hiringRolePills, openPositions } from "@/constants/site";
+import { homeTestimonials } from "@/constants/testimonials";
 
 export default function HomePage() {
   const weeklySpotlight = getWeeklySpotlight();
@@ -27,11 +13,7 @@ export default function HomePage() {
   return (
     <div className="w-full min-w-0">
       {/* Hero */}
-      <HeroSection className="hero-gradient hero-glow hero-curve relative flex min-h-[min(88vh,52rem)] flex-col overflow-hidden px-4 pt-10 pb-20 sm:px-6 sm:pt-14 sm:pb-28 lg:px-10 lg:pt-16 lg:pb-24">
-        <div className="hero-blob hero-blob-1" aria-hidden />
-        <div className="hero-blob hero-blob-2" aria-hidden />
-        <div className="hero-blob hero-blob-3" aria-hidden />
-
+      <HeroSection className="hero-celestial hero-celestial-curve relative flex min-h-[min(88vh,52rem)] flex-col overflow-hidden px-4 pt-10 pb-20 sm:px-6 sm:pt-14 sm:pb-28 lg:px-10 lg:pt-16 lg:pb-24">
         <div className="relative z-10 mx-auto flex w-full min-w-0 max-w-6xl flex-1 flex-col justify-center gap-12 lg:flex-row lg:items-center lg:justify-between lg:gap-16 xl:gap-20">
           <div className="min-w-0 max-w-2xl">
             <div
@@ -100,7 +82,7 @@ export default function HomePage() {
                 </h2>
               </div>
 
-              <div className="border-y border-[var(--ypp-border)] bg-[var(--ypp-white)] px-5 py-4">
+              <div className="bg-[var(--ypp-white)] px-5 py-5 pb-6">
                 <div className="flex items-center gap-2">
                   <span className="h-px w-6 shrink-0 bg-[var(--ypp-primary)]/70" aria-hidden />
                   <p className="font-label text-[10px] font-semibold uppercase tracking-wider text-[var(--ypp-primary)] sm:text-xs">
@@ -160,27 +142,6 @@ export default function HomePage() {
                   </p>
                 )}
               </div>
-
-              <div className="bg-gradient-to-b from-[var(--ypp-lavender)]/25 to-[var(--ypp-blush)]/20 p-4">
-                <ul className="flex flex-wrap justify-center gap-2 sm:justify-start">
-                  {passionTopics.map(({ label, href }, i) => (
-                    <li key={label}>
-                      <Link
-                        href={href}
-                        className="hero-animate-in inline-flex rounded-full border border-[var(--ypp-border)] bg-[var(--ypp-white)]/95 px-3 py-1.5 font-body text-[11px] font-semibold text-[var(--ypp-ink)] shadow-[var(--shadow-sm)] backdrop-blur-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-[var(--ypp-primary)]/35 hover:bg-[var(--ypp-lavender)]/45 hover:text-[var(--ypp-primary)] hover:shadow-[var(--shadow-md)] sm:px-3.5 sm:py-2 sm:text-xs"
-                        style={{ animationDelay: `${0.35 + i * 0.04}s` }}
-                      >
-                        {label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className="border-t border-[var(--ypp-border)] bg-[var(--ypp-white)] px-4 py-2.5">
-                <p className="text-center font-body text-[10px] leading-snug text-[var(--ypp-muted)] sm:text-[11px]">
-                  Each chip links to Programs &amp; Chapters.
-                </p>
-              </div>
             </div>
           </div>
         </div>
@@ -226,37 +187,42 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Stats strip — By the Numbers */}
-      <section className="border-b border-[var(--ypp-border)] bg-[var(--ypp-white)] px-4 py-12 sm:px-6 lg:px-8">
-        <div className="mx-auto min-w-0 max-w-6xl">
-          <p className="section-label justify-center text-[var(--ypp-muted)]">
-            By the Numbers
-          </p>
-          <div className="mt-8 grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-6">
-            {statsByTheNumbers.map(({ value, label }) => (
-              <div key={label} className="min-w-0 text-center">
-                <div className="font-heading text-2xl font-bold text-[var(--ypp-deep)] sm:text-3xl">
-                  {value}
-                </div>
-                <div className="font-label mt-1 text-xs text-[var(--ypp-muted)]">
-                  {label}
-                </div>
-              </div>
-            ))}
+      <ClassInActionGallery subtitle="Live video, shared tools, and small groups—same idea online and in person." />
+
+      <section
+        className="border-y border-[var(--ypp-border)] bg-[var(--ypp-white)] px-4 py-16 sm:px-6 lg:px-8"
+        aria-labelledby="testimonials-heading"
+      >
+        <div className="mx-auto max-w-6xl min-w-0">
+          <div className="text-center">
+            <p className="font-label text-xs font-semibold uppercase tracking-wider text-[var(--ypp-primary)]">
+              From families
+            </p>
+            <h2
+              id="testimonials-heading"
+              className="font-heading mt-3 text-balance text-3xl font-bold tracking-tight text-[var(--ypp-deep)] sm:text-4xl"
+            >
+              What people are saying
+            </h2>
           </div>
+          <TestimonialsMarquee items={homeTestimonials} />
         </div>
       </section>
 
-      <ClassInActionGallery subtitle="Live video, shared tools, and small groups—same idea online and in person." />
-
-      {/* Open positions — Join Our Team (cursor-follow bubble) */}
-      <MouseFollowSection className="relative bg-[var(--ypp-blush)]/60 px-4 py-16 sm:px-6 lg:px-8">
+      {/* Open positions — Join Our Team (palette + glass cards aligned with celestial hero) */}
+      <section className="relative overflow-hidden border-y border-[var(--ypp-border)]/40 bg-gradient-to-b from-[#e8deff]/90 via-[var(--ypp-blush)]/85 to-[#faf7ff] px-4 py-16 sm:px-6 lg:px-8">
+        <div
+          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_90%_60%_at_50%_-10%,rgba(139,63,232,0.14),transparent_55%),radial-gradient(ellipse_70%_45%_at_100%_50%,rgba(107,33,200,0.06),transparent)]"
+          aria-hidden
+        />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[rgba(255,255,255,0.55)] to-transparent" aria-hidden />
         <div className="relative z-10 mx-auto min-w-0 max-w-6xl">
           <div className="flex items-center gap-3">
             <span className="h-px w-8 bg-[var(--ypp-primary)]" aria-hidden />
             <p className="font-label text-xs font-semibold uppercase tracking-wider text-[var(--ypp-primary)]">
               Now Hiring
             </p>
+            <span className="h-px w-8 bg-[var(--ypp-primary)]/50 sm:w-12" aria-hidden />
           </div>
           <h2 className="font-heading mt-4 text-balance text-3xl font-bold tracking-tight text-[var(--ypp-deep)] sm:text-4xl">
             Teach or lead where you are
@@ -269,7 +235,7 @@ export default function HomePage() {
               <Link
                 key={title}
                 href={href}
-                className="group flex min-w-0 flex-col rounded-2xl border-2 border-[var(--ypp-border)] bg-[var(--ypp-white)] p-6 shadow-sm transition-all hover:border-[var(--ypp-primary)]/40 hover:shadow-md"
+                className="group flex min-w-0 flex-col rounded-2xl border border-white/70 bg-[rgba(255,255,255,0.72)] p-6 shadow-[0_8px_32px_rgba(59,15,110,0.08)] ring-1 ring-[var(--ypp-primary)]/10 backdrop-blur-md transition-all duration-200 hover:-translate-y-0.5 hover:border-[var(--ypp-primary)]/35 hover:bg-[rgba(255,255,255,0.88)] hover:shadow-[0_12px_40px_rgba(107,33,200,0.12)] hover:ring-[var(--ypp-primary)]/20"
               >
                 <h3 className="font-heading text-lg font-semibold text-[var(--ypp-deep)] transition-colors group-hover:text-[var(--ypp-primary)]">
                   {title}
@@ -289,7 +255,7 @@ export default function HomePage() {
           <div className="mt-10 flex flex-wrap items-center gap-4">
             <Link
               href="/apply"
-              className="font-body inline-flex items-center rounded-xl border-2 border-[var(--ypp-primary)] bg-[var(--ypp-white)] px-6 py-3 font-semibold text-[var(--ypp-primary)] transition-colors hover:bg-[var(--ypp-primary)] hover:text-white"
+              className="btn-primary font-body inline-flex items-center rounded-full px-6 py-3 text-base shadow-[0_6px_24px_rgba(107,33,200,0.25)]"
             >
               View all openings
               <svg className="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -297,106 +263,6 @@ export default function HomePage() {
               </svg>
             </Link>
           </div>
-        </div>
-      </MouseFollowSection>
-
-      {/* Newest courses — quick display, no images; right-aligned like opposite of Join Our Team */}
-      <section className="border-y border-[var(--ypp-border)] bg-[var(--ypp-white)] px-4 py-16 sm:px-6 lg:px-8">
-        <div className="mx-auto min-w-0 max-w-6xl text-right">
-          <div className="flex items-center justify-end gap-3">
-            <span className="h-px w-8 bg-[var(--ypp-primary)]" aria-hidden />
-            <p className="font-label text-xs font-semibold uppercase tracking-wider text-[var(--ypp-primary)] underline decoration-[var(--ypp-primary)] underline-offset-2">
-              Newest Courses
-            </p>
-          </div>
-          <h2 className="font-heading mt-2 text-2xl font-bold text-[var(--ypp-deep)] sm:text-3xl">
-            Newest Additions
-          </h2>
-          <p className="font-body ml-auto mt-3 max-w-2xl text-right text-[var(--ypp-muted)]">
-            We add courses often. Until the student portal opens, use Programs &amp; Chapters for the catalog.
-          </p>
-          {getNewestCourses().length === 0 ? (
-            <div className="card-ypp mt-12 flex flex-col items-center justify-center px-6 py-16 text-center">
-              <p className="font-body text-lg text-[var(--ypp-ink)]">
-                No classes available at the moment.
-              </p>
-              <p className="font-body mt-2 text-[var(--ypp-muted)]">
-                Check back soon or browse Programs &amp; Chapters.
-              </p>
-              <Link
-                href="/programs"
-                className="btn-primary mt-6 inline-flex items-center"
-                style={{ fontFamily: "var(--font-dm-sans)" }}
-              >
-                View Programs & Chapters
-                <svg className="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </Link>
-            </div>
-          ) : (
-          <>
-            <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-              {getNewestCourses().map((course) => {
-                const hasPortalLink = course.href.trim().length > 0;
-                const CardInner = (
-                  <>
-                    <h3 className="font-heading font-semibold text-[var(--ypp-deep)]">
-                      {course.name}
-                    </h3>
-                    <div className="mt-2 flex flex-wrap gap-1.5">
-                      <span className="rounded-full bg-[var(--ypp-lavender)] px-2.5 py-0.5 font-body text-xs font-medium capitalize text-[var(--ypp-primary)]">
-                        {course.delivery === "in-person" ? "In person" : "Online"}
-                        {course.chapter ? ` · ${course.chapter}` : ""}
-                      </span>
-                      <span className="rounded-full bg-[var(--ypp-lavender)] px-2.5 py-0.5 font-body text-xs text-[var(--ypp-muted)]">
-                        Grades {course.grades}
-                      </span>
-                      {course.ages && (
-                        <span className="rounded-full bg-[var(--ypp-lavender)] px-2.5 py-0.5 font-body text-xs text-[var(--ypp-muted)]">
-                          Ages {course.ages}
-                        </span>
-                      )}
-                    </div>
-                    <p className="font-body mt-2 text-sm text-[var(--ypp-muted)] leading-snug">
-                      {course.summary}
-                    </p>
-                    <span className="mt-3 inline-flex items-center text-sm font-medium text-[var(--ypp-primary)]">
-                      {hasPortalLink ? "Full details & sign up →" : "Coming soon"}
-                    </span>
-                  </>
-                );
-                return hasPortalLink ? (
-                  <a
-                    key={course.name}
-                    href={course.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="card-ypp block min-w-0 text-left"
-                  >
-                    {CardInner}
-                  </a>
-                ) : (
-                  <div key={course.name} className="card-ypp block min-w-0 text-left">
-                    {CardInner}
-                  </div>
-                );
-              })}
-            </div>
-            <div className="mt-10 flex justify-end">
-              <Link
-                href="/programs"
-                className="btn-primary inline-flex items-center"
-                style={{ fontFamily: "var(--font-dm-sans)" }}
-              >
-                View all Programs & Chapters
-                <svg className="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </Link>
-            </div>
-          </>
-          )}
         </div>
       </section>
 

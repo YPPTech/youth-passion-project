@@ -64,10 +64,58 @@ export default function DonatePage() {
       <PageHeader
         label="Donate"
         title="Support Youth Passion Project"
-        subtitle="Tax-deductible gifts keep our courses free for students."
+        subtitle="We are a 501(c)(3) nonprofit—your contribution is tax-deductible and goes straight to free programs for students."
       />
 
-      {/* Our Sponsors — emphasized at top */}
+      {/* Primary donation CTA — first on the page */}
+      <section className="border-b border-[var(--ypp-border)] bg-gradient-to-b from-[var(--ypp-lavender)]/55 via-[var(--ypp-blush)]/90 to-[var(--ypp-blush)] px-4 py-12 sm:px-6 sm:py-14 lg:px-8">
+        <div className="mx-auto max-w-4xl min-w-0">
+          <div className="mb-8 text-center">
+            <p className="font-label text-xs font-bold uppercase tracking-[0.2em] text-[var(--ypp-primary)]">
+              Donate now
+            </p>
+            <h2 className="font-heading mt-3 text-balance text-3xl font-bold tracking-tight text-[var(--ypp-deep)] sm:text-4xl md:text-[2.5rem] md:leading-tight">
+              Your gift keeps every class free for students
+            </h2>
+            <p className="font-body mx-auto mt-4 max-w-2xl text-pretty text-base text-[var(--ypp-muted)] sm:text-lg">
+              If you can give, do it here first—then scroll to see who else stands with us. Volunteers and donors together keep YPP running.
+            </p>
+          </div>
+          <div className="relative overflow-hidden rounded-3xl border-2 border-[var(--ypp-primary)]/35 bg-[var(--ypp-white)] p-8 shadow-[0_12px_48px_rgba(107,33,200,0.15)] sm:p-10 md:flex md:items-center md:justify-between md:gap-10">
+            <div className="absolute right-0 top-0 h-40 w-40 translate-x-10 -translate-y-10 rounded-full bg-[var(--ypp-primary)]/15 blur-3xl" aria-hidden />
+            <div className="absolute bottom-0 left-0 h-32 w-32 -translate-x-10 translate-y-10 rounded-full bg-[var(--ypp-mid)]/10 blur-3xl" aria-hidden />
+            <div className="relative flex-1">
+              <h3 className="font-heading text-xl font-bold text-[var(--ypp-ink)] sm:text-2xl">
+                Make a tax-deductible gift today
+              </h3>
+              <p className="font-body mt-3 text-[var(--ypp-muted)] leading-relaxed sm:text-[1.05rem]">
+                We depend on supporters like you. Donations help us reach more students, train peer instructors, and add
+                new free courses—without charging families.
+              </p>
+              <div className="mt-8 flex flex-col gap-5 sm:flex-row sm:flex-wrap sm:items-center">
+                <a
+                  href="https://www.paypal.com/us/fundraiser/charity/4239878"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-primary inline-flex items-center justify-center gap-2 px-10 py-4 text-base font-bold shadow-[0_8px_28px_rgba(107,33,200,0.45)] sm:text-lg"
+                >
+                  <IconHeart />
+                  Donate with PayPal
+                </a>
+                <div className="flex items-center gap-2 text-sm text-[var(--ypp-muted)] sm:max-w-xs">
+                  <IconShield />
+                  <span>501(c)(3) nonprofit · Secure checkout · Receipt for your taxes</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p className="font-body mt-6 text-center text-sm text-[var(--ypp-muted)]">
+            After your gift, the PayPal Giving Fund sends a written acknowledgement you can use for tax filings.
+          </p>
+        </div>
+      </section>
+
+      {/* Our Sponsors */}
       <section className="relative border-y-2 border-[var(--ypp-primary)]/30 bg-gradient-to-b from-[var(--ypp-lavender)]/50 to-[var(--ypp-blush)] px-4 py-16 sm:px-6 lg:px-8">
         <div className="absolute inset-0 pointer-events-none overflow-hidden rounded-none" aria-hidden>
           <div className="absolute left-1/2 top-0 h-48 w-96 -translate-x-1/2 rounded-full bg-[var(--ypp-primary)]/10 blur-3xl" />
@@ -122,11 +170,16 @@ export default function DonatePage() {
         </div>
       </section>
 
-      {/* Impact + main CTA */}
+      {/* What your gift supports */}
       <section className="bg-[var(--ypp-blush)]/60 px-4 py-16 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-5xl">
-          {/* Impact points — 3 columns on larger screens */}
-          <div className="grid gap-6 sm:grid-cols-3 mb-14">
+          <p className="font-label text-center text-xs font-semibold uppercase tracking-wider text-[var(--ypp-primary)]">
+            Your impact
+          </p>
+          <h2 className="font-heading mt-2 text-center text-2xl font-bold text-[var(--ypp-deep)] sm:text-3xl">
+            What donations make possible
+          </h2>
+          <div className="mt-10 grid gap-6 sm:grid-cols-3">
             {impactPoints.map(({ title, description, icon }) => (
               <div
                 key={title}
@@ -144,37 +197,17 @@ export default function DonatePage() {
               </div>
             ))}
           </div>
-
-          {/* Main donation card — prominent CTA */}
-          <div className="relative overflow-hidden rounded-3xl border-2 border-[var(--ypp-primary)]/20 bg-[var(--ypp-white)] p-8 shadow-lg sm:p-10 md:flex md:items-center md:justify-between md:gap-8">
-            <div className="absolute right-0 top-0 h-32 w-32 translate-x-8 -translate-y-8 rounded-full bg-[var(--ypp-primary)]/10 blur-2xl" aria-hidden />
-            <div className="relative flex-1">
-              <h2 className="font-heading text-2xl font-bold text-[var(--ypp-ink)] sm:text-3xl">
-                Make a tax-deductible gift today
-              </h2>
-              <p className="font-body mt-3 text-[var(--ypp-muted)] leading-relaxed">
-                We depend on dedicated volunteers and supporters to keep our project running. Your donation helps YPP reach more students, train more instructors, and offer an even broader set of free courses.
-              </p>
-              <div className="mt-6 flex flex-wrap items-center gap-4">
-                <a
-                  href="https://www.paypal.com/us/fundraiser/charity/4239878"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-primary inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-semibold"
-                >
-                  <IconHeart />
-                  Donate with PayPal
-                </a>
-                <div className="flex items-center gap-2 text-sm text-[var(--ypp-muted)]">
-                  <IconShield />
-                  <span>501(c)(3) nonprofit · EIN available upon request</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <p className="font-body mt-6 text-center text-sm text-[var(--ypp-muted)]">
-            Once processed, the PayPal Giving Fund provides a contemporaneous written acknowledgement for your tax filings.
+          <p className="font-body mt-12 text-center text-sm text-[var(--ypp-muted)]">
+            Ready to give?{" "}
+            <a
+              href="https://www.paypal.com/us/fundraiser/charity/4239878"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-[var(--ypp-primary)] hover:underline"
+            >
+              Donate with PayPal
+            </a>{" "}
+            — same link as at the top of this page.
           </p>
         </div>
       </section>

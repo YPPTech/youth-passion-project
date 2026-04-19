@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -47,12 +48,13 @@ export default function Header() {
           className="flex min-w-0 max-w-[min(100%,calc(100%-3.25rem))] items-center gap-2 no-underline sm:gap-3 xl:max-w-none"
           onBeforeNavigate={() => setMobileOpen(false)}
         >
-          <img
+          <Image
             src="/logo.png"
             alt="YPP Logo"
-            width={44}
-            height={44}
-            className="h-10 w-10 shrink-0 object-contain drop-shadow-[0_2px_6px_rgba(107,33,200,0.3)] sm:h-11 sm:w-11"
+            width={128}
+            height={84}
+            priority
+            className="h-10 w-auto max-w-[4.25rem] shrink-0 object-contain drop-shadow-[0_2px_6px_rgba(107,33,200,0.3)] sm:h-11 sm:max-w-[4.75rem]"
           />
           <div className="nav-logo-text min-w-0 flex-1 leading-tight">
             <span className="line-clamp-2 sm:line-clamp-none">Youth Passion Project</span>

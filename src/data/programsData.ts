@@ -1,10 +1,10 @@
 /**
  * Single source of truth for programs/courses. Used by:
  * - Programs page (online + in-person sections)
- * - Homepage "Newest Courses" section
+ * - Weekly spotlight / catalog helpers (see weeklySpotlight.ts)
  *
  * When you have courses again: import from programs-sample-data.ts and assign below,
- * or replace the empty arrays with the sample data. Homepage and Programs stay in sync.
+ * or replace the empty arrays with the sample data.
  */
 
 export type OnlineClass = {
@@ -36,9 +36,26 @@ export type InPersonLocation = {
   classes: InPersonClass[];
 };
 
-/** No classes at the moment. Restore from programs-sample-data when sessions are available. */
+/** No online sessions listed until the student portal publishes a catalog. */
 export const onlineSessions: OnlineSession[] = [];
-export const inPersonLocations: InPersonLocation[] = [];
+
+/** Active in-person chapter locations shown on Programs & Chapters. */
+export const inPersonLocations: InPersonLocation[] = [
+  {
+    id: "scarsdale-ny",
+    city: "Scarsdale",
+    state: "NY",
+    sessions: "Fall & Spring",
+    classes: [],
+  },
+  {
+    id: "edison-nj",
+    city: "Edison",
+    state: "NJ",
+    sessions: "Fall & Spring",
+    classes: [],
+  },
+];
 
 export type NewestCourseItem = {
   name: string;

@@ -1,6 +1,4 @@
-"use client";
-
-import { useState, type ReactNode } from "react";
+import type { ReactNode } from "react";
 
 export type InPersonClass = {
   name: string;
@@ -17,6 +15,19 @@ export type InPersonLocation = {
   classes: InPersonClass[];
 };
 
+function LocationPinIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.75} aria-hidden>
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M12 21s-6-5.35-6-10a6 6 0 1112 0c0 4.65-6 10-6 10z"
+      />
+      <circle cx="12" cy="11" r="2.25" strokeWidth={1.75} />
+    </svg>
+  );
+}
+
 type Props = {
   locations: InPersonLocation[];
   /** When locations are empty, show only the short “check back” lines (parent shows the program-model banner). */
@@ -25,29 +36,16 @@ type Props = {
   emptyStateIntro?: ReactNode;
 };
 
-export default function InPersonSection({ locations, compactEmptyState = false, emptyStateIntro }: Props) {
-  const [selectedId, setSelectedId] = useState<string | null>(null);
-
-  // Restore map when needed: uncomment the block below and change wrapper to grid lg:grid-cols-2
-  // {/* Map card (stored for later):
-  //   <div className="card-ypp">
-  //     <h3 className="font-heading font-semibold text-[var(--ypp-ink)]">Map</h3>
-  //     <div className="mt-4 flex aspect-video w-full items-center justify-center overflow-hidden rounded-lg bg-[var(--ypp-border)]">
-  //       <p className="text-center text-sm text-[var(--ypp-muted)]">
-  //         Map: DE, PA (in-person locations)
-  //       </p>
-  //     </div>
-  //   </div>
-  // */}
-
+export default function InPersonSection({
+  locations,
+  compactEmptyState = false,
+  emptyStateIntro,
+}: Props) {
   return (
-    <div className="mt-10 w-full min-w-0">
-      <div className="card-ypp min-w-0">
-        <h3 className="font-heading font-semibold text-[var(--ypp-ink)]">
-          Locations & Sessions
-        </h3>
+    <div className="mt-12 w-full min-w-0 sm:mt-14">
+      <div className="min-w-0">
         {locations.length === 0 ? (
-          <div className="mt-6 flex flex-col items-center justify-center rounded-xl border border-[var(--ypp-border)] bg-[var(--ypp-blush)]/30 px-6 py-12 text-center">
+          <div className="flex flex-col items-center justify-center rounded-2xl border border-[var(--ypp-border)] bg-[var(--ypp-white)]/80 px-6 py-14 text-center shadow-[var(--shadow-sm)] backdrop-blur-sm">
             {!compactEmptyState && emptyStateIntro ? (
               <div className="font-body max-w-2xl text-[var(--ypp-ink)] leading-relaxed">{emptyStateIntro}</div>
             ) : null}
@@ -61,99 +59,30 @@ export default function InPersonSection({ locations, compactEmptyState = false, 
             </p>
           </div>
         ) : (
-          <>
-            <p className="mt-1 text-sm text-[var(--ypp-muted)]">
-              Select a location to see classes offered there.
-            </p>
-            <ul className="mt-4 space-y-2">
-              {locations.map((loc) => {
-            const isOpen = selectedId === loc.id;
-            return (
-              <li key={loc.id} className="flex flex-col gap-2">
-                <button
-                  type="button"
-                  onClick={() => setSelectedId(isOpen ? null : loc.id)}
-                  className={`card-ypp w-full rounded-xl border-2 p-4 text-left transition-colors hover:border-[var(--ypp-primary)]/40 hover:bg-[var(--ypp-lavender)]/30 ${
-                    isOpen
-                      ? "border-[var(--ypp-primary)] bg-[var(--ypp-lavender)]/40"
-                      : "border-transparent"
-                  }`}
-                >
-                  <span className="font-medium text-[var(--ypp-ink)]">
-                    {loc.city}, {loc.state}
-                  </span>
-                  <span className="mt-1 block text-sm text-[var(--ypp-muted)]">
-                    Sessions: {loc.sessions}
-                  </span>
-                  <span className="mt-2 inline-block text-sm font-medium text-[var(--ypp-primary)]">
-                    {isOpen ? "Hide classes ▼" : "View classes →"}
-                  </span>
-                </button>
-                {isOpen && (
-                  <div className="rounded-xl border border-[var(--ypp-border)] bg-[var(--ypp-white)] p-4">
-                    <h4 className="font-heading font-semibold text-[var(--ypp-ink)]">
-                      Classes at {loc.city}
-                    </h4>
-                    <ul className="mt-4 space-y-3">
-                      {loc.classes.map((cls) => {
-                        const hasLink = cls.link.trim().length > 0;
-                        const inner = (
-                          <>
-                            <span className="font-medium text-[var(--ypp-ink)]">
-                              {cls.name}
-                            </span>
-                            <span className="mt-0.5 block text-sm text-[var(--ypp-primary)]">
-                              {cls.grades}
-                            </span>
-                            <p className="mt-2 line-clamp-2 text-sm text-[var(--ypp-muted)] leading-relaxed">
-                              {cls.description}
-                            </p>
-                            <span className="mt-2 inline-block text-xs font-semibold text-[var(--ypp-primary)]">
-                              {hasLink ? "Full details & sign up →" : "Coming soon"}
-                            </span>
-                          </>
-                        );
-                        return (
-                          <li key={cls.name}>
-                            {hasLink ? (
-                              <a
-                                href={cls.link}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="block rounded-lg border border-[var(--ypp-border)] p-3 transition-colors hover:border-[var(--ypp-primary)]/50 hover:bg-[var(--ypp-lavender)]/20"
-                              >
-                                {inner}
-                              </a>
-                            ) : (
-                              <div className="block rounded-lg border border-[var(--ypp-border)] p-3">
-                                {inner}
-                              </div>
-                            )}
-                          </li>
-                        );
-                      })}
-                    </ul>
-                    {loc.classes[0]?.link?.trim() ? (
-                      <a
-                        href={loc.classes[0].link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="mt-4 inline-block text-sm font-semibold text-[var(--ypp-primary)] hover:underline"
-                      >
-                        View all classes & sign up on portal →
-                      </a>
-                    ) : (
-                      <p className="mt-4 text-sm font-semibold text-[var(--ypp-primary)]">
-                        Student portal — coming soon
+          <ul className="mx-auto grid max-w-3xl list-none grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8">
+            {locations.map((loc) => (
+              <li key={loc.id}>
+                <div className="group relative flex h-full min-h-[8.5rem] flex-col rounded-2xl border border-[var(--ypp-primary)]/15 bg-[var(--ypp-white)]/85 p-6 shadow-[0_8px_32px_rgba(59,15,110,0.08)] ring-1 ring-white/60 backdrop-blur-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-[var(--ypp-primary)]/30 hover:shadow-[0_14px_40px_rgba(107,33,200,0.12)] sm:p-7">
+                  <div className="flex items-start gap-4">
+                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[var(--ypp-lavender)] text-[var(--ypp-primary)] transition-colors group-hover:bg-[var(--ypp-primary)]/10">
+                      <LocationPinIcon className="h-6 w-6" />
+                    </div>
+                    <div className="min-w-0 flex-1 text-left">
+                      <p className="font-label text-[10px] font-semibold uppercase tracking-wider text-[var(--ypp-primary)]/90">
+                        In person
                       </p>
-                    )}
+                      <p className="font-heading mt-1.5 text-xl font-bold tracking-tight text-[var(--ypp-deep)] sm:text-2xl">
+                        {loc.city}, {loc.state}
+                      </p>
+                      {loc.sessions ? (
+                        <p className="font-body mt-2 text-sm text-[var(--ypp-muted)]">{loc.sessions}</p>
+                      ) : null}
+                    </div>
                   </div>
-                )}
+                </div>
               </li>
-            );
-          })}
-            </ul>
-          </>
+            ))}
+          </ul>
         )}
       </div>
     </div>

@@ -1,10 +1,10 @@
 /**
- * Sample data for Programs page and homepage "Newest Courses". Restore when classes are available:
+ * Sample data for the Programs page. Restore when classes are available:
  * 1. In src/data/programsData.ts, set:
  *    import { onlineSessionsSample, inPersonLocationsSample } from "@/app/programs/programs-sample-data";
  *    export const onlineSessions = onlineSessionsSample;
  *    export const inPersonLocations = inPersonLocationsSample;
- * 2. Programs page and homepage will both show courses; remove the "no classes" conditionals if you prefer.
+ * 2. Remove the "no classes" conditionals on the Programs page if you prefer.
  */
 /** Empty link = no portal URL while portal is coming soon. */
 const NO_PORTAL_LINK = "";

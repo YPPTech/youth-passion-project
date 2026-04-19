@@ -49,7 +49,7 @@ export type WeeklySpotlight = {
 const IDLE_SPOTLIGHT: Omit<WeeklySpotlight, "source"> = {
   title: "No open class list right now",
   blurb:
-    "We’re between published sections. When registration opens, you’ll enroll through the student portal and see offerings on Programs & Chapters. Until then, explore how chapters work, check the calendar, or contact us—we’re still here.",
+    "When registration opens, you'll enroll through the student portal and see offerings on Programs & Chapters.",
   ctaLabel: "Programs & Chapters",
   ctaHref: "/programs",
 };

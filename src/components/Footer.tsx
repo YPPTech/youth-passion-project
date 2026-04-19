@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import HomeReloadLink from "@/components/HomeReloadLink";
 
@@ -76,12 +77,12 @@ export default function Footer() {
           {/* Column 1: Brand + logo + tagline */}
           <div className="flex flex-col sm:pr-4">
             <HomeReloadLink className="flex items-start gap-5 no-underline text-inherit outline-offset-4 transition-opacity hover:opacity-90 focus-visible:rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--ypp-primary)]">
-              <img
+              <Image
                 src="/logo.png"
                 alt="Youth Passion Project"
-                width={56}
-                height={56}
-                className="h-14 w-14 shrink-0 object-contain"
+                width={128}
+                height={84}
+                className="h-14 w-auto max-w-[5.5rem] shrink-0 object-contain"
               />
               <div className="min-w-0 flex-1">
                 <h3 className="font-heading text-lg font-bold leading-tight text-[var(--ypp-ink)]">

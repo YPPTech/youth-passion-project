@@ -190,7 +190,7 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Hero: light gradient (YPP palette — light mode) */
+/* Hero: light gradient (legacy / alternate sections) */
 .hero-gradient {
   background: linear-gradient(135deg, var(--ypp-lavender) 0%, var(--ypp-blush) 50%, var(--ypp-white) 100%);
   position: relative;
@@ -219,21 +219,46 @@ html {
   pointer-events: none;
 }
 
-/* Fun hero: floating blobs */
-@keyframes heroBlob1 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  33% { transform: translate(20px, -15px) scale(1.05); }
-  66% { transform: translate(-10px, 10px) scale(0.98); }
+/* Home hero — celestial art + soft veil for typography (reference: public/hero/celestial-reference.png) */
+.hero-celestial {
+  position: relative;
+  isolation: isolate;
+  background-color: #1e0b3a;
+  background-image:
+    linear-gradient(
+      115deg,
+      rgba(255, 252, 255, 0.94) 0%,
+      rgba(248, 242, 255, 0.72) 28%,
+      rgba(200, 182, 255, 0.35) 52%,
+      rgba(80, 40, 140, 0.45) 78%,
+      rgba(25, 8, 55, 0.55) 100%
+    ),
+    url("/hero/celestial-reference.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
-@keyframes heroBlob2 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  33% { transform: translate(-25px, 20px) scale(1.08); }
-  66% { transform: translate(15px, -10px) scale(0.95); }
+.hero-celestial::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse 130% 75% at 50% 112%, rgba(255, 255, 255, 0.55) 0%, rgba(243, 236, 255, 0.12) 45%, transparent 58%);
 }
-@keyframes heroBlob3 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(10px, 15px) scale(1.03); }
+.hero-celestial-curve::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 48px;
+  background: var(--ypp-blush);
+  clip-path: ellipse(58% 100% at 50% 100%);
+  pointer-events: none;
+  z-index: 1;
 }
+
 @keyframes heroFadeInUp {
   from { opacity: 0; transform: translateY(24px); }
   to { opacity: 1; transform: translateY(0); }
@@ -242,63 +267,35 @@ html {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-6px); }
 }
-.hero-blob {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(72px);
-  opacity: 0.22;
-  pointer-events: none;
-}
-.hero-blob-1 {
-  width: 320px;
-  height: 320px;
-  background: rgba(232, 216, 255, 0.6);
-  top: -80px;
-  right: 10%;
-  animation: heroBlob1 12s ease-in-out infinite;
-}
-.hero-blob-2 {
-  width: 240px;
-  height: 240px;
-  background: rgba(243, 236, 255, 0.8);
-  bottom: 20%;
-  left: -60px;
-  animation: heroBlob2 10s ease-in-out infinite 1s;
-}
-.hero-blob-3 {
-  width: 180px;
-  height: 180px;
-  background: rgba(180, 127, 255, 0.2);
-  bottom: -40px;
-  right: 25%;
-  animation: heroBlob3 14s ease-in-out infinite 0.5s;
-}
-
-/* Mouse-following subtle darker gradient bubble */
-.hero-mouse-bubble {
-  position: absolute;
-  width: 380px;
-  height: 380px;
-  left: 0;
-  top: 0;
-  border-radius: 50%;
-  background: radial-gradient(
-    circle,
-    rgba(150, 125, 195, 0.38) 0%,
-    rgba(140, 115, 185, 0.22) 40%,
-    rgba(125, 105, 170, 0.1) 65%,
-    transparent 78%
-  );
-  filter: blur(42px);
-  pointer-events: none;
-  transform: translate(-50%, -50%);
-  transition: opacity 0.25s ease-out, left 0.12s ease-out, top 0.12s ease-out;
-  z-index: 1;
-}
-
 .hero-animate-in {
   animation: heroFadeInUp 0.7s ease-out both;
   animation-fill-mode: both;
+}
+
+/* Homepage testimonials — very slow horizontal drift (duplicated track = seamless loop) */
+@keyframes testimonial-marquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+.testimonial-marquee-outer {
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
+}
+.testimonial-marquee-track {
+  animation: testimonial-marquee 140s linear infinite;
+  will-change: transform;
+}
+.testimonial-marquee-track:hover {
+  animation-play-state: paused;
+}
+@media (prefers-reduced-motion: reduce) {
+  .testimonial-marquee-track {
+    animation: none;
+  }
 }
 .hero-stat-float {
   animation: heroStatFloat 4s ease-in-out infinite;
@@ -324,7 +321,6 @@ html {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero-blob-1, .hero-blob-2, .hero-blob-3,
   .hero-stat-float, .hero-passion-pill, .hero-glow::before { animation: none; }
 }
 

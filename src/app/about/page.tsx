@@ -1,7 +1,7 @@
 "use client";
 
+import Image from "next/image";
 import { useState, useEffect } from "react";
-import ClassInActionGallery from "@/components/ClassInActionGallery";
 import SectionHeading from "@/components/SectionHeading";
 
 type LeadershipMember = {
@@ -119,8 +119,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <ClassInActionGallery subtitle="Online: live video and shared tools (e.g. Scratch, Lichess). In person: same programs with local logistics." />
-
       {/* Mission and how we work */}
       <section className="bg-[var(--ypp-blush)]/60 px-4 py-16 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl">
@@ -206,12 +204,14 @@ export default function AboutPage() {
                   onClick={() => setSelected(person)}
                   className="card-ypp w-full cursor-pointer overflow-hidden p-0 text-left transition-transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-[var(--ypp-primary)]"
                 >
-                  <div className="aspect-square bg-[var(--ypp-border)] overflow-hidden">
+                  <div className="relative aspect-square overflow-hidden bg-[var(--ypp-border)]">
                     {person.image && person.image !== "/team/placeholder.jpg" ? (
-                      <img
+                      <Image
                         src={person.image}
                         alt=""
-                        className="h-full w-full object-cover object-[50%_38%]"
+                        fill
+                        className="object-cover object-[50%_38%]"
+                        sizes="(max-width: 640px) 100vw, 18rem"
                       />
                     ) : (
                       <div className="flex h-full items-center justify-center text-[var(--ypp-muted)] text-sm">
@@ -264,12 +264,14 @@ export default function AboutPage() {
             </div>
             <div className="p-6 sm:p-8">
               <div className="flex flex-col gap-6 sm:flex-row sm:gap-8">
-                <div className="mx-auto h-80 w-80 shrink-0 overflow-hidden rounded-xl bg-[var(--ypp-border)] sm:h-96 sm:w-96">
+                <div className="relative mx-auto h-80 w-80 shrink-0 overflow-hidden rounded-xl bg-[var(--ypp-border)] sm:h-96 sm:w-96">
                   {selected.image && selected.image !== "/team/placeholder.jpg" ? (
-                    <img
+                    <Image
                       src={selected.image}
                       alt=""
-                      className="h-full w-full object-cover object-[50%_38%]"
+                      fill
+                      className="object-cover object-[50%_38%]"
+                      sizes="(max-width: 640px) 20rem, 24rem"
                     />
                   ) : (
                     <div className="flex h-full w-full items-center justify-center text-[var(--ypp-muted)]">

@@ -2,48 +2,14 @@ import Link from "next/link";
 import PageHeader from "@/components/PageHeader";
 import SectionHeading from "@/components/SectionHeading";
 import InPersonSection from "@/components/InPersonSection";
-import { onlineSessions, inPersonLocations } from "@/data/programsData";
+import { inPersonLocations } from "@/data/programsData";
 
 const programModelLinkClass =
   "font-medium text-[var(--ypp-primary)] underline decoration-[var(--ypp-primary)]/40 underline-offset-2 transition-colors hover:text-[var(--ypp-deep)] hover:decoration-[var(--ypp-primary)]";
 
 const sectionScrollClass = "scroll-mt-[calc(var(--ypp-nav-height)+0.75rem)]";
 
-const programTypes = [
-  {
-    title: "YPP Chapters",
-    description: "In-person at partner schools",
-    sectionId: "ypp-chapters",
-  },
-  {
-    title: "Special Opportunities",
-    description: "Passion Labs, competitions, events",
-    sectionId: "special-opportunities",
-  },
-  {
-    title: "Online Offerings",
-    description: "Where available",
-    sectionId: "online-offerings",
-  },
-] as const;
-
-function ProgramModelCopy({ className }: { className?: string }) {
-  return (
-    <p className={className}>
-      Most programs run through partner-school chapters; new sessions start often.{" "}
-      <Link href="/notify" className={programModelLinkClass}>
-        Get notified when the student portal opens
-      </Link>{" "}
-      so you can enroll and hear what&apos;s new.
-    </p>
-  );
-}
-
 export default function ProgramsPage() {
-  const noOnline = onlineSessions.length === 0;
-  const noInPerson = inPersonLocations.length === 0;
-  const bothListingsEmpty = noOnline && noInPerson;
-
   return (
     <div className="w-full min-w-0">
       {/* When student portal launches, add back to PageHeader:
@@ -55,189 +21,46 @@ export default function ProgramsPage() {
       */}
       <PageHeader
         title="Programs & Chapters"
-        subtitle="See what we offer online and near you. Registration moves to the student portal when it launches—for now, contact us or use the links below."
+        subtitle={
+          <>
+            In-person chapters in <strong className="font-semibold text-[var(--ypp-ink)]">Scarsdale, NY</strong> and{" "}
+            <strong className="font-semibold text-[var(--ypp-ink)]">Edison, NJ</strong>. Registration will move to the
+            student portal when it launches—until then, contact us for session details,{" "}
+            <Link href="/notify" className={programModelLinkClass}>
+              join the waitlist
+            </Link>
+            , or{" "}
+            <Link href="/join#teach-or-lead" className={programModelLinkClass}>
+              volunteer to teach
+            </Link>
+            .
+          </>
+        }
       />
 
-      <section className="border-b border-[var(--ypp-border)] bg-[var(--ypp-white)] px-4 py-12 sm:px-6 lg:px-8">
-        <div className="mx-auto w-full max-w-6xl min-w-0">
-          <h2 className="sr-only">Program types</h2>
-          <p className="font-body mx-auto max-w-3xl text-center text-pretty text-base leading-relaxed text-[var(--ypp-muted)] sm:text-lg">
-            Online or in person: take a class—or teach one.
-          </p>
-          <ul className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-3 sm:items-stretch">
-            {programTypes.map(({ title, description, sectionId }) => (
-              <li key={title} className="min-w-0">
-                <a
-                  href={`#${sectionId}`}
-                  aria-label={`Jump to ${title} section`}
-                  className="flex h-full min-h-0 flex-col rounded-2xl border border-[var(--ypp-border)] bg-[var(--ypp-blush)]/40 px-5 py-5 text-left shadow-[var(--shadow-sm)] no-underline transition-colors hover:border-[var(--ypp-primary)]/35 hover:bg-[var(--ypp-lavender)]/35 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ypp-primary)] focus-visible:ring-offset-2"
-                >
-                  <h3 className="font-heading text-balance text-lg font-bold text-[var(--ypp-deep)] sm:text-xl">{title}</h3>
-                  <p className="font-body mt-2 text-pretty text-sm leading-snug text-[var(--ypp-muted)] sm:text-base">{description}</p>
-                  <span className="font-body mt-3 inline-flex items-center text-xs font-semibold text-[var(--ypp-primary)] sm:text-sm">
-                    View section <span aria-hidden>→</span>
-                  </span>
-                </a>
-              </li>
-            ))}
-          </ul>
-          <p className="font-body mx-auto mt-10 max-w-2xl text-center text-pretty text-sm text-[var(--ypp-muted)] sm:text-base">
-            Want to teach?{" "}
-            <Link href="/join#teach-or-lead" className={`inline-flex items-center gap-1 ${programModelLinkClass}`}>
-              Volunteer roles
-              <span aria-hidden>→</span>
-            </Link>
-          </p>
-        </div>
-      </section>
-
-      {bothListingsEmpty && (
-        <section className="border-b border-[var(--ypp-border)] bg-[var(--ypp-white)] px-4 py-10 sm:px-6 lg:px-8">
-          <div className="mx-auto w-full max-w-3xl min-w-0">
-            <div className="card-ypp border-[var(--ypp-primary)]/25 bg-[var(--ypp-lavender)]/15 px-6 py-8 text-center sm:px-8">
-              <ProgramModelCopy className="font-body text-base leading-relaxed text-[var(--ypp-ink)] sm:text-lg" />
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* In-person map + list */}
       <section
         id="ypp-chapters"
-        className={`bg-[var(--ypp-blush)]/60 px-4 py-16 sm:px-6 lg:px-8 ${sectionScrollClass}`}
+        className={`relative overflow-hidden border-b border-[var(--ypp-border)]/60 bg-gradient-to-b from-[var(--ypp-lavender)]/45 via-[var(--ypp-blush)]/90 to-[#faf8ff] px-4 py-20 sm:px-6 sm:py-24 lg:px-8 ${sectionScrollClass}`}
       >
-        <div className="mx-auto w-full max-w-6xl min-w-0">
-          <SectionHeading
-            title="YPP Chapters"
-            subtitle="In-person programs at partner schools"
-          />
-          <InPersonSection
-            locations={inPersonLocations}
-            compactEmptyState={bothListingsEmpty}
-            emptyStateIntro={<ProgramModelCopy />}
-          />
+        <div
+          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_50%_-20%,rgba(139,63,232,0.12),transparent_50%),radial-gradient(ellipse_50%_40%_at_100%_60%,rgba(107,33,200,0.06),transparent)]"
+          aria-hidden
+        />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-white/40 to-transparent" aria-hidden />
+        <div className="relative mx-auto w-full max-w-5xl min-w-0">
+          <SectionHeading title="In-person chapters" subtitle="Where we run programs today." />
+          <InPersonSection locations={inPersonLocations} />
         </div>
       </section>
 
-      {/* Special opportunities (static overview) */}
-      <section
-        id="special-opportunities"
-        className={`border-y border-[var(--ypp-border)] bg-[var(--ypp-white)] px-4 py-16 sm:px-6 lg:px-8 ${sectionScrollClass}`}
-      >
-        <div className="mx-auto w-full max-w-6xl min-w-0">
-          <SectionHeading
-            title="Special Opportunities"
-            subtitle="Passion Labs, competitions, and events beyond the regular chapter week"
-          />
-          <div className="card-ypp mx-auto mt-10 max-w-3xl px-6 py-8 sm:px-8">
-            <p className="font-body text-center text-pretty text-base leading-relaxed text-[var(--ypp-ink)] sm:text-lg">
-              Labs, competitions, and events run across the network; timing and sign-up vary by chapter. The student
-              portal will list what&apos;s open. Until then,{" "}
-              <Link href="/notify" className={programModelLinkClass}>
-                get notified when it launches
-              </Link>
-              .
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Online list */}
-      <section
-        id="online-offerings"
-        className={`bg-[var(--ypp-lavender)]/20 px-4 py-16 sm:px-6 lg:px-8 ${sectionScrollClass}`}
-      >
-        <div className="mx-auto w-full max-w-6xl min-w-0">
-          <SectionHeading
-            title="Online Offerings"
-            subtitle="Live sessions where we offer them—platform varies by class. Details and sign-up move to the student portal when it opens."
-          />
-          {onlineSessions.length === 0 ? (
-            <div className="card-ypp mt-10 flex flex-col items-center justify-center px-6 py-16 text-center">
-              {!bothListingsEmpty && (
-                <ProgramModelCopy className="font-body max-w-2xl text-base leading-relaxed text-[var(--ypp-ink)] sm:text-lg" />
-              )}
-              <p
-                className={`font-body text-lg text-[var(--ypp-ink)] ${bothListingsEmpty ? "" : "mt-8"}`}
-              >
-                No online classes available at the moment.
-              </p>
-              <p className="font-body mt-2 text-[var(--ypp-muted)]">
-                Check back soon or email support for options.
-              </p>
-            </div>
-          ) : (
-            <div className="mt-10 space-y-8">
-              {onlineSessions.map(({ session, location, classes }) => (
-                <div
-                  key={session}
-                  className="card-ypp min-w-0"
-                >
-                  <div className="flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between">
-                    <h3 className="font-heading min-w-0 text-balance text-lg font-semibold text-[var(--ypp-ink)]">
-                      {session}
-                    </h3>
-                    <span className="shrink-0 text-sm text-[var(--ypp-muted)] sm:text-right">{location}</span>
-                  </div>
-                  <ul className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2">
-                    {classes.map(({ name, grades, description, link }) => {
-                      const hasLink = link.trim().length > 0;
-                      const body = (
-                        <>
-                          <h4 className="font-heading text-lg font-semibold text-[var(--ypp-ink)]">
-                            {name}
-                          </h4>
-                          <p className="mt-1 text-sm font-medium text-[var(--ypp-primary)]">
-                            {grades}
-                          </p>
-                          <p className="mt-3 font-body text-sm text-[var(--ypp-muted)] leading-relaxed">
-                            {description}
-                          </p>
-                          <span className="mt-4 inline-block text-sm font-semibold text-[var(--ypp-primary)]">
-                            {hasLink ? "Full details & sign up →" : "Coming soon"}
-                          </span>
-                        </>
-                      );
-                      return (
-                        <li key={name}>
-                          {hasLink ? (
-                            <a
-                              href={link}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="card-ypp block p-5 transition-colors hover:border-[var(--ypp-primary)]/50 hover:bg-[var(--ypp-lavender)]/20"
-                            >
-                              {body}
-                            </a>
-                          ) : (
-                            <div className="card-ypp block p-5">{body}</div>
-                          )}
-                        </li>
-                      );
-                    })}
-                  </ul>
-                </div>
-              ))}
-            </div>
-          )}
-        </div>
-      </section>
-
-      {/* Class descriptions note + Calendar link */}
       <section className="border-t border-[var(--ypp-border)] bg-[var(--ypp-white)] px-4 py-12 sm:px-6 lg:px-8">
         <div className="mx-auto w-full max-w-3xl min-w-0 text-center">
           <p className="font-body text-pretty text-[var(--ypp-muted)]">
-            Full descriptions, grades, ages, and instructor profiles will live on the student portal. The{" "}
-            <Link href="/programs/calendar" className="text-[var(--ypp-primary)] font-medium hover:underline">
+            Course descriptions, grades, and instructor profiles will live on the student portal. The{" "}
+            <Link href="/programs/calendar" className="font-medium text-[var(--ypp-primary)] hover:underline">
               Calendar
             </Link>{" "}
-            page will show a week-at-a-glance when that portal is live—it&apos;s a placeholder for now.
-          </p>
-          <p className="font-body mt-6 text-sm text-[var(--ypp-muted)] sm:text-base">
-            Want to teach?{" "}
-            <Link href="/join#teach-or-lead" className={`font-medium ${programModelLinkClass}`}>
-              Apply to teach →
-            </Link>
+            will show a week-at-a-glance when that goes live—it&apos;s a placeholder for now.
           </p>
         </div>
       </section>
