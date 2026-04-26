@@ -1,0 +1,514 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>YPP Branding (Visual)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Nunito:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --ypp-deep: #3b0f6e;
+        --ypp-primary: #6b21c8;
+        --ypp-mid: #8b3fe8;
+        --ypp-light: #b47fff;
+        --ypp-lavender: #e8d8ff;
+        --ypp-blush: #f3ecff;
+        --ypp-pathways: #7c5cbf;
+        --ypp-global: #9b6fd4;
+        --ypp-white: #ffffff;
+        --ypp-ink: #1a0533;
+        --ypp-muted: #6b5f7a;
+        --ypp-border: rgba(107, 33, 200, 0.15);
+        --shadow-sm: 0 2px 8px rgba(59, 15, 110, 0.1);
+        --shadow-md: 0 6px 24px rgba(59, 15, 110, 0.15);
+        --shadow-lg: 0 16px 48px rgba(59, 15, 110, 0.2);
+        --r-md: 8px;
+        --r-lg: 16px;
+        --r-xl: 24px;
+        --r-full: 999px;
+      }
+
+      * { box-sizing: border-box; }
+      html, body {
+        margin: 0;
+        padding: 0;
+        background: #ffffff;
+        color: var(--ypp-ink);
+        font-family: "DM Sans", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif;
+      }
+
+      .page {
+        padding: 40px;
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        padding: 18px 20px;
+        border: 1px solid var(--ypp-border);
+        border-radius: 18px;
+        background: linear-gradient(135deg, rgba(232,216,255,0.55), rgba(243,236,255,0.65), rgba(255,255,255,0.95));
+        box-shadow: var(--shadow-sm);
+      }
+
+      .brandLockup {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        min-width: 0;
+      }
+
+      .brandText { min-width: 0; }
+      .brandName {
+        margin: 0;
+        font-family: "Lora", Georgia, serif;
+        font-size: 18px;
+        font-weight: 700;
+        letter-spacing: -0.01em;
+        color: var(--ypp-deep);
+        line-height: 1.2;
+      }
+      .brandTag  {
+        margin: 6px 0 0;
+        font-family: "Nunito", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif;
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--ypp-mid);
+      }
+
+      .meta {
+        text-align: right;
+        color: var(--ypp-muted);
+        font-size: 12px;
+        line-height: 1.35;
+      }
+
+      h2 {
+        margin: 34px 0 12px;
+        font-size: 18px;
+        letter-spacing: -0.01em;
+        color: var(--ypp-deep);
+        font-family: "Playfair Display", Georgia, serif;
+        font-weight: 800;
+      }
+      .sub {
+        margin: 0 0 16px;
+        color: var(--ypp-muted);
+        font-size: 13px;
+        line-height: 1.6;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 14px;
+      }
+
+      .card {
+        border: 1px solid var(--ypp-border);
+        border-radius: var(--r-xl);
+        background: var(--ypp-white);
+        box-shadow: var(--shadow-sm);
+        overflow: hidden;
+      }
+      .cardInner { padding: 16px; }
+      .label { font-size: 11px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ypp-primary); }
+      .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+
+      .swatch {
+        border-radius: 16px;
+        border: 1px solid rgba(0,0,0,0.06);
+        height: 76px;
+      }
+
+      .swatchRow {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      .swatchMeta {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+        align-items: baseline;
+      }
+      .swatchName { font-weight: 800; font-size: 13px; }
+      .swatchHex  { font-size: 12px; color: var(--ypp-muted); }
+
+      .grad {
+        height: 86px;
+        border-radius: 18px;
+        border: 1px solid rgba(0,0,0,0.06);
+      }
+
+      .typeSample {
+        display: grid;
+        gap: 10px;
+      }
+      .typeRow {
+        padding: 14px 16px;
+        border: 1px solid var(--ypp-border);
+        border-radius: 18px;
+        background: linear-gradient(180deg, rgba(243,236,255,0.6), rgba(255,255,255,1));
+      }
+      .typeMeta { font-size: 11px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ypp-muted); }
+      .display { font-family: "Playfair Display", Georgia, serif; font-size: 48px; line-height: 1.1; letter-spacing: -0.02em; font-weight: 900; color: var(--ypp-deep); }
+      .h1 { font-family: "Playfair Display", Georgia, serif; font-size: 36px; line-height: 1.2; letter-spacing: -0.01em; font-weight: 700; color: var(--ypp-deep); }
+      .h2 { font-family: "Playfair Display", Georgia, serif; font-size: 28px; line-height: 1.25; letter-spacing: -0.01em; font-weight: 700; color: var(--ypp-deep); }
+      .h3 { font-family: "DM Sans", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif; font-size: 20px; line-height: 1.25; letter-spacing: -0.01em; font-weight: 600; color: var(--ypp-primary); }
+      .body { font-family: "DM Sans", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif; font-size: 16px; line-height: 1.65; color: var(--ypp-ink); }
+      .small { font-family: "DM Sans", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif; font-size: 13px; color: var(--ypp-muted); }
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        border-radius: var(--r-full);
+        padding: 6px 12px;
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        font-weight: 800;
+        font-family: "DM Sans", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif;
+        background: var(--ypp-lavender);
+        color: var(--ypp-primary);
+      }
+
+      .btnRow {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        align-items: center;
+      }
+      .btn {
+        border: 0;
+        border-radius: var(--r-full);
+        padding: 12px 18px;
+        font-weight: 800;
+        letter-spacing: -0.01em;
+        font-size: 14px;
+        font-family: "DM Sans", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif;
+        box-shadow: var(--shadow-sm);
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .btnPrimary { background: linear-gradient(135deg, var(--ypp-primary), var(--ypp-mid)); color: #fff; box-shadow: 0 4px 20px rgba(107,33,200,0.35); }
+      .btnSecondary { background: #fff; color: var(--ypp-primary); border: 2px solid var(--ypp-primary); }
+      .btnDark { background: var(--ypp-deep); color: #fff; }
+
+      .chip {
+        border-radius: var(--r-full);
+        padding: 7px 12px;
+        font-size: 12px;
+        font-weight: 800;
+        border: 1px solid var(--ypp-border);
+        background: rgba(243,236,255,0.7);
+        color: var(--ypp-deep);
+      }
+
+      .logoBox {
+        display: grid;
+        place-items: center;
+        height: 140px;
+        background: radial-gradient(ellipse at 70% 20%, rgba(232,216,255,0.9), rgba(255,255,255,1));
+        border-bottom: 1px solid var(--ypp-border);
+      }
+
+      .logoMark {
+        width: 64px;
+        height: 64px;
+      }
+      .logoMarkImg {
+        height: 104px;
+        width: auto;
+        max-width: 168px;
+        display: block;
+        object-fit: contain;
+        filter: drop-shadow(0 2px 6px rgba(107, 33, 200, 0.3));
+      }
+      .logoMarkImg.sm {
+        height: 44px;
+        width: auto;
+        max-width: 76px;
+        object-fit: contain;
+        filter: drop-shadow(0 2px 6px rgba(107, 33, 200, 0.3));
+      }
+
+      .col-6 { grid-column: span 6; }
+      .col-4 { grid-column: span 4; }
+      .col-8 { grid-column: span 8; }
+      .col-12 { grid-column: span 12; }
+
+      @media print {
+        body { background: #fff; }
+        .page { padding: 22px; }
+        .card { break-inside: avoid; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <div class="topbar">
+        <div class="brandLockup">
+          <img class="logoMarkImg sm" src="./public/logo.png" alt="Youth Passion Project logo" />
+          <div class="brandText">
+            <p class="brandName">Youth Passion Project</p>
+            <p class="brandTag">Branding reference (visual)</p>
+          </div>
+        </div>
+        <div class="meta">
+          Source tokens: <span class="mono">src/app/globals.css</span><br />
+          Fonts: <span class="mono">src/app/layout.tsx</span>
+        </div>
+      </div>
+
+      <h2>Colors</h2>
+      <p class="sub">Primary palette tokens in use across the site. Use CSS variables like <span class="mono">var(--ypp-primary)</span>.</p>
+      <div class="grid">
+        <div class="card col-4">
+          <div class="cardInner swatchRow">
+            <div class="swatch" style="background: var(--ypp-deep)"></div>
+            <div class="swatchMeta"><div class="swatchName">Deep</div><div class="swatchHex mono">#3B0F6E</div></div>
+            <div class="small mono">--ypp-deep</div>
+          </div>
+        </div>
+        <div class="card col-4">
+          <div class="cardInner swatchRow">
+            <div class="swatch" style="background: var(--ypp-primary)"></div>
+            <div class="swatchMeta"><div class="swatchName">Primary</div><div class="swatchHex mono">#6B21C8</div></div>
+            <div class="small mono">--ypp-primary</div>
+          </div>
+        </div>
+        <div class="card col-4">
+          <div class="cardInner swatchRow">
+            <div class="swatch" style="background: var(--ypp-mid)"></div>
+            <div class="swatchMeta"><div class="swatchName">Mid</div><div class="swatchHex mono">#8B3FE8</div></div>
+            <div class="small mono">--ypp-mid</div>
+          </div>
+        </div>
+        <div class="card col-4">
+          <div class="cardInner swatchRow">
+            <div class="swatch" style="background: var(--ypp-light)"></div>
+            <div class="swatchMeta"><div class="swatchName">Light</div><div class="swatchHex mono">#B47FFF</div></div>
+            <div class="small mono">--ypp-light</div>
+          </div>
+        </div>
+        <div class="card col-4">
+          <div class="cardInner swatchRow">
+            <div class="swatch" style="background: var(--ypp-lavender)"></div>
+            <div class="swatchMeta"><div class="swatchName">Lavender</div><div class="swatchHex mono">#E8D8FF</div></div>
+            <div class="small mono">--ypp-lavender</div>
+          </div>
+        </div>
+        <div class="card col-4">
+          <div class="cardInner swatchRow">
+            <div class="swatch" style="background: var(--ypp-blush)"></div>
+            <div class="swatchMeta"><div class="swatchName">Blush</div><div class="swatchHex mono">#F3ECFF</div></div>
+            <div class="small mono">--ypp-blush</div>
+          </div>
+        </div>
+        <div class="card col-4">
+          <div class="cardInner swatchRow">
+            <div class="swatch" style="background: var(--ypp-pathways)"></div>
+            <div class="swatchMeta"><div class="swatchName">Pathways</div><div class="swatchHex mono">#7C5CBF</div></div>
+            <div class="small mono">--ypp-pathways</div>
+          </div>
+        </div>
+        <div class="card col-4">
+          <div class="cardInner swatchRow">
+            <div class="swatch" style="background: var(--ypp-global)"></div>
+            <div class="swatchMeta"><div class="swatchName">Global Ops</div><div class="swatchHex mono">#9B6FD4</div></div>
+            <div class="small mono">--ypp-global</div>
+          </div>
+        </div>
+        <div class="card col-4">
+          <div class="cardInner swatchRow">
+            <div class="swatch" style="background: var(--ypp-ink)"></div>
+            <div class="swatchMeta"><div class="swatchName">Ink</div><div class="swatchHex mono">#1A0533</div></div>
+            <div class="small mono">--ypp-ink</div>
+          </div>
+        </div>
+        <div class="card col-4">
+          <div class="cardInner swatchRow">
+            <div class="swatch" style="background: var(--ypp-muted)"></div>
+            <div class="swatchMeta"><div class="swatchName">Muted</div><div class="swatchHex mono">#6B5F7A</div></div>
+            <div class="small mono">--ypp-muted</div>
+          </div>
+        </div>
+        <div class="card col-4">
+          <div class="cardInner swatchRow">
+            <div class="swatch" style="background: var(--ypp-white); border: 1px solid rgba(0,0,0,0.08)"></div>
+            <div class="swatchMeta"><div class="swatchName">White</div><div class="swatchHex mono">#FFFFFF</div></div>
+            <div class="small mono">--ypp-white</div>
+          </div>
+        </div>
+      </div>
+
+      <h2>Gradients</h2>
+      <p class="sub">Common gradients used for CTAs and hero backgrounds.</p>
+      <div class="grid">
+        <div class="card col-6">
+          <div class="cardInner">
+            <div class="label">Deep → Primary</div>
+            <div class="grad" style="margin-top: 10px; background: linear-gradient(135deg, var(--ypp-deep), var(--ypp-primary))"></div>
+            <div class="small mono" style="margin-top: 10px;">linear-gradient(135deg, --ypp-deep, --ypp-primary)</div>
+          </div>
+        </div>
+        <div class="card col-6">
+          <div class="cardInner">
+            <div class="label">Primary → Mid</div>
+            <div class="grad" style="margin-top: 10px; background: linear-gradient(135deg, var(--ypp-primary), var(--ypp-mid))"></div>
+            <div class="small mono" style="margin-top: 10px;">linear-gradient(135deg, --ypp-primary, --ypp-mid)</div>
+          </div>
+        </div>
+        <div class="card col-12">
+          <div class="cardInner">
+            <div class="label">Hero background</div>
+            <div class="grad" style="margin-top: 10px; height: 110px; background: linear-gradient(135deg, var(--ypp-lavender) 0%, var(--ypp-blush) 50%, var(--ypp-white) 100%)"></div>
+            <div class="small mono" style="margin-top: 10px;">linear-gradient(135deg, --ypp-lavender 0%, --ypp-blush 50%, --ypp-white 100%)</div>
+          </div>
+        </div>
+      </div>
+
+      <h2>Typography</h2>
+      <p class="sub">These are the actual type families and sizes used in the project (see <span class="mono">src/app/layout.tsx</span> and <span class="mono">ypp-design-palette.html</span>).</p>
+      <div class="grid">
+        <div class="card col-8">
+          <div class="cardInner typeSample">
+            <div class="typeRow">
+              <div class="typeMeta">Display / hero (Playfair Display 48px / 3rem · 900)</div>
+              <div class="display">Discover what you love.</div>
+              <div class="small">Use: <span class="mono">.font-display</span></div>
+            </div>
+            <div class="typeRow">
+              <div class="typeMeta">H1 (Playfair Display 36px / 2.25rem · 700)</div>
+              <div class="h1">Free online & in-person classes</div>
+              <div class="small">Use: <span class="mono">.font-heading</span></div>
+            </div>
+            <div class="typeRow">
+              <div class="typeMeta">H2 (Playfair Display 28px / 1.75rem · 700)</div>
+              <div class="h2">Programs built by students, for students</div>
+              <div class="small">Use: <span class="mono">.font-heading</span></div>
+            </div>
+            <div class="typeRow">
+              <div class="typeMeta">H3 / Accent (DM Sans 20px / 1.25rem · 600)</div>
+              <div class="h3">Learn with friendly, high-quality instructors</div>
+              <div class="small">Use: <span class="mono">.font-body</span> (accented headings in some sections)</div>
+            </div>
+            <div class="typeRow">
+              <div class="typeMeta">Body (DM Sans 16px / 1rem · 400)</div>
+              <div class="body">
+                Youth Passion Project connects students with passionate, high-quality instructors to discover what they love and build the skills to pursue it.
+              </div>
+              <div class="small">Use: <span class="mono">.font-body</span></div>
+            </div>
+            <div class="typeRow">
+              <div class="typeMeta">Small / helper (DM Sans 13px · 400)</div>
+              <div class="small">Short helper text, captions, and supporting copy live here.</div>
+              <div class="small">Use: <span class="mono">text-sm</span> + muted color tokens</div>
+            </div>
+          </div>
+        </div>
+        <div class="card col-4">
+          <div class="cardInner">
+            <div class="label">Label / Pill</div>
+            <div style="margin-top: 12px; display: flex; flex-wrap: wrap; gap: 10px;">
+              <span class="pill">About</span>
+              <span class="pill" style="background: rgba(124,92,191,0.16); color: var(--ypp-pathways);">Pathways</span>
+              <span class="pill" style="background: rgba(155,111,212,0.16); color: var(--ypp-global);">Global Ops</span>
+            </div>
+            <div class="small" style="margin-top: 10px;">Use: <span class="mono">.font-label</span> (DM Sans 11px · 700/800 · tracking wide · uppercase)</div>
+            <div class="card" style="margin-top: 14px; box-shadow: none;">
+              <div class="cardInner" style="padding: 12px 14px;">
+                <div class="label" style="color: var(--ypp-muted);">Font families</div>
+                <div style="margin-top: 10px; display: grid; gap: 10px;">
+                  <div>
+                    <div class="small mono">DM Sans</div>
+                    <div class="body" style="font-weight: 400;">Aa Bb Cc 0123</div>
+                  </div>
+                  <div>
+                    <div class="small mono">Playfair Display</div>
+                    <div class="h2" style="margin-top: 4px;">Aa Bb Cc</div>
+                  </div>
+                  <div>
+                    <div class="small mono">Nunito</div>
+                    <div class="body" style="font-family: 'Nunito', ui-sans-serif, system-ui; font-weight: 700;">Aa Bb Cc 0123</div>
+                  </div>
+                  <div>
+                    <div class="small mono">Lora</div>
+                    <div class="body" style="font-family: 'Lora', Georgia, serif; font-weight: 700;">Aa Bb Cc 0123</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h2>UI components</h2>
+      <p class="sub">Representative buttons + a card surface style (matches the global CSS utilities used in the app).</p>
+      <div class="grid">
+        <div class="card col-12">
+          <div class="cardInner">
+            <div class="label">Buttons</div>
+            <div class="btnRow" style="margin-top: 12px;">
+              <span class="btn btnPrimary">Primary CTA <span class="chip">.btn-primary</span></span>
+              <span class="btn btnSecondary">Secondary <span class="chip">.btn-secondary</span></span>
+              <span class="btn btnDark">Student Portal <span class="chip">.btn-dark</span></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card col-6">
+          <div class="logoBox">
+            <img class="logoMarkImg" src="./public/logo.png" alt="Youth Passion Project logo" />
+          </div>
+          <div class="cardInner">
+            <div class="label">Logo mark</div>
+            <p class="sub" style="margin: 10px 0 0;">
+              Asset: <span class="mono">public/logo.png</span><br />
+              Note: this is the same file referenced by the site header/footer (<span class="mono">/logo.png</span>).
+            </p>
+          </div>
+        </div>
+
+        <div class="card col-6">
+          <div class="cardInner">
+            <div class="label">Card surface</div>
+            <div style="margin-top: 12px; padding: 18px; border-radius: 22px; border: 1px solid var(--ypp-border); box-shadow: var(--shadow-md); background: #fff;">
+              <div class="pill" style="background: rgba(240,230,255,1); color: var(--ypp-primary);">Card</div>
+              <div class="h3" style="margin-top: 12px; font-size: 18px; color: var(--ypp-deep);">Clean, friendly, elevated</div>
+              <div class="body" style="margin-top: 10px;">
+                Use <span class="mono">.card-ypp</span> for consistent rounding, border, and elevation.
+              </div>
+            </div>
+            <div class="small mono" style="margin-top: 12px;">Border: rgba(107,33,200,0.15) · Radius: 24px · Shadow: 0 6px 24px rgba(59,15,110,0.15)</div>
+          </div>
+        </div>
+      </div>
+
+      <h2>Notes</h2>
+      <div class="card col-12">
+        <div class="cardInner">
+          <div class="label">Implementation</div>
+          <p class="sub" style="margin-top: 10px;">
+            In the app, most styling is done via Tailwind + CSS variables (e.g. <span class="mono">bg-[var(--ypp-blush)]</span>).
+            For full token definitions, see <span class="mono">src/app/globals.css</span>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+

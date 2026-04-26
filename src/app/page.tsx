@@ -22,7 +22,7 @@ export default function HomePage() {
             >
               <span className="h-px w-8 shrink-0 bg-[var(--ypp-primary)] sm:w-10" aria-hidden />
               <p className="font-label text-[11px] font-semibold uppercase tracking-wider text-[var(--ypp-primary)] sm:text-xs">
-                Peer learning · 100% free · Worldwide
+                Student-led learning · 100% free · Worldwide
               </p>
             </div>
             <h1
@@ -36,7 +36,7 @@ export default function HomePage() {
               className="hero-animate-in font-body mt-6 max-w-xl text-base font-normal leading-relaxed text-[var(--ypp-muted)] sm:mt-7 sm:text-[1.0625rem] sm:leading-relaxed"
               style={{ animationDelay: "0.35s" }}
             >
-              Free, peer-taught classes online or in person. Take a class—or teach one.
+              Free classes taught by passionate students—designed to help learners grow, explore, and succeed together. Join a class or become a mentor.
             </p>
 
             <div
