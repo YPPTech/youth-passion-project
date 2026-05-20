@@ -55,9 +55,6 @@ function ContactFaqAnswer() {
         <li>
           In-person instructor support: {mailTo(e.inPersonInstructors)}
         </li>
-        <li>
-          Online instructor support: {mailTo(e.onlineInstructorSupport)}
-        </li>
       </ul>
       <p>
         You can also connect with us on Instagram or X (Twitter). For postal mail, phone, or Zoom, email the relevant
@@ -142,7 +139,7 @@ const faqCategories: { title: string; items: FaqItem[] }[] = [
       },
       {
         q: "Who do I contact for instructor support?",
-        a: "In-person instructors: In-person Support at in-person-instructors@youthpassionproject.org.\n\nOnline instructors: Online Support at online-instructor-support@youthpassionproject.org.",
+        a: "In-person instructors can contact In-person Support at in-person-instructors@youthpassionproject.org. For general instructor questions, contact Enrollment and Student Services at support@youthpassionproject.org.",
       },
       {
         q: "I’m not in high school. How can I help?",

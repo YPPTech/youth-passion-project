@@ -52,8 +52,6 @@ export const CONTACT_EMAILS = {
   tech: "tech@youthpassionproject.org",
   /** In-person instructor support */
   inPersonInstructors: "in-person-instructors@youthpassionproject.org",
-  /** Online instructor support */
-  onlineInstructorSupport: "online-instructor-support@youthpassionproject.org",
 } as const;
 
 /** Application form URLs — single source for Apply page and any links to apply. */
@@ -61,6 +59,8 @@ const INSTRUCTOR_APPLICATION_URL =
   "https://docs.google.com/forms/d/e/1FAIpQLSfXlGvCx_itTN6bBdevbL7ohb8Ya7tQMIQS5JBF92q4xPS1QA/viewform";
 const CHAPTER_PRESIDENT_APPLICATION_URL =
   "https://docs.google.com/forms/d/e/1FAIpQLSd7d2uxq1kJaFP5FAp5HsMe0h2U13CNz6heKuBcsY8rMgLOLQ/viewform";
+export const TECH_MANAGER_APPLICATION_URL =
+  "https://docs.google.com/forms/d/e/1FAIpQLSf8AzWsbi6QNY2F8DUkPk1xdoSErIm7F2EhfpPCZGGhgKeLrA/viewform";
 
 /**
  * All open roles — single source of truth for Apply page and homepage (Now Hiring bar + Join Our Team cards).

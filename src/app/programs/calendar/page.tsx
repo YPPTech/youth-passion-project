@@ -7,13 +7,13 @@ export default function CalendarPage() {
       <PageHeader
         label="Schedule"
         title="Calendar"
-        subtitle="Use the student portal for registration and current course details. This page will continue to show chapter schedules, training, and operations updates."
+        subtitle="Nothing is scheduled here yet. When weekly chapter events, trainings, or program updates are ready, they will appear on this page."
         action={
           <Link
             href="/programs"
             className="inline-flex items-center rounded-lg border-2 border-[var(--ypp-primary)] bg-[var(--ypp-white)] px-4 py-2 font-semibold text-[var(--ypp-primary)] transition-colors hover:bg-[var(--ypp-primary)] hover:text-white"
           >
-            ← Back to Programs & Chapters
+            Back to Programs & Chapters
           </Link>
         }
       />
