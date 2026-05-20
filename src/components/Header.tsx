@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import HomeReloadLink from "@/components/HomeReloadLink";
+import { PORTAL_URL } from "@/constants/site";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -74,12 +75,15 @@ export default function Header() {
             );
           })}
           <li>
-            <span
-              className="nav-link nav-cta cursor-default opacity-90"
-              aria-label="Portal coming soon"
+            <a
+              href={PORTAL_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="nav-link nav-cta"
+              aria-label="Open student portal"
             >
-              Portal coming soon
-            </span>
+              Student Portal
+            </a>
           </li>
         </ul>
 
@@ -131,12 +135,16 @@ export default function Header() {
                   {label}
                 </Link>
               ))}
-              <span
-                className="nav-cta mt-1 flex min-h-[2.75rem] cursor-default items-center justify-center rounded-full px-3 py-3 text-center opacity-90"
-                aria-label="Portal coming soon"
+              <a
+                href={PORTAL_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setMobileOpen(false)}
+                className="nav-cta mt-1 flex min-h-[2.75rem] items-center justify-center rounded-full px-3 py-3 text-center"
+                aria-label="Open student portal"
               >
-                Portal coming soon
-              </span>
+                Student Portal
+              </a>
             </div>
           </nav>
         </div>

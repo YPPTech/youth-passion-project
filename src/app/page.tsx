@@ -2,14 +2,10 @@ import Link from "next/link";
 import ClassInActionGallery from "@/components/ClassInActionGallery";
 import HeroSection from "@/components/HeroSection";
 import TestimonialsMarquee from "@/components/TestimonialsMarquee";
-import { getWeeklySpotlight } from "@/data/weeklySpotlight";
-import { hiringRolePills, openPositions } from "@/constants/site";
+import { hiringRolePills, openPositions, PORTAL_URL } from "@/constants/site";
 import { homeTestimonials } from "@/constants/testimonials";
 
 export default function HomePage() {
-  const weeklySpotlight = getWeeklySpotlight();
-  const spotlightCtaExternal = weeklySpotlight.ctaHref.startsWith("http");
-
   return (
     <div className="w-full min-w-0">
       {/* Hero */}
@@ -22,7 +18,7 @@ export default function HomePage() {
             >
               <span className="h-px w-8 shrink-0 bg-[var(--ypp-primary)] sm:w-10" aria-hidden />
               <p className="font-label text-[11px] font-semibold uppercase tracking-wider text-[var(--ypp-primary)] sm:text-xs">
-                Student-led learning · 100% free · Worldwide
+                Summer 2026 · Now Accepting Applications
               </p>
             </div>
             <h1
@@ -61,86 +57,71 @@ export default function HomePage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
               </Link>
+              <a
+                href={PORTAL_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-secondary font-body inline-flex min-h-[2.75rem] items-center px-6 py-3 text-base"
+              >
+                Student Portal
+                <svg className="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
             </div>
           </div>
 
-          <div className="w-full min-w-0 shrink-0 lg:max-w-sm">
+          <div className="w-full min-w-0 shrink-0 lg:max-w-md xl:max-w-lg">
             <div
-              className="hero-animate-in overflow-hidden rounded-2xl border border-[var(--ypp-border)] bg-[var(--ypp-white)] shadow-[var(--shadow-sm)]"
+              className="hero-animate-in overflow-hidden rounded-2xl border border-white/80 bg-white/92 shadow-[0_22px_70px_rgba(59,15,110,0.20)] ring-1 ring-[var(--ypp-primary)]/15 backdrop-blur-md"
               style={{ animationDelay: "0.3s" }}
             >
-              <div className="border-b border-[var(--ypp-border)] bg-[var(--ypp-blush)]/50 px-5 py-4">
+              <div className="border-b border-[var(--ypp-border)] bg-gradient-to-br from-[var(--ypp-lavender)]/70 via-white/70 to-[var(--ypp-blush)]/60 px-6 py-6 sm:px-7">
                 <div className="flex items-center gap-2">
                   <span className="h-px w-6 shrink-0 bg-[var(--ypp-primary)]" aria-hidden />
                   <p className="font-label text-[10px] font-semibold uppercase tracking-wider text-[var(--ypp-primary)] sm:text-xs">
-                    Explore by class
+                    Summer 2026 · Applications open
                   </p>
                 </div>
-                <h2 className="font-heading mt-3 text-xl font-semibold leading-snug tracking-tight text-[var(--ypp-deep)] sm:text-2xl">
-                  Browse by{" "}
-                  <span className="font-normal italic text-[var(--ypp-primary)]">class</span>
+                <h2 className="font-heading mt-3 text-3xl font-bold leading-tight tracking-tight text-[var(--ypp-deep)] sm:text-[2.1rem]">
+                  Find your place at YPP this summer
                 </h2>
               </div>
 
-              <div className="bg-[var(--ypp-white)] px-5 py-5 pb-6">
+              <div className="bg-[var(--ypp-white)] px-6 py-6 sm:px-7 sm:py-7">
                 <div className="flex items-center gap-2">
                   <span className="h-px w-6 shrink-0 bg-[var(--ypp-primary)]/70" aria-hidden />
                   <p className="font-label text-[10px] font-semibold uppercase tracking-wider text-[var(--ypp-primary)] sm:text-xs">
-                    {weeklySpotlight.source === "idle" ? "Between sessions" : "This week"}
+                    Open roles and registration
                   </p>
                 </div>
-                <h3 className="font-heading mt-2 text-base font-semibold leading-snug text-[var(--ypp-deep)] sm:text-lg">
-                  {weeklySpotlight.title}
+                <h3 className="font-heading mt-3 text-2xl font-semibold leading-snug text-[var(--ypp-deep)] sm:text-[1.7rem]">
+                  Classes, instructor applications, chapter leadership, and tech team roles are live.
                 </h3>
-                {(weeklySpotlight.gradesLabel || weeklySpotlight.source === "catalog") && (
-                  <div className="mt-2 flex flex-wrap items-center gap-2">
-                    {weeklySpotlight.gradesLabel ? (
-                      <span className="rounded-full bg-[var(--ypp-lavender)] px-2.5 py-0.5 font-body text-xs text-[var(--ypp-muted)]">
-                        {weeklySpotlight.gradesLabel}
-                      </span>
-                    ) : null}
-                    {weeklySpotlight.source === "catalog" && (
-                      <span className="rounded-full border border-[var(--ypp-border)] bg-[var(--ypp-blush)]/40 px-2.5 py-0.5 font-body text-xs font-medium text-[var(--ypp-primary)]">
-                        Live catalog
-                      </span>
-                    )}
-                  </div>
-                )}
-                <p
-                  className={`font-body mt-2 text-xs leading-snug text-[var(--ypp-muted)] sm:text-[13px] sm:leading-relaxed ${
-                    weeklySpotlight.source === "catalog" ? "line-clamp-2" : ""
-                  }`}
-                >
-                  {weeklySpotlight.blurb}
+                <p className="font-body mt-4 text-sm leading-relaxed text-[var(--ypp-muted)] sm:text-base">
+                  Create an account in the student portal to register for courses or apply to help run the next session.
                 </p>
-                {spotlightCtaExternal ? (
-                  <a
-                    href={weeklySpotlight.ctaHref}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="font-body mt-3 inline-flex items-center text-sm font-semibold text-[var(--ypp-primary)] transition-colors hover:underline"
-                  >
-                    {weeklySpotlight.ctaLabel}
-                    <svg className="ml-1 h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                    </svg>
-                  </a>
-                ) : (
-                  <Link
-                    href={weeklySpotlight.ctaHref}
-                    className="font-body mt-3 inline-flex items-center text-sm font-semibold text-[var(--ypp-primary)] transition-colors hover:underline"
-                  >
-                    {weeklySpotlight.ctaLabel}
-                    <svg className="ml-1 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </Link>
-                )}
-                {weeklySpotlight.disclaimer && (
-                  <p className="font-body mt-2 text-[10px] leading-snug text-[var(--ypp-muted)] sm:text-[11px]">
-                    {weeklySpotlight.disclaimer}
-                  </p>
-                )}
+                <div className="mt-5 grid grid-cols-2 gap-2 text-sm sm:grid-cols-4">
+                  {["Students", "Instructors", "Chapters", "Tech"].map((item) => (
+                    <span
+                      key={item}
+                      className="rounded-full border border-[var(--ypp-primary)]/15 bg-[var(--ypp-lavender)]/45 px-3 py-2 text-center font-body text-xs font-semibold text-[var(--ypp-deep)]"
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
+                <a
+                  href={PORTAL_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-primary font-body mt-7 inline-flex min-h-[3.35rem] w-full items-center justify-center rounded-xl px-5 py-4 text-center text-base font-bold shadow-[0_12px_34px_rgba(107,33,200,0.30)]"
+                >
+                  Apply in the portal
+                  <svg className="ml-2 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </a>
               </div>
             </div>
           </div>
@@ -152,13 +133,19 @@ export default function HomePage() {
         <div className="mx-auto flex min-w-0 max-w-6xl flex-col flex-wrap items-stretch justify-between gap-5 sm:flex-row sm:items-center sm:gap-6">
           <div className="flex min-w-0 flex-col gap-1 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
             <span className="font-label text-xs font-semibold uppercase tracking-widest text-[var(--ypp-primary)]">
-              We&apos;re hiring
+              Summer 2026 · Now Accepting Applications
             </span>
             <p className="font-body text-sm text-white/85">
-              High schoolers: teach a class or lead a chapter.
+              High schoolers: teach a class, lead a chapter, or help build YPP tech this summer.
             </p>
           </div>
           <div className="flex min-w-0 flex-wrap items-center justify-start gap-3 sm:justify-end">
+            <Link
+              href="/join"
+              className="font-body rounded-full bg-white px-6 py-3 text-base font-bold text-[var(--ypp-deep)] shadow-md ring-2 ring-white/40 transition-all hover:scale-105 hover:bg-[var(--ypp-lavender)] hover:shadow-lg"
+            >
+              Technology Manager
+            </Link>
             {hiringRolePills.map((role) => (
               <Link
                 key={role.id}

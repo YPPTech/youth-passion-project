@@ -7,7 +7,7 @@ export default function CalendarPage() {
       <PageHeader
         label="Schedule"
         title="Calendar"
-        subtitle="After the student portal launches, this will be your chapter’s week at a glance—classes, training, and ops in one view. Nothing here yet."
+        subtitle="Use the student portal for registration and current course details. This page will continue to show chapter schedules, training, and operations updates."
         action={
           <Link
             href="/programs"

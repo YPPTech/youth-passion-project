@@ -4,7 +4,7 @@ This marketing site links to the **YPP Pathways Portal** in many places (header,
 
 - **Repo:** [braydenwhite-blip/YPP-Portal](https://github.com/braydenwhite-blip/YPP-Portal)
 - **Stack:** Next.js 14, PostgreSQL (Prisma), NextAuth — pathways, instructor training, events, chapter dashboards.
-- **Deploy:** Typically `youthpassionproject-portal.vercel.app` or `portal.youthpassionproject.org`.
+- **Deploy:** `portal.youthpassionproject.org`.
 
 Here’s how to keep this site in sync with the portal.
 
@@ -14,7 +14,7 @@ Here’s how to keep this site in sync with the portal.
 
 **Single source of truth:** `src/constants/site.ts` → `PORTAL_URL`.
 
-- **Default:** `https://youthpassionproject-portal.vercel.app`
+- **Default:** `https://portal.youthpassionproject.org/`
 - **Override:** set **`NEXT_PUBLIC_PORTAL_URL`** in:
   - **Local:** `.env.local` in the project root (create it if missing)
   - **Vercel:** Project → Settings → Environment Variables

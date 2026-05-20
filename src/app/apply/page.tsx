@@ -1,31 +1,29 @@
 import Link from "next/link";
 import PageHeader from "@/components/PageHeader";
 import SectionHeading from "@/components/SectionHeading";
-import { applyRoles, CONTACT_EMAILS } from "@/constants/site";
+import { applyRoles, CONTACT_EMAILS, PORTAL_URL } from "@/constants/site";
 
 export default function ApplyPage() {
   return (
     <div className="min-w-0 w-full">
-      {/* When student portal launches, add back to PageHeader:
-        action={
-          <span className="btn-primary inline-flex cursor-default items-center opacity-90" aria-label="Student portal coming soon">
-            Coming soon
-          </span>
-        }
-      */}
       <PageHeader
-        label="Volunteer roles"
+        label="Summer 2026 · Now Accepting Applications"
         title="Apply for a role"
-        subtitle="High school students: instructor or chapter president. Pick a form below (25–26 cycle)."
+        subtitle="High school students: instructor or chapter president. Pick a form below for the Summer 2026 application cycle."
       />
 
       <section className="border-b border-[var(--ypp-border)] bg-[var(--ypp-white)] px-4 py-6 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
           <p className="font-body text-sm text-[var(--ypp-muted)] sm:text-base">
-            Enrolling as a student? Start at{" "}
-            <Link href="/join" className="font-semibold text-[var(--ypp-primary)] hover:underline">
-              Join Us
-            </Link>
+            Enrolling as a student? Use the{" "}
+            <a
+              href={PORTAL_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-[var(--ypp-primary)] hover:underline"
+            >
+              student portal
+            </a>
             .
           </p>
         </div>
@@ -77,16 +75,20 @@ export default function ApplyPage() {
         </div>
       </section>
 
-      {/* Portal / waitlist reminder */}
+      {/* Portal reminder */}
       <section className="border-t border-[var(--ypp-border)] bg-[var(--ypp-lavender)]/20 px-4 py-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <p className="font-body text-[var(--ypp-muted)]">
-            Students: the portal is{" "}
-            <span className="font-medium text-[var(--ypp-primary)]">coming soon</span>. Use{" "}
-            <Link href="/join" className="font-medium text-[var(--ypp-primary)] hover:underline">
-              Join Us
-            </Link>{" "}
-            or{" "}
+            Students can register through the{" "}
+            <a
+              href={PORTAL_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-[var(--ypp-primary)] hover:underline"
+            >
+              student portal
+            </a>
+            . For program details, visit{" "}
             <Link href="/programs" className="font-medium text-[var(--ypp-primary)] hover:underline">
               Programs &amp; Chapters
             </Link>

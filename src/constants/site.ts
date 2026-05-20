@@ -6,18 +6,17 @@
 /**
  * YPP Pathways Portal (registration, courses, instructor training, events).
  * Repo: https://github.com/braydenwhite-blip/YPP-Portal
- * Kept for when the portal goes live again. Do not use in UI while STUDENT_PORTAL_COMING_SOON is true.
  */
 export const PORTAL_URL =
   typeof process !== "undefined" && process.env?.NEXT_PUBLIC_PORTAL_URL
     ? process.env.NEXT_PUBLIC_PORTAL_URL
-    : "https://youthpassionproject-portal.vercel.app";
+    : "https://portal.youthpassionproject.org/";
 
 /**
  * When true, the marketing site shows “Coming soon” for the student portal and does not link to PORTAL_URL.
  * Set to false when the portal is ready; then restore portal links in components (or wire CTAs to PORTAL_URL).
  */
-export const STUDENT_PORTAL_COMING_SOON = true;
+export const STUDENT_PORTAL_COMING_SOON = false;
 
 /**
  * Optional: Google Form URL for /notify waitlist. Unused while STUDENT_PORTAL_COMING_SOON is the primary UX.

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import HomeReloadLink from "@/components/HomeReloadLink";
+import { PORTAL_URL } from "@/constants/site";
 
 const navigateLinks = [
   { href: "/about", label: "About Us" },
@@ -117,9 +118,14 @@ export default function Footer() {
             <h4 className={colHeading}>Resources</h4>
             <ul className={colList}>
               <li>
-                <span className="font-body text-sm text-[var(--ypp-muted)]">
-                  Student portal — <span className="text-[var(--ypp-primary)]">Coming soon</span>
-                </span>
+                <a
+                  href={PORTAL_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-body text-sm text-[var(--ypp-ink)] transition-colors hover:text-[var(--ypp-primary)]"
+                >
+                  Student Portal
+                </a>
               </li>
               {resourceLinks.map(({ href, label }) => (
                 <li key={label}>

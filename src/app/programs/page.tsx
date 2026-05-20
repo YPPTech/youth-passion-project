@@ -3,6 +3,7 @@ import PageHeader from "@/components/PageHeader";
 import SectionHeading from "@/components/SectionHeading";
 import InPersonSection from "@/components/InPersonSection";
 import { inPersonLocations } from "@/data/programsData";
+import { PORTAL_URL } from "@/constants/site";
 
 const programModelLinkClass =
   "font-medium text-[var(--ypp-primary)] underline decoration-[var(--ypp-primary)]/40 underline-offset-2 transition-colors hover:text-[var(--ypp-deep)] hover:decoration-[var(--ypp-primary)]";
@@ -12,24 +13,17 @@ const sectionScrollClass = "scroll-mt-[calc(var(--ypp-nav-height)+0.75rem)]";
 export default function ProgramsPage() {
   return (
     <div className="w-full min-w-0">
-      {/* When student portal launches, add back to PageHeader:
-        action={
-          <span className="btn-primary inline-flex cursor-default items-center opacity-90" aria-label="Student portal coming soon">
-            Coming soon
-          </span>
-        }
-      */}
       <PageHeader
+        label="Summer 2026 · Now Accepting Applications"
         title="Programs & Chapters"
         subtitle={
           <>
             In-person chapters in <strong className="font-semibold text-[var(--ypp-ink)]">Scarsdale, NY</strong> and{" "}
-            <strong className="font-semibold text-[var(--ypp-ink)]">Edison, NJ</strong>. Registration will move to the
-            student portal when it launches—until then, contact us for session details,{" "}
-            <Link href="/notify" className={programModelLinkClass}>
-              join the waitlist
-            </Link>
-            , or{" "}
+            <strong className="font-semibold text-[var(--ypp-ink)]">Edison, NJ</strong>. Summer 2026 applications are open now; register through the{" "}
+            <a href={PORTAL_URL} target="_blank" rel="noopener noreferrer" className={programModelLinkClass}>
+              student portal
+            </a>
+            {" "}or{" "}
             <Link href="/join#teach-or-lead" className={programModelLinkClass}>
               volunteer to teach
             </Link>
@@ -56,11 +50,15 @@ export default function ProgramsPage() {
       <section className="border-t border-[var(--ypp-border)] bg-[var(--ypp-white)] px-4 py-12 sm:px-6 lg:px-8">
         <div className="mx-auto w-full max-w-3xl min-w-0 text-center">
           <p className="font-body text-pretty text-[var(--ypp-muted)]">
-            Course descriptions, grades, and instructor profiles will live on the student portal. The{" "}
+            Course descriptions, grades, and instructor profiles are available through the{" "}
+            <a href={PORTAL_URL} target="_blank" rel="noopener noreferrer" className="font-medium text-[var(--ypp-primary)] hover:underline">
+              student portal
+            </a>
+            . The{" "}
             <Link href="/programs/calendar" className="font-medium text-[var(--ypp-primary)] hover:underline">
               Calendar
             </Link>{" "}
-            will show a week-at-a-glance when that goes live—it&apos;s a placeholder for now.
+            will continue to show chapter updates and scheduling notes.
           </p>
         </div>
       </section>

@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
 import PageHeader from "@/components/PageHeader";
-import { CONTACT_EMAILS } from "@/constants/site";
+import { CONTACT_EMAILS, PORTAL_URL } from "@/constants/site";
 
 const EMAIL_REGEX = /([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})/g;
 const EMAIL_TEST = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -85,7 +85,7 @@ const faqCategories: { title: string; items: FaqItem[] }[] = [
       },
       {
         q: "How do I register for courses?",
-        a: "Our student portal is coming soon. When it launches, you’ll register there: sign in or create an account, then use the course catalog and registration form. For in-person classes (where offered), the process is location-dependent—some require in-person sign-up, others have online links. Until the portal is live, contact our Enrollment & Student Services Team at support@youthpassionproject.org for registration help. Parents will need to sign a liability form.",
+        a: "Register through the student portal: sign in or create an account, then use the course catalog and registration form. For in-person classes (where offered), the process is location-dependent; some require in-person sign-up, others have online links. If you need help, contact our Enrollment & Student Services Team at support@youthpassionproject.org. Parents will need to sign a liability form.",
       },
       {
         q: "How do I know if my registration went through?",
@@ -97,7 +97,7 @@ const faqCategories: { title: string; items: FaqItem[] }[] = [
       },
       {
         q: "Why was my registration rejected? How do I fix it?",
-        a: "Some instructors set grade-level or class-size requirements. If you don’t meet those prerequisites, your registration may be rejected and all enrollments voided. When the student portal is available, re-register there and only choose courses for which you meet the prerequisites. Also, do not register for more than three courses—that will cause rejection. If you have questions, contact our Enrollment & Student Services Team.",
+        a: "Some instructors set grade-level or class-size requirements. If you don’t meet those prerequisites, your registration may be rejected and all enrollments voided. Re-register in the student portal and only choose courses for which you meet the prerequisites. Also, do not register for more than three courses—that will cause rejection. If you have questions, contact our Enrollment & Student Services Team.",
       },
       {
         q: "How often do courses meet? What do I need to prepare?",
@@ -159,7 +159,7 @@ const faqCategories: { title: string; items: FaqItem[] }[] = [
       },
       {
         q: "What courses are offered?",
-        a: "We offer a large variety of courses in subjects like Competition Math, Painting, Chess, Creative Writing, and many more. The lineup changes each session based on which instructors are teaching. Our student portal is coming soon—the catalog will be there when it launches. Until then, see our Programs & Chapters page or contact support@youthpassionproject.org.",
+        a: "We offer a large variety of courses in subjects like Competition Math, Painting, Chess, Creative Writing, and many more. The lineup changes each session based on which instructors are teaching. The student portal has the current catalog; you can also see our Programs & Chapters page or contact support@youthpassionproject.org.",
       },
       {
         q: "Who are the instructors?",
@@ -231,13 +231,20 @@ export default function FAQsPage() {
           ))}
 
           <p className="font-body mt-12 text-center text-sm text-[var(--ypp-muted)]">
-            Our student portal is <span className="font-medium text-[var(--ypp-primary)]">coming soon</span>
-            —registration and the full course catalog will be available there when it launches. For enrollment or
-            student services, use our{" "}
+            Registration and the full course catalog are available in the{" "}
+            <a
+              href={PORTAL_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-[var(--ypp-primary)] hover:underline"
+            >
+              student portal
+            </a>
+            . For enrollment or student services, use our{" "}
             <Link href="/contact" className="font-medium text-[var(--ypp-primary)] hover:underline">
               Contact page
             </Link>
-            . For students and parents, email{" "}
+            , or email{" "}
             <a
               href={`mailto:${CONTACT_EMAILS.support}`}
               className="font-medium text-[var(--ypp-primary)] hover:underline"

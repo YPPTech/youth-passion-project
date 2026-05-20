@@ -90,7 +90,7 @@ docs/                  # Maintainer docs (portal sync, waitlist)
 ### Site-wide copy, emails, and applications
 
 - **`src/constants/site.ts`** — single source for:
-  - Portal URL and **“portal coming soon”** behavior (`STUDENT_PORTAL_COMING_SOON`).
+  - Portal URL and student portal behavior (`STUDENT_PORTAL_COMING_SOON`).
   - Contact emails (`CONTACT_EMAILS`).
   - **Apply / hiring:** `applyRoles` (roles, teasers, Google Form links). Homepage “Now Hiring” and `/apply` stay in sync with this list.
   - **Legal:** `LEGAL_LINKS` (internal routes + external Google Docs/Sheets).
