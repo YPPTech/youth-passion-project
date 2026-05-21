@@ -10,12 +10,12 @@ import Image from "next/image";
 const photos = [
   {
     src: "/photos/class-scratch-online.png",
-    alt: "YPP online class: instructor and students on video chat while sharing a Scratch coding project in the browser.",
+    alt: "YPP online class: teacher and students on video chat while sharing a Scratch coding project in the browser.",
     caption: "Scratch class: live video and shared screen.",
   },
   {
     src: "/photos/class-chess-online.png",
-    alt: "YPP online chess class: instructor and students on video with a Lichess lesson board and YPP curriculum on screen.",
+    alt: "YPP online chess class: teacher and students on video with a Lichess lesson board and YPP curriculum on screen.",
     caption: "Chess on Lichess: small group, lesson on the board.",
   },
 ] as const;

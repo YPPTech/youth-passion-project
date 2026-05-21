@@ -4,7 +4,7 @@
  */
 
 /**
- * YPP Pathways Portal (registration, courses, instructor training, events).
+ * YPP Pathways Portal (registration, courses, training, events).
  * Repo: https://github.com/braydenwhite-blip/YPP-Portal
  */
 export const PORTAL_URL =
@@ -35,7 +35,6 @@ export const LEGAL_LINKS = [
   { href: "/legal/by-laws", label: "By-Laws", internal: true },
   { href: "/legal/enrollment-consent", label: "Enrollment Consent and Release Agreement", internal: true },
   { href: "/legal/enrollment-media-release", label: "Enrollment Media Release Agreement", internal: true },
-  { href: "/legal/instructor-retainment", label: "Instructor Retainment", internal: true },
   { href: "/legal/volunteer-retainment", label: "Volunteer Retainment", internal: true },
   { href: "/legal/volunteer-media-release", label: "Volunteer Media Release", internal: true },
   { href: "https://docs.google.com/forms/d/e/1FAIpQLSfy4sOTNRXNjLMJ63jF2jx7B7FYBI3HLZAkuufi_vnhmvYTkg/viewform", label: "Whistleblower Report", internal: false },
@@ -50,13 +49,9 @@ export const CONTACT_EMAILS = {
   marketing: "marketing@youthpassionproject.org",
   /** Website, portal, and technical infrastructure */
   tech: "tech@youthpassionproject.org",
-  /** In-person instructor support */
-  inPersonInstructors: "in-person-instructors@youthpassionproject.org",
 } as const;
 
 /** Application form URLs — single source for Apply page and any links to apply. */
-const INSTRUCTOR_APPLICATION_URL =
-  "https://docs.google.com/forms/d/e/1FAIpQLSfXlGvCx_itTN6bBdevbL7ohb8Ya7tQMIQS5JBF92q4xPS1QA/viewform";
 const CHAPTER_PRESIDENT_APPLICATION_URL =
   "https://docs.google.com/forms/d/e/1FAIpQLSd7d2uxq1kJaFP5FAp5HsMe0h2U13CNz6heKuBcsY8rMgLOLQ/viewform";
 export const TECH_MANAGER_APPLICATION_URL =
@@ -68,32 +63,14 @@ export const TECH_MANAGER_APPLICATION_URL =
  */
 export const applyRoles = [
   {
-    id: "instructor",
-    title: "Instructor",
-    ageGrade: "High school students (grades 9–12)",
-    /** One line for /apply cards; homepage still uses shortDescription. */
-    applyTeaser: "Teach what you love—online or in person.",
-    shortDescription:
-      "Lead classes for younger students in your subject. Weekly sessions with curriculum support and training.",
-    description:
-      "Lead classes for younger students online or at a chapter. Most sessions run 30–60 minutes, 1–2 times per week.",
-    details: [
-      "Application + training; support from YPP staff.",
-      "You’ll describe your course and how you’d run it.",
-      "Mentorship from experienced leaders.",
-    ],
-    applyLink: INSTRUCTOR_APPLICATION_URL,
-    applyLabel: "Instructor application (25–26)",
-  },
-  {
     id: "chapter-president",
     title: "Chapter President",
     ageGrade: "High school students (grades 9–12)",
-    applyTeaser: "Start or grow a chapter: recruit instructors and run local programs.",
+    applyTeaser: "Start or grow a chapter: recruit volunteers and run local programs.",
     shortDescription:
-      "Coordinate a chapter—recruit instructors, plan events, and partner with your school. Reach out to your school first.",
+      "Coordinate a chapter—recruit volunteers, plan events, and partner with your school. Reach out to your school first.",
     description:
-      "Run a YPP chapter: recruit volunteers and instructors, plan classes and events, and connect your school with YPP.",
+      "Run a YPP chapter: recruit volunteers, plan classes and events, and connect your school with YPP.",
     details: [
       "Contact your school before applying when you can.",
       "The form asks for your school, grade, and why you want to lead.",
@@ -108,8 +85,15 @@ export const applyRoles = [
 export const hiringRolePills = applyRoles.map((r) => ({ title: r.title, id: r.id }));
 
 /** Cards for Join Our Team section — derived from applyRoles. */
-export const openPositions = applyRoles.map((r) => ({
-  title: r.title,
-  description: r.shortDescription,
-  href: `/apply#${r.id}` as const,
-}));
+export const openPositions = [
+  ...applyRoles.map((r) => ({
+    title: r.title,
+    description: r.shortDescription,
+    href: `/apply#${r.id}` as const,
+  })),
+  {
+    title: "Technology Manager",
+    description: "Help maintain YPP's website and portal while supporting digital tools and technical reliability.",
+    href: "/join" as const,
+  },
+];

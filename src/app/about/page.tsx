@@ -27,7 +27,7 @@ const leadership: LeadershipMember[] = [
   {
     personName: "Brayden White",
     name: "Vice President for Instruction",
-    bio: "Brayden is the Vice President of Instruction at the Youth Passion Project. He helps build programs that allow students to explore their interests and develop new skills. He built YPP's portal for students and instructors and helps train educators while supporting student instruction and programming across the organization. Brayden also teaches the BOW Sports Capital: Introduction to Sports Economics, a course on the business and economics behind professional sports. Outside of YPP, he enjoys spending time with friends, following sports, and finding the best food wherever he can.",
+    bio: "Brayden is the Vice President of Instruction at the Youth Passion Project. He helps build programs that allow students to explore their interests and develop new skills. He built YPP's portal for students and staff and helps train educators while supporting student instruction and programming across the organization. Brayden also teaches the BOW Sports Capital: Introduction to Sports Economics, a course on the business and economics behind professional sports. Outside of YPP, he enjoys spending time with friends, following sports, and finding the best food wherever he can.",
     image: "/team/brayden-white.png",
   },
   {
@@ -45,14 +45,14 @@ const leadership: LeadershipMember[] = [
   {
     personName: "Anthea Zamir",
     name: "Chief Technology Officer",
-    bio: "Anthea is a junior in high school in Seattle and serves as the Chief Technology Officer at the Youth Passion Project. She built and maintains the organization's website and is currently developing YPP's online portal for students and instructors. In her role, she oversees the organization's technical infrastructure and works to enhance the digital systems that support YPP's programs and operations. Previously, she also taught Introduction to Algebra 1 at YPP. Outside of her work, Anthea plays varsity golf at her school and enjoys traveling, attending concerts, and exploring new technology.",
+    bio: "Anthea is a junior in high school in Seattle and serves as the Chief Technology Officer at the Youth Passion Project. She built and maintains the organization's website and is currently developing YPP's online portal for students and staff. In her role, she oversees the organization's technical infrastructure and works to enhance the digital systems that support YPP's programs and operations. Previously, she also taught Introduction to Algebra 1 at YPP. Outside of her work, Anthea plays varsity golf at her school and enjoys traveling, attending concerts, and exploring new technology.",
     image: "/team/anthea-zamir.png",
   },
 ];
 
 const aboutHeroStats = [
   { value: "3,400+", label: "Students" },
-  { value: "200+", label: "Instructors" },
+  { value: "200+", label: "Volunteers" },
   { value: "110+", label: "Courses" },
   { value: "30+", label: "Countries" },
 ];
@@ -132,7 +132,7 @@ export default function AboutPage() {
             Our Mission
           </h2>
           <p className="font-body mt-4 text-[var(--ypp-muted)] leading-relaxed">
-            We connect young people with peer instructors, programs, and community so they can explore interests and
+            We connect young people with peer teachers, programs, and community so they can explore interests and
             build skills—with room to lead.
           </p>
 
@@ -154,7 +154,7 @@ export default function AboutPage() {
                 </span>
               </h3>
               <p className="font-body mt-3 text-[var(--ypp-muted)] leading-relaxed">
-                In-person programs at partner schools. Students learn from trained peer instructors in small groups.
+                In-person programs at partner schools. Students learn from trained peer teachers in small groups.
               </p>
             </div>
             <div>
@@ -165,7 +165,7 @@ export default function AboutPage() {
                 </span>
               </h3>
               <p className="font-body mt-3 text-[var(--ypp-muted)] leading-relaxed">
-                From first class to advanced offerings and special programs—we support students and instructors over time.
+                From first class to advanced offerings and special programs—we support students and volunteers over time.
               </p>
             </div>
             <div>

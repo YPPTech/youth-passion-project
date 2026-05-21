@@ -43,7 +43,7 @@ export default function ContactPage() {
                 id="contact-general-inbox-desc"
                 className="font-body text-base font-medium leading-snug text-[var(--ypp-muted)] sm:text-lg"
               >
-                Main inbox (students, families, instructors, and partners)
+                Main inbox (students, families, volunteers, and partners)
               </p>
               <a
                 href={`mailto:${supportMail}`}

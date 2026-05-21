@@ -43,7 +43,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   title: "Youth Passion Project | Free Online & In-Person Classes",
   description:
-    "Youth Passion Project connects students with passionate, high-quality instructors to discover what they love and build the skills to pursue it.",
+    "Youth Passion Project connects students with passionate, high-quality teachers to discover what they love and build the skills to pursue it.",
   icons: {
     icon: "/logo.png",
     apple: "/logo.png",
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Youth Passion Project | Free Online & In-Person Classes",
     description:
-      "Youth Passion Project connects students with passionate, high-quality instructors to discover what they love and build the skills to pursue it.",
+      "Youth Passion Project connects students with passionate, high-quality teachers to discover what they love and build the skills to pursue it.",
     url: "https://www.youthpassionproject.org",
   },
 };

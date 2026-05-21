@@ -96,13 +96,13 @@ export default function HomePage() {
                   </p>
                 </div>
                 <h3 className="font-heading mt-3 text-2xl font-semibold leading-snug text-[var(--ypp-deep)] sm:text-[1.7rem]">
-                  Classes, instructor applications, chapter leadership, and tech team roles are live.
+                  Classes, chapter leadership, and tech team roles are live.
                 </h3>
                 <p className="font-body mt-4 text-sm leading-relaxed text-[var(--ypp-muted)] sm:text-base">
                   Create an account in the student portal to register for courses or apply to help run the next session.
                 </p>
-                <div className="mt-5 grid grid-cols-2 gap-2 text-sm sm:grid-cols-4">
-                  {["Students", "Instructors", "Chapters", "Tech"].map((item) => (
+                <div className="mt-5 grid grid-cols-2 gap-2 text-sm sm:grid-cols-3">
+                  {["Students", "Chapters", "Tech"].map((item) => (
                     <span
                       key={item}
                       className="rounded-full border border-[var(--ypp-primary)]/15 bg-[var(--ypp-lavender)]/45 px-3 py-2 text-center font-body text-xs font-semibold text-[var(--ypp-deep)]"
@@ -136,7 +136,7 @@ export default function HomePage() {
               Summer 2026 · Now Accepting Applications
             </span>
             <p className="font-body text-sm text-white/85">
-              High schoolers: teach a class, lead a chapter, or help build YPP tech this summer.
+              High schoolers: lead a chapter or help build YPP tech this summer.
             </p>
           </div>
           <div className="flex min-w-0 flex-wrap items-center justify-start gap-3 sm:justify-end">
@@ -156,7 +156,7 @@ export default function HomePage() {
               </Link>
             ))}
             <Link
-              href="/apply"
+              href="/join"
               className="font-body inline-flex min-h-[2.5rem] items-center rounded-full border-2 border-white/80 bg-transparent px-5 py-2.5 text-sm font-semibold text-white transition-all hover:bg-white hover:text-[var(--ypp-deep)]"
             >
               All openings
@@ -212,10 +212,10 @@ export default function HomePage() {
             <span className="h-px w-8 bg-[var(--ypp-primary)]/50 sm:w-12" aria-hidden />
           </div>
           <h2 className="font-heading mt-4 text-balance text-3xl font-bold tracking-tight text-[var(--ypp-deep)] sm:text-4xl">
-            Teach or lead where you are
+            Lead or build where you are
           </h2>
           <p className="font-body mt-4 max-w-2xl text-pretty leading-relaxed text-[var(--ypp-muted)]">
-            Instructors and chapter presidents run programs locally and online.
+            Chapter presidents and technology managers help run programs and keep YPP moving.
           </p>
           <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {openPositions.map(({ title, description, href }) => (
@@ -241,7 +241,7 @@ export default function HomePage() {
           </div>
           <div className="mt-10 flex flex-wrap items-center gap-4">
             <Link
-              href="/apply"
+              href="/join"
               className="btn-primary font-body inline-flex items-center rounded-full px-6 py-3 text-base shadow-[0_6px_24px_rgba(107,33,200,0.25)]"
             >
               View all openings

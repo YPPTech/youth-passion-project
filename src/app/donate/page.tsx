@@ -23,8 +23,8 @@ const impactPoints = [
     ),
   },
   {
-    title: "Support young instructors",
-    description: "Training and materials for student instructors.",
+    title: "Support young teachers",
+    description: "Training and materials for student-led classes.",
     icon: (
       <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
@@ -89,7 +89,7 @@ export default function DonatePage() {
                 Make a tax-deductible gift today
               </h3>
               <p className="font-body mt-3 text-[var(--ypp-muted)] leading-relaxed sm:text-[1.05rem]">
-                We depend on supporters like you. Donations help us reach more students, train peer instructors, and add
+                We depend on supporters like you. Donations help us reach more students, train peer teachers, and add
                 new free courses—without charging families.
               </p>
               <div className="mt-8 flex flex-col gap-5 sm:flex-row sm:flex-wrap sm:items-center">

@@ -13,7 +13,7 @@ When the student portal is not yet ready, the site can collect emails so you can
 1. Go to [Google Forms](https://forms.google.com) and create a new form.
 2. Add at least one question:
    - **Email** (Short answer) — required.
-   - Optional: “I’m interested as” (Multiple choice: Student / Parent / Instructor / Other).
+   - Optional: “I’m interested as” (Multiple choice: Student / Parent / Volunteer / Other).
 3. Turn on “Collect email addresses” in form settings if you want Google to record them in addition to the Short answer.
 4. Send the form, then use **Send** → **Link** and copy the **viewform** URL (e.g. `https://docs.google.com/forms/d/e/.../viewform`).
 

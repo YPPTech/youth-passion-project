@@ -50,7 +50,7 @@ export default function ProgramsPage() {
       <section className="border-t border-[var(--ypp-border)] bg-[var(--ypp-white)] px-4 py-12 sm:px-6 lg:px-8">
         <div className="mx-auto w-full max-w-3xl min-w-0 text-center">
           <p className="font-body text-pretty text-[var(--ypp-muted)]">
-            Course descriptions, grades, and instructor profiles are available through the{" "}
+            Course descriptions, grades, and teacher profiles are available through the{" "}
             <a href={PORTAL_URL} target="_blank" rel="noopener noreferrer" className="font-medium text-[var(--ypp-primary)] hover:underline">
               student portal
             </a>

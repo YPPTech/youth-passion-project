@@ -20,7 +20,7 @@ export const homeTestimonials: HomeTestimonial[] = [
   {
     id: "parent-wonderful",
     quote:
-      "The classes have been wonderful. The instructors engage the children, work hard in teaching them, and have made our girls look forward to their classes each week. It is an absolutely wonderful program.",
+      "The classes have been wonderful. The teachers engage the children, work hard in teaching them, and have made our girls look forward to their classes each week. It is an absolutely wonderful program.",
     attribution: "Parent of YPP students",
   },
   {
@@ -29,7 +29,7 @@ export const homeTestimonials: HomeTestimonial[] = [
     attribution: "Parent of a YPP student",
   },
   {
-    id: "parent-high-school-instructors",
+    id: "parent-high-school-teachers",
     quote: "My daughter really loved all the classes she attended—the high school kids did a great job!",
     attribution: "Parent of a YPP student",
   },

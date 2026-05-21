@@ -9,7 +9,7 @@ export default function ApplyPage() {
       <PageHeader
         label="Summer 2026 · Now Accepting Applications"
         title="Apply for a role"
-        subtitle="High school students: instructor or chapter president. Pick a form below for the Summer 2026 application cycle."
+        subtitle="High school students: apply for chapter president using the form below for the Summer 2026 application cycle."
       />
 
       <section className="border-b border-[var(--ypp-border)] bg-[var(--ypp-white)] px-4 py-6 sm:px-6 lg:px-8">

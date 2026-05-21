@@ -13,7 +13,7 @@ const sections = [
     title: "1. Purpose",
     content: (
       <p>
-        The purpose of this enrollment release and consent agreement (hereafter &ldquo;Agreement&rdquo;) is to set forth mutual understanding and agreement of a set of guidelines pursuant to which child(ren), as defined below, (hereafter &ldquo;Student&rdquo;), if minor(s), under the care of parent(s) and/or guardian(s) (hereafter &ldquo;Parent&rdquo;), shall partake in an online course provided by instructor(s) (hereafter &ldquo;Instructors&rdquo;) organized by Youth Passion Project Inc., a Delaware Nonprofit Corporation exempt by the Internal Revenue Service under 26 US Code Section 501(c)(3) (hereafter, &ldquo;The Project&rdquo;).
+        The purpose of this enrollment release and consent agreement (hereafter &ldquo;Agreement&rdquo;) is to set forth mutual understanding and agreement of a set of guidelines pursuant to which child(ren), as defined below, (hereafter &ldquo;Student&rdquo;), if minor(s), under the care of parent(s) and/or guardian(s) (hereafter &ldquo;Parent&rdquo;), shall partake in an online course provided by educator(s) (hereafter &ldquo;Educators&rdquo;) organized by Youth Passion Project Inc., a Delaware Nonprofit Corporation exempt by the Internal Revenue Service under 26 US Code Section 501(c)(3) (hereafter, &ldquo;The Project&rdquo;).
       </p>
     ),
   },
@@ -22,7 +22,7 @@ const sections = [
     title: "2. Consent",
     content: (
       <p>
-        Parent and Student understands and consents to Student participation in an online course with other students and Instructors, potentially from different parts of the world. Parent and Student understands that The Project is not a test preparation service and should not be used as a replacement for a regular school curriculum. Parent and Student understand that any views or material discussed in courses by Instructors or other students are not the views of The Project.
+        Parent and Student understands and consents to Student participation in an online course with other students and Educators, potentially from different parts of the world. Parent and Student understands that The Project is not a test preparation service and should not be used as a replacement for a regular school curriculum. Parent and Student understand that any views or material discussed in courses by Educators or other students are not the views of The Project.
       </p>
     ),
   },
@@ -31,7 +31,7 @@ const sections = [
     title: "3. Behavior",
     content: (
       <p>
-        Parent and Student understands that The Project is committed to providing a safe and comfortable environment for all students to engage in learning. Parent and Student understands that Student shall be held to a set of expectations regarding behavior, and if Student behaves in any manner not conducive to a safe learning environment (including, but not limited to, disruptive, disrespectful, threatening, abusive, harassing, obscene, offensive, profane, vulgar or sexual behavior of any sort), The Project and/or Instructors may dismiss Student from courses and Student may be barred from participating in other courses. The Project may involve Parent in discussions regarding Student&rsquo;s behavior, if it is deemed appropriate by an internal investigation in accordance with the Official Governances of The Youth Passion Project Inc.
+        Parent and Student understands that The Project is committed to providing a safe and comfortable environment for all students to engage in learning. Parent and Student understands that Student shall be held to a set of expectations regarding behavior, and if Student behaves in any manner not conducive to a safe learning environment (including, but not limited to, disruptive, disrespectful, threatening, abusive, harassing, obscene, offensive, profane, vulgar or sexual behavior of any sort), The Project and/or Educators may dismiss Student from courses and Student may be barred from participating in other courses. The Project may involve Parent in discussions regarding Student&rsquo;s behavior, if it is deemed appropriate by an internal investigation in accordance with the Official Governances of The Youth Passion Project Inc.
       </p>
     ),
   },
@@ -40,7 +40,7 @@ const sections = [
     title: "4. Release",
     content: (
       <p>
-        Parent and Student understands that The Project is not responsible for any actions or harms caused by other students or Instructors to Student. Parent agrees to release The Project from any and all legal and/or financial responsibility for any damages Student incurs due to participation in online courses, even if such harms are due to The Project&rsquo;s neglect. The Project will strive to aid, to the best of its ability, Parent and Student in any issues involving Instructors and/or other students.
+        Parent and Student understands that The Project is not responsible for any actions or harms caused by other students or Educators to Student. Parent agrees to release The Project from any and all legal and/or financial responsibility for any damages Student incurs due to participation in online courses, even if such harms are due to The Project&rsquo;s neglect. The Project will strive to aid, to the best of its ability, Parent and Student in any issues involving Educators and/or other students.
       </p>
     ),
   },

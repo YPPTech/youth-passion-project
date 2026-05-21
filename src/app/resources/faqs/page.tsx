@@ -42,7 +42,7 @@ function ContactFaqAnswer() {
           Contact Us
         </Link>
         {" "}
-        — one inbox for students, families, instructors, and partners ({mailTo(e.support)}). We route to the right team.
+        — one inbox for students, families, volunteers, and partners ({mailTo(e.support)}). We route to the right team.
       </p>
       <p className="font-medium text-[var(--ypp-ink)]">Specialized inboxes</p>
       <ul className="list-disc space-y-2 pl-5">
@@ -51,9 +51,6 @@ function ContactFaqAnswer() {
         </li>
         <li>
           Website, portal, and technical issues: {mailTo(e.tech)}
-        </li>
-        <li>
-          In-person instructor support: {mailTo(e.inPersonInstructors)}
         </li>
       </ul>
       <p>
@@ -94,7 +91,7 @@ const faqCategories: { title: string; items: FaqItem[] }[] = [
       },
       {
         q: "Why was my registration rejected? How do I fix it?",
-        a: "Some instructors set grade-level or class-size requirements. If you don’t meet those prerequisites, your registration may be rejected and all enrollments voided. Re-register in the student portal and only choose courses for which you meet the prerequisites. Also, do not register for more than three courses—that will cause rejection. If you have questions, contact our Enrollment & Student Services Team.",
+        a: "Some courses set grade-level or class-size requirements. If you don’t meet those prerequisites, your registration may be rejected and all enrollments voided. Re-register in the student portal and only choose courses for which you meet the prerequisites. Also, do not register for more than three courses—that will cause rejection. If you have questions, contact our Enrollment & Student Services Team.",
       },
       {
         q: "How often do courses meet? What do I need to prepare?",
@@ -113,8 +110,8 @@ const faqCategories: { title: string; items: FaqItem[] }[] = [
         a: "For online classes: you’ll need a device with a camera and microphone and a stable internet connection. For in-person classes: requirements depend on the course and chapter. Some courses may list additional materials (e.g., for art or coding); those details are in the course description.",
       },
       {
-        q: "Who do I contact for enrollment issues or problems with my course or instructor?",
-        a: "Contact Enrollment and Student Services at support@youthpassionproject.org. For enrollment issues, send your email from the address you used to register and include the student’s full name. For course or instructor issues, include the student’s full name, the instructor’s full name, and the course name.",
+        q: "Who do I contact for enrollment issues or problems with my course?",
+        a: "Contact Enrollment and Student Services at support@youthpassionproject.org. For enrollment issues, send your email from the address you used to register and include the student’s full name. For course issues, include the student’s full name and the course name.",
       },
       {
         q: "How do I give feedback on my course?",
@@ -123,27 +120,11 @@ const faqCategories: { title: string; items: FaqItem[] }[] = [
     ],
   },
   {
-    title: "For Instructors & Volunteers",
+    title: "For Volunteers",
     items: [
       {
-        q: "How do I become an instructor?",
-        a: "High school students can apply from our Apply for a role page (or start at Join Us → Teach or lead). You’ll share your passion, proposed course idea, and availability. Our team reviews applications and supports new instructors through training and curriculum help.",
-      },
-      {
-        q: "What’s the time commitment for teaching a course?",
-        a: "Most courses meet once or twice a week for 30–60 minutes per session, plus some prep time. Exact commitment depends on the course length and your syllabus.",
-      },
-      {
-        q: "Can I teach more than one course?",
-        a: "Yes. Many instructors start with one course and later propose additional subjects. Contact us or apply again for another course idea.",
-      },
-      {
-        q: "Who do I contact for instructor support?",
-        a: "In-person instructors can contact In-person Support at in-person-instructors@youthpassionproject.org. For general instructor questions, contact Enrollment and Student Services at support@youthpassionproject.org.",
-      },
-      {
         q: "I’m not in high school. How can I help?",
-        a: "Our instructor and volunteer roles—including curriculum development, outreach, and operations—are for high school students only. You must be in high school to apply. See Join Us or Apply for a role for openings, or email us at support@youthpassionproject.org with questions.",
+        a: "Our volunteer roles—including chapter leadership, technology, outreach, and operations—are for high school students only. You must be in high school to apply. See Join Us or Apply for a role for openings, or email us at support@youthpassionproject.org with questions.",
       },
     ],
   },
@@ -156,11 +137,7 @@ const faqCategories: { title: string; items: FaqItem[] }[] = [
       },
       {
         q: "What courses are offered?",
-        a: "We offer a large variety of courses in subjects like Competition Math, Painting, Chess, Creative Writing, and many more. The lineup changes each session based on which instructors are teaching. The student portal has the current catalog; you can also see our Programs & Chapters page or contact support@youthpassionproject.org.",
-      },
-      {
-        q: "Who are the instructors?",
-        a: "Our 100+ instructors are high school students who are passionate about what they teach. All potential instructors submit applications, and we accept only a small percentage. We evaluate teaching ability, professionalism, organization, qualifications, character, and course feasibility through interviews with trained hiring staff. Our instructors include published authors, award-winning researchers, musicians who have performed at venues like Carnegie Hall, ranked chess players and athletes, and seniors accepted to prestigious colleges. We hand-pick instructors who we believe add greatly to our mission and community.",
+        a: "We offer a large variety of courses in subjects like Competition Math, Painting, Chess, Creative Writing, and many more. The lineup changes each session based on which courses are available. The student portal has the current catalog; you can also see our Programs & Chapters page or contact support@youthpassionproject.org.",
       },
       {
         q: "When will the next session be open for registration?",

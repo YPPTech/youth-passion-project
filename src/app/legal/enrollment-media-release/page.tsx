@@ -13,7 +13,7 @@ const sections = [
     title: "1. Purpose",
     content: (
       <p>
-        The purpose of this enrollment media release agreement (hereafter &ldquo;Agreement&rdquo;) is to set forth mutual understanding and agreement of a set of guidelines pursuant to which child(ren), as defined below, (hereafter &ldquo;Student&rdquo;), if minor(s), under the care of parent(s) and/or guardian(s) (hereafter &ldquo;Parent&rdquo;), shall partake in an online course provided by instructor(s) (hereafter &ldquo;Instructors&rdquo;) organized by Youth Passion Project Inc., a Delaware Nonprofit Corporation exempt by the Internal Revenue Service under 26 US Code Section 501(c)(3) (hereafter, &ldquo;The Project&rdquo;).
+        The purpose of this enrollment media release agreement (hereafter &ldquo;Agreement&rdquo;) is to set forth mutual understanding and agreement of a set of guidelines pursuant to which child(ren), as defined below, (hereafter &ldquo;Student&rdquo;), if minor(s), under the care of parent(s) and/or guardian(s) (hereafter &ldquo;Parent&rdquo;), shall partake in an online course provided by educator(s) (hereafter &ldquo;Educators&rdquo;) organized by Youth Passion Project Inc., a Delaware Nonprofit Corporation exempt by the Internal Revenue Service under 26 US Code Section 501(c)(3) (hereafter, &ldquo;The Project&rdquo;).
       </p>
     ),
   },

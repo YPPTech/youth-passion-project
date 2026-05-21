@@ -6,7 +6,7 @@ const categoryStyles: Record<
 > = {
   "Student class":
     "border-[var(--ypp-primary)]/25 bg-[var(--ypp-lavender)]/50 text-[var(--ypp-primary)]",
-  "Instructor training":
+  "Volunteer training":
     "border-[var(--ypp-deep)]/20 bg-[var(--ypp-deep)]/5 text-[var(--ypp-deep)]",
   Alumni: "border-[var(--ypp-primary)]/25 bg-[var(--ypp-blush)]/70 text-[var(--ypp-deep)]",
   Chapter: "border-[var(--ypp-border)] bg-[var(--ypp-white)] text-[var(--ypp-ink)]",

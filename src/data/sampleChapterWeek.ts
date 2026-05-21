@@ -6,7 +6,7 @@
 
 export type ScheduleCategory =
   | "Student class"
-  | "Instructor training"
+  | "Volunteer training"
   | "Alumni"
   | "Chapter"
   | "Community";
@@ -39,8 +39,8 @@ export const sampleChapterWeek: ScheduleDay[] = [
       },
       {
         time: "6:00–7:30 PM",
-        title: "New instructor onboarding",
-        category: "Instructor training",
+        title: "New volunteer onboarding",
+        category: "Volunteer training",
         note: "Lesson planning, Zoom norms, and safety basics.",
       },
     ],
@@ -90,7 +90,7 @@ export const sampleChapterWeek: ScheduleDay[] = [
         time: "6:30–7:30 PM",
         title: "Alumni mentor office hours",
         category: "Alumni",
-        note: "Drop-in Q&A for instructors and interested students.",
+        note: "Drop-in Q&A for volunteers and interested students.",
       },
     ],
   },
@@ -115,12 +115,12 @@ export const sampleChapterWeek: ScheduleDay[] = [
         time: "10:00–11:30 AM",
         title: "Community open house",
         category: "Community",
-        note: "Families meet instructors; learn about the chapter.",
+        note: "Families meet volunteers; learn about the chapter.",
       },
       {
         time: "1:00–3:00 PM",
-        title: "Regional instructor training",
-        category: "Instructor training",
+        title: "Regional volunteer training",
+        category: "Volunteer training",
         note: "Pedagogy deep-dive across nearby chapters.",
       },
     ],

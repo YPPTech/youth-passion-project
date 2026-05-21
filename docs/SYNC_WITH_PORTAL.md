@@ -3,7 +3,7 @@
 This marketing site links to the **YPP Pathways Portal** in many places (header, footer, Programs, Apply, Calendar, FAQs). The portal is a separate app:
 
 - **Repo:** [braydenwhite-blip/YPP-Portal](https://github.com/braydenwhite-blip/YPP-Portal)
-- **Stack:** Next.js 14, PostgreSQL (Prisma), NextAuth — pathways, instructor training, events, chapter dashboards.
+- **Stack:** Next.js 14, PostgreSQL (Prisma), NextAuth — pathways, training, events, chapter dashboards.
 - **Deploy:** `portal.youthpassionproject.org`.
 
 Here’s how to keep this site in sync with the portal.
