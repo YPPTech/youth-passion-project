@@ -52,6 +52,8 @@ export const CONTACT_EMAILS = {
 } as const;
 
 /** Application form URLs — single source for Apply page and any links to apply. */
+const INSTRUCTOR_APPLICATION_URL =
+  "https://docs.google.com/forms/d/e/1FAIpQLSfXlGvCx_itTN6bBdevbL7ohb8Ya7tQMIQS5JBF92q4xPS1QA/viewform";
 const CHAPTER_PRESIDENT_APPLICATION_URL =
   "https://docs.google.com/forms/d/e/1FAIpQLSd7d2uxq1kJaFP5FAp5HsMe0h2U13CNz6heKuBcsY8rMgLOLQ/viewform";
 export const TECH_MANAGER_APPLICATION_URL =
@@ -62,6 +64,23 @@ export const TECH_MANAGER_APPLICATION_URL =
  * Add or edit roles here; the Apply page and hiring bar stay in sync.
  */
 export const applyRoles = [
+  {
+    id: "instructor",
+    title: "Instructor",
+    ageGrade: "High school students (grades 9-12)",
+    applyTeaser: "Teach what you love online or in person.",
+    shortDescription:
+      "Lead classes for younger students in your subject with curriculum support, training, and mentorship.",
+    description:
+      "Lead classes for younger students online or at a chapter. Most sessions run 30-60 minutes, 1-2 times per week.",
+    details: [
+      "Application and training, with support from YPP staff.",
+      "The form asks about your course idea and how you would run it.",
+      "Mentorship from experienced leaders.",
+    ],
+    applyLink: INSTRUCTOR_APPLICATION_URL,
+    applyLabel: "Instructor application",
+  },
   {
     id: "chapter-president",
     title: "Chapter President",

@@ -58,6 +58,47 @@ export default function InPersonSection({
               Check back soon or contact us about starting a chapter.
             </p>
           </div>
+        ) : locations.length === 1 ? (
+          <div className="mx-auto max-w-4xl">
+            {locations.map((loc) => (
+              <div
+                key={loc.id}
+                className="relative overflow-hidden rounded-2xl border border-[var(--ypp-primary)]/15 bg-white/92 shadow-[0_18px_55px_rgba(59,15,110,0.10)] ring-1 ring-white/70 backdrop-blur-sm"
+              >
+                <div className="grid gap-0 md:grid-cols-[1fr_auto] md:items-stretch">
+                  <div className="p-7 text-left sm:p-9">
+                    <div className="flex items-center gap-3">
+                      <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-[var(--ypp-primary)]/15 bg-[var(--ypp-lavender)]/55 text-[var(--ypp-primary)]">
+                        <LocationPinIcon className="h-5 w-5" />
+                      </span>
+                      <div>
+                        <p className="font-label text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--ypp-primary)]">
+                          Active in-person chapter
+                        </p>
+                        <p className="font-body mt-1 text-sm text-[var(--ypp-muted)]">
+                          Programs currently run here.
+                        </p>
+                      </div>
+                    </div>
+                    <h3 className="font-heading mt-7 text-4xl font-bold tracking-tight text-[var(--ypp-deep)] sm:text-5xl">
+                      {loc.city}, {loc.state}
+                    </h3>
+                  </div>
+                  <div className="border-t border-[var(--ypp-border)] bg-[var(--ypp-blush)]/50 p-7 md:flex md:min-w-56 md:flex-col md:justify-center md:border-l md:border-t-0 sm:p-9">
+                    <p className="font-label text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--ypp-primary)]">
+                      Sessions
+                    </p>
+                    <p className="font-body mt-2 text-lg font-semibold text-[var(--ypp-ink)]">
+                      {loc.sessions || "To be announced"}
+                    </p>
+                    <p className="font-body mt-3 text-sm leading-relaxed text-[var(--ypp-muted)]">
+                      Course details and registration will be listed in the student portal when available.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         ) : (
           <ul className="mx-auto grid max-w-3xl list-none grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8">
             {locations.map((loc) => (

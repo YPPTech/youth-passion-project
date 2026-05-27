@@ -31,7 +31,7 @@ export default function JoinPage() {
       <PageHeader
         label="Summer 2026 · Now Accepting Applications"
         title="Join Us"
-        subtitle="High school students can apply now to lead a chapter or help build YPP's platform."
+        subtitle="High school students can apply now to teach a class, lead a chapter, or help build YPP's platform."
         action={
           <a
             href={PORTAL_URL}
@@ -61,7 +61,7 @@ export default function JoinPage() {
               they love.
             </p>
             <div className="mt-6 grid grid-cols-2 gap-2">
-              {["Chapter President", "Tech Manager"].map((item) => (
+              {["Instructor", "Chapter President", "Tech Manager"].map((item) => (
                 <span
                   key={item}
                   className="rounded-full border border-[var(--ypp-primary)]/15 bg-[var(--ypp-lavender)]/45 px-3 py-2 text-center font-body text-xs font-semibold text-[var(--ypp-deep)]"

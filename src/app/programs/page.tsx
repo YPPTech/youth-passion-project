@@ -18,8 +18,8 @@ export default function ProgramsPage() {
         title="Programs & Chapters"
         subtitle={
           <>
-            In-person chapters in <strong className="font-semibold text-[var(--ypp-ink)]">Scarsdale, NY</strong> and{" "}
-            <strong className="font-semibold text-[var(--ypp-ink)]">Edison, NJ</strong>. Summer 2026 applications are open now; register through the{" "}
+            Our in-person chapter is in <strong className="font-semibold text-[var(--ypp-ink)]">Scarsdale, NY</strong>.
+            {" "}Summer 2026 applications are open now; register through the{" "}
             <a href={PORTAL_URL} target="_blank" rel="noopener noreferrer" className={programModelLinkClass}>
               student portal
             </a>
@@ -42,7 +42,7 @@ export default function ProgramsPage() {
         />
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-white/40 to-transparent" aria-hidden />
         <div className="relative mx-auto w-full max-w-5xl min-w-0">
-          <SectionHeading title="In-person chapters" subtitle="Where we run programs today." />
+          <SectionHeading title="In-person chapter" subtitle="Scarsdale is YPP's active chapter location." />
           <InPersonSection locations={inPersonLocations} />
         </div>
       </section>

@@ -75,7 +75,7 @@ const faqCategories: { title: string; items: FaqItem[] }[] = [
       },
       {
         q: "What age group are the courses for? Do I have to live in a certain area?",
-        a: "Our courses are designed for elementary and middle school students. We offer both online and in-person classes. Online classes are open to any eligible student worldwide—no location requirement. In-person classes depend on where we have active chapters; check our Programs & Chapters page and our Calendar to see what’s available in your area.",
+        a: "Our courses are designed for elementary and middle school students. We offer both online and in-person classes. Online classes are open to any eligible student worldwide—no location requirement. In-person classes are currently available through our Scarsdale, NY chapter; check our Programs & Chapters page and our Calendar to see what’s available.",
       },
       {
         q: "How do I register for courses?",
@@ -103,7 +103,7 @@ const faqCategories: { title: string; items: FaqItem[] }[] = [
       },
       {
         q: "How do the classes work? Online vs. in-person?",
-        a: "We offer both online and in-person classes. Online classes are live and interactive (e.g., Zoom or similar) and can be taken from anywhere. In-person classes meet at chapter locations when available. Both formats typically run 30–60 minutes, once or twice a week, and emphasize practice and participation. The course catalog and registration form indicate whether each course is online or in-person.",
+        a: "We offer both online and in-person classes. Online classes are live and interactive (e.g., Zoom or similar) and can be taken from anywhere. In-person classes meet through the Scarsdale, NY chapter when available. Both formats typically run 30–60 minutes, once or twice a week, and emphasize practice and participation. The course catalog and registration form indicate whether each course is online or in-person.",
       },
       {
         q: "Do I need any special equipment or software?",
@@ -133,7 +133,7 @@ const faqCategories: { title: string; items: FaqItem[] }[] = [
     items: [
       {
         q: "What is the Youth Passion Project?",
-        a: "The Youth Passion Project is an organization that offers free classes—both online and in-person—taught by high school students. We focus on subjects that aren’t traditionally taught in school—from songwriting to coding to baking—giving younger students unique learning opportunities. Online classes are available from anywhere; in-person classes run where we have chapters. We’re a Delaware nonprofit with 501(c)(3) status. You can read more about our mission on our About page.",
+        a: "The Youth Passion Project is an organization that offers free classes—both online and in-person—taught by high school students. We focus on subjects that aren’t traditionally taught in school—from songwriting to coding to baking—giving younger students unique learning opportunities. Online classes are available from anywhere; in-person classes currently run through our Scarsdale, NY chapter. We’re a Delaware nonprofit with 501(c)(3) status. You can read more about our mission on our About page.",
       },
       {
         q: "What courses are offered?",
@@ -145,7 +145,7 @@ const faqCategories: { title: string; items: FaqItem[] }[] = [
       },
       {
         q: "Where do you operate?",
-        a: "We’re based in Delaware. Online classes are open to students anywhere in the world. In-person classes run in locations where we have active chapters—availability varies by region. Our programs run in Fall and Spring; see the Programs & Chapters page and Calendar for chapter locations, dates, and what’s offered near you.",
+        a: "We’re based in Delaware. Online classes are open to students anywhere in the world. In-person classes currently run through our Scarsdale, NY chapter. Our programs run in Fall and Spring; see the Programs & Chapters page and Calendar for dates and what’s offered.",
       },
       {
         q: "How is YPP funded?",

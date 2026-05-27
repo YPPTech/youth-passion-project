@@ -39,19 +39,12 @@ export type InPersonLocation = {
 /** No online sessions listed until the student portal publishes a catalog. */
 export const onlineSessions: OnlineSession[] = [];
 
-/** Active in-person chapter locations shown on Programs & Chapters. */
+/** Active in-person chapter shown on Programs & Chapters. */
 export const inPersonLocations: InPersonLocation[] = [
   {
     id: "scarsdale-ny",
     city: "Scarsdale",
     state: "NY",
-    sessions: "Fall & Spring",
-    classes: [],
-  },
-  {
-    id: "edison-nj",
-    city: "Edison",
-    state: "NJ",
     sessions: "Fall & Spring",
     classes: [],
   },

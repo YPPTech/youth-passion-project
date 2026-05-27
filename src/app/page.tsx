@@ -96,7 +96,7 @@ export default function HomePage() {
                   </p>
                 </div>
                 <h3 className="font-heading mt-3 text-2xl font-semibold leading-snug text-[var(--ypp-deep)] sm:text-[1.7rem]">
-                  Classes, chapter leadership, and tech team roles are live.
+                  Classes, teaching roles, chapter leadership, and tech team roles are live.
                 </h3>
                 <p className="font-body mt-4 text-sm leading-relaxed text-[var(--ypp-muted)] sm:text-base">
                   Create an account in the student portal to register for courses or apply to help run the next session.
@@ -136,7 +136,7 @@ export default function HomePage() {
               Summer 2026 · Now Accepting Applications
             </span>
             <p className="font-body text-sm text-white/85">
-              High schoolers: lead a chapter or help build YPP tech this summer.
+              High schoolers: teach a class, lead a chapter, or help build YPP tech this summer.
             </p>
           </div>
           <div className="flex min-w-0 flex-wrap items-center justify-start gap-3 sm:justify-end">
@@ -215,7 +215,7 @@ export default function HomePage() {
             Lead or build where you are
           </h2>
           <p className="font-body mt-4 max-w-2xl text-pretty leading-relaxed text-[var(--ypp-muted)]">
-            Chapter presidents and technology managers help run programs and keep YPP moving.
+            Instructors, chapter presidents, and technology managers help run programs and keep YPP moving.
           </p>
           <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {openPositions.map(({ title, description, href }) => (

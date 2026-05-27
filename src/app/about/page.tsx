@@ -6,47 +6,89 @@ import SectionHeading from "@/components/SectionHeading";
 
 type LeadershipMember = {
   personName: string;
-  name: string;
+  role: string;
+  location: string;
   bio: string;
   image: string;
 };
 
 const leadership: LeadershipMember[] = [
   {
-    personName: "Ian DiLorenzo",
-    name: "Co-President",
-    bio: "Ian is the Co-President of the Youth Passion Project. At YPP, he is the director of our in-person learning chapters. Outside of YPP, he loves the outdoors, movies, and learning about languages. He is currently studying both Latin and Spanish at Scarsdale High School, and loves to learn about the culture and history behind all sorts of different languages.",
-    image: "/team/ian-dilorenzo.png",
+    personName: "Aveena Haswani",
+    role: "Co-President",
+    location: "Acton, MA",
+    bio: "Aveena is the Co-President of the Youth Passion Project. At YPP, she manages the technology team and oversees the overall communication strategy. Outside of YPP, she loves swimming, baking, and spending time with friends.",
+    image: "/team/aveena-haswani-new.jpg",
   },
   {
-    personName: "Aveena Haswani",
-    name: "Co-President",
-    bio: "Aveena is the Co-President of the Youth Passion Project. At YPP, she manages the tech team and oversees the overall communication strategy. Outside of YPP, she loves swimming, baking, and spending time with friends.",
-    image: "/team/aveena-haswani.png",
+    personName: "Ian DiLorenzo",
+    role: "Co-President",
+    location: "Scarsdale, NY",
+    bio: "Ian is the Co-President of the Youth Passion Project. At YPP, he is the director of our in-person learning chapters. Outside of YPP, he loves the outdoors, movies, and learning about languages. He is currently studying both Latin and Spanish at Scarsdale High School, and loves to learn about the culture and history behind all sorts of different languages.",
+    image: "/team/ian-dilorenzo-new.jpg",
   },
   {
     personName: "Brayden White",
-    name: "Vice President for Instruction",
-    bio: "Brayden is the Vice President of Instruction at the Youth Passion Project. He helps build programs that allow students to explore their interests and develop new skills. He built YPP's portal for students and staff and helps train educators while supporting student instruction and programming across the organization. Brayden also teaches the BOW Sports Capital: Introduction to Sports Economics, a course on the business and economics behind professional sports. Outside of YPP, he enjoys spending time with friends, following sports, and finding the best food wherever he can.",
-    image: "/team/brayden-white.png",
+    role: "Vice President of Instruction",
+    location: "Scarsdale, NY",
+    bio: "Brayden is the Vice President of Instruction of the Youth Passion Project. He helps build programs that allow students to explore their interests and develop new skills. He built YPP's portal for students and instructors and helps train educators while supporting student instruction and programming across the organization. Brayden also teaches the BOW Sports Capital: Introduction to Sports Economics, a course on the business and economics behind professional sports. Outside of YPP, he enjoys spending time with friends, following sports, and finding the best food wherever he can.",
+    image: "/team/brayden-white-new.jpg",
   },
   {
     personName: "Sanvi Mehta",
-    name: "Vice President for Communication",
-    bio: "Sanvi is the Vice President of Communication at the Youth Passion Project. In this role, she manages sponsorship outreach, oversees parent communication, and helps expand YPP's visibility through strategic marketing and social media. Sanvi first joined YPP as an ambitious student, taking classes in health, debate, and several other subjects. Through these experiences, she developed a strong passion for the organization and its mission, wanting to further her time at YPP. Outside of YPP, Sanvi enjoys spending time with friends, watching sports, and dancing.",
-    image: "/team/sanvi-mehta.png",
+    role: "Vice President of Communications",
+    location: "Frisco, TX",
+    bio: "Sanvi is the Vice President of Communications of the Youth Passion Project. In this role, she manages sponsorship outreach, oversees parent communication, and helps expand YPP's visibility through strategic marketing and social media. Sanvi first joined YPP as an ambitious student, taking classes in health, debate, and several other subjects. Through these experiences, she developed a strong passion for the organization and its mission, wanting to further her involvement at YPP. Outside of YPP, Sanvi enjoys spending time with friends, watching sports, and dancing.",
+    image: "/team/sanvi-mehta-new.jpg",
   },
   {
     personName: "Katherine Zhang",
-    name: "Chief of Staff",
-    bio: "Katherine is a junior in high school on the East Coast and currently serves as Chief of Staff of the Youth Passion Project. In this role, she is responsible for overseeing recruitment, supporting staff members and their needs, and maintaining institutional knowledge to ensure continuity and efficiency in the organization. At school, Katherine is an officer of the speech and debate team, teaching lowerclassmen techniques to develop critical thinking and argumentation skills. She also enjoys learning history and Spanish. Outside of school, Katherine likes reading and hanging out with friends and family.",
-    image: "/team/katherine-zhang.png",
+    role: "Chief of Staff",
+    location: "Scarsdale, NY",
+    bio: "Katherine is a junior in high school on the East Coast and currently serves as Chief of Staff of the Youth Passion Project. In this role, she is responsible for overseeing recruitment, supporting staff members and their needs, and maintaining institutional knowledge to ensure continuity and efficiency in the organization. At school, Katherine is an officer of the speech and debate team, teaching lowerclassmen techniques to develop critical thinking and argumentation skills. She also enjoys learning about history and Spanish. Outside of school, Katherine likes reading and hanging out with friends and family.",
+    image: "/team/katherine-zhang-new-optimized.jpg",
   },
   {
     personName: "Anthea Zamir",
-    name: "Chief Technology Officer",
-    bio: "Anthea is a junior in high school in Seattle and serves as the Chief Technology Officer at the Youth Passion Project. She built and maintains the organization's website and is currently developing YPP's online portal for students and staff. In her role, she oversees the organization's technical infrastructure and works to enhance the digital systems that support YPP's programs and operations. Previously, she also taught Introduction to Algebra 1 at YPP. Outside of her work, Anthea plays varsity golf at her school and enjoys traveling, attending concerts, and exploring new technology.",
-    image: "/team/anthea-zamir.png",
+    role: "Chief Technology Officer",
+    location: "Snoqualmie, WA",
+    bio: "Anthea is a junior in high school in the Greater Seattle Area and serves as the Chief Technology Officer of the Youth Passion Project. She built and maintains the organization's website and is currently developing YPP's online portal for students and instructors. In her role, she oversees the organization's technical infrastructure and works to enhance the digital systems that support YPP's programs and operations. Previously, she also taught Introduction to Algebra 1 at YPP. Outside of her work, Anthea plays golf at her school and enjoys traveling, attending concerts, and exploring new technology.",
+    image: "/team/anthea-zamir.jpg",
+  },
+  {
+    personName: "Milo Wald",
+    role: "Chapter President",
+    location: "Scarsdale, NY",
+    bio: "Milo is the Chapter President at Scarsdale of the Youth Passion Project, where he helps lead and organize in-person learning opportunities for students in his community. Outside of school, he enjoys exploring STEM topics, playing soccer, and snowboarding. He is always excited to learn new things and share his interests with others through both academics and leadership.",
+    image: "/team/milo-wald.jpg",
+  },
+  {
+    personName: "Wesley Ho",
+    role: "Director of Technology",
+    location: "New York, NY",
+    bio: "Wesley is the Director of Technology of the Youth Passion Project (YPP) and a junior in high school in New York. While working at YPP, he works alongside YPP's tech team to make sure its software is up to date and works to improve the learning experiences of educators and students across the country. Outside of YPP, he is a member of his school's Science Olympiad team and enjoys learning alongside and getting to know other people.",
+    image: "/team/wesley-ho.jpg",
+  },
+  {
+    personName: "Jackson Faber",
+    role: "Communications Director",
+    location: "San Rafael, CA",
+    bio: "Jackson, a high school junior in San Francisco, California, is the Communications Director of the Youth Passion Project. As Communications Director, he is in charge of coordinating YPP's initiatives and spearheading various communication projects. Outside of school, Jackson captains his high school's varsity tennis and cross-country teams and also plays varsity soccer. Aside from athletics, he likes spending time with friends and reading interesting books.",
+    image: "/team/jackson-faber.jpg",
+  },
+  {
+    personName: "Jennifer Chen",
+    role: "Communications Manager",
+    location: "Brooklyn, NY",
+    bio: "Jennifer, a high school sophomore in New York, is the Communications Manager of the Youth Passion Project. As Communications Manager, she is in charge of expanding YPP, managing social media content execution, maintaining consistent branding, and ensuring that all communication among parents, students, and teams is smooth. Prior to YPP, she tutored elementary and middle school students online and in person, sparking her interest in helping other students.",
+    image: "/team/jennifer-chen.jpg",
+  },
+  {
+    personName: "Alina Peng",
+    role: "Social Media Manager",
+    location: "Scarsdale, NY",
+    bio: "Alina is a junior in high school in New York and serves as the Social Media Manager of the Youth Passion Project. She is in charge of creating content for YPP's Instagram as well as TikTok to increase outreach to potential students and teachers. Through her different posts, she helps promote YPP's mission and increase awareness of its programs, opportunities, and benefits.",
+    image: "/team/alina-peng-optimized.jpg",
   },
 ];
 
@@ -191,7 +233,7 @@ export default function AboutPage() {
         <div className="mx-auto max-w-6xl min-w-0">
           <SectionHeading
             title="Leadership Team"
-            subtitle="Who runs day-to-day operations"
+            subtitle="Meet the students leading YPP's programs, technology, and communications."
           />
           <p className="font-body mt-2 text-center text-sm text-[var(--ypp-muted)]">
             Open a card for the full bio.
@@ -220,12 +262,11 @@ export default function AboutPage() {
                     )}
                   </div>
                   <div className="p-5">
-                    <p className="text-xs font-semibold tracking-wider text-[var(--ypp-primary)]">
+                    <h3 className="text-xl font-semibold leading-tight text-[var(--ypp-ink)]">
                       {person.personName}
-                    </p>
-                    <h3 className="mt-1 text-lg font-semibold text-[var(--ypp-ink)]">
-                      {person.name}
                     </h3>
+                    <p className="mt-2 text-sm font-medium text-[var(--ypp-deep)]">{person.role}</p>
+                    <p className="mt-1 text-sm text-[var(--ypp-muted)]">{person.location}</p>
                   </div>
                 </button>
               </li>
@@ -280,12 +321,11 @@ export default function AboutPage() {
                   )}
                 </div>
                 <div className="min-w-0 flex-1">
-                  <p id="modal-name" className="text-xs font-semibold tracking-wider text-[var(--ypp-primary)]">
+                  <h3 id="modal-name" className="text-3xl font-semibold leading-tight text-[var(--ypp-ink)]">
                     {selected.personName}
-                  </p>
-                  <h3 className="mt-1 text-lg font-semibold text-[var(--ypp-ink)]">
-                    {selected.name}
                   </h3>
+                  <p className="mt-2 text-base font-medium text-[var(--ypp-deep)]">{selected.role}</p>
+                  <p className="mt-1 text-sm text-[var(--ypp-muted)]">{selected.location}</p>
                   <p className="font-body mt-4 text-sm leading-relaxed text-[var(--ypp-muted)] sm:text-base">
                     {selected.bio}
                   </p>
