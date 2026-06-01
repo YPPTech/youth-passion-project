@@ -51,9 +51,18 @@ export const CONTACT_EMAILS = {
   tech: "tech@youthpassionproject.org",
 } as const;
 
+/** Official social profiles — footer, FAQs, and other contact surfaces. */
+export const SOCIAL_LINKS = [
+  { name: "X (Twitter)", href: "https://x.com/PassionYouth", icon: "x" },
+  { name: "Instagram", href: "https://www.instagram.com/youthpassionproject/", icon: "instagram" },
+  { name: "TikTok", href: "https://www.tiktok.com/@youthpassionproject", icon: "tiktok" },
+  { name: "Facebook", href: "https://www.facebook.com/people/Youth-Passion-Project/100063756570369/", icon: "facebook" },
+  { name: "LinkedIn", href: "https://www.linkedin.com/company/youth-passion-project", icon: "linkedin" },
+] as const;
+
 /** Application form URLs — single source for Apply page and any links to apply. */
 const INSTRUCTOR_APPLICATION_URL =
-  "https://docs.google.com/forms/d/e/1FAIpQLSfXlGvCx_itTN6bBdevbL7ohb8Ya7tQMIQS5JBF92q4xPS1QA/viewform";
+  "https://portal.youthpassionproject.org/signup/instructor";
 const CHAPTER_PRESIDENT_APPLICATION_URL =
   "https://docs.google.com/forms/d/e/1FAIpQLSd7d2uxq1kJaFP5FAp5HsMe0h2U13CNz6heKuBcsY8rMgLOLQ/viewform";
 export const TECH_MANAGER_APPLICATION_URL =

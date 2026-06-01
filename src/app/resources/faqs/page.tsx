@@ -1,7 +1,10 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
 import PageHeader from "@/components/PageHeader";
-import { CONTACT_EMAILS, PORTAL_URL } from "@/constants/site";
+import { applyRoles, CONTACT_EMAILS, PORTAL_URL, SOCIAL_LINKS } from "@/constants/site";
+
+const instructorRole = applyRoles.find((r) => r.id === "instructor")!;
+const chapterPresidentRole = applyRoles.find((r) => r.id === "chapter-president")!;
 
 const EMAIL_REGEX = /([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})/g;
 const EMAIL_TEST = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -31,7 +34,20 @@ function mailTo(addr: string, className?: string) {
   );
 }
 
-/** Matches /contact: main inbox first, then specialty addresses from CONTACT_EMAILS. */
+function PortalLink({ children }: { children?: ReactNode }) {
+  return (
+    <a
+      href={PORTAL_URL}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="font-medium text-[var(--ypp-primary)] hover:underline"
+    >
+      {children ?? "YPP Pathways Portal"}
+    </a>
+  );
+}
+
+/** Matches /contact: main inbox for students, families, volunteers, and partners. */
 function ContactFaqAnswer() {
   const e = CONTACT_EMAILS;
   return (
@@ -44,18 +60,23 @@ function ContactFaqAnswer() {
         {" "}
         — one inbox for students, families, volunteers, and partners ({mailTo(e.support)}). We route to the right team.
       </p>
-      <p className="font-medium text-[var(--ypp-ink)]">Specialized inboxes</p>
+      <p className="font-medium text-[var(--ypp-ink)]">Social media</p>
       <ul className="list-disc space-y-2 pl-5">
-        <li>
-          Media inquiries — Public Relations: {mailTo(e.marketing)}
-        </li>
-        <li>
-          Website, portal, and technical issues: {mailTo(e.tech)}
-        </li>
+        {SOCIAL_LINKS.map(({ name, href }) => (
+          <li key={href}>
+            <a
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-[var(--ypp-primary)] hover:underline"
+            >
+              {name}
+            </a>
+          </li>
+        ))}
       </ul>
       <p>
-        You can also connect with us on Instagram or X (Twitter). For postal mail, phone, or Zoom, email the relevant
-        address above and we can arrange it.
+        For postal mail, phone, or Zoom, email {mailTo(e.support)} and we can arrange it.
       </p>
     </div>
   );
@@ -75,47 +96,48 @@ const faqCategories: { title: string; items: FaqItem[] }[] = [
       },
       {
         q: "What age group are the courses for? Do I have to live in a certain area?",
-        a: "Our courses are designed for elementary and middle school students. We offer both online and in-person classes. Online classes are open to any eligible student worldwide—no location requirement. In-person classes are currently available through our Scarsdale, NY chapter; check our Programs & Chapters page and our Calendar to see what’s available.",
+        a: "Our courses are designed for elementary and middle school students. For Summer 2026, we are running in-person classes only—no online classes at this time. Programs meet through our Scarsdale, NY chapter, so students need to be able to attend locally. See Programs & Chapters and our Calendar for what’s offered.",
       },
       {
         q: "How do I register for courses?",
-        a: "Register through the student portal: sign in or create an account, then use the course catalog and registration form. For in-person classes (where offered), the process is location-dependent; some require in-person sign-up, others have online links. If you need help, contact our Enrollment & Student Services Team at support@youthpassionproject.org. Parents will need to sign a liability form.",
+        answer: (
+          <p>
+            Summer 2026 · Now Accepting Applications. Create an account or sign in at the{" "}
+            <PortalLink />, browse the course catalog, and complete the registration form. Parents will
+            need to sign enrollment consent forms. Already applied? Use the portal to check your status.
+            For help, email {mailTo(CONTACT_EMAILS.support)}.
+          </p>
+        ),
       },
       {
-        q: "How do I know if my registration went through?",
-        a: "If you registered online, you’ll receive an automated email from registrar@youthpassionproject.org with the status of your registration. If approved, you’ll get your student’s schedule as a Google Doc. If any part was rejected, you’ll get a description of the error. Make sure registrar@youthpassionproject.org is not blocked and check your spam folder. If you don’t receive the email within two hours, reach out to us.",
+        q: "When is registration open for the next session?",
+        answer: (
+          <p>
+            Summer 2026 applications are open now. Register through the <PortalLink /> or visit our{" "}
+            <Link href="/calendar" className="font-medium text-[var(--ypp-primary)] hover:underline">
+              Calendar
+            </Link>{" "}
+            for schedules and key dates.
+          </p>
+        ),
       },
       {
-        q: "A course I want isn’t on the registration form. Why?",
-        a: "If a course isn’t on the form, it has likely reached its maximum capacity. The registration form reflects current availability. If you’d still like to be considered, you can request an exception by contacting our Enrollment & Student Services Team with your child’s name, grade, and any courses they’re currently enrolled in.",
+        q: "What courses are offered?",
+        answer: (
+          <p>
+            We offer a wide variety of courses—from competition math and chess to creative writing, coding,
+            and more. The lineup changes each session. The current Summer 2026 catalog is in the{" "}
+            <PortalLink />; you can also browse{" "}
+            <Link href="/programs" className="font-medium text-[var(--ypp-primary)] hover:underline">
+              Programs &amp; Chapters
+            </Link>{" "}
+            or email {mailTo(CONTACT_EMAILS.support)} with questions.
+          </p>
+        ),
       },
       {
-        q: "Why was my registration rejected? How do I fix it?",
-        a: "Some courses set grade-level or class-size requirements. If you don’t meet those prerequisites, your registration may be rejected and all enrollments voided. Re-register in the student portal and only choose courses for which you meet the prerequisites. Also, do not register for more than three courses—that will cause rejection. If you have questions, contact our Enrollment & Student Services Team.",
-      },
-      {
-        q: "How often do courses meet? What do I need to prepare?",
-        a: "Courses meet once or twice a week at set times; the exact schedule is in the course catalog and registration form. The catalog also lists any prerequisites and materials. Read the course description before signing up so you know what to expect.",
-      },
-      {
-        q: "Do I need to attend every class?",
-        a: "Yes. We ask that you commit to attending every class. Our curriculums are progressive and build on past content, and we have limited spots—we count on full attendance. If your schedule conflicts or you can’t attend consistently, please contact our Enrollment & Student Services Team before enrolling.",
-      },
-      {
-        q: "How do the classes work? Online vs. in-person?",
-        a: "We offer both online and in-person classes. Online classes are live and interactive (e.g., Zoom or similar) and can be taken from anywhere. In-person classes meet through the Scarsdale, NY chapter when available. Both formats typically run 30–60 minutes, once or twice a week, and emphasize practice and participation. The course catalog and registration form indicate whether each course is online or in-person.",
-      },
-      {
-        q: "Do I need any special equipment or software?",
-        a: "For online classes: you’ll need a device with a camera and microphone and a stable internet connection. For in-person classes: requirements depend on the course and chapter. Some courses may list additional materials (e.g., for art or coding); those details are in the course description.",
-      },
-      {
-        q: "Who do I contact for enrollment issues or problems with my course?",
-        a: "Contact Enrollment and Student Services at support@youthpassionproject.org. For enrollment issues, send your email from the address you used to register and include the student’s full name. For course issues, include the student’s full name and the course name.",
-      },
-      {
-        q: "How do I give feedback on my course?",
-        a: "We welcome feedback. At the end of each session you’ll receive a form via email to submit feedback. For immediate concerns, contact Enrollment and Student Services at support@youthpassionproject.org.",
+        q: "How do in-person classes work?",
+        a: "For now, all classes meet in person through our Scarsdale, NY chapter—we are not offering online classes at this time. Sessions typically run 30–60 minutes, once or twice a week, in small groups led by trained high school instructors. The portal catalog lists current in-person offerings.",
       },
     ],
   },
@@ -123,33 +145,60 @@ const faqCategories: { title: string; items: FaqItem[] }[] = [
     title: "For Volunteers",
     items: [
       {
-        q: "I’m not in high school. How can I help?",
-        a: "Our volunteer roles—including chapter leadership, technology, outreach, and operations—are for high school students only. You must be in high school to apply. See Join Us or Apply for a role for openings, or email us at support@youthpassionproject.org with questions.",
+        q: "How do I apply to teach as an instructor?",
+        answer: (
+          <p>
+            Instructor roles are for high school students (grades 9–12). For Summer 2026, we are running
+            in-person classes only at our Scarsdale, NY chapter—if you live in the area and can teach locally,
+            apply through the{" "}
+            <a
+              href={instructorRole.applyLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-[var(--ypp-primary)] hover:underline"
+            >
+              instructor application
+            </a>{" "}
+            in the <PortalLink /> or on our{" "}
+            <Link href="/apply#instructor" className="font-medium text-[var(--ypp-primary)] hover:underline">
+              Apply page
+            </Link>
+            . You’ll share your course idea, get training and mentorship, and lead small in-person classes for
+            younger students. Questions? Email {mailTo(CONTACT_EMAILS.support)}.
+          </p>
+        ),
+      },
+      {
+        q: "How do I apply to be a Chapter President?",
+        answer: (
+          <p>
+            Chapter President is for high school students (grades 9–12) who want to start or grow a YPP chapter
+            at their school—you can apply from anywhere, not just Scarsdale. Summer 2026 applications are open
+            now. We recommend contacting your school before applying when you can. Apply on our{" "}
+            <Link href="/apply#chapter-president" className="font-medium text-[var(--ypp-primary)] hover:underline">
+              Apply page
+            </Link>{" "}
+            or through the{" "}
+            <a
+              href={chapterPresidentRole.applyLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-[var(--ypp-primary)] hover:underline"
+            >
+              Chapter President application form
+            </a>
+            .
+          </p>
+        ),
       },
     ],
   },
   {
-    title: "Programs & Organization",
+    title: "About YPP",
     items: [
       {
         q: "What is the Youth Passion Project?",
-        a: "The Youth Passion Project is an organization that offers free classes—both online and in-person—taught by high school students. We focus on subjects that aren’t traditionally taught in school—from songwriting to coding to baking—giving younger students unique learning opportunities. Online classes are available from anywhere; in-person classes currently run through our Scarsdale, NY chapter. We’re a Delaware nonprofit with 501(c)(3) status. You can read more about our mission on our About page.",
-      },
-      {
-        q: "What courses are offered?",
-        a: "We offer a large variety of courses in subjects like Competition Math, Painting, Chess, Creative Writing, and many more. The lineup changes each session based on which courses are available. The student portal has the current catalog; you can also see our Programs & Chapters page or contact support@youthpassionproject.org.",
-      },
-      {
-        q: "When will the next session be open for registration?",
-        a: "You can view our full course schedule on our Calendar page. Check back or contact us for the latest updates about registration openings.",
-      },
-      {
-        q: "Where do you operate?",
-        a: "We’re based in Delaware. Online classes are open to students anywhere in the world. In-person classes currently run through our Scarsdale, NY chapter. Our programs run in Fall and Spring; see the Programs & Chapters page and Calendar for dates and what’s offered.",
-      },
-      {
-        q: "How is YPP funded?",
-        a: "We’re supported by donations (including through the Community Foundation of Delaware), grants, and in-kind support. Donations are tax-deductible. See the Donate page for more.",
+        a: "The Youth Passion Project offers free classes taught by high school volunteers. We focus on subjects that aren’t traditionally taught in school, from songwriting to coding to baking. Right now our programs are in-person only at our Scarsdale, NY chapter—we are not running online classes at this time. We’re a Delaware nonprofit with 501(c)(3) status. Read more on our About page.",
       },
       {
         q: "How do I contact the Youth Passion Project?",
@@ -165,7 +214,7 @@ export default function FAQsPage() {
       <PageHeader
         label="Resources"
         title="Frequently Asked Questions"
-        subtitle="Quick answers about our courses, how to join, and how we run."
+        subtitle="Quick answers about our courses, volunteering, and how we run."
       />
 
       {/* FAQ content */}
@@ -205,15 +254,9 @@ export default function FAQsPage() {
           ))}
 
           <p className="font-body mt-12 text-center text-sm text-[var(--ypp-muted)]">
-            Registration and the full course catalog are available in the{" "}
-            <a
-              href={PORTAL_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-medium text-[var(--ypp-primary)] hover:underline"
-            >
-              student portal
-            </a>
+            Summer 2026 · Now Accepting Applications — in-person classes only (no online at this time). Register
+            and browse the course catalog in the{" "}
+            <PortalLink>Pathways Portal</PortalLink>
             . For enrollment or student services, use our{" "}
             <Link href="/contact" className="font-medium text-[var(--ypp-primary)] hover:underline">
               Contact page

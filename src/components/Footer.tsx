@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import HomeReloadLink from "@/components/HomeReloadLink";
-import { PORTAL_URL } from "@/constants/site";
+import { PORTAL_URL, SOCIAL_LINKS } from "@/constants/site";
 
 const navigateLinks = [
   { href: "/about", label: "About Us" },
@@ -19,15 +19,9 @@ const resourceLinks = [
 
 const contactLinks = [{ href: "/contact", label: "Contact Us" }];
 
-const social = [
-  { name: "X (Twitter)", href: "https://x.com/PassionYouth", icon: "x" as const },
-  { name: "Instagram", href: "https://www.instagram.com/youthpassionproject/", icon: "instagram" as const },
-  { name: "TikTok", href: "https://www.tiktok.com/@youthpassionproject", icon: "tiktok" as const },
-  { name: "Facebook", href: "https://www.facebook.com/people/Youth-Passion-Project/100063756570369/", icon: "facebook" as const },
-  { name: "LinkedIn", href: "https://www.linkedin.com/company/youth-passion-project", icon: "linkedin" as const },
-];
+const social = SOCIAL_LINKS;
 
-function SocialIcon({ icon }: { icon: "x" | "instagram" | "tiktok" | "facebook" | "linkedin" }) {
+function SocialIcon({ icon }: { icon: (typeof SOCIAL_LINKS)[number]["icon"] }) {
   const className = "h-4 w-4 shrink-0";
   if (icon === "x") {
     return (
