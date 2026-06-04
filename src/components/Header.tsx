@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import HomeReloadLink from "@/components/HomeReloadLink";
+import { LOGO } from "@/constants/logo";
 import { PORTAL_URL } from "@/constants/site";
 
 const navLinks = [
@@ -50,11 +51,12 @@ export default function Header() {
           onBeforeNavigate={() => setMobileOpen(false)}
         >
           <Image
-            src="/logo.png"
-            alt="YPP Logo"
-            width={128}
-            height={84}
+            src={LOGO.src}
+            alt={LOGO.alt}
+            width={LOGO.width}
+            height={LOGO.height}
             priority
+            unoptimized
             className="h-10 w-auto max-w-[4.25rem] shrink-0 object-contain drop-shadow-[0_2px_6px_rgba(107,33,200,0.3)] sm:h-11 sm:max-w-[4.75rem]"
           />
           <div className="nav-logo-text min-w-0 flex-1 leading-tight">

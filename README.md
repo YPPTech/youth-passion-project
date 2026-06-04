@@ -85,7 +85,7 @@ docs/                  # Maintainer docs (portal sync, waitlist)
 
 - **Main nav links:** `src/components/Header.tsx` — `navLinks` array.
 - **Footer:** `src/components/Footer.tsx` (social links, columns, legal).
-- **Logo:** `public/logo.png` (also used as favicon via `metadata.icons` in `src/app/layout.tsx`).
+- **Logo:** Transparent PNG at `public/logo.png` (also `src/app/icon.png` and `src/app/apple-icon.png`). Regenerate from a flat-background export with `node scripts/make-logo-transparent.mjs path/to/source.png`.
 
 ### Site-wide copy, emails, and applications
 

@@ -23,6 +23,8 @@
 # misc
 .DS_Store
 *.pem
+public/logo-source.jpg
+public/logo-transparent.tmp.png
 
 # debug
 npm-debug.log*

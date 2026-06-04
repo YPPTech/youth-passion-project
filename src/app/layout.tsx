@@ -3,6 +3,7 @@ import { DM_Sans, Playfair_Display, Nunito, Lora } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { LOGO } from "@/constants/logo";
 
 const dmSans = DM_Sans({
   variable: "--font-dm-sans",
@@ -45,14 +46,16 @@ export const metadata: Metadata = {
   description:
     "Youth Passion Project connects students with passionate, high-quality teachers to discover what they love and build the skills to pursue it.",
   icons: {
-    icon: "/logo.png",
-    apple: "/logo.png",
+    icon: [{ url: LOGO.src, type: "image/png", sizes: "any" }],
+    apple: [{ url: "/apple-icon.png", type: "image/png" }],
+    shortcut: LOGO.src,
   },
   openGraph: {
     title: "Youth Passion Project | Free Online & In-Person Classes",
     description:
       "Youth Passion Project connects students with passionate, high-quality teachers to discover what they love and build the skills to pursue it.",
     url: "https://www.youthpassionproject.org",
+    images: [{ url: LOGO.src, width: LOGO.width, height: LOGO.height, alt: LOGO.alt }],
   },
 };
 
