@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import PageHeader from "@/components/PageHeader";
+import CorporateSponsorshipPackage from "@/components/donate/CorporateSponsorshipPackage";
 
 const sponsors = [
   {
@@ -115,6 +116,8 @@ export default function DonatePage() {
         </div>
       </section>
 
+      <CorporateSponsorshipPackage />
+
       {/* Our Sponsors */}
       <section className="relative border-y-2 border-[var(--ypp-primary)]/30 bg-gradient-to-b from-[var(--ypp-lavender)]/50 to-[var(--ypp-blush)] px-4 py-16 sm:px-6 lg:px-8">
         <div className="absolute inset-0 pointer-events-none overflow-hidden rounded-none" aria-hidden>
@@ -158,12 +161,16 @@ export default function DonatePage() {
             ))}
           </div>
           <p className="font-body mt-12 text-center text-sm text-[var(--ypp-muted)]">
-            Interested in becoming a sponsor?{" "}
-            <Link
-              href="/contact"
+            Interested in becoming a sponsor? See{" "}
+            <a
+              href="#corporate-sponsorship"
               className="font-semibold text-[var(--ypp-primary)] hover:underline"
             >
-              Contact us
+              corporate sponsorship tiers
+            </a>{" "}
+            above or{" "}
+            <Link href="/contact" className="font-semibold text-[var(--ypp-primary)] hover:underline">
+              contact us
             </Link>
             .
           </p>
