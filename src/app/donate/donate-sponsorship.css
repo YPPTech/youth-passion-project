@@ -562,17 +562,16 @@
 .yppSponsorship .tier-card p.popular {
   display: inline-block;
   margin: 0 0 8px;
-  background: linear-gradient(145deg, #ffffff, #f0e0ff);
-  color: #1a0533;
+  background: #ffffff;
+  color: #1a0533 !important;
   font-size: 0.8rem;
   font-weight: 800;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
   padding: 6px 14px;
   border-radius: 999px;
-  border: 1px solid #c9a0ff;
-  box-shadow:
-    0 4px 16px rgba(0, 0, 0, 0.45),
-    0 0 0 1px rgba(255, 255, 255, 0.5);
+  border: 2px solid #b47fff;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.5);
 }
 
 .yppSponsorship .visionary {
