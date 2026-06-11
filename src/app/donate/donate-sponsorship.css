@@ -559,19 +559,20 @@
   border: 2px solid #e4c7ff;
 }
 
-.yppSponsorship .popular {
+.yppSponsorship .tier-card p.popular {
   display: inline-block;
   margin: 0 0 8px;
-  background: linear-gradient(145deg, #ffffff, #f5e8ff);
-  color: #3b0f6e;
-  font-size: 0.77rem;
+  background: linear-gradient(145deg, #ffffff, #f0e0ff);
+  color: #1a0533;
+  font-size: 0.8rem;
   font-weight: 800;
-  padding: 5px 12px;
+  letter-spacing: 0.04em;
+  padding: 6px 14px;
   border-radius: 999px;
-  border: 1px solid #e4c7ff;
+  border: 1px solid #c9a0ff;
   box-shadow:
     0 4px 16px rgba(0, 0, 0, 0.45),
-    0 0 0 1px rgba(255, 255, 255, 0.35);
+    0 0 0 1px rgba(255, 255, 255, 0.5);
 }
 
 .yppSponsorship .visionary {
