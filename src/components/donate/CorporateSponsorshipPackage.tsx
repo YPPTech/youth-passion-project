@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { Newsreader, Plus_Jakarta_Sans } from "next/font/google";
 import { LOGO } from "@/constants/logo";
 import {
   SPONSORSHIP_INQUIRY_MAILTO,
@@ -10,29 +9,9 @@ import {
 } from "@/data/sponsorshipTiers";
 import "@/app/donate/donate-sponsorship.css";
 
-const sponsorSans = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
-  variable: "--sponsor-font-body",
-  display: "swap",
-});
-
-const sponsorSerif = Newsreader({
-  subsets: ["latin"],
-  weight: ["500", "700"],
-  variable: "--sponsor-font-display",
-  display: "swap",
-});
-
 export default function CorporateSponsorshipPackage() {
   return (
-    <div
-      id="corporate-sponsorship"
-      className={`yppSponsorship ${sponsorSans.variable} ${sponsorSerif.variable}`}
-      style={{
-        fontFamily: "var(--sponsor-font-body), Plus Jakarta Sans, sans-serif",
-      }}
-    >
+    <div id="corporate-sponsorship" className="yppSponsorship">
       <header className="hero">
         <div className="stars" aria-hidden="true" />
         <div className="container hero-content">
