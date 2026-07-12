@@ -67,6 +67,9 @@ const CHAPTER_PRESIDENT_APPLICATION_URL =
   "https://docs.google.com/forms/d/e/1FAIpQLSd7d2uxq1kJaFP5FAp5HsMe0h2U13CNz6heKuBcsY8rMgLOLQ/viewform";
 export const TECH_MANAGER_APPLICATION_URL =
   "https://docs.google.com/forms/d/e/1FAIpQLSf8AzWsbi6QNY2F8DUkPk1xdoSErIm7F2EhfpPCZGGhgKeLrA/viewform";
+/** Social Media Manager / Director application form. */
+export const SOCIAL_MEDIA_MANAGER_APPLICATION_URL =
+  "https://forms.gle/tcqUJjZhTkLzUNQr7";
 
 /**
  * All open roles — single source of truth for Apply page and homepage (Now Hiring bar + Join Our Team cards).
@@ -114,6 +117,12 @@ export const hiringRolePills = applyRoles.map((r) => ({ title: r.title, id: r.id
 
 /** Cards for Join Our Team section — derived from applyRoles. */
 export const openPositions = [
+  {
+    title: "Social Media Manager",
+    description:
+      "Help grow YPP's online presence across Instagram, TikTok, and more while sharing student stories and program updates.",
+    href: "/join" as const,
+  },
   ...applyRoles.map((r) => ({
     title: r.title,
     description: r.shortDescription,

@@ -3,11 +3,20 @@ import PageHeader from "@/components/PageHeader";
 import {
   CONTACT_EMAILS,
   PORTAL_URL,
+  SOCIAL_MEDIA_MANAGER_APPLICATION_URL,
   TECH_MANAGER_APPLICATION_URL,
   applyRoles,
 } from "@/constants/site";
 
 const opportunityItems = [
+  {
+    title: "Social Media Manager application",
+    audience: "High school students in grades 9-12",
+    description:
+      "Help grow YPP's online presence across Instagram, TikTok, and more while sharing student stories and program updates.",
+    href: SOCIAL_MEDIA_MANAGER_APPLICATION_URL,
+    cta: "Apply for Social Media Manager",
+  },
   ...applyRoles.map((role) => ({
     title: `${role.title} application`,
     audience: role.ageGrade,
@@ -61,7 +70,7 @@ export default function JoinPage() {
               they love.
             </p>
             <div className="mt-6 grid grid-cols-2 gap-2">
-              {["Instructor", "Chapter President", "Tech Manager"].map((item) => (
+              {["Social Media", "Instructor", "Chapter President", "Tech Manager"].map((item) => (
                 <span
                   key={item}
                   className="rounded-full border border-[var(--ypp-primary)]/15 bg-[var(--ypp-lavender)]/45 px-3 py-2 text-center font-body text-xs font-semibold text-[var(--ypp-deep)]"
