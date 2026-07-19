@@ -424,6 +424,35 @@ html {
   box-shadow: 0 0 0 3px rgba(107, 33, 200, 0.12);
 }
 
+/* Scroll arrows for newsletter/carousel sections */
+.scroll-arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+  display: inline-flex;
+  height: 2.5rem;
+  width: 2.5rem;
+  transform: translateY(-50%);
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  border: 1px solid var(--ypp-border);
+  background: var(--ypp-white);
+  color: var(--ypp-ink);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.18s;
+}
+.scroll-arrow:hover {
+  border-color: var(--ypp-primary);
+  color: var(--ypp-primary);
+}
+.scroll-arrow-prev {
+  left: -0.75rem;
+}
+.scroll-arrow-next {
+  right: -0.75rem;
+}
+
 /* Avoid horizontal scroll from wide flex/grid children (mobile / narrow viewports) */
 html {
   overflow-x: clip;
