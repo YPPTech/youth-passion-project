@@ -70,6 +70,9 @@ export const TECH_MANAGER_APPLICATION_URL =
 /** Social Media Manager / Director application form. */
 export const SOCIAL_MEDIA_MANAGER_APPLICATION_URL =
   "https://forms.gle/tcqUJjZhTkLzUNQr7";
+/** Scarsdale Public Library workshop registration. */
+export const WORKSHOP_REGISTRATION_URL =
+  "https://docs.google.com/forms/d/e/1FAIpQLScLMgjzDYbwMV0toSjod64hXgpG3rI7RNJHsCKjebDzADdGLw/viewform";
 
 /**
  * All open roles — single source of truth for Apply page and homepage (Now Hiring bar + Join Our Team cards).
