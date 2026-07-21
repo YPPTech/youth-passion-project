@@ -41,8 +41,11 @@ export default function ProgramsPage() {
           aria-hidden
         />
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-white/40 to-transparent" aria-hidden />
-        <div className="relative mx-auto w-full max-w-5xl min-w-0">
-          <SectionHeading title="In-person chapter" subtitle="Scarsdale is YPP's active chapter location." />
+        <div className="relative mx-auto w-full max-w-6xl min-w-0">
+          <SectionHeading
+            title="In-person chapters"
+            subtitle="YPP has active chapters in Scarsdale and the Bronx, New York City."
+          />
           <InPersonSection locations={inPersonLocations} />
         </div>
       </section>

@@ -2,22 +2,11 @@ import Link from "next/link";
 import PageHeader from "@/components/PageHeader";
 import {
   CONTACT_EMAILS,
-  PORTAL_URL,
   SOCIAL_MEDIA_MANAGER_APPLICATION_URL,
-  TECH_MANAGER_APPLICATION_URL,
-  WORKSHOP_REGISTRATION_URL,
   applyRoles,
 } from "@/constants/site";
 
 const opportunityItems = [
-  {
-    title: "Workshop registration",
-    audience: "Scarsdale Public Library",
-    description:
-      "Sign up for a YPP workshop at the Scarsdale Public Library. Open to students and families.",
-    href: WORKSHOP_REGISTRATION_URL,
-    cta: "Register for workshop",
-  },
   {
     title: "Social Media Manager application",
     audience: "High school students in grades 9-12",
@@ -33,14 +22,6 @@ const opportunityItems = [
     href: role.applyLink,
     cta: role.applyLabel,
   })),
-  {
-    title: "Technology Manager application",
-    audience: "High school students in grades 9-10",
-    description:
-      "Help maintain YPP's website and portal, support technical reliability, and collaborate on digital tools.",
-    href: TECH_MANAGER_APPLICATION_URL,
-    cta: "Apply for Technology Manager",
-  },
 ] as const;
 
 export default function JoinPage() {
@@ -49,37 +30,24 @@ export default function JoinPage() {
       <PageHeader
         label="Summer 2026 · Now Accepting Applications"
         title="Join Us"
-        subtitle="High school students can apply now to teach a class, lead a chapter, or help build YPP's platform."
-        action={
-          <a
-            href={PORTAL_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-primary inline-flex items-center rounded-full px-6 py-3 text-base"
-          >
-            Open student portal
-            <svg className="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-            </svg>
-          </a>
-        }
+        subtitle="High school students can apply now to teach a class, lead a chapter, or help grow YPP's online presence."
       />
 
       <section className="bg-[var(--ypp-blush)]/60 px-4 py-14 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-[0.9fr_1.6fr] lg:items-start">
           <aside className="rounded-2xl border border-white/80 bg-white/90 p-6 shadow-[0_14px_42px_rgba(59,15,110,0.10)] ring-1 ring-[var(--ypp-primary)]/10">
             <p className="font-label text-xs font-semibold uppercase tracking-wider text-[var(--ypp-primary)]">
-              Open all week
+              Now accepting applications
             </p>
             <h2 className="font-heading mt-3 text-3xl font-bold leading-tight text-[var(--ypp-deep)]">
-              Apply now for every open role
+              Find your place on the YPP team
             </h2>
             <p className="font-body mt-4 text-sm leading-relaxed text-[var(--ypp-muted)] sm:text-base">
               Summer 2026 applications are open. Choose the role that fits how you want to help students explore what
               they love.
             </p>
             <div className="mt-6 grid grid-cols-2 gap-2">
-              {["Workshop", "Social Media", "Instructor", "Chapter President", "Tech Manager"].map((item) => (
+              {["Social Media", "Instructor", "Chapter President"].map((item) => (
                 <span
                   key={item}
                   className="rounded-full border border-[var(--ypp-primary)]/15 bg-[var(--ypp-lavender)]/45 px-3 py-2 text-center font-body text-xs font-semibold text-[var(--ypp-deep)]"

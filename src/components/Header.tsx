@@ -13,7 +13,7 @@ const navLinks = [
   { href: "/about", label: "About" },
   { href: "/newsletter", label: "Newsletter" },
   { href: "/programs", label: "Programs & Chapters" },
-  { href: "/programs/calendar", label: "Calendar" },
+  { href: "/register", label: "Register" },
   { href: "/join", label: "Join Us" },
   { href: "/donate", label: "Donate" },
 ];

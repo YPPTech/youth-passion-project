@@ -12,27 +12,13 @@ type LeadershipMember = {
   image: string;
 };
 
-const leadership: LeadershipMember[] = [
+const officerTeam: LeadershipMember[] = [
   {
-    personName: "Aveena Haswani",
-    role: "Co-President",
-    location: "Acton, MA",
-    bio: "Aveena is the Co-President of the Youth Passion Project. At YPP, she manages the technology team and oversees the overall communication strategy. Outside of YPP, she loves swimming, baking, and spending time with friends.",
-    image: "/team/aveena-haswani-new.jpg",
-  },
-  {
-    personName: "Ian DiLorenzo",
-    role: "Co-President",
-    location: "Scarsdale, NY",
-    bio: "Ian is the Co-President of the Youth Passion Project. At YPP, he is the director of our in-person learning chapters. Outside of YPP, he loves the outdoors, movies, and learning about languages. He is currently studying both Latin and Spanish at Scarsdale High School, and loves to learn about the culture and history behind all sorts of different languages.",
-    image: "/team/ian-dilorenzo-new.jpg",
-  },
-  {
-    personName: "Brayden White",
-    role: "Vice President of Instruction",
-    location: "Scarsdale, NY",
-    bio: "Brayden is the Vice President of Instruction of the Youth Passion Project. He helps build programs that allow students to explore their interests and develop new skills. He built YPP's portal for students and instructors and helps train educators while supporting student instruction and programming across the organization. Brayden also teaches the BOW Sports Capital: Introduction to Sports Economics, a course on the business and economics behind professional sports. Outside of YPP, he enjoys spending time with friends, following sports, and finding the best food wherever he can.",
-    image: "/team/brayden-white-new.jpg",
+    personName: "Anthea Zamir",
+    role: "Chief Technology Officer",
+    location: "Snoqualmie, WA",
+    bio: "Anthea is a junior in high school in the Greater Seattle Area and serves as the Chief Technology Officer of the Youth Passion Project. She built and maintains the organization's website and is currently developing YPP's online portal for students and instructors. In her role, she oversees the organization's technical infrastructure and works to enhance the digital systems that support YPP's programs and operations. Previously, she also taught Introduction to Algebra 1 at YPP. Outside of her work, Anthea plays golf at her school and enjoys traveling, attending concerts, and exploring new technology.",
+    image: "/team/anthea-zamir.jpg",
   },
   {
     personName: "Sanvi Mehta",
@@ -42,26 +28,29 @@ const leadership: LeadershipMember[] = [
     image: "/team/sanvi-mehta-new.jpg",
   },
   {
-    personName: "Katherine Zhang",
-    role: "Chief of Staff",
+    personName: "Ian DiLorenzo",
+    role: "Co-President",
     location: "Scarsdale, NY",
-    bio: "Katherine is a junior in high school on the East Coast and currently serves as Chief of Staff of the Youth Passion Project. In this role, she is responsible for overseeing recruitment, supporting staff members and their needs, and maintaining institutional knowledge to ensure continuity and efficiency in the organization. At school, Katherine is an officer of the speech and debate team, teaching lowerclassmen techniques to develop critical thinking and argumentation skills. She also enjoys learning about history and Spanish. Outside of school, Katherine likes reading and hanging out with friends and family.",
-    image: "/team/katherine-zhang-new-optimized.jpg",
+    bio: "Ian is the Co-President of the Youth Passion Project. At YPP, he is the director of our in-person learning chapters. Outside of YPP, he loves the outdoors, movies, and learning about languages. He is currently studying both Latin and Spanish at Scarsdale High School, and loves to learn about the culture and history behind all sorts of different languages.",
+    image: "/team/ian-dilorenzo-new.jpg",
   },
   {
-    personName: "Anthea Zamir",
-    role: "Chief Technology Officer",
-    location: "Snoqualmie, WA",
-    bio: "Anthea is a junior in high school in the Greater Seattle Area and serves as the Chief Technology Officer of the Youth Passion Project. She built and maintains the organization's website and is currently developing YPP's online portal for students and instructors. In her role, she oversees the organization's technical infrastructure and works to enhance the digital systems that support YPP's programs and operations. Previously, she also taught Introduction to Algebra 1 at YPP. Outside of her work, Anthea plays golf at her school and enjoys traveling, attending concerts, and exploring new technology.",
-    image: "/team/anthea-zamir.jpg",
+    personName: "Aveena Haswani",
+    role: "Co-President",
+    location: "Acton, MA",
+    bio: "Aveena is the Co-President of the Youth Passion Project. At YPP, she manages the technology team and oversees the overall communication strategy. Outside of YPP, she loves swimming, baking, and spending time with friends.",
+    image: "/team/aveena-haswani-new.jpg",
   },
   {
-    personName: "Milo Wald",
-    role: "Chapter President",
+    personName: "Brayden White",
+    role: "Vice President of Instruction",
     location: "Scarsdale, NY",
-    bio: "Milo is the Chapter President at Scarsdale of the Youth Passion Project, where he helps lead and organize in-person learning opportunities for students in his community. Outside of school, he enjoys exploring STEM topics, playing soccer, and snowboarding. He is always excited to learn new things and share his interests with others through both academics and leadership.",
-    image: "/team/milo-wald.jpg",
+    bio: "Brayden is the Vice President of Instruction of the Youth Passion Project. He helps build programs that allow students to explore their interests and develop new skills. He built YPP's portal for students and instructors and helps train educators while supporting student instruction and programming across the organization. Brayden also teaches the BOW Sports Capital: Introduction to Sports Economics, a course on the business and economics behind professional sports. Outside of YPP, he enjoys spending time with friends, following sports, and finding the best food wherever he can.",
+    image: "/team/brayden-white-new.jpg",
   },
+];
+
+const teamMembers: LeadershipMember[] = [
   {
     personName: "Wesley Ho",
     role: "Director of Technology",
@@ -90,6 +79,13 @@ const leadership: LeadershipMember[] = [
     bio: "Alina is a junior in high school in New York and serves as the Social Media Manager of the Youth Passion Project. She is in charge of creating content for YPP's Instagram as well as TikTok to increase outreach to potential students and teachers. Through her different posts, she helps promote YPP's mission and increase awareness of its programs, opportunities, and benefits.",
     image: "/team/alina-peng-optimized.jpg",
   },
+  {
+    personName: "Milo Wald",
+    role: "Chapter President",
+    location: "Scarsdale, NY",
+    bio: "Milo is the Chapter President at Scarsdale of the Youth Passion Project, where he helps lead and organize in-person learning opportunities for students in his community. Outside of school, he enjoys exploring STEM topics, playing soccer, and snowboarding. He is always excited to learn new things and share his interests with others through both academics and leadership.",
+    image: "/team/milo-wald.jpg",
+  },
 ];
 
 const aboutHeroStats = [
@@ -110,6 +106,41 @@ export default function AboutPage() {
     document.addEventListener("keydown", onEscape);
     return () => document.removeEventListener("keydown", onEscape);
   }, [selected]);
+
+  function TeamCard({ person }: { person: LeadershipMember }) {
+    return (
+      <li className="w-full max-w-[18rem] min-w-0 sm:w-72 sm:max-w-none">
+        <button
+          type="button"
+          onClick={() => setSelected(person)}
+          className="card-ypp w-full cursor-pointer overflow-hidden p-0 text-left transition-transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-[var(--ypp-primary)]"
+        >
+          <div className="relative aspect-square overflow-hidden bg-[var(--ypp-border)]">
+            {person.image && person.image !== "/team/placeholder.jpg" ? (
+              <Image
+                src={person.image}
+                alt=""
+                fill
+                className="object-cover object-[50%_38%]"
+                sizes="(max-width: 640px) 100vw, 18rem"
+              />
+            ) : (
+              <div className="flex h-full items-center justify-center text-[var(--ypp-muted)] text-sm">
+                Photo
+              </div>
+            )}
+          </div>
+          <div className="p-5">
+            <h3 className="text-xl font-semibold leading-tight text-[var(--ypp-ink)]">
+              {person.personName}
+            </h3>
+            <p className="mt-2 text-sm font-medium text-[var(--ypp-deep)]">{person.role}</p>
+            <p className="mt-1 text-sm text-[var(--ypp-muted)]">{person.location}</p>
+          </div>
+        </button>
+      </li>
+    );
+  }
 
   return (
     <div className="min-w-0 w-full">
@@ -238,40 +269,28 @@ export default function AboutPage() {
           <p className="font-body mt-2 text-center text-sm text-[var(--ypp-muted)]">
             Open a card for the full bio.
           </p>
-          <ul className="mt-12 flex list-none flex-wrap justify-center gap-x-10 gap-y-10">
-            {leadership.map((person) => (
-              <li key={person.personName} className="w-full max-w-[18rem] min-w-0 sm:w-72 sm:max-w-none">
-                <button
-                  type="button"
-                  onClick={() => setSelected(person)}
-                  className="card-ypp w-full cursor-pointer overflow-hidden p-0 text-left transition-transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-[var(--ypp-primary)]"
-                >
-                  <div className="relative aspect-square overflow-hidden bg-[var(--ypp-border)]">
-                    {person.image && person.image !== "/team/placeholder.jpg" ? (
-                      <Image
-                        src={person.image}
-                        alt=""
-                        fill
-                        className="object-cover object-[50%_38%]"
-                        sizes="(max-width: 640px) 100vw, 18rem"
-                      />
-                    ) : (
-                      <div className="flex h-full items-center justify-center text-[var(--ypp-muted)] text-sm">
-                        Photo
-                      </div>
-                    )}
-                  </div>
-                  <div className="p-5">
-                    <h3 className="text-xl font-semibold leading-tight text-[var(--ypp-ink)]">
-                      {person.personName}
-                    </h3>
-                    <p className="mt-2 text-sm font-medium text-[var(--ypp-deep)]">{person.role}</p>
-                    <p className="mt-1 text-sm text-[var(--ypp-muted)]">{person.location}</p>
-                  </div>
-                </button>
-              </li>
-            ))}
-          </ul>
+
+          <div className="mt-12">
+            <p className="font-label text-center text-xs font-semibold uppercase tracking-wider text-[var(--ypp-primary)]">
+              Officer Team
+            </p>
+            <ul className="mt-6 flex list-none flex-wrap justify-center gap-x-10 gap-y-10">
+              {officerTeam.map((person) => (
+                <TeamCard key={person.personName} person={person} />
+              ))}
+            </ul>
+          </div>
+
+          <div className="mt-16">
+            <p className="font-label text-center text-xs font-semibold uppercase tracking-wider text-[var(--ypp-primary)]">
+              Team
+            </p>
+            <ul className="mt-6 flex list-none flex-wrap justify-center gap-x-10 gap-y-10">
+              {teamMembers.map((person) => (
+                <TeamCard key={person.personName} person={person} />
+              ))}
+            </ul>
+          </div>
         </div>
       </section>
 

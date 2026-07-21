@@ -48,6 +48,13 @@ export const inPersonLocations: InPersonLocation[] = [
     sessions: "Fall & Spring",
     classes: [],
   },
+  {
+    id: "bronx-ny",
+    city: "The Bronx",
+    state: "NY",
+    sessions: "Fall & Spring",
+    classes: [],
+  },
 ];
 
 export type NewestCourseItem = {

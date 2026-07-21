@@ -9,6 +9,7 @@ const navigateLinks = [
   { href: "/newsletter", label: "Newsletter" },
   { href: "/programs", label: "Programs & Chapters" },
   { href: "/programs/calendar", label: "Calendar" },
+  { href: "/register", label: "Register for Classes" },
   { href: "/join", label: "Join Us" },
   { href: "/donate", label: "Donate" },
 ];

@@ -100,25 +100,38 @@ export default function InPersonSection({
             ))}
           </div>
         ) : (
-          <ul className="mx-auto grid max-w-3xl list-none grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8">
+          <ul className="mx-auto grid max-w-5xl list-none grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-10">
             {locations.map((loc) => (
               <li key={loc.id}>
-                <div className="group relative flex h-full min-h-[8.5rem] flex-col rounded-2xl border border-[var(--ypp-primary)]/15 bg-[var(--ypp-white)]/85 p-6 shadow-[0_8px_32px_rgba(59,15,110,0.08)] ring-1 ring-white/60 backdrop-blur-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-[var(--ypp-primary)]/30 hover:shadow-[0_14px_40px_rgba(107,33,200,0.12)] sm:p-7">
-                  <div className="flex items-start gap-4">
-                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[var(--ypp-lavender)] text-[var(--ypp-primary)] transition-colors group-hover:bg-[var(--ypp-primary)]/10">
-                      <LocationPinIcon className="h-6 w-6" />
+                <div className="group relative flex h-full min-h-[18rem] flex-col overflow-hidden rounded-3xl border border-[var(--ypp-primary)]/15 bg-white/92 shadow-[0_18px_55px_rgba(59,15,110,0.10)] ring-1 ring-white/70 backdrop-blur-sm transition-all duration-200 hover:-translate-y-1 hover:border-[var(--ypp-primary)]/30 hover:shadow-[0_24px_70px_rgba(107,33,200,0.14)]">
+                  <div className="flex flex-1 flex-col p-8 sm:p-10">
+                    <div className="flex items-center gap-4">
+                      <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-[var(--ypp-primary)]/15 bg-[var(--ypp-lavender)]/55 text-[var(--ypp-primary)] transition-colors group-hover:bg-[var(--ypp-primary)]/10">
+                        <LocationPinIcon className="h-7 w-7" />
+                      </div>
+                      <div>
+                        <p className="font-label text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--ypp-primary)]">
+                          Active in-person chapter
+                        </p>
+                        <p className="font-body mt-1 text-sm text-[var(--ypp-muted)]">
+                          Programs currently run here.
+                        </p>
+                      </div>
                     </div>
-                    <div className="min-w-0 flex-1 text-left">
-                      <p className="font-label text-[10px] font-semibold uppercase tracking-wider text-[var(--ypp-primary)]/90">
-                        In person
-                      </p>
-                      <p className="font-heading mt-1.5 text-xl font-bold tracking-tight text-[var(--ypp-deep)] sm:text-2xl">
-                        {loc.city}, {loc.state}
-                      </p>
-                      {loc.sessions ? (
-                        <p className="font-body mt-2 text-sm text-[var(--ypp-muted)]">{loc.sessions}</p>
-                      ) : null}
-                    </div>
+                    <h3 className="font-heading mt-8 text-4xl font-bold tracking-tight text-[var(--ypp-deep)] sm:text-5xl">
+                      {loc.city}, {loc.state}
+                    </h3>
+                  </div>
+                  <div className="border-t border-[var(--ypp-border)] bg-[var(--ypp-blush)]/50 px-8 py-7 sm:px-10 sm:py-8">
+                    <p className="font-label text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--ypp-primary)]">
+                      Sessions
+                    </p>
+                    <p className="font-body mt-2 text-xl font-semibold text-[var(--ypp-ink)] sm:text-2xl">
+                      {loc.sessions || "To be announced"}
+                    </p>
+                    <p className="font-body mt-3 text-sm leading-relaxed text-[var(--ypp-muted)] sm:text-base">
+                      Course details and registration will be listed in the student portal when available.
+                    </p>
                   </div>
                 </div>
               </li>
