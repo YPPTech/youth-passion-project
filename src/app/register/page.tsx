@@ -12,6 +12,37 @@ export const metadata: Metadata = {
     "Register for Youth Passion Project classes and in-person workshops.",
 };
 
+const scarsdaleWorkshops = [
+  {
+    title: "Summer STEM",
+    when: "July 29, 3–4 P.M. EST",
+    audience: "Incoming 2nd to 5th graders",
+    description:
+      "Summer STEM is a fun, hands-on summer course where elementary school students explore a science topic through an exciting experiment. This session introduces a new STEM concept in an engaging, age-appropriate way, encouraging curiosity, creativity, and a love of learning through hands-on exploration.",
+  },
+  {
+    title: "Slime Making",
+    when: "August 1, 11 A.M. – 12 P.M. EST",
+    audience: "Incoming 2nd to 5th graders",
+    description:
+      "In this class, students will learn how to make different types of slime while experimenting with colors, textures, and fun add-ins. They’ll have the chance to be creative and make their own unique slime creations.",
+  },
+  {
+    title: "Exploring Grammar and Literature",
+    when: "August 7, 11–12 P.M. EST",
+    audience: "Incoming 4th to 7th graders",
+    description:
+      "In this class, students will build their English skills through a mix of grammar and literature. They’ll practice sentence structure and language skills while also exploring stories, characters, themes, and different types of writing.",
+  },
+  {
+    title: "Intro to Filmmaking",
+    when: "August 10, 1–2 P.M. EST",
+    audience: "Incoming 3rd to 6th graders",
+    description:
+      "In this class, students will learn the basics of filmmaking and acting while exploring how movies and scenes are created. They’ll practice acting, storytelling, directing, and creating their own short scenes in a fun and hands-on environment.",
+  },
+] as const;
+
 export default function RegisterPage() {
   return (
     <div className="min-w-0 w-full">
@@ -69,6 +100,50 @@ export default function RegisterPage() {
               <p className="font-body mt-6 text-sm text-[var(--ypp-muted)]">
                 Opens the official YPP workshop registration form.
               </p>
+            </div>
+
+            <div className="border-t border-[var(--ypp-border)] bg-[var(--ypp-lavender)]/35 px-6 py-10 sm:px-12 sm:py-12 lg:px-16">
+              <div className="mx-auto max-w-3xl text-center">
+                <p className="font-label text-xs font-bold uppercase tracking-[0.18em] text-[var(--ypp-primary)]">
+                  What’s available
+                </p>
+                <h3 className="font-heading mt-3 text-2xl font-bold text-[var(--ypp-deep)] sm:text-3xl">
+                  Scarsdale Public Library workshops
+                </h3>
+              </div>
+
+              <ul className="mx-auto mt-8 max-w-3xl space-y-4">
+                {scarsdaleWorkshops.map((workshop) => (
+                  <li
+                    key={workshop.title}
+                    className="rounded-2xl border border-[var(--ypp-border)] bg-white px-5 py-5 text-left shadow-[var(--shadow-sm)] sm:px-6 sm:py-6"
+                  >
+                    <p className="font-heading text-base font-bold leading-snug text-[var(--ypp-deep)] sm:text-lg">
+                      {workshop.title}{" "}
+                      <span className="font-semibold text-[var(--ypp-ink)]">
+                        ({workshop.when}):
+                      </span>{" "}
+                      <span className="font-semibold text-[var(--ypp-ink)]">
+                        {workshop.audience}
+                      </span>
+                    </p>
+                    <p className="font-body mt-3 text-sm leading-relaxed text-[var(--ypp-muted)] sm:text-base">
+                      {workshop.description}
+                    </p>
+                  </li>
+                ))}
+              </ul>
+
+              <div className="mt-8 text-center">
+                <a
+                  href={WORKSHOP_REGISTRATION_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-body inline-flex min-h-[2.75rem] items-center justify-center rounded-full border-2 border-[var(--ypp-primary)] bg-white px-6 py-2.5 text-sm font-bold text-[var(--ypp-primary)] transition-colors hover:bg-[var(--ypp-primary)] hover:text-white"
+                >
+                  Register for a workshop
+                </a>
+              </div>
             </div>
           </div>
         </div>
