@@ -6,6 +6,7 @@ import { PORTAL_URL, SOCIAL_LINKS } from "@/constants/site";
 
 const navigateLinks = [
   { href: "/about", label: "About Us" },
+  { href: "/newsletter", label: "Newsletter" },
   { href: "/programs", label: "Programs & Chapters" },
   { href: "/programs/calendar", label: "Calendar" },
   { href: "/register", label: "Register for Classes" },

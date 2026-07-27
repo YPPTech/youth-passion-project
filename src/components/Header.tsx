@@ -11,6 +11,7 @@ import { PORTAL_URL } from "@/constants/site";
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
+  { href: "/newsletter", label: "Newsletter" },
   { href: "/programs", label: "Programs & Chapters" },
   { href: "/register", label: "Register" },
   { href: "/join", label: "Join Us" },
