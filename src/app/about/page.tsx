@@ -14,6 +14,27 @@ type LeadershipMember = {
 
 const officerTeam: LeadershipMember[] = [
   {
+    personName: "Aveena Haswani",
+    role: "Co-President",
+    location: "Acton, MA",
+    bio: "Aveena is the Co-President of the Youth Passion Project. At YPP, she manages the technology team and oversees the overall communication strategy. Outside of YPP, she loves swimming, baking, and spending time with friends.",
+    image: "/team/aveena-haswani-new.jpg",
+  },
+  {
+    personName: "Ian DiLorenzo",
+    role: "Co-President",
+    location: "Scarsdale, NY",
+    bio: "Ian is the Co-President of the Youth Passion Project. At YPP, he is the director of our in-person learning chapters. Outside of YPP, he loves the outdoors, movies, and learning about languages. He is currently studying both Latin and Spanish at Scarsdale High School, and loves to learn about the culture and history behind all sorts of different languages.",
+    image: "/team/ian-dilorenzo-new.jpg",
+  },
+  {
+    personName: "Brayden White",
+    role: "Vice President of Instruction",
+    location: "Scarsdale, NY",
+    bio: "Brayden is the Vice President of Instruction of the Youth Passion Project. He helps build programs that allow students to explore their interests and develop new skills. He built YPP's portal for students and instructors and helps train educators while supporting student instruction and programming across the organization. Brayden also teaches the BOW Sports Capital: Introduction to Sports Economics, a course on the business and economics behind professional sports. Outside of YPP, he enjoys spending time with friends, following sports, and finding the best food wherever he can.",
+    image: "/team/brayden-white-new.jpg",
+  },
+  {
     personName: "Anthea Zamir",
     role: "Chief Technology Officer",
     location: "Snoqualmie, WA",
@@ -26,27 +47,6 @@ const officerTeam: LeadershipMember[] = [
     location: "Frisco, TX",
     bio: "Sanvi is the Vice President of Communications of the Youth Passion Project. In this role, she manages sponsorship outreach, oversees parent communication, and helps expand YPP's visibility through strategic marketing and social media. Sanvi first joined YPP as an ambitious student, taking classes in health, debate, and several other subjects. Through these experiences, she developed a strong passion for the organization and its mission, wanting to further her involvement at YPP. Outside of YPP, Sanvi enjoys spending time with friends, watching sports, and dancing.",
     image: "/team/sanvi-mehta-new.jpg",
-  },
-  {
-    personName: "Ian DiLorenzo",
-    role: "Co-President",
-    location: "Scarsdale, NY",
-    bio: "Ian is the Co-President of the Youth Passion Project. At YPP, he is the director of our in-person learning chapters. Outside of YPP, he loves the outdoors, movies, and learning about languages. He is currently studying both Latin and Spanish at Scarsdale High School, and loves to learn about the culture and history behind all sorts of different languages.",
-    image: "/team/ian-dilorenzo-new.jpg",
-  },
-  {
-    personName: "Aveena Haswani",
-    role: "Co-President",
-    location: "Acton, MA",
-    bio: "Aveena is the Co-President of the Youth Passion Project. At YPP, she manages the technology team and oversees the overall communication strategy. Outside of YPP, she loves swimming, baking, and spending time with friends.",
-    image: "/team/aveena-haswani-new.jpg",
-  },
-  {
-    personName: "Brayden White",
-    role: "Vice President of Instruction",
-    location: "Scarsdale, NY",
-    bio: "Brayden is the Vice President of Instruction of the Youth Passion Project. He helps build programs that allow students to explore their interests and develop new skills. He built YPP's portal for students and instructors and helps train educators while supporting student instruction and programming across the organization. Brayden also teaches the BOW Sports Capital: Introduction to Sports Economics, a course on the business and economics behind professional sports. Outside of YPP, he enjoys spending time with friends, following sports, and finding the best food wherever he can.",
-    image: "/team/brayden-white-new.jpg",
   },
 ];
 
@@ -71,13 +71,6 @@ const teamMembers: LeadershipMember[] = [
     location: "Brooklyn, NY",
     bio: "Jennifer, a high school sophomore in New York, is the Communications Manager of the Youth Passion Project. As Communications Manager, she is in charge of expanding YPP, managing social media content execution, maintaining consistent branding, and ensuring that all communication among parents, students, and teams is smooth. Prior to YPP, she tutored elementary and middle school students online and in person, sparking her interest in helping other students.",
     image: "/team/jennifer-chen.jpg",
-  },
-  {
-    personName: "Alina Peng",
-    role: "Social Media Manager",
-    location: "Scarsdale, NY",
-    bio: "Alina is a junior in high school in New York and serves as the Social Media Manager of the Youth Passion Project. She is in charge of creating content for YPP's Instagram as well as TikTok to increase outreach to potential students and teachers. Through her different posts, she helps promote YPP's mission and increase awareness of its programs, opportunities, and benefits.",
-    image: "/team/alina-peng-optimized.jpg",
   },
   {
     personName: "Milo Wald",

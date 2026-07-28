@@ -21,11 +21,11 @@ const scarsdaleWorkshops = [
       "Summer STEM is a fun, hands-on summer course where elementary school students explore a science topic through an exciting experiment. This session introduces a new STEM concept in an engaging, age-appropriate way, encouraging curiosity, creativity, and a love of learning through hands-on exploration.",
   },
   {
-    title: "Slime Making",
-    when: "August 1, 11 A.M. – 12 P.M. EST",
+    title: "French Culture and Language",
+    when: "August 1, 11–11:45 A.M. EST",
     audience: "Incoming 2nd to 5th graders",
     description:
-      "In this class, students will learn how to make different types of slime while experimenting with colors, textures, and fun add-ins. They’ll have the chance to be creative and make their own unique slime creations.",
+      "Students will learn about the culture of French-speaking countries and will learn some useful French phrases, vocabulary and pronunciation.",
   },
   {
     title: "Exploring Grammar and Literature",
