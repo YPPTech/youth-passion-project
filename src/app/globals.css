@@ -272,6 +272,20 @@ html {
   animation-fill-mode: both;
 }
 
+@keyframes promoModalIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+.promo-modal-panel {
+  animation: promoModalIn 0.35s ease-out;
+}
+
 /* Homepage testimonials — very slow horizontal drift (duplicated track = seamless loop) */
 @keyframes testimonial-marquee {
   from {

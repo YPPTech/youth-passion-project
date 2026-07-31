@@ -65,9 +65,9 @@ const INSTRUCTOR_APPLICATION_URL =
   "https://portal.youthpassionproject.org/signup/instructor";
 const CHAPTER_PRESIDENT_APPLICATION_URL =
   "https://docs.google.com/forms/d/e/1FAIpQLSd7d2uxq1kJaFP5FAp5HsMe0h2U13CNz6heKuBcsY8rMgLOLQ/viewform";
-/** Social Media Manager / Director application form. */
-export const SOCIAL_MEDIA_MANAGER_APPLICATION_URL =
-  "https://forms.gle/tcqUJjZhTkLzUNQr7";
+/** Technology Manager application form. */
+export const TECH_MANAGER_APPLICATION_URL =
+  "https://docs.google.com/forms/d/e/1FAIpQLSf8AzWsbi6QNY2F8DUkPk1xdoSErIm7F2EhfpPCZGGhgKeLrA/viewform";
 /** Scarsdale Public Library workshop registration. */
 export const WORKSHOP_REGISTRATION_URL =
   "https://docs.google.com/forms/d/e/1FAIpQLScLMgjzDYbwMV0toSjod64hXgpG3rI7RNJHsCKjebDzADdGLw/viewform";
@@ -119,9 +119,9 @@ export const hiringRolePills = applyRoles.map((r) => ({ title: r.title, id: r.id
 /** Cards for Join Our Team section — derived from applyRoles. */
 export const openPositions = [
   {
-    title: "Social Media Manager",
+    title: "Technology Manager",
     description:
-      "Help grow YPP's online presence across Instagram, TikTok, and more while sharing student stories and program updates.",
+      "Help maintain YPP's website and portal while supporting digital tools and technical reliability.",
     href: "/join" as const,
   },
   ...applyRoles.map((r) => ({

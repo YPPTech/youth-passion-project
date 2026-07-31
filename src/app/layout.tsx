@@ -3,6 +3,7 @@ import { DM_Sans, Playfair_Display, Nunito, Lora } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import TechManagerPromoModal from "@/components/TechManagerPromoModal";
 import { LOGO } from "@/constants/logo";
 
 const dmSans = DM_Sans({
@@ -70,6 +71,7 @@ export default function RootLayout({
         <Header />
         <main className="min-w-0 w-full flex-1 pt-[var(--ypp-nav-height)]">{children}</main>
         <Footer />
+        <TechManagerPromoModal />
       </body>
     </html>
   );
