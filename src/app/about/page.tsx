@@ -52,20 +52,6 @@ const officerTeam: LeadershipMember[] = [
 
 const teamMembers: LeadershipMember[] = [
   {
-    personName: "Wesley Ho",
-    role: "Director of Technology",
-    location: "New York, NY",
-    bio: "Wesley is the Director of Technology of the Youth Passion Project (YPP) and a junior in high school in New York. While working at YPP, he works alongside YPP's tech team to make sure its software is up to date and works to improve the learning experiences of educators and students across the country. Outside of YPP, he is a member of his school's Science Olympiad team and enjoys learning alongside and getting to know other people.",
-    image: "/team/wesley-ho.jpg",
-  },
-  {
-    personName: "Jackson Faber",
-    role: "Communications Director",
-    location: "San Rafael, CA",
-    bio: "Jackson, a high school junior in San Francisco, California, is the Communications Director of the Youth Passion Project. As Communications Director, he is in charge of coordinating YPP's initiatives and spearheading various communication projects. Outside of school, Jackson captains his high school's varsity tennis and cross-country teams and also plays varsity soccer. Aside from athletics, he likes spending time with friends and reading interesting books.",
-    image: "/team/jackson-faber.jpg",
-  },
-  {
     personName: "Jennifer Chen",
     role: "Communications Manager",
     location: "Brooklyn, NY",
@@ -73,11 +59,25 @@ const teamMembers: LeadershipMember[] = [
     image: "/team/jennifer-chen.jpg",
   },
   {
+    personName: "Zoey Zafar",
+    role: "Social Media Manager",
+    location: "Frisco, TX",
+    bio: "Zoey is a high school junior in Texas and she serves as the Social Media Manager of the Youth Passion Project. While working at YPP, she creates content, develops creative posts, and monitors content performance. Outside of YPP, Zoey enjoys baking, hiking, and spending time with her friends.",
+    image: "/team/zoey-zafar.png",
+  },
+  {
     personName: "Milo Wald",
     role: "Chapter President",
     location: "Scarsdale, NY",
     bio: "Milo is the Chapter President at Scarsdale of the Youth Passion Project, where he helps lead and organize in-person learning opportunities for students in his community. Outside of school, he enjoys exploring STEM topics, playing soccer, and snowboarding. He is always excited to learn new things and share his interests with others through both academics and leadership.",
     image: "/team/milo-wald.jpg",
+  },
+  {
+    personName: "Esther Monopo",
+    role: "Chapter President",
+    location: "The Bronx, NY",
+    bio: "Esther is the Chapter President at the Bronx of the Youth Passion Project, where she helps lead and organize in-person learning opportunities for students in her community. A driven 11th-grade student, she brings strong research, communication, and event organization skills to her role. Dedicated to community justice, she is eager to support others while developing advanced skills in advocacy and leadership.",
+    image: "/team/esther-monopo.png",
   },
 ];
 
