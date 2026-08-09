@@ -10,6 +10,8 @@ type LeadershipMember = {
   location: string;
   bio: string;
   image: string;
+  /** Tailwind object-position class override for headshot framing. */
+  imagePositionClass?: string;
 };
 
 const officerTeam: LeadershipMember[] = [
@@ -66,6 +68,14 @@ const teamMembers: LeadershipMember[] = [
     image: "/team/zoey-zafar.png",
   },
   {
+    personName: "Nathan Jithendra",
+    role: "Tech Manager",
+    location: "Fulshear, TX",
+    bio: "Nathan is the Tech Manager at Youth Passion Project, where he builds and maintains the tools chapter presidents and students use every day. He's a rising sophomore at Jordan High School, where he leads programming for the school's VEX Robotics Team and works to make computer science more accessible to people around the world. Outside of YPP, he focuses on artificial intelligence and software engineering, often building projects that combine the two.",
+    image: "/team/nathan-jithendra.png",
+    imagePositionClass: "object-center",
+  },
+  {
     personName: "Milo Wald",
     role: "Chapter President",
     location: "Scarsdale, NY",
@@ -114,7 +124,7 @@ export default function AboutPage() {
                 src={person.image}
                 alt=""
                 fill
-                className="object-cover object-[50%_38%]"
+                className={`object-cover ${person.imagePositionClass ?? "object-[50%_38%]"}`}
                 sizes="(max-width: 640px) 100vw, 18rem"
               />
             ) : (
@@ -323,7 +333,7 @@ export default function AboutPage() {
                       src={selected.image}
                       alt=""
                       fill
-                      className="object-cover object-[50%_38%]"
+                      className={`object-cover ${selected.imagePositionClass ?? "object-[50%_38%]"}`}
                       sizes="(max-width: 640px) 20rem, 24rem"
                     />
                   ) : (
