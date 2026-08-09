@@ -18,7 +18,11 @@ export default function ProgramsPage() {
         title="Programs & Chapters"
         subtitle={
           <>
-            Our in-person chapter is in <strong className="font-semibold text-[var(--ypp-ink)]">Scarsdale, NY</strong>.
+            Our in-person chapters are in{" "}
+            <strong className="font-semibold text-[var(--ypp-ink)]">Scarsdale</strong>,{" "}
+            <strong className="font-semibold text-[var(--ypp-ink)]">the Bronx</strong>,{" "}
+            <strong className="font-semibold text-[var(--ypp-ink)]">Bay Ridge, Brooklyn</strong>, and{" "}
+            <strong className="font-semibold text-[var(--ypp-ink)]">Lower Manhattan</strong>.
             {" "}Summer 2026 applications are open now; register through the{" "}
             <a href={PORTAL_URL} target="_blank" rel="noopener noreferrer" className={programModelLinkClass}>
               student portal
@@ -44,7 +48,7 @@ export default function ProgramsPage() {
         <div className="relative mx-auto w-full max-w-6xl min-w-0">
           <SectionHeading
             title="In-person chapters"
-            subtitle="YPP has active chapters in Scarsdale and the Bronx, New York City."
+            subtitle="YPP has active chapters in Scarsdale, the Bronx, Bay Ridge (Brooklyn), and Lower Manhattan."
           />
           <InPersonSection locations={inPersonLocations} />
         </div>

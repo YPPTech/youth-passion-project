@@ -55,6 +55,20 @@ export const inPersonLocations: InPersonLocation[] = [
     sessions: "Fall & Spring",
     classes: [],
   },
+  {
+    id: "bay-ridge-brooklyn-ny",
+    city: "Bay Ridge, Brooklyn",
+    state: "NY",
+    sessions: "Fall & Spring",
+    classes: [],
+  },
+  {
+    id: "lower-manhattan-ny",
+    city: "Lower Manhattan",
+    state: "NY",
+    sessions: "Fall & Spring",
+    classes: [],
+  },
 ];
 
 export type NewestCourseItem = {
