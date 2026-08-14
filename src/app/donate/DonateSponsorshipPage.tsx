@@ -72,6 +72,8 @@ function TierModal({
   );
 }
 
+const PAYPAL_DONATE_URL = "https://www.paypal.com/us/fundraiser/charity/4239878";
+
 export default function DonateSponsorshipPage() {
   const [activeTierId, setActiveTierId] = useState<string | null>(null);
   const activeTier = sponsorshipTiers.find((tier) => tier.id === activeTierId) ?? null;
@@ -80,14 +82,61 @@ export default function DonateSponsorshipPage() {
     <div className="min-w-0 w-full">
       <PageHeader
         label="501(c)(3) · Tax-Deductible"
-        title="Sponsorship"
-        subtitle="Support free, student-taught classes for elementary and middle school students around the world."
-        action={
-          <a href={SPONSORSHIP_INQUIRY_MAILTO} className="btn-primary inline-flex items-center rounded-full px-6 py-3 text-base">
-            Request sponsorship details
-          </a>
-        }
+        title="Support Youth Passion Project"
+        subtitle="Give any amount as a donation, or become a sponsor with recognition for your organization."
       />
+
+      <section className="border-b border-[var(--ypp-border)] bg-[var(--ypp-blush)]/50 px-4 py-12 sm:px-6 lg:px-8">
+        <div className="mx-auto grid max-w-5xl gap-6 lg:grid-cols-2">
+          <article className="flex flex-col rounded-3xl border border-[var(--ypp-border)] bg-white p-7 shadow-[0_16px_44px_rgba(59,15,110,0.08)] sm:p-8">
+            <p className="font-label text-xs font-bold uppercase tracking-[0.18em] text-[var(--ypp-primary)]">
+              Donations
+            </p>
+            <h2 className="font-heading mt-3 text-2xl font-bold text-[var(--ypp-deep)] sm:text-3xl">
+              Give casually
+            </h2>
+            <p className="font-body mt-3 flex-1 text-sm leading-relaxed text-[var(--ypp-muted)] sm:text-base">
+              Any amount helps keep classes free for students. One-time gifts through PayPal are tax-deductible, and
+              you’ll get a receipt for your records.
+            </p>
+            <a
+              href={PAYPAL_DONATE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary mt-7 inline-flex min-h-[2.75rem] items-center justify-center rounded-full px-6 py-3 text-sm font-bold sm:text-base"
+            >
+              Donate with PayPal
+            </a>
+          </article>
+
+          <article className="flex flex-col rounded-3xl border border-[var(--ypp-border)] bg-white p-7 shadow-[0_16px_44px_rgba(59,15,110,0.08)] sm:p-8">
+            <p className="font-label text-xs font-bold uppercase tracking-[0.18em] text-[var(--ypp-primary)]">
+              Sponsorships
+            </p>
+            <h2 className="font-heading mt-3 text-2xl font-bold text-[var(--ypp-deep)] sm:text-3xl">
+              Sponsor a session
+            </h2>
+            <p className="font-body mt-3 flex-1 text-sm leading-relaxed text-[var(--ypp-muted)] sm:text-base">
+              For businesses and larger gifts. Sponsorships include website, newsletter, and social recognition, plus a
+              Session Impact Report.
+            </p>
+            <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+              <a
+                href="#sponsorship"
+                className="btn-primary inline-flex min-h-[2.75rem] flex-1 items-center justify-center rounded-full px-6 py-3 text-sm font-bold sm:text-base"
+              >
+                View sponsorship tiers
+              </a>
+              <a
+                href={SPONSORSHIP_INQUIRY_MAILTO}
+                className="font-body inline-flex min-h-[2.75rem] flex-1 items-center justify-center rounded-full border-2 border-[var(--ypp-primary)] px-6 py-3 text-sm font-bold text-[var(--ypp-primary)] transition-colors hover:bg-[var(--ypp-lavender)]/50"
+              >
+                Request details
+              </a>
+            </div>
+          </article>
+        </div>
+      </section>
 
       <div className="donate-sponsorship min-w-0 w-full">
       <header className="hero">
@@ -184,7 +233,7 @@ export default function DonateSponsorshipPage() {
         </div>
       </section>
 
-      <section className="section section-alt">
+      <section id="sponsorship" className="section section-alt scroll-mt-[calc(var(--ypp-nav-height)+0.75rem)]">
         <div className="container">
           <div className="section-heading">
             <h2>Sponsorship Tiers</h2>

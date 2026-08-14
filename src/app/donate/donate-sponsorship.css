@@ -602,13 +602,13 @@
   border: 2px solid #e4c7ff;
 }
 
-.donate-sponsorship .popular {
+.donate-sponsorship .section .popular {
   margin: 0;
   position: absolute;
   top: -11px;
   right: 12px;
   background: #f0d1ff;
-  color: #2f1858;
+  color: #000000;
   font-size: 0.77rem;
   font-weight: 800;
   padding: 4px 10px;

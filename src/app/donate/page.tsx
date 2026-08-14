@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import DonateSponsorshipPage from "./DonateSponsorshipPage";
 
 export const metadata: Metadata = {
-  title: "Sponsorship | Youth Passion Project",
+  title: "Donate & Sponsorship | Youth Passion Project",
   description:
-    "Support Youth Passion Project through tiered sponsorships that help keep free, student-taught classes available to learners worldwide.",
+    "Support Youth Passion Project with a tax-deductible donation or a sponsorship that helps keep free, student-taught classes available to learners worldwide.",
 };
 
 export default function DonatePage() {
