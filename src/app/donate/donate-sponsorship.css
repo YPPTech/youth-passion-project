@@ -602,16 +602,23 @@
   border: 2px solid #e4c7ff;
 }
 
+.donate-sponsorship .highlight::after {
+  display: none;
+}
+
 .donate-sponsorship .section .popular {
   margin: 0;
   position: absolute;
-  top: -11px;
-  right: 12px;
+  top: 14px;
+  right: 14px;
+  z-index: 2;
   background: #f0d1ff;
   color: #000000;
   font-size: 0.77rem;
   font-weight: 800;
-  padding: 4px 10px;
+  line-height: 1.2;
+  white-space: nowrap;
+  padding: 6px 12px;
   border-radius: 999px;
 }
 
@@ -764,8 +771,7 @@
   }
 
   .donate-sponsorship .popular {
-    position: static;
-    display: inline-block;
-    margin-bottom: 8px;
+    top: 12px;
+    right: 12px;
   }
 }
