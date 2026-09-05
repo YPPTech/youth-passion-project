@@ -195,6 +195,29 @@ export default function AboutPage() {
         </div>
       </section>
 
+            {/* As featured in */}
+      <section className="border-b border-[var(--ypp-border)] bg-[var(--ypp-white)] px-4 py-12 sm:px-6 lg:px-8">
+        <div className="mx-auto flex max-w-4xl min-w-0 flex-col items-center gap-6 text-center sm:flex-row sm:gap-8 sm:text-left">
+          <div className="shrink-0 overflow-hidden rounded-2xl border border-[var(--ypp-border)] shadow-[var(--shadow-sm)]">
+            <Image
+              src="/photos/press-featured-in.jpg"
+              alt="Newspaper clippings from coverage of Youth Passion Project."
+              width={200}
+              height={200}
+              className="h-56 w-56 object-cover sm:h-64 sm:w-64"
+            />
+          </div>
+          <div className="min-w-0">
+            <p className="font-label text-xs font-semibold uppercase tracking-wider text-[var(--ypp-primary)]">
+              As featured in
+            </p>
+            <p className="font-body mt-2 text-[var(--ypp-muted)] leading-relaxed">
+              Youth Passion Project has been covered by the Scarsdale Inquirer and the Scarsdale High School Maroon.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Mission and how we work */}
       <section className="bg-[var(--ypp-blush)]/60 px-4 py-16 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl">

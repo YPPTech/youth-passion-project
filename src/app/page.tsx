@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import ClassInActionGallery from "@/components/ClassInActionGallery";
 import HeroSection from "@/components/HeroSection";
 import TestimonialsMarquee from "@/components/TestimonialsMarquee";
@@ -169,7 +170,31 @@ export default function HomePage() {
         </div>
       </section>
 
-      <ClassInActionGallery subtitle="Live video, shared tools, and small groups—same idea online and in person." />
+            <ClassInActionGallery subtitle="Live video, shared tools, and small groups—same idea online and in person." />
+
+      <section className="bg-[var(--ypp-blush)]/40 px-4 py-16 sm:px-6 lg:px-8">
+        <div className="mx-auto grid w-full min-w-0 max-w-6xl items-center gap-10 lg:grid-cols-2 lg:gap-14">
+          <div className="order-2 min-w-0 lg:order-1">
+            <h2 className="font-heading text-balance text-3xl font-bold tracking-tight text-[var(--ypp-deep)] sm:text-4xl">
+              Meet the YPP instructors
+            </h2>
+            <p className="font-body mt-4 max-w-xl text-pretty leading-relaxed text-[var(--ypp-muted)]">
+              Student instructors teaching their very first week of classes—just like the classes running today.
+            </p>
+          </div>
+          <div className="order-1 min-w-0 lg:order-2">
+            <div className="mx-auto aspect-square w-full max-w-md overflow-hidden rounded-2xl border border-[var(--ypp-border)] shadow-[var(--shadow-sm)]">
+              <Image
+                src="/photos/community-first-week.jpg"
+                alt="Four YPP student instructors on video calls during their first week teaching classes."
+                width={1080}
+                height={1080}
+                className="h-full w-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
 
       <section
         className="border-y border-[var(--ypp-border)] bg-[var(--ypp-white)] px-4 py-16 sm:px-6 lg:px-8"

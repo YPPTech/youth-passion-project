@@ -3,13 +3,12 @@
 import Image from "next/image";
 
 /**
- * Replace placeholder files in public/photos/ with full-resolution screenshots:
- * - class-scratch-online.png
+ * Replace remaining placeholder file in public/photos/ with a full-resolution screenshot:
  * - class-chess-online.png
  */
 const photos = [
   {
-    src: "/photos/class-scratch-online.png",
+    src: "/photos/class-scratch-online.jpg",
     alt: "YPP online class: teacher and students on video chat while sharing a Scratch coding project in the browser.",
     caption: "Scratch class: live video and shared screen.",
   },
