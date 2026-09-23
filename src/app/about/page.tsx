@@ -217,6 +217,32 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+      
+      {/* Instructor spotlight */}
+      <section className="border-b border-[var(--ypp-border)] bg-[var(--ypp-white)] px-4 py-12 sm:px-6 lg:px-8">
+        <div className="mx-auto flex max-w-4xl min-w-0 flex-col items-center gap-6 text-center sm:flex-row sm:gap-8 sm:text-left">
+          <div className="flex h-56 w-56 shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-[var(--ypp-border)] bg-[var(--ypp-blush)]/30 shadow-[var(--shadow-sm)] sm:h-64 sm:w-64">
+            <Image
+              src="/team/natalie-dowd.jpg"
+              alt="Instructor spotlight graphic for Natalie Dowd, YPP 3-D Modeling instructor."
+              width={601}
+              height={598}
+              className="h-full w-full object-contain"
+            />
+          </div>
+          <div className="min-w-0">
+            <p className="font-label text-xs font-semibold uppercase tracking-wider text-[var(--ypp-primary)]">
+              Instructor spotlight
+            </p>
+            <p className="font-heading mt-2 text-xl font-bold text-[var(--ypp-deep)]">
+              Natalie Dowd
+            </p>
+            <p className="font-body mt-2 text-[var(--ypp-muted)] leading-relaxed">
+              3-D Modeling instructor, teaching beginner and intermediate students.
+            </p>
+          </div>
+        </div>
+      </section>
 
       {/* Mission and how we work */}
       <section className="bg-[var(--ypp-blush)]/60 px-4 py-16 sm:px-6 lg:px-8">

@@ -96,7 +96,7 @@ const faqCategories: { title: string; items: FaqItem[] }[] = [
       },
       {
         q: "What age group are the courses for? Do I have to live in a certain area?",
-        a: "Our courses are designed for elementary and middle school students. For Summer 2026, we are running in-person classes only—no online classes at this time. Programs meet through our Scarsdale, NY chapter, so students need to be able to attend locally. See Programs & Chapters and our Calendar for what’s offered.",
+        a: "Our courses are designed for elementary and middle school students. For Summer 2026, we are running in-person classes only—no online classes at this time. Programs meet through our local chapters, so students need to be able to attend in person near one of our chapter locations. See Programs & Chapters and our Calendar for what’s offered.",
       },
       {
         q: "How do I register for courses?",
@@ -137,7 +137,7 @@ const faqCategories: { title: string; items: FaqItem[] }[] = [
       },
       {
         q: "How do in-person classes work?",
-        a: "For now, all classes meet in person through our Scarsdale, NY chapter—we are not offering online classes at this time. Sessions typically run 30–60 minutes, once or twice a week, in small groups led by trained high school instructors. The portal catalog lists current in-person offerings.",
+        a: "For now, all classes meet in person through our local chapters—we are not offering online classes at this time. Sessions typically run 30–60 minutes, once or twice a week, in small groups led by trained high school instructors. The portal catalog lists current in-person offerings.",
       },
     ],
   },
@@ -149,7 +149,7 @@ const faqCategories: { title: string; items: FaqItem[] }[] = [
         answer: (
           <p>
             Instructor roles are for high school students (grades 9–12). For Summer 2026, we are running
-            in-person classes only at our Scarsdale, NY chapter—if you live in the area and can teach locally,
+            in-person classes only at our chapter locations—if you live near one of our chapters and can teach locally,
             apply through the{" "}
             <a
               href={instructorRole.applyLink}
@@ -198,7 +198,7 @@ const faqCategories: { title: string; items: FaqItem[] }[] = [
     items: [
       {
         q: "What is the Youth Passion Project?",
-        a: "The Youth Passion Project offers free classes taught by high school volunteers. We focus on subjects that aren’t traditionally taught in school, from songwriting to coding to baking. Right now our programs are in-person only at our Scarsdale, NY chapter—we are not running online classes at this time. We’re a Delaware nonprofit with 501(c)(3) status. Read more on our About page.",
+        a: "The Youth Passion Project offers free classes taught by high school volunteers. We focus on subjects that aren’t traditionally taught in school, from songwriting to coding to baking. Right now our programs are in-person only at our chapter locations—we are not running online classes at this time. We’re a Delaware nonprofit with 501(c)(3) status. Read more on our About page.",
       },
       {
         q: "How do I contact the Youth Passion Project?",

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import ByTheNumbersSection from "@/components/ByTheNumbersSection";
 import ClassInActionGallery from "@/components/ClassInActionGallery";
 import HeroSection from "@/components/HeroSection";
 import TestimonialsMarquee from "@/components/TestimonialsMarquee";
@@ -215,6 +216,8 @@ export default function HomePage() {
           <TestimonialsMarquee items={homeTestimonials} />
         </div>
       </section>
+
+      <ByTheNumbersSection />
 
       {/* Open positions — Join Our Team (palette + glass cards aligned with celestial hero) */}
       <section className="relative overflow-hidden border-y border-[var(--ypp-border)]/40 bg-gradient-to-b from-[#e8deff]/90 via-[var(--ypp-blush)]/85 to-[#faf7ff] px-4 py-16 sm:px-6 lg:px-8">
