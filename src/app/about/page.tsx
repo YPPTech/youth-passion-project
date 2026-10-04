@@ -41,7 +41,7 @@ const officerTeam: LeadershipMember[] = [
     role: "Chief Technology Officer",
     location: "Snoqualmie, WA",
     bio: "Anthea is a junior in high school in the Greater Seattle Area and serves as the Chief Technology Officer of the Youth Passion Project. She built and maintains the organization's website and is currently developing YPP's online portal for students and instructors. In her role, she oversees the organization's technical infrastructure and works to enhance the digital systems that support YPP's programs and operations. Previously, she also taught Introduction to Algebra 1 at YPP. Outside of her work, Anthea plays golf at her school and enjoys traveling, attending concerts, and exploring new technology.",
-    image: "/team/anthea-zamir.jpg",
+    image: "/team/anthea-zamir-2026.jpg",
   },
   {
     personName: "Sanvi Mehta",
