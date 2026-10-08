@@ -43,13 +43,16 @@ const scarsdaleWorkshops = [
   },
 ] as const;
 
+const FRISCO_CLASS_SIGNUP_URL = "https://forms.gle/ysgbr8KrBgAGRBLG7";
+const FRISCO_INTEREST_FORM_URL = "https://forms.gle/pnGpc5UdY2PgpPdY8";
+
 export default function RegisterPage() {
   return (
     <div className="min-w-0 w-full">
       <PageHeader
         label="Open Now · In Person"
         title="Register for Classes"
-        subtitle="Sign up for YPP’s workshop at the Scarsdale Public Library."
+        subtitle="Sign up for YPP’s workshops in Scarsdale and classes in Frisco."
       />
 
       <section className="relative overflow-hidden border-b border-[var(--ypp-border)] bg-gradient-to-b from-[var(--ypp-lavender)]/55 via-[var(--ypp-blush)] to-[#faf8ff] px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
@@ -145,6 +148,59 @@ export default function RegisterPage() {
                 </a>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+            <section className="border-t border-[var(--ypp-border)] bg-white px-4 py-14 sm:px-6 sm:py-16 lg:px-8">
+        <div className="mx-auto max-w-3xl">
+          <div className="text-center">
+            <p className="font-label text-xs font-bold uppercase tracking-[0.18em] text-[var(--ypp-primary)]">
+              Frisco, TX
+            </p>
+            <h3 className="font-heading mt-3 text-2xl font-bold text-[var(--ypp-deep)] sm:text-3xl">
+              Frisco classes
+            </h3>
+          </div>
+
+          <div className="mt-8 rounded-2xl border border-[var(--ypp-border)] bg-white px-5 py-5 text-left shadow-[var(--shadow-sm)] sm:px-6 sm:py-6">
+            <p className="font-heading text-base font-bold leading-snug text-[var(--ypp-deep)] sm:text-lg">
+              Mythical Worlds: Creative Writing &amp; Fantasy Storytelling{" "}
+              <span className="font-semibold text-[var(--ypp-ink)]">
+                (Ages 8–12, 3rd–6th grade)
+              </span>
+            </p>
+            <p className="font-body mt-3 text-sm leading-relaxed text-[var(--ypp-muted)] sm:text-base">
+              Unleash your imagination! In this creative writing class, students learn to build their own fantasy
+              worlds from scratch, crafting magical characters, epic quests, and vivid settings through fun prompts
+              and interactive storytelling.
+            </p>
+            <a
+              href={FRISCO_CLASS_SIGNUP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-body mt-5 inline-flex min-h-[2.75rem] items-center justify-center rounded-full border-2 border-[var(--ypp-primary)] bg-white px-6 py-2.5 text-sm font-bold text-[var(--ypp-primary)] transition-colors hover:bg-[var(--ypp-primary)] hover:text-white"
+            >
+              Sign up for this class
+            </a>
+          </div>
+
+          <div className="mt-6 rounded-2xl border border-[var(--ypp-border)] bg-[var(--ypp-lavender)]/35 px-5 py-5 text-left sm:px-6 sm:py-6">
+            <p className="font-heading text-base font-bold leading-snug text-[var(--ypp-deep)] sm:text-lg">
+              Frisco Class Interest Form
+            </p>
+            <p className="font-body mt-3 text-sm leading-relaxed text-[var(--ypp-muted)] sm:text-base">
+              Help us plan our upcoming classes in Frisco! Let us know which subjects, hobbies, or skills you are most
+              interested in learning so we can bring your favorite topics to life.
+            </p>
+            <a
+              href={FRISCO_INTEREST_FORM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-body mt-5 inline-flex min-h-[2.75rem] items-center justify-center rounded-full border-2 border-[var(--ypp-primary)] bg-white px-6 py-2.5 text-sm font-bold text-[var(--ypp-primary)] transition-colors hover:bg-[var(--ypp-primary)] hover:text-white"
+            >
+              Fill out the interest form
+            </a>
           </div>
         </div>
       </section>
