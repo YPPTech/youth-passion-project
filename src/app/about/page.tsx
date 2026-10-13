@@ -6,7 +6,7 @@ import SectionHeading from "@/components/SectionHeading";
 
 type LeadershipMember = {
   personName: string;
-  role: string;
+  role?: string;
   location: string;
   bio: string;
   image: string;
@@ -23,17 +23,10 @@ const officerTeam: LeadershipMember[] = [
     image: "/team/aveena-haswani-new.jpg",
   },
   {
-    personName: "Ian DiLorenzo",
+    personName: "Brayden White",
     role: "Co-President",
     location: "Scarsdale, NY",
-    bio: "Ian is the Co-President of the Youth Passion Project. At YPP, he is the director of our in-person learning chapters. Outside of YPP, he loves the outdoors, movies, and learning about languages. He is currently studying both Latin and Spanish at Scarsdale High School, and loves to learn about the culture and history behind all sorts of different languages.",
-    image: "/team/ian-dilorenzo-new.jpg",
-  },
-  {
-    personName: "Brayden White",
-    role: "Vice President of Instruction",
-    location: "Scarsdale, NY",
-    bio: "Brayden is the Vice President of Instruction of the Youth Passion Project. He helps build programs that allow students to explore their interests and develop new skills. He built YPP's portal for students and instructors and helps train educators while supporting student instruction and programming across the organization. Brayden also teaches the BOW Sports Capital: Introduction to Sports Economics, a course on the business and economics behind professional sports. Outside of YPP, he enjoys spending time with friends, following sports, and finding the best food wherever he can.",
+    bio: "Brayden is the Co-President of the Youth Passion Project. He helps build programs that allow students to explore their interests and develop new skills. He built YPP's portal for students and instructors and helps train educators while supporting student instruction and programming across the organization. Brayden also teaches the BOW Sports Capital: Introduction to Sports Economics, a course on the business and economics behind professional sports. Outside of YPP, he enjoys spending time with friends, following sports, and finding the best food wherever he can.",
     image: "/team/brayden-white-new.jpg",
   },
   {
@@ -49,6 +42,12 @@ const officerTeam: LeadershipMember[] = [
     location: "Frisco, TX",
     bio: "Sanvi is the Vice President of Communications of the Youth Passion Project. In this role, she manages sponsorship outreach, oversees parent communication, and helps expand YPP's visibility through strategic marketing and social media. Sanvi first joined YPP as an ambitious student, taking classes in health, debate, and several other subjects. Through these experiences, she developed a strong passion for the organization and its mission, wanting to further her involvement at YPP. Outside of YPP, Sanvi enjoys spending time with friends, watching sports, and dancing.",
     image: "/team/sanvi-mehta-new.jpg",
+  },
+  {
+    personName: "Ian DiLorenzo",
+    location: "Scarsdale, NY",
+    bio: "Ian is part of the Youth Passion Project leadership team. At YPP, he helps lead in-person learning chapters. Outside of YPP, he loves the outdoors, movies, and learning about languages. He is currently studying both Latin and Spanish at Scarsdale High School, and loves to learn about the culture and history behind all sorts of different languages.",
+    image: "/team/ian-dilorenzo-new.jpg",
   },
 ];
 
@@ -137,8 +136,12 @@ export default function AboutPage() {
             <h3 className="text-xl font-semibold leading-tight text-[var(--ypp-ink)]">
               {person.personName}
             </h3>
-            <p className="mt-2 text-sm font-medium text-[var(--ypp-deep)]">{person.role}</p>
-            <p className="mt-1 text-sm text-[var(--ypp-muted)]">{person.location}</p>
+            {person.role ? (
+              <p className="mt-2 text-sm font-medium text-[var(--ypp-deep)]">{person.role}</p>
+            ) : null}
+            <p className={`${person.role ? "mt-1" : "mt-2"} text-sm text-[var(--ypp-muted)]`}>
+              {person.location}
+            </p>
           </div>
         </button>
       </li>
@@ -191,55 +194,6 @@ export default function AboutPage() {
                 </div>
               ))}
             </div>
-          </div>
-        </div>
-      </section>
-
-            {/* As featured in */}
-      <section className="border-b border-[var(--ypp-border)] bg-[var(--ypp-white)] px-4 py-12 sm:px-6 lg:px-8">
-        <div className="mx-auto flex max-w-4xl min-w-0 flex-col items-center gap-6 text-center sm:flex-row sm:gap-8 sm:text-left">
-          <div className="shrink-0 overflow-hidden rounded-2xl border border-[var(--ypp-border)] shadow-[var(--shadow-sm)]">
-            <Image
-              src="/photos/press-featured-in.jpg"
-              alt="Newspaper clippings from coverage of Youth Passion Project."
-              width={200}
-              height={200}
-              className="h-56 w-56 object-cover sm:h-64 sm:w-64"
-            />
-          </div>
-          <div className="min-w-0">
-            <p className="font-label text-xs font-semibold uppercase tracking-wider text-[var(--ypp-primary)]">
-              As featured in
-            </p>
-            <p className="font-body mt-2 text-[var(--ypp-muted)] leading-relaxed">
-              Youth Passion Project has been covered by the Scarsdale Inquirer and the Scarsdale High School Maroon.
-            </p>
-          </div>
-        </div>
-      </section>
-      
-      {/* Instructor spotlight */}
-      <section className="border-b border-[var(--ypp-border)] bg-[var(--ypp-white)] px-4 py-12 sm:px-6 lg:px-8">
-        <div className="mx-auto flex max-w-4xl min-w-0 flex-col items-center gap-6 text-center sm:flex-row sm:gap-8 sm:text-left">
-          <div className="flex h-56 w-56 shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-[var(--ypp-border)] bg-[var(--ypp-blush)]/30 shadow-[var(--shadow-sm)] sm:h-64 sm:w-64">
-            <Image
-              src="/team/natalie-dowd.jpg"
-              alt="Instructor spotlight graphic for Natalie Dowd, YPP 3-D Modeling instructor."
-              width={601}
-              height={598}
-              className="h-full w-full object-contain"
-            />
-          </div>
-          <div className="min-w-0">
-            <p className="font-label text-xs font-semibold uppercase tracking-wider text-[var(--ypp-primary)]">
-              Instructor spotlight
-            </p>
-            <p className="font-heading mt-2 text-xl font-bold text-[var(--ypp-deep)]">
-              Natalie Dowd
-            </p>
-            <p className="font-body mt-2 text-[var(--ypp-muted)] leading-relaxed">
-              3-D Modeling instructor, teaching beginner and intermediate students.
-            </p>
           </div>
         </div>
       </section>
@@ -395,8 +349,12 @@ export default function AboutPage() {
                   <h3 id="modal-name" className="text-3xl font-semibold leading-tight text-[var(--ypp-ink)]">
                     {selected.personName}
                   </h3>
-                  <p className="mt-2 text-base font-medium text-[var(--ypp-deep)]">{selected.role}</p>
-                  <p className="mt-1 text-sm text-[var(--ypp-muted)]">{selected.location}</p>
+                  {selected.role ? (
+                    <p className="mt-2 text-base font-medium text-[var(--ypp-deep)]">{selected.role}</p>
+                  ) : null}
+                  <p className={`${selected.role ? "mt-1" : "mt-2"} text-sm text-[var(--ypp-muted)]`}>
+                    {selected.location}
+                  </p>
                   <p className="font-body mt-4 text-sm leading-relaxed text-[var(--ypp-muted)] sm:text-base">
                     {selected.bio}
                   </p>
